@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Eric Miller's Website</title>
+---
+layout: page
+---
 
-    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <div class="padded-container fira">
-        <h1 class="heading">Who am I?</h1>
-        <p>
-            I am a Software Engineering student at MSOE University. I especially like databases and data analytics/visualization.
-            I also volunteer for a <a href="http://www.firstinspires.org/robotics/frc">FIRST Robotics Competition</a> team,
-            Team 1675, nicknamed the Ultimate Protection Squad.
-        </p>
-        <h1>Computer Science</h1>
-        <p>
-            I've been learning computer science since my junior year of high school, in 2011.
-            I've worked in a variety of languages, including C/C++, C#, Java, JavaScript, Python, Ruby, and more.
-            I like making cool web apps and scripts, especially when it involves working with databases.
-        </p>
-        <p>
-            In my free time, I'm often playing with new operating systems and a personal server. Currently, I'm running FreeBSD
-            on my server, and am quite liking it. The ports system is nice, and the whole operating system is very tightly controlled.
-        </p>
-        <h1>Coffee</h1>
-        <p>
-            I like coffee, and in particular, I like working in coffeehouses. They're great for socializing, working, and enjoying delicious coffee.
-            My favorite is <a href="https://anodynecoffee.com">Anodyne</a>.
-        </p>
-    </div>
-</body>
-</html>
+<div class="home">
+
+    <h1 class="page-heading">Posts</h1>
+
+    <ul class="post-list">
+        {% for post in site.posts %}
+        <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+            <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+            </h2>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
