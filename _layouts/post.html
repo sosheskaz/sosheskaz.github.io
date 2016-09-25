@@ -16,7 +16,7 @@ layout: page
         <p></p>
         {% endif %}
         {% if page.image_name == nil %}
-        <a id="post_link" class="post_link" href="{{ site.baseurl | append: page.url }}">{{ page.post_name }}</a>
+        <a id="post_link" class="post_link" href="{{ site.baseurl | append: page.url }}">{{ page.title }}</a>
         {% endif %}
         {% if page.image_name == nil %}
             <br>

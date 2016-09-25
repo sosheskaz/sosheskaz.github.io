@@ -1,15 +1,20 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I'm a Software Engineering student at Milwaukee School of Engineering (MSOE). I also mentor fabrication/machining at a local
+FIRST Robotics Competition (FRC) team, Team 1675. Occasionally, I'll write things about the technology industry, technology politics,
+or really anything I feel interested in writing about. Those things will be put here as I write them.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+I like webcomics. Here are my favorites:
+* [Paranatural](http://www.paranatural.net)
+* [Questionable Content](https://questionablecontent.net)
+* [Sam and Fuzzy](http://www.samandfuzzy.com)
+* [Saturday Morning Breakfast Cereal (SMBC)](http://www.smbc-comics.com)
+* [Scandinavia and the World (SATW)](http://satwcomic.com)
+* [Surviving the World](http://survivingtheworld.net)
+* [Three Panel Soul](http://threepanelsoul.com)
+* [Whomp!](http://www.whompcomic.com)
+* [XKCD](https://xkcd.com)
