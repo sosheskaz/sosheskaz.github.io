@@ -33,9 +33,10 @@ markdown_ext: "md"
 liquid:
     error_mode: strict
 
+
 # Blog Address configs
 baseurl: ""
-url: "http://sosheskaz.github.io"
+url: "http://localhost:4000"
 
 # baseurl: ""
-# url: "http://localhost:4000"
+# url: "sosheskaz.github.io"
