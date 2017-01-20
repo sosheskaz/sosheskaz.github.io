@@ -4,7 +4,7 @@ layout: page
 <div id="Post" class="Post text_good_2">
     <article class="Article">
         {% if page.image_name %}
-        <a style="text-decoration: none !important;" href="{{ site.baseurl | append: page.url}}">
+        <a style="text-decoration: none !important;" href="{{ site.url | append: page.url}}">
             <div class="post_image" style="background-position: 100% 100%; background-image:url({{site.url | append: site.baseurl | append: '/files/post_files/' | append: page.image_name}})">
                 <span class="title_on_image"> {{ page.post_name }} </span>
             </div>
@@ -16,7 +16,7 @@ layout: page
         <p></p>
         {% endif %}
         {% if page.image_name == nil %}
-        <a id="post_link" class="post_link" href="{{ site.baseurl | append: page.url }}">{{ page.title }}</a>
+        <a id="post_link" class="post_link" href="{{ site.url | append: page.url }}">{{ page.title }}</a>
         {% endif %}
         {% if page.image_name == nil %}
             <br>
