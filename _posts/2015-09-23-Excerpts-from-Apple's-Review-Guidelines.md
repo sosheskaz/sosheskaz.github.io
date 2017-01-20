@@ -1,3 +1,9 @@
+---
+layout: post
+title: Excerpts from Apple's Review Guidelines
+tags: apple review guidelines funny humor
+---
+
 From this document: [https://developer.apple.com/app-store/review/guidelines/](https://developer.apple.com/app-store/review/guidelines/)
 
 - "…if your app is plain creepy, it may not be accepted"

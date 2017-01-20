@@ -6,9 +6,9 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Jan 2017 15:36:26 -0600</pubDate>
-    <lastBuildDate>Tue, 17 Jan 2017 15:36:26 -0600</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <pubDate>Fri, 20 Jan 2017 14:22:27 -0600</pubDate>
+    <lastBuildDate>Fri, 20 Jan 2017 14:22:27 -0600</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
     
       <item>
         <title>How to Secure Your Online Life</title>
@@ -147,7 +147,7 @@ processing power, but if that’s not needed, it would be an acceptable work com
 reasonable 2.9GHz Dual-Core i5 CPU, 8GB (config to 16GB) memory, 256GB (config to 1TB) SSD, and integrated Iris Pro
 graphics. It compares to the 15” models about as well as the previous years did; it’s noticeably weaker.&lt;/p&gt;
 
-&lt;h2 id=&quot;macbook-pro&quot;&gt;15” MacBook Pro&lt;/h2&gt;
+&lt;h2 id=&quot;15-macbook-pro&quot;&gt;15” MacBook Pro&lt;/h2&gt;
 &lt;p&gt;These computers are definitely the flagship, albeit with the nasty price point of $2400. It has a 2.6GHz Quad-Core i7
 CPU (config to 2.9GHz), 16GB Memory, 256GB (config to 2TB) of SSD storage, and Radeon Pro 450 (config to 460) graphics.&lt;/p&gt;
 
@@ -309,6 +309,105 @@ The new service will now be viewable via bonjour clients, such as Safari and dns
       </item>
     
       <item>
+        <title>A Dramatic Re-enactment of the iPhone 7's Development Pitch</title>
+        <description>&lt;h3 id=&quot;t-is-tim-cook-all-others-positions-are-inferred-by-context&quot;&gt;T is Tim Cook. All others’ positions are inferred by context.&lt;/h3&gt;
+
+&lt;p&gt;This is just a fun little script I wrote.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;T: “We need better photo quality.”&lt;/p&gt;
+
+&lt;p&gt;A: “Really? I think users care more about-“&lt;/p&gt;
+
+&lt;p&gt;The sniper Apple keeps across the street to monitor its engineers takes out A.&lt;/p&gt;
+
+&lt;p&gt;B: “Photo quality is my top priority!”&lt;/p&gt;
+
+&lt;p&gt;T: “Okay, good. What can we do about it?”&lt;/p&gt;
+
+&lt;p&gt;B: “Well, people like zooming in, but digital zoom sucks. We could work on that.”&lt;/p&gt;
+
+&lt;p&gt;T: “Ooh, I like that. What do we need to do?&lt;/p&gt;
+
+&lt;p&gt;B: “Well, if we made it physically a little bigger-“&lt;/p&gt;
+
+&lt;p&gt;A red dot appears just on the left of C’s center of mass.&lt;/p&gt;
+
+&lt;p&gt;B: “But that would be silly. Instead, we’ll add an &lt;em&gt;ENTIRE SECOND CAMERA&lt;/em&gt; that has a different zoom built-in!”&lt;/p&gt;
+
+&lt;p&gt;T: “I love it. What else do you have?”&lt;/p&gt;
+
+&lt;p&gt;B: “Let’s add wide color; our users have wanted for years-“&lt;/p&gt;
+
+&lt;p&gt;B’s brains splatter against the wall.&lt;/p&gt;
+
+&lt;p&gt;T: “Gary, he kind of had a point, that’s actually a good idea.”&lt;/p&gt;
+
+&lt;p&gt;G: “Sorry boss. I heard ‘our users have wanted it for years’ and assumed it was go time.”&lt;/p&gt;
+
+&lt;p&gt;T: “Normally a safe assumption, but I’m afraid you were wrong on this one. Harvey, go for it.”&lt;/p&gt;
+
+&lt;p&gt;A second sniper takes out Gary.&lt;/p&gt;
+
+&lt;p&gt;H: “Done, boss.”&lt;/p&gt;
+
+&lt;p&gt;T: “Excellent. Now back to the task at hand; what else can we do?”&lt;/p&gt;
+
+&lt;p&gt;C: “We could custom build a special, extra chip dedicated solely to taking good pictures.”&lt;/p&gt;
+
+&lt;p&gt;T: “You better not be about to tell me we have to make the phone bigger.”&lt;/p&gt;
+
+&lt;p&gt;A red dot appears on D’s temple.&lt;/p&gt;
+
+&lt;p&gt;C: “Of course not boss! Remember when we got rid of the DVD drive and people were mad but we called it ‘innovative’? What if we made extra space… by getting rid of the headphone jack!”&lt;/p&gt;
+
+&lt;p&gt;Tim Cook’s jaw drops, flabberghasted by C’s utter &lt;em&gt;genius&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;T: “That’s the best idea I’ve ever heard. I can’t believe it - I finally get to pull a ‘Steve Jobs’.”&lt;/p&gt;
+
+&lt;p&gt;T: “Now - that’s almost enough for the next release, but I think we need a bit more. What more can we do to improve image quality?&lt;/p&gt;
+
+&lt;p&gt;C: “I’ve got you. Check this out - what if we double our processing power, and just make micro-optimizations with that until it looks good?”&lt;/p&gt;
+
+&lt;p&gt;T: “Like a college student pounding coffees until their term paper is done.”&lt;/p&gt;
+
+&lt;p&gt;C: “Exactly.”&lt;/p&gt;
+
+&lt;p&gt;T: “Well, I’m satisfied. Start manufacturing. Unfortunately, C, we need to protect our secrecy, and non-disclosure agreements just aren’t enough anymore.”&lt;/p&gt;
+
+&lt;p&gt;Harvey shoots C.&lt;/p&gt;
+
+&lt;p&gt;T: “Excellent job Harvey. I knew hooking up a mic in the room to your Apple® AirPods™ would pay off. Unfortunately-“&lt;/p&gt;
+
+&lt;p&gt;Harvey gets taken out by a third sniper, Ivan.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/yeah.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;T: “-you only get 5 hours of life with them.”&lt;/p&gt;
+</description>
+        <pubDate>Wed, 14 Sep 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2016/09/14/A-Dramatic-Reenactment-of-the-iPhone-7's-Development-Pitch.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/14/A-Dramatic-Reenactment-of-the-iPhone-7's-Development-Pitch.html</guid>
+        
+        <category>apple</category>
+        
+        <category>iphone</category>
+        
+        <category>7</category>
+        
+        <category>development</category>
+        
+        <category>pitch</category>
+        
+        <category>funny</category>
+        
+        <category>humor</category>
+        
+        
+      </item>
+    
+      <item>
         <title>09/07 Apple Event Coverage</title>
         <description>&lt;p&gt;So, I’ll do my regular coverage of the Apple event now that I’ve sat on it a few days, broken into relevant subsections:&lt;/p&gt;
 
@@ -345,6 +444,34 @@ So overall this year was disappointing, but had some cool things in the future.&
         <pubDate>Sat, 10 Sep 2016 00:00:00 -0500</pubDate>
         <link>http://localhost:4000/2016/09/10/0907-Apple-Event-Coverage.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/09/10/0907-Apple-Event-Coverage.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Excerpts from Apple's Review Guidelines</title>
+        <description>&lt;p&gt;From this document: &lt;a href=&quot;https://developer.apple.com/app-store/review/guidelines/&quot;&gt;https://developer.apple.com/app-store/review/guidelines/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“…if your app is plain creepy, it may not be accepted”&lt;/li&gt;
+  &lt;li&gt;“We have lots of serious developers who don’t want their quality Apps to be surrounded by amateur hour.”&lt;/li&gt;
+  &lt;li&gt;“We will reject Apps for any content or behavior that we believe is over the line. What line, you ask? Well, as a Supreme Court Justice once said, “I’ll know it when I see it”.”&lt;/li&gt;
+  &lt;li&gt;“If you run to the press and trash us, it never helps.”&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 23 Sep 2015 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2015/09/23/Excerpts-from-Apple's-Review-Guidelines.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/23/Excerpts-from-Apple's-Review-Guidelines.html</guid>
+        
+        <category>apple</category>
+        
+        <category>review</category>
+        
+        <category>guidelines</category>
+        
+        <category>funny</category>
+        
+        <category>humor</category>
         
         
       </item>
