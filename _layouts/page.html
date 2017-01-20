@@ -8,10 +8,10 @@
     <meta name="author" content="Eric Miller" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{site.favicon}}">
-    <link rel="stylesheet" href="{{site.baseurl}}/files/css/theme.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/files/css/font.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/files/css/beautifier.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/files/css/main.css">
+    <link rel="stylesheet" href="{{site.url}}/files/css/theme.css">
+    <link rel="stylesheet" href="{{site.url}}/files/css/font.css">
+    <link rel="stylesheet" href="{{site.url}}/files/css/beautifier.css">
+    <link rel="stylesheet" href="{{site.url}}/files/css/main.css">
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
 
     {%seo title=false%}
@@ -21,13 +21,13 @@
     <header id="blog_header">
         <nav class="top_nav_bar">
             <ul>
-                <li><a href="{{site.url | append: '/' | append: page.lang | append: '/index.html'}}" class="{% if page.page_w == 'home' %}active_tab{% endif %}">
+                <li><a href="{{page.lang | append: '/index.html'}}" class="{% if page.page_w == 'home' %}active_tab{% endif %}">
                     <span class="fa fa-home"></span> Home
                 </a></li>
-                <li><a href="{{site.url | append: '/' | append: '/posts/index.html'}}">
+                <li><a href="{{'posts/index.html'}}">
                     <span class="fa fa-home"></span> All Posts
                 </a></li>
-                <li style="float: right !important"><a href="{{site.url | append: '/' | append: page.lang | append: '/about/index.html'}}" class="{% if page.page_w == 'me' %}active_tab{% endif %}">
+                <li style="float: right !important"><a href="{{page.lang | append: '/about/index.html'}}" class="{% if page.page_w == 'me' %}active_tab{% endif %}">
                     <span class="fa fa-user"></span> About Me
                 </a></li>
                 <li style="float: right !important"><span id="search_bar">
@@ -57,7 +57,7 @@
                 {% if forloop.index <= 5 %}
                 <div class="latest_post_container">
                     <p>
-                        <a class="latest_post" href="{{ site.rul | append: post.url}}">
+                        <a class="latest_post" href="{{post.url}}">
                             {{ post.title | escape }}
                         </a>
                         <span class="latest_post_date">{{post.date | date: '%d %B %Y'}}</span>
@@ -72,7 +72,7 @@
                     <li>Links</li>
                     <span class="links_dashed"></span>
 
-                    <li style="margin-top:10%"><a href="{{site.url | append: '/' | append: page.lang | append: '/index.html'}}">Personal Page</a></li>
+                    <li style="margin-top:10%"><a href="{{page.lang | append: '/index.html'}}">Personal Page</a></li>
                     <li><a href="https://linkedin.com/in/eric-miller">LinkedIn</a></li>
                     <li><a href="http://www.team1675.net">Team 1675</a></li>
                 </ul>
