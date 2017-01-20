@@ -4,9 +4,7 @@ title: A Dramatic Re-enactment of the iPhone 7's Development Pitch
 tags: apple iphone 7 development pitch funny humor
 ---
 
-### T is Tim Cook. All others' positions are inferred by context.
-
-This is just a fun little script I wrote.
+T is Tim Cook. All others' positions are inferred by context. This is just a fun little script I wrote.
 
 ----
 
