@@ -35,8 +35,8 @@ liquid:
 
 
 # Blog Address configs
-baseurl: ""
-url: "http://localhost:4000"
-
 # baseurl: ""
-# url: "sosheskaz.github.io"
+# url: "http://localhost:4000"
+
+baseurl: ""
+url: "sosheskaz.github.io"
