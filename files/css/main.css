@@ -256,6 +256,14 @@ body
     text-align: center;
     font-size: 20px;
 }
+.sidebar_social
+{
+    display: block !important;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+}
 .Post
 {
     color: rgb(230,230,230);
