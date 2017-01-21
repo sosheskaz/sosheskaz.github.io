@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html>
 <head>
     <title>09/07 Apple Event Coverage</title>
@@ -71,6 +71,23 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+    <script>window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));</script>
 </head>
 
 <body class="text_good_2">
@@ -150,7 +167,9 @@ So overall this year was disappointing, but had some cool things in the future.<
 
         </div>
 
+
         <aside class="sidebar">
+
             <section class="sidebar_about_me">
                 <img id="my_image"src="http://localhost:4000/files/images/my/Team1675_MentorHeadshots-106.png">
                 <div>
@@ -160,10 +179,24 @@ So overall this year was disappointing, but had some cool things in the future.<
                 </div>
             </section>
             <span class="dashed"></span>
+
+            <section class="sidebar_social">
+
+                <a href="/feed.xml">RSS</a>
+
+                <br>
+                <div class="fb-like" data-href="http://localhost:4000" data-layout="button_count"
+                     data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                <br>
+
+                <a class="twitter-share-button"href="http://localhost:4000">Tweet</a>
+                <a class="twitter-follow-button" href="https://twitter.com/sosheskaz">Follow @sosheskaz</a>
+            </section>
+
+            <span class="dashed"></span>
             <section class="sidebar_latest_post text_good_2">Latest Posts
                 <p></p>
             
-                
                 <div class="latest_post_container">
                     <p>
                         <a class="latest_post" href="/2017/01/20/Ethical-Considerations-In-Advanced-Robotics-and-AI.html">
@@ -172,9 +205,9 @@ So overall this year was disappointing, but had some cool things in the future.<
                         <span class="latest_post_date">20 January 2017</span>
                     </p>
                 </div>
+
                 
             
-                
                 <div class="latest_post_container">
                     <p>
                         <a class="latest_post" href="/2017/01/17/How-to-Secure-Your-Online-Life.html">
@@ -183,9 +216,9 @@ So overall this year was disappointing, but had some cool things in the future.<
                         <span class="latest_post_date">17 January 2017</span>
                     </p>
                 </div>
+
                 
             
-                
                 <div class="latest_post_container">
                     <p>
                         <a class="latest_post" href="/2016/11/12/2016-Macbook-Pro-Impressions.html">
@@ -194,9 +227,9 @@ So overall this year was disappointing, but had some cool things in the future.<
                         <span class="latest_post_date">12 November 2016</span>
                     </p>
                 </div>
+
                 
             
-                
                 <div class="latest_post_container">
                     <p>
                         <a class="latest_post" href="/2016/09/26/Avahi-HTTP-Service.html">
@@ -205,9 +238,9 @@ So overall this year was disappointing, but had some cool things in the future.<
                         <span class="latest_post_date">26 September 2016</span>
                     </p>
                 </div>
+
                 
             
-                
                 <div class="latest_post_container">
                     <p>
                         <a class="latest_post" href="/2016/09/24/Jurassic-World-Reversal.html">
@@ -216,30 +249,18 @@ So overall this year was disappointing, but had some cool things in the future.<
                         <span class="latest_post_date">24 September 2016</span>
                     </p>
                 </div>
+
                 
-            
                 
-            
-                
-            
-                
-            
             </section>
             <span class="dashed"></span>
             <section class="sidebar_latest_post text_good_2">
                 <ul id="links">
                     <li>Links</li>
-                    <span class="links_dashed"></span>
 
                     <li><a href="https://linkedin.com/in/eric-miller">LinkedIn</a></li>
                     <li><a href="http://www.team1675.net">Team 1675</a></li>
                 </ul>
-            </section>
-            <section class="sidebar_tags">Tags
-                <br>
-                
-                
-                
             </section>
         </aside>
     </div>

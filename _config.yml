@@ -15,6 +15,7 @@ title: Eric Miller's Website
 description: >
     My personal website. A place for my stuff.
 email: millere@msoe.edu
+author: Eric Miller
 github_username: sosheskaz
 favicon: /files/images/favicon.png
 
@@ -23,7 +24,10 @@ my_images_path: files/images/my/
 post_images_path: files/images/posts/
 
 # configuration
-gems: ["octopress-paginate" , "jekyll-seo-tag"]
+gems:
+  - octopress-paginate
+  - jekyll-seo-tag
+  - jekyll-feed
 exclude:    ["default.gems" , "Gemfile" , "Gemfile.lock" , ".gitignore" , "license" , ".git" , "readme.md"]
 keep_files: [".git" , "license.html" , "readme.md"]
 source: .
@@ -33,10 +37,3 @@ markdown_ext: "md"
 liquid:
     error_mode: strict
 
-
-# Blog Address configs
-#baseurl: ""
-#url: "https://localhost:4000"
-
-#baseurl: ""
-#url: "https://sosheskaz.github.io"
