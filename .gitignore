@@ -1,8 +1,4 @@
-_site
 .sass-cache
 .jekyll-metadata
 
 .idea/
-
-site/
-posts/
