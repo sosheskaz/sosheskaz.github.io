@@ -1,16 +1,15 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>09/07 Apple Event Coverage</title>
     <meta charset="utf-8">
     <meta name="author" content="Eric Miller" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/files/images/favicon.png">
-    <link rel="stylesheet" href="http://localhost:4000/files/css/theme.css">
-    <link rel="stylesheet" href="http://localhost:4000/files/css/font.css">
-    <link rel="stylesheet" href="http://localhost:4000/files/css/beautifier.css">
-    <link rel="stylesheet" href="http://localhost:4000/files/css/main.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+    <link rel="stylesheet" href="/css/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -89,37 +88,42 @@
         return t;
     }(document, "script", "twitter-wjs"));</script>
 </head>
+<body>
+    <div id="wrapper">
+        <div id="header-wrapper">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
 
-<body class="text_good_2">
-    <header id="blog_header">
-        <nav class="top_nav_bar">
-            <ul>
-                <li><a href="http://localhost:4000/index.html" class="">
-                    <span class="fa fa-home"></span> Home
-                </a></li>
-                <li><a href="http://localhost:4000/posts/index.html">
-                    <span class="fa fa-home"></span> All Posts
-                </a></li>
-                <li style="float: right !important"><a href="http://localhost:4000//about/index.html" class="">
-                    <span class="fa fa-user"></span> About Me
-                </a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="body_container">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/posts/">All Posts</a></li>
+                            <li><a href="/posts/">Latest</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/about/">About</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
 
-        <div class="main_side_container">
+        <div id="page-content-wrapper">
             <div id="Post" class="Post text_good_2">
     <article class="Article">
-        
-        
-        <a id="post_link" class="post_link" href="/2016/09/10/0907-Apple-Event-Coverage.html">09/07 Apple Event Coverage</a>
-        
-        
-            <br>
-            <br>
-            
-        
+        <h1 class="post-title"><a id="post_link" class="post_link" href="/2016/09/10/0907-Apple-Event-Coverage.html">09/07 Apple Event Coverage</a></h1>
+        <hr>
+        <br>
         <p>So, I’ll do my regular coverage of the Apple event now that I’ve sat on it a few days, broken into relevant subsections:</p>
 
 <h3 id="apple-watch">Apple Watch:</h3>
@@ -166,108 +170,6 @@ So overall this year was disappointing, but had some cool things in the future.<
 </div>
 
         </div>
-
-
-        <aside class="sidebar">
-
-            <section class="sidebar_about_me">
-                <img id="my_image"src="http://localhost:4000/files/images/my/Team1675_MentorHeadshots-106.png">
-                <div>
-                    <p id="note">
-                        Computer Scientist, Mentor, Machinist
-                    </p>
-                </div>
-            </section>
-            <span class="dashed"></span>
-
-            <section class="sidebar_social">
-
-                <a href="/feed.xml">RSS</a>
-
-                <br>
-                <div class="fb-like" data-href="http://localhost:4000" data-layout="button_count"
-                     data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-
-                <br>
-
-                <a class="twitter-share-button"href="http://localhost:4000">Tweet</a>
-                <a class="twitter-follow-button" href="https://twitter.com/sosheskaz">Follow @sosheskaz</a>
-
-                <form action="https://cash.me/$sosheskaz" target="_blank">
-                    <button>Buy me a coffee?</button>
-                </form>
-            </section>
-
-            <span class="dashed"></span>
-            <section class="sidebar_latest_post text_good_2">Latest Posts
-                <p></p>
-            
-                <div class="latest_post_container">
-                    <p>
-                        <a class="latest_post" href="/2017/01/20/Ethical-Considerations-In-Advanced-Robotics-and-AI.html">
-                            Ethical Considerations in Advanced Robotics and AI
-                        </a>
-                        <span class="latest_post_date">20 January 2017</span>
-                    </p>
-                </div>
-
-                
-            
-                <div class="latest_post_container">
-                    <p>
-                        <a class="latest_post" href="/2017/01/17/How-to-Secure-Your-Online-Life.html">
-                            How to Secure Your Online Life
-                        </a>
-                        <span class="latest_post_date">17 January 2017</span>
-                    </p>
-                </div>
-
-                
-            
-                <div class="latest_post_container">
-                    <p>
-                        <a class="latest_post" href="/2016/11/12/2016-Macbook-Pro-Impressions.html">
-                            2016 MacBook Pro Impressions
-                        </a>
-                        <span class="latest_post_date">12 November 2016</span>
-                    </p>
-                </div>
-
-                
-            
-                <div class="latest_post_container">
-                    <p>
-                        <a class="latest_post" href="/2016/09/26/Avahi-HTTP-Service.html">
-                            How to use Avahi to advertise an HTTP service
-                        </a>
-                        <span class="latest_post_date">26 September 2016</span>
-                    </p>
-                </div>
-
-                
-            
-                <div class="latest_post_container">
-                    <p>
-                        <a class="latest_post" href="/2016/09/24/Jurassic-World-Reversal.html">
-                            Jurassic World with Chris Pratt as the Velociraptors and a Velociraptor as Chris Pratt
-                        </a>
-                        <span class="latest_post_date">24 September 2016</span>
-                    </p>
-                </div>
-
-                
-                
-            </section>
-            <span class="dashed"></span>
-            <section class="sidebar_latest_post text_good_2">
-                <ul id="links">
-                    <li>Links</li>
-
-                    <li><a href="https://linkedin.com/in/eric-miller">LinkedIn</a></li>
-                    <li><a href="http://www.team1675.net">Team 1675</a></li>
-                </ul>
-            </section>
-        </aside>
     </div>
 </body>
 </html>

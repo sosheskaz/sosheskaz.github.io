@@ -1,3 +1,10 @@
+#page-content-wrapper {
+  margin-left: 8%;
+  margin-right: 8%; }
+
+.post-title {
+  text-align: center; }
+
 /**
  * Reset some basic elements
  */

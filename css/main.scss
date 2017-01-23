@@ -26,6 +26,11 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+
+
 // Minima also includes a mixin for defining media queries.
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -34,6 +39,15 @@ $on-laptop:        800px;
 //         padding-left: $spacing-unit / 2;
 //     }
 // }
+
+#page-content-wrapper {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.post-title {
+  text-align: center;
+}
 
 // Import partials from the `minima` theme.
 @import "minima";
