@@ -88,7 +88,7 @@
 <body>
     <div id="wrapper">
         <div id="header-wrapper">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default navbar-custom">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -105,18 +105,20 @@
                         <ul class="nav navbar-nav">
                             <li><a href="/">Home</a></li>
                             <li><a href="/posts/">All Posts</a></li>
-                            <li><a href="/posts/">Latest</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/about/">About</a></li>
+                            <li><a href="/feed.xml">RSS</a></li>
+                            <li><a href="/about/">About Me</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
         </div>
+    </div>
 
-        <div id="page-content-wrapper">
-            <ul class="post-list">
+<div class="col-md-1"></div>
+<div id="page-content-wrapper" class="content col-md-10">
+    <ul class="post-list">
   
   <li>
     <span class="post-meta">Jan 20, 2017</span>
@@ -184,7 +186,7 @@
   
 </ul>
 
-        </div>
-    </div>
+</div>
+<div class="col-md-1"></div>
 </body>
 </html>

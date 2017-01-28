@@ -74,6 +74,6 @@ T: "Excellent job Harvey. I knew hooking up a mic in the room to your Apple® Ai
 
 Harvey gets taken out by a third sniper, Ivan.
 
-![]({{site.baseurl}}/{{site.post_images_path}}yeah.jpeg)
-
 T: "-you only get 5 hours of life with them."
+
+![](/{{site.post_images_path}}/yeah.jpeg)

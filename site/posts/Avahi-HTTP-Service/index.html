@@ -91,7 +91,7 @@
 <body>
     <div id="wrapper">
         <div id="header-wrapper">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default navbar-custom">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -108,18 +108,20 @@
                         <ul class="nav navbar-nav">
                             <li><a href="/">Home</a></li>
                             <li><a href="/posts/">All Posts</a></li>
-                            <li><a href="/posts/">Latest</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/about/">About</a></li>
+                            <li><a href="/feed.xml">RSS</a></li>
+                            <li><a href="/about/">About Me</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
         </div>
+    </div>
 
-        <div id="page-content-wrapper">
-            <div id="Post" class="Post text_good_2">
+<div class="col-md-1"></div>
+<div id="page-content-wrapper" class="content col-md-10">
+    <div id="Post" class="Post text_good_2">
     <article class="Article">
         <h1 class="post-title"><a id="post_link" class="post_link" href="/posts/Avahi-HTTP-Service/">How to use Avahi to advertise an HTTP service</a></h1>
         <hr>
@@ -161,28 +163,15 @@ The new service will now be viewable via bonjour clients, such as Safari and dns
 <p><img src="/files/images/posts/2016-09-26-avahi-in-safari.png" alt="Avahi-Safari" />
 <img src="/files/images/posts/2016-09-26-avahi-in-terminal.png" alt="Avahi-dns-sd" /></p>
 
-        <p></p>
-        <span class="tags">Tags</span>
-        
-        <a class="tag" href="#">avahi</a>
-        
-        <a class="tag" href="#">bonjour</a>
-        
-        <a class="tag" href="#">zeroconf</a>
-        
-        <a class="tag" href="#">plex</a>
-        
     </article>
 
     <br />
 
     <div class="fb-like" data-href="http://localhost:4000/posts/Avahi-HTTP-Service/" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
-
-    <div class="fb-comments" data-href="http://localhost:4000/posts/Avahi-HTTP-Service/" data-numposts="5"></div>
 </div>
 
-        </div>
-    </div>
+</div>
+<div class="col-md-1"></div>
 </body>
 </html>

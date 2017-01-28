@@ -20,8 +20,8 @@ github_username: sosheskaz
 favicon: /files/images/favicon.png
 
 # My image folder
-my_images_path: files/images/my/
-post_images_path: files/images/posts/
+my_images_path: files/images/my
+post_images_path: files/images/posts
 
 # configuration
 gems:

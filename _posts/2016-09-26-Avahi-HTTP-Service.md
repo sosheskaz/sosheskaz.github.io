@@ -38,5 +38,5 @@ Within that file, add the following (which I shamelessly stole most of from [her
 Now, restart avahi with the command `sudo service avahi-daemon restart`.
 The new service will now be viewable via bonjour clients, such as Safari and dns-sd (see below).
 
-![Avahi-Safari]({{site.baseurl}}/{{site.post_images_path}}2016-09-26-avahi-in-safari.png)
-![Avahi-dns-sd]({{site.baseurl}}/{{site.post_images_path}}2016-09-26-avahi-in-terminal.png)
+![Avahi-Safari](/{{site.post_images_path}}/2016-09-26-avahi-in-safari.png)
+![Avahi-dns-sd](/{{site.post_images_path}}/2016-09-26-avahi-in-terminal.png)

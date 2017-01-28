@@ -1,6 +1,27 @@
-#page-content-wrapper {
-  margin-left: 8%;
-  margin-right: 8%; }
+html, body {
+  min-height: 100%;
+  height: 100%; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.navbar-custom {
+  background-color: #f8f8f8; }
+
+.full {
+  min-height: 100%;
+  height: 100%; }
+
+.about-sidebar {
+  background-color: #DFDFDF;
+  padding: 2em; }
+
+.content {
+  padding: 2em 5%;
+  background-color: #EFEFEF; }
+
+.me {
+  content: url(/files/images/my/Team1675_MentorHeadshots-106.png); }
 
 .post-title {
   text-align: center; }

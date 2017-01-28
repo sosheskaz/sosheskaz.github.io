@@ -20,7 +20,7 @@ these here.
 * Multi-Factor Authentication - The process of using multiple ways to verify that someone is who they say they are. For example,  a password (something only you should know), and a code texted to your phone (something only you should have). By verifying someone's identity in multiple ways, you increase the barrier to entry of breaking into your phone.
 
 # Step 1. Password Manager
-![LastPass in action]({{site.baseurl}}/{{site.post_images_path}}2017-01-17-LastPass.png)
+![LastPass in action](/{{site.post_images_path}}/2017-01-17-LastPass.png)
 
 Passwords in general have two main vulnerabilities:
 
@@ -39,7 +39,8 @@ The result is that, as long as you guard your master password jealously, avoid r
 However, password managers have one important downfall: if your master password gets out, you can lose everything. Which is why you may also want to use:
 
 # Step 2. Two-Factor Authentication
-![What Authy looks like]({{site.baseurl}}/{{site.post_images_path}}2017-01-17-Authy.PNG)
+<div class="col-md-12">
+<img src="/{{site.post_images_path}}/2017-01-17-Authy.PNG" class="col-md-6">
 
 2-factor authentication can send a unique code to a device you own, to prove that you are who you say you are, when you first log in to a service from a new device or haven't logged in for a long time.
 
@@ -50,15 +51,17 @@ I recommend [Authy](https://www.authy.com) as your "one-stop-shop" for this, as 
 You can use this for LastPass, and now in order for someone to get into your account, it makes it *very* difficult to break into your account.
 
 Note: Apple and Microsoft have their own ways for doing this for their accounts, that are in some ways more convenient and in some ways less so.
+</div>
 
 # Step 3. Full Disk Encryption
-![FileVault]({{site.baseurl}}/{{site.post_images_path}}2017-01-17-FileVault.png)
+<div class="col-md-12">
+<img src="/{{site.post_images_path}}/2017-01-17-FileVault.png" class="col-md-8">
 
 This is a rather drastic step, but it has been made feasible by advances in technology. This will slow down your computer, but if you have a Solid State Drive (SSD) it isn't particularly noticeable. The previous two steps can be considered sufficient for most people. This is turned on by default in Android and iOS.
 
 The hard drive is where all your data is kept. Under normal circumstances, if someone steals this or your computer, they can read anything on it (that isn't encrypted). Hackers have a saying: "Physical access is total access". Of course, if there's nothing interesting/private on your computer (that's not encrypted already, like LastPass and Authy) this is a pointless exercise.
 
 Windows does this with BitLocker, and MacOS does this with FileVault. Both are excellent solutions (although Apple has a better record of not programming "back doors" in their software - which has lost them fans among the NSA and FBI and gotten them praise from privacy advocates). If these aren't sufficient for you, you can do research and find your own solution.
-
+</div>
 # Conclusion
 Congrats! With step 1 and 2, and proper diligence, your digital life is now locked down tight. If you followed step 3 as well, you're Fort Knox 🎉.

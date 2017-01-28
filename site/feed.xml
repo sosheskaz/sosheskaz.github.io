@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Jan 2017 23:21:31 -0600</pubDate>
-    <lastBuildDate>Sun, 22 Jan 2017 23:21:31 -0600</lastBuildDate>
+    <pubDate>Fri, 27 Jan 2017 18:16:41 -0600</pubDate>
+    <lastBuildDate>Fri, 27 Jan 2017 18:16:41 -0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -122,27 +122,30 @@ these here.&lt;/p&gt;
 &lt;p&gt;However, password managers have one important downfall: if your master password gets out, you can lose everything. Which is why you may also want to use:&lt;/p&gt;
 
 &lt;h1 id=&quot;step-2-two-factor-authentication&quot;&gt;Step 2. Two-Factor Authentication&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-01-17-Authy.PNG&quot; alt=&quot;What Authy looks like&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;col-md-12&quot;&gt;
+&lt;img src=&quot;/files/images/posts/2017-01-17-Authy.PNG&quot; class=&quot;col-md-6&quot; /&gt;
 
-&lt;p&gt;2-factor authentication can send a unique code to a device you own, to prove that you are who you say you are, when you first log in to a service from a new device or haven’t logged in for a long time.&lt;/p&gt;
+2-factor authentication can send a unique code to a device you own, to prove that you are who you say you are, when you first log in to a service from a new device or haven't logged in for a long time.
 
-&lt;p&gt;Typically, this is a service you have to turn on in the web service you’re looking at. Usually it works by sending you a text with a one-time code that you can use to log in, but there are other solutions.&lt;/p&gt;
+Typically, this is a service you have to turn on in the web service you're looking at. Usually it works by sending you a text with a one-time code that you can use to log in, but there are other solutions.
 
-&lt;p&gt;I recommend &lt;a href=&quot;https://www.authy.com&quot;&gt;Authy&lt;/a&gt; as your “one-stop-shop” for this, as it works with a lot of websites, won’t fill up your text inbox, and works on iOS, Android, and Desktop. When setting up two-factor authentication on a website, look for “Google Authenticator”. It’ll give you a QR code - just scan it, and it’s set up! Note that some sites only support text for authentication, and not Google Authenticator.&lt;/p&gt;
+I recommend [Authy](https://www.authy.com) as your &quot;one-stop-shop&quot; for this, as it works with a lot of websites, won't fill up your text inbox, and works on iOS, Android, and Desktop. When setting up two-factor authentication on a website, look for &quot;Google Authenticator&quot;. It'll give you a QR code - just scan it, and it's set up! Note that some sites only support text for authentication, and not Google Authenticator.
 
-&lt;p&gt;You can use this for LastPass, and now in order for someone to get into your account, it makes it &lt;em&gt;very&lt;/em&gt; difficult to break into your account.&lt;/p&gt;
+You can use this for LastPass, and now in order for someone to get into your account, it makes it *very* difficult to break into your account.
 
-&lt;p&gt;Note: Apple and Microsoft have their own ways for doing this for their accounts, that are in some ways more convenient and in some ways less so.&lt;/p&gt;
+Note: Apple and Microsoft have their own ways for doing this for their accounts, that are in some ways more convenient and in some ways less so.
+&lt;/div&gt;
 
 &lt;h1 id=&quot;step-3-full-disk-encryption&quot;&gt;Step 3. Full Disk Encryption&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-01-17-FileVault.png&quot; alt=&quot;FileVault&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;col-md-12&quot;&gt;
+&lt;img src=&quot;/files/images/posts/2017-01-17-FileVault.png&quot; class=&quot;col-md-8&quot; /&gt;
 
-&lt;p&gt;This is a rather drastic step, but it has been made feasible by advances in technology. This will slow down your computer, but if you have a Solid State Drive (SSD) it isn’t particularly noticeable. The previous two steps can be considered sufficient for most people. This is turned on by default in Android and iOS.&lt;/p&gt;
+This is a rather drastic step, but it has been made feasible by advances in technology. This will slow down your computer, but if you have a Solid State Drive (SSD) it isn't particularly noticeable. The previous two steps can be considered sufficient for most people. This is turned on by default in Android and iOS.
 
-&lt;p&gt;The hard drive is where all your data is kept. Under normal circumstances, if someone steals this or your computer, they can read anything on it (that isn’t encrypted). Hackers have a saying: “Physical access is total access”. Of course, if there’s nothing interesting/private on your computer (that’s not encrypted already, like LastPass and Authy) this is a pointless exercise.&lt;/p&gt;
+The hard drive is where all your data is kept. Under normal circumstances, if someone steals this or your computer, they can read anything on it (that isn't encrypted). Hackers have a saying: &quot;Physical access is total access&quot;. Of course, if there's nothing interesting/private on your computer (that's not encrypted already, like LastPass and Authy) this is a pointless exercise.
 
-&lt;p&gt;Windows does this with BitLocker, and MacOS does this with FileVault. Both are excellent solutions (although Apple has a better record of not programming “back doors” in their software - which has lost them fans among the NSA and FBI and gotten them praise from privacy advocates). If these aren’t sufficient for you, you can do research and find your own solution.&lt;/p&gt;
-
+Windows does this with BitLocker, and MacOS does this with FileVault. Both are excellent solutions (although Apple has a better record of not programming &quot;back doors&quot; in their software - which has lost them fans among the NSA and FBI and gotten them praise from privacy advocates). If these aren't sufficient for you, you can do research and find your own solution.
+&lt;/div&gt;
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;Congrats! With step 1 and 2, and proper diligence, your digital life is now locked down tight. If you followed step 3 as well, you’re Fort Knox 🎉.&lt;/p&gt;
 </description>
@@ -449,9 +452,9 @@ The new service will now be viewable via bonjour clients, such as Safari and dns
 
 &lt;p&gt;Harvey gets taken out by a third sniper, Ivan.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/yeah.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
 &lt;p&gt;T: “-you only get 5 hours of life with them.”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/yeah.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 14 Sep 2016 00:00:00 -0500</pubDate>
         <link>http://localhost:4000/2016/09/14/A-Dramatic-Reenactment-of-the-iPhone-7's-Development-Pitch.html</link>
