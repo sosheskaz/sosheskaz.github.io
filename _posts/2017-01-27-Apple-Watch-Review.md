@@ -9,6 +9,7 @@ writing a review a month later. For the record, this is a 42mm Series
 2 model.
 
 # Overall
+
 In the time I've had it, I've gained a very favorable opinion of the
 Apple Watch. Its user experience is definitely one of the best I've
 experienced, and it feels very polished. Notably, integrating it 
@@ -18,16 +19,18 @@ in – in large part due to the incredible user experience that the
 designers have achieved.
 
 # Cool Things it Does
+
 I'm going to start out by listing a lot of the really cool and
 useful features of the watch that make an impact in my daily life.
 
 ## 1. Activity Tracking &amp; Health
+
 Let me just start out by saying that if you're a hardcore runner or
 athlete, this watch will not replace your Garmin. It's a consumer
 product, not a professional one.
 
 <div class="col-md-12">
-<img src="{{site.post_images_path}}/2017-01-27-Activity.jpg" class="col-md-3">
+<img src="/{{site.post_images_path}}/2017-01-27-Activity.jpg" class="col-md-3">
 
 <p>
 This is a feature I was very skeptical about; I occasionally go to
@@ -62,6 +65,7 @@ minute – once a day.
 </div>
 
 ## 2. Notifications – And the Sweet Sound of Silence
+
 Next up: the notifications on the watch. Personally, I've permanently
 switched my phone to silent mode, because the tap on the wrist that
 the Apple Watch gives you when you receive notifications is both
@@ -76,6 +80,7 @@ the Apple watch steps up and fills the role more conveniently and with
 more subtlety.
 
 ## 3. Ping or Mute your Phone
+
 How often do you misplace your phone right next to you, but aren't
 sure where it is? Or go somewhere where you probably should turn on
 Do Not Disturb mode, but meh it's on vibrate and it'll probably be fine.
@@ -85,15 +90,18 @@ iPhone make a noise (or if you hold it down, flash the LED too) to
 help you find it. Honestly, this is one of the smartest things they did.
 
 ## Ending the Rule of Three
+
 Of course there are lots of other cool things to do, including: auto-unlocking
 your mac, being a stopwatch/nightstand-alarm-clock/timer, showing your
 daily calendar, being a remote for your camera, and more – but this post
 is already pretty long and I don't want to bore you too much.
 
 # Complaints and Grievances
+
 Of course, it wouldn't be a fair review if I didn't list some negatives.
 
 ## 1. The Screen is Small
+
 I knew this going in, but ultimately, there are simply limits on
 what you can do with an interface on a 1.6" (or 1.5") screen. While I think
 Apple and third party vendors have, for the most part, created 
@@ -110,8 +118,9 @@ adding a third dimension to the touch screen and, while it makes
 sense for a screen this small, is disappointing.
 
 ## 2. No Third-Party Watch Faces
+
 <div class="col-md-12">
-<img src="{{site.post_images_path}}/2017-01-27-Face.jpg" class="col-md-3">
+<img src="/{{site.post_images_path}}/2017-01-27-Face.jpg" class="col-md-3">
 
 <p>
 One of the nice things, and something Apple put a good deal of 
@@ -128,9 +137,11 @@ which throttles this customizability.
 </div>
 
 &nbsp;
+
 ## 3. The App Screen
+
 <div class="col-md-12">
-<img src="{{site.post_images_path}}/2017-01-27-AppScreen.jpg" class="col-md-3">
+<img src="/{{site.post_images_path}}/2017-01-27-AppScreen.jpg" class="col-md-3">
 
 <p>
 The app screen is arranged hexagonally. The rationale behind this
@@ -148,6 +159,7 @@ a pain, which of course makes it even harder to use.
 </div>
 
 &nbsp;
+
 # Closing
 Overall, the Apple Watch is very thoughtfully designed, offers a
 lovely user experience, and integrates easily into one's daily

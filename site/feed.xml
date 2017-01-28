@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Jan 2017 20:44:50 -0600</pubDate>
-    <lastBuildDate>Fri, 27 Jan 2017 20:44:50 -0600</lastBuildDate>
+    <pubDate>Fri, 27 Jan 2017 20:47:48 -0600</pubDate>
+    <lastBuildDate>Fri, 27 Jan 2017 20:47:48 -0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -18,6 +18,7 @@ writing a review a month later. For the record, this is a 42mm Series
 2 model.&lt;/p&gt;
 
 &lt;h1 id=&quot;overall&quot;&gt;Overall&lt;/h1&gt;
+
 &lt;p&gt;In the time I’ve had it, I’ve gained a very favorable opinion of the
 Apple Watch. Its user experience is definitely one of the best I’ve
 experienced, and it feels very polished. Notably, integrating it 
@@ -27,16 +28,18 @@ in – in large part due to the incredible user experience that the
 designers have achieved.&lt;/p&gt;
 
 &lt;h1 id=&quot;cool-things-it-does&quot;&gt;Cool Things it Does&lt;/h1&gt;
+
 &lt;p&gt;I’m going to start out by listing a lot of the really cool and
 useful features of the watch that make an impact in my daily life.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-activity-tracking--health&quot;&gt;1. Activity Tracking &amp;amp; Health&lt;/h2&gt;
+
 &lt;p&gt;Let me just start out by saying that if you’re a hardcore runner or
 athlete, this watch will not replace your Garmin. It’s a consumer
 product, not a professional one.&lt;/p&gt;
 
 &lt;div class=&quot;col-md-12&quot;&gt;
-&lt;img src=&quot;files/images/posts/2017-01-27-Activity.jpg&quot; class=&quot;col-md-3&quot; /&gt;
+&lt;img src=&quot;/files/images/posts/2017-01-27-Activity.jpg&quot; class=&quot;col-md-3&quot; /&gt;
 
 &lt;p&gt;
 This is a feature I was very skeptical about; I occasionally go to
@@ -71,6 +74,7 @@ minute – once a day.
 &lt;/div&gt;
 
 &lt;h2 id=&quot;2-notifications--and-the-sweet-sound-of-silence&quot;&gt;2. Notifications – And the Sweet Sound of Silence&lt;/h2&gt;
+
 &lt;p&gt;Next up: the notifications on the watch. Personally, I’ve permanently
 switched my phone to silent mode, because the tap on the wrist that
 the Apple Watch gives you when you receive notifications is both
@@ -85,6 +89,7 @@ the Apple watch steps up and fills the role more conveniently and with
 more subtlety.&lt;/p&gt;
 
 &lt;h2 id=&quot;3-ping-or-mute-your-phone&quot;&gt;3. Ping or Mute your Phone&lt;/h2&gt;
+
 &lt;p&gt;How often do you misplace your phone right next to you, but aren’t
 sure where it is? Or go somewhere where you probably should turn on
 Do Not Disturb mode, but meh it’s on vibrate and it’ll probably be fine.
@@ -94,15 +99,18 @@ iPhone make a noise (or if you hold it down, flash the LED too) to
 help you find it. Honestly, this is one of the smartest things they did.&lt;/p&gt;
 
 &lt;h2 id=&quot;ending-the-rule-of-three&quot;&gt;Ending the Rule of Three&lt;/h2&gt;
+
 &lt;p&gt;Of course there are lots of other cool things to do, including: auto-unlocking
 your mac, being a stopwatch/nightstand-alarm-clock/timer, showing your
 daily calendar, being a remote for your camera, and more – but this post
 is already pretty long and I don’t want to bore you too much.&lt;/p&gt;
 
 &lt;h1 id=&quot;complaints-and-grievances&quot;&gt;Complaints and Grievances&lt;/h1&gt;
+
 &lt;p&gt;Of course, it wouldn’t be a fair review if I didn’t list some negatives.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-the-screen-is-small&quot;&gt;1. The Screen is Small&lt;/h2&gt;
+
 &lt;p&gt;I knew this going in, but ultimately, there are simply limits on
 what you can do with an interface on a 1.6” (or 1.5”) screen. While I think
 Apple and third party vendors have, for the most part, created 
@@ -119,8 +127,9 @@ adding a third dimension to the touch screen and, while it makes
 sense for a screen this small, is disappointing.&lt;/p&gt;
 
 &lt;h2 id=&quot;2-no-third-party-watch-faces&quot;&gt;2. No Third-Party Watch Faces&lt;/h2&gt;
+
 &lt;div class=&quot;col-md-12&quot;&gt;
-&lt;img src=&quot;files/images/posts/2017-01-27-Face.jpg&quot; class=&quot;col-md-3&quot; /&gt;
+&lt;img src=&quot;/files/images/posts/2017-01-27-Face.jpg&quot; class=&quot;col-md-3&quot; /&gt;
 
 &lt;p&gt;
 One of the nice things, and something Apple put a good deal of 
@@ -137,9 +146,11 @@ which throttles this customizability.
 &lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
+
 &lt;h2 id=&quot;3-the-app-screen&quot;&gt;3. The App Screen&lt;/h2&gt;
+
 &lt;div class=&quot;col-md-12&quot;&gt;
-&lt;img src=&quot;files/images/posts/2017-01-27-AppScreen.jpg&quot; class=&quot;col-md-3&quot; /&gt;
+&lt;img src=&quot;/files/images/posts/2017-01-27-AppScreen.jpg&quot; class=&quot;col-md-3&quot; /&gt;
 
 &lt;p&gt;
 The app screen is arranged hexagonally. The rationale behind this
@@ -157,6 +168,7 @@ a pain, which of course makes it even harder to use.
 &lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
+
 &lt;h1 id=&quot;closing&quot;&gt;Closing&lt;/h1&gt;
 &lt;p&gt;Overall, the Apple Watch is very thoughtfully designed, offers a
 lovely user experience, and integrates easily into one’s daily
