@@ -6,9 +6,134 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Feb 2017 16:45:12 -0600</pubDate>
-    <lastBuildDate>Tue, 14 Feb 2017 16:45:12 -0600</lastBuildDate>
+    <pubDate>Thu, 23 Feb 2017 17:46:15 -0600</pubDate>
+    <lastBuildDate>Thu, 23 Feb 2017 17:46:15 -0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>3 Things I Like About Swift</title>
+        <description>&lt;div class=&quot;col-md-9&quot;&gt;
+
+Within the past several months, I've been working a lot in Swift 3 and XCode 8. The language was a brand
+new experience for me, and there was quite a learning curve. I've never worked with a language like it and
+while, as always, programming skills carry over, the syntax of Swift proved tricky. However, after this time,
+I've either gained an appreciation for some of the more novel features in Swift, or else I've gained
+stockholm syndrome. Determining which is left as an exercise to the reader.
+
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://developer.apple.com/swift/images/swift-og.png&quot; class=&quot;img-rounded col-md-3&quot; style=&quot;padding-bottom: 20px;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;1-nil-nada-nothing&quot;&gt;1. Nil! Nada! Nothing!&lt;/h1&gt;
+&lt;p&gt;That’s right, “nil”. That’s what null is called. Yes, it’s weird that they’ve eschewed traditional
+labeling in favor of this. The logic kind of makes sense, but I won’t go into it - I’m not actually here
+to talk about nil, but about &lt;em&gt;how it’s handled&lt;/em&gt; in Swift.&lt;/p&gt;
+
+&lt;p&gt;In C#, there’s a concept called &lt;strong&gt;Nullable.&lt;/strong&gt; This makes primatives, like floating-point numbers and 
+integers, which one would not normally be able to assign a value of null, to be assigned null. 
+This is often quite useful when you want primatives to behave like normal objects. Swift implements a
+similar system, but instead it works for any object.&lt;/p&gt;
+
+&lt;p&gt;As an example, say you have a “Point” object, stored in the variable point.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var point: Point = Point(1, 3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The variable point can never be nil. If one tries the following code: &lt;code class=&quot;highlighter-rouge&quot;&gt;point = nil&lt;/code&gt; it will raise a compiler
+error. However, if you wanted it to be able to be nil, all you have to do is add a ‘?’ to Point, so that
+the type is now “nillable”.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var point: Point? = Point(1, 3)
+point = nil
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This seems novel at first, but in conjunction with other features (one of which is coming up next) it really
+simplifies programming. When writing a function, if one wants, they can mandate that no values passed in are
+nil, which can simplify edge cases and testing. Now, onto “nillable’s” best friend:&lt;/p&gt;
+
+&lt;h1 id=&quot;2-guard-statements&quot;&gt;2. Guard Statements&lt;/h1&gt;
+&lt;p&gt;Guard statements were, for me, covered briefly in a class, but beyond that, not talked about much. A guard
+statement is a statement at the beginning of a function where it’s decided whether the function can basically
+work. They’re often used to check for null or for error conditions. Swift, however, has its own dedicated
+keyword for this, logically called &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt;. The keyword alone is useful for keeping code readable, because
+one can see the keyword, realize it’s just checking for error conditions, and skip over it when understanding
+how some code works.&lt;/p&gt;
+
+&lt;p&gt;But other than that, what benefits are there? For one, they force good practice; the compiler won’t allow
+you to forget to &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt;, or execute some other control flow. They allow one to create variables
+for future use, allowing one to seamlessly unwrap a nillable. Here’s that in practice:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func doThing(thisReallyShouldNotBeNil: Int?, shouldBeTrue: Bool) {
+    guard let notNil = thisReallyShouldNotBeNil else {
+        print(&quot;you put in nil you dummy!&quot;)
+        return
+    }
+    guard shouldBeTrue == true else {
+        print(&quot;This should never happen :P&quot;)
+        return
+    }
+    
+    // notNil is an Int now, not an Int?.
+    
+    print(notNil != nil) // you will get a compiler warning because this will never be possible. 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Obviously this is simplified, but it becomes very powerful in keeping things from getting out of hand as 
+they get more complicated.&lt;/p&gt;
+
+&lt;h1 id=&quot;3-string-templating&quot;&gt;3. String Templating&lt;/h1&gt;
+&lt;p&gt;Y’all, this is the best templating I’ve ever seen. Even better than Ruby or C#. It’s simply beautiful. Say
+one wants to print out a person’s information:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;print(&quot;Name: \(person.name)    Height: \(person.height)    Profession: \(person.profession)&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’s the simplest thing. Backslash, parenthesis. Fits the context of the language, is perfectly clear,
+and is one of the least verbose methods out there in any language. Simple beauty. It’s the small things in
+life.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-bad&quot;&gt;The Bad&lt;/h1&gt;
+&lt;p&gt;Swift is an innovative, different, and unique language, and it has its share of bad. Most of it boils down to&lt;/p&gt;
+
+&lt;h2 id=&quot;xcode&quot;&gt;XCode&lt;/h2&gt;
+&lt;p&gt;Swift is hard to build without XCode. Really hard. Even JetBrains’ AppCode relies on opening XCode for 
+certain operations. One of the main reasons for this boils down to the flat filemap. In most programming
+languages, if you put something in a folder, that means it’s in that folder in the operating system.
+This makes traversing and interacting with your project from the command line natural. Instead, there’s an
+XML file that keeps track of the folder and subfolder in every file. If you want to look at the project as
+intended, you need XCode. While this maps well to Apple’s (and arguable BSD’s) centralized philosophy, it’s
+an annoyance to developers.&lt;/p&gt;
+
+&lt;p&gt;XCode is buggy and crash-prone; lots of times features simply stop working and XCode needs to be restarted.
+It reminds me of my early days with Eclipse over 5 years ago, and even then I believe Eclipse was more 
+reliable.&lt;/p&gt;
+
+&lt;p&gt;Beyond that, it just has poor design in many ways. Keyboard shortcuts aren’t shown in menus, the toolbar is
+at times incomplete, and “generate” code functionality is painfully absent, to name a few.&lt;/p&gt;
+
+&lt;h1 id=&quot;closing&quot;&gt;Closing&lt;/h1&gt;
+&lt;p&gt;So yes, I like Swift quite a bit. It winds up being a different language, but some of the language features
+have shown to not only be niceto use, but to be very forward-thinking in terms of keeping large codebases 
+sustainable. It also keeps up with more modern functionality, syntax, and paradigms quite well, while also
+putting its own spin on it.&lt;/p&gt;
+
+&lt;p&gt;Finally, it’s important to consider that Swift is designed very specifically around building UI apps. In
+this way it’s often more specific, or at least has a different focus, than many other languages. When 
+learning it, it’s important to keep an open mind, and to give Swift’s way of doing things a shot. I’m glad
+I did.&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Feb 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/2017/02/23/3-Things-About-Swift.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/23/3-Things-About-Swift.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Photos of the Sunrise</title>
@@ -765,34 +890,6 @@ So overall this year was disappointing, but had some cool things in the future.&
         <pubDate>Sat, 10 Sep 2016 00:00:00 -0500</pubDate>
         <link>http://localhost:4000/2016/09/10/0907-Apple-Event-Coverage.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/09/10/0907-Apple-Event-Coverage.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Excerpts from Apple's Review Guidelines</title>
-        <description>&lt;p&gt;From this document: &lt;a href=&quot;https://developer.apple.com/app-store/review/guidelines/&quot;&gt;https://developer.apple.com/app-store/review/guidelines/&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;“…if your app is plain creepy, it may not be accepted”&lt;/li&gt;
-  &lt;li&gt;“We have lots of serious developers who don’t want their quality Apps to be surrounded by amateur hour.”&lt;/li&gt;
-  &lt;li&gt;“We will reject Apps for any content or behavior that we believe is over the line. What line, you ask? Well, as a Supreme Court Justice once said, “I’ll know it when I see it”.”&lt;/li&gt;
-  &lt;li&gt;“If you run to the press and trash us, it never helps.”&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 23 Sep 2015 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2015/09/23/Excerpts-from-Apple's-Review-Guidelines.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/09/23/Excerpts-from-Apple's-Review-Guidelines.html</guid>
-        
-        <category>apple</category>
-        
-        <category>review</category>
-        
-        <category>guidelines</category>
-        
-        <category>funny</category>
-        
-        <category>humor</category>
         
         
       </item>

@@ -122,70 +122,127 @@
 <div id="page-content-wrapper" class="content col-md-10">
     <div class="home">
 
-    <h1 class="post-title"><a href="/2017/02/14/Sunrise-Photos.html">Photos of the Sunrise</a></h1>
+    <h1 class="post-title"><a href="/2017/02/23/3-Things-About-Swift.html">3 Things I Like About Swift</a></h1>
     <div>
-        <p>A few nights ago, I was up all night working. Around 6:30 AM I got done, and my watch told me it was less
-than half an hour until sunrise (which was at 6:52). On a whim, I decided to go to the top of the hill by my house and
-try to take some pictures. It turned out to be a really nice view, where even though it was obfuscated by
-the lake, I could just barely see the horizon over the lake. I also like urban photography, so the early
-morning street was another nice aspect in my opinion. The sun came out right in the corner of where the 
-lake met some towers, which was less than ideal for me, but I still feel they came out well.</p>
+        <div class="col-md-9">
 
-<p>The photos were also taken with the iPhone’s “Live Photos” function, where 1.5 seconds before and after
-the photo are captured as low-framerate (albeit good enough to look decent) video. The photos here don’t
-reflect this, but the movement of the cars add a nice dimension to the early-morning city.</p>
+Within the past several months, I've been working a lot in Swift 3 and XCode 8. The language was a brand
+new experience for me, and there was quite a learning curve. I've never worked with a language like it and
+while, as always, programming skills carry over, the syntax of Swift proved tricky. However, after this time,
+I've either gained an appreciation for some of the more novel features in Swift, or else I've gained
+stockholm syndrome. Determining which is left as an exercise to the reader.
 
-<hr />
+</div>
+<p><img src="https://developer.apple.com/swift/images/swift-og.png" class="img-rounded col-md-3" style="padding-bottom: 20px;" /></p>
 
-<p>
+<h1 id="1-nil-nada-nothing">1. Nil! Nada! Nothing!</h1>
+<p>That’s right, “nil”. That’s what null is called. Yes, it’s weird that they’ve eschewed traditional
+labeling in favor of this. The logic kind of makes sense, but I won’t go into it - I’m not actually here
+to talk about nil, but about <em>how it’s handled</em> in Swift.</p>
 
-<p>
-<a href="/files/albums/sunrise/sunrise - 1.jpg" target="_blank">
-<img src="/files/albums/sunrise/sunrise - 1low.jpg" class="img-rounded col-md-4" style="padding-bottom: 20px" />
-</a>
-</p>
+<p>In C#, there’s a concept called <strong>Nullable.</strong> This makes primatives, like floating-point numbers and 
+integers, which one would not normally be able to assign a value of null, to be assigned null. 
+This is often quite useful when you want primatives to behave like normal objects. Swift implements a
+similar system, but instead it works for any object.</p>
 
-<p>
-<a href="/files/albums/sunrise/sunrise - 2.jpg" target="_blank">
-<img src="/files/albums/sunrise/sunrise - 2low.jpg" class="img-rounded col-md-4" style="padding-bottom: 20px" />
-</a>
-</p>
+<p>As an example, say you have a “Point” object, stored in the variable point.</p>
 
-<p>
-<a href="/files/albums/sunrise/sunrise - 3.jpg" target="_blank">
-<img src="/files/albums/sunrise/sunrise - 3low.jpg" class="img-rounded col-md-4" style="padding-bottom: 20px" />
-</a>
-</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var point: Point = Point(1, 3)
+</code></pre>
+</div>
 
-<p>
-<a href="/files/albums/sunrise/sunrise - 4.jpg" target="_blank">
-<img src="/files/albums/sunrise/sunrise - 4low.jpg" class="img-rounded col-md-4" style="padding-bottom: 20px" />
-</a>
-</p>
+<p>The variable point can never be nil. If one tries the following code: <code class="highlighter-rouge">point = nil</code> it will raise a compiler
+error. However, if you wanted it to be able to be nil, all you have to do is add a ‘?’ to Point, so that
+the type is now “nillable”.</p>
 
-<p>
-<a href="/files/albums/sunrise/sunrise - 5.jpg" target="_blank">
-<img src="/files/albums/sunrise/sunrise - 5low.jpg" class="img-rounded col-md-4" style="padding-bottom: 20px" />
-</a>
-</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var point: Point? = Point(1, 3)
+point = nil
+</code></pre>
+</div>
 
-<p>
-<a href="/files/albums/sunrise/sunrise - 6.jpg" target="_blank">
-<img src="/files/albums/sunrise/sunrise - 6low.jpg" class="img-rounded col-md-4" style="padding-bottom: 20px" />
-</a>
-</p>
+<p>This seems novel at first, but in conjunction with other features (one of which is coming up next) it really
+simplifies programming. When writing a function, if one wants, they can mandate that no values passed in are
+nil, which can simplify edge cases and testing. Now, onto “nillable’s” best friend:</p>
 
-<p>
-<a href="/files/albums/sunrise/sunrise - 7.jpg" target="_blank">
-<img src="/files/albums/sunrise/sunrise - 7low.jpg" class="img-rounded col-md-4" style="padding-bottom: 20px" />
-</a>
-</p>
+<h1 id="2-guard-statements">2. Guard Statements</h1>
+<p>Guard statements were, for me, covered briefly in a class, but beyond that, not talked about much. A guard
+statement is a statement at the beginning of a function where it’s decided whether the function can basically
+work. They’re often used to check for null or for error conditions. Swift, however, has its own dedicated
+keyword for this, logically called <code class="highlighter-rouge">guard</code>. The keyword alone is useful for keeping code readable, because
+one can see the keyword, realize it’s just checking for error conditions, and skip over it when understanding
+how some code works.</p>
 
-</p>
+<p>But other than that, what benefits are there? For one, they force good practice; the compiler won’t allow
+you to forget to <code class="highlighter-rouge">return</code>, <code class="highlighter-rouge">break</code>, or execute some other control flow. They allow one to create variables
+for future use, allowing one to seamlessly unwrap a nillable. Here’s that in practice:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>func doThing(thisReallyShouldNotBeNil: Int?, shouldBeTrue: Bool) {
+    guard let notNil = thisReallyShouldNotBeNil else {
+        print("you put in nil you dummy!")
+        return
+    }
+    guard shouldBeTrue == true else {
+        print("This should never happen :P")
+        return
+    }
+    
+    // notNil is an Int now, not an Int?.
+    
+    print(notNil != nil) // you will get a compiler warning because this will never be possible. 
+}
+</code></pre>
+</div>
+
+<p>Obviously this is simplified, but it becomes very powerful in keeping things from getting out of hand as 
+they get more complicated.</p>
+
+<h1 id="3-string-templating">3. String Templating</h1>
+<p>Y’all, this is the best templating I’ve ever seen. Even better than Ruby or C#. It’s simply beautiful. Say
+one wants to print out a person’s information:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>print("Name: \(person.name)    Height: \(person.height)    Profession: \(person.profession)")
+</code></pre>
+</div>
+
+<p>It’s the simplest thing. Backslash, parenthesis. Fits the context of the language, is perfectly clear,
+and is one of the least verbose methods out there in any language. Simple beauty. It’s the small things in
+life.</p>
+
+<h1 id="the-bad">The Bad</h1>
+<p>Swift is an innovative, different, and unique language, and it has its share of bad. Most of it boils down to</p>
+
+<h2 id="xcode">XCode</h2>
+<p>Swift is hard to build without XCode. Really hard. Even JetBrains’ AppCode relies on opening XCode for 
+certain operations. One of the main reasons for this boils down to the flat filemap. In most programming
+languages, if you put something in a folder, that means it’s in that folder in the operating system.
+This makes traversing and interacting with your project from the command line natural. Instead, there’s an
+XML file that keeps track of the folder and subfolder in every file. If you want to look at the project as
+intended, you need XCode. While this maps well to Apple’s (and arguable BSD’s) centralized philosophy, it’s
+an annoyance to developers.</p>
+
+<p>XCode is buggy and crash-prone; lots of times features simply stop working and XCode needs to be restarted.
+It reminds me of my early days with Eclipse over 5 years ago, and even then I believe Eclipse was more 
+reliable.</p>
+
+<p>Beyond that, it just has poor design in many ways. Keyboard shortcuts aren’t shown in menus, the toolbar is
+at times incomplete, and “generate” code functionality is painfully absent, to name a few.</p>
+
+<h1 id="closing">Closing</h1>
+<p>So yes, I like Swift quite a bit. It winds up being a different language, but some of the language features
+have shown to not only be niceto use, but to be very forward-thinking in terms of keeping large codebases 
+sustainable. It also keeps up with more modern functionality, syntax, and paradigms quite well, while also
+putting its own spin on it.</p>
+
+<p>Finally, it’s important to consider that Swift is designed very specifically around building UI apps. In
+this way it’s often more specific, or at least has a different focus, than many other languages. When 
+learning it, it’s important to keep an open mind, and to give Swift’s way of doing things a shot. I’m glad
+I did.</p>
+
+<p>&lt;/div&gt;</p>
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/2017/02/14/Sunrise-Photos.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/2017/02/23/3-Things-About-Swift.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>
