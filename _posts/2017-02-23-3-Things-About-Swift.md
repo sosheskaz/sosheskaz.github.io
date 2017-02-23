@@ -110,5 +110,3 @@ Finally, it's important to consider that Swift is designed very specifically aro
 this way it's often more specific, or at least has a different focus, than many other languages. When 
 learning it, it's important to keep an open mind, and to give Swift's way of doing things a shot. I'm glad
 I did.
-
-</div>
