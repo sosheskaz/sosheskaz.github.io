@@ -102,7 +102,7 @@ at times incomplete, and "generate" code functionality is painfully absent, to n
 
 # Closing
 So yes, I like Swift quite a bit. It winds up being a different language, but some of the language features
-have shown to not only be niceto use, but to be very forward-thinking in terms of keeping large codebases 
+have shown to not only be nice to use, but to be very forward-thinking in terms of keeping large codebases 
 sustainable. It also keeps up with more modern functionality, syntax, and paradigms quite well, while also
 putting its own spin on it.
 
