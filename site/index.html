@@ -122,7 +122,7 @@
 <div id="page-content-wrapper" class="content col-md-10">
     <div class="home">
 
-    <h1 class="post-title"><a href="/2017/03/06/XCode-CI-Article.html">Setting up Simple Continuous Integration for iOS Development</a></h1>
+    <h1 class="post-title"><a href="/2017/03/07/XCode-CI-Article.html">Setting up Simple Continuous Integration for iOS Development</a></h1>
     <div>
         <p>Setting up reliable continuous integration (CI) for XCode can be a nightmare. I personally wrestled with the
 problem for a long while, eventually finding a somewhat convoluted workaround to make it work. However, I’ve
@@ -195,14 +195,14 @@ here, but if you want to customize your settings, look up a guide on configuring
 an output similar to the following. To stop the process, run <code class="highlighter-rouge">./runAll stop kill</code>. Note that this process
 will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.</p>
 
-<p><img src="/files/images/posts/2017-03-06-runAll-start.jpg" alt="Sample output" /></p>
+<p><img src="/files/images/posts/2017-03-07-runAll-start.jpg" alt="Sample output" /></p>
 
 <p>Now navigate to <a href="http://localhost:8111/">http://localhost:8111/</a>. If accessing this from a machine other
 than the one you just set up the server on, use that machine’s hostname instead of localhost. You’ll see
 a setup dialog, similar to the one below. Walk through the setup process. The default settings should be
 fine for simple use cases.</p>
 
-<p><img src="/files/images/posts/2017-03-06-setup-dialog.jpg" alt="Setup Dialog" /></p>
+<p><img src="/files/images/posts/2017-03-07-setup-dialog.jpg" alt="Setup Dialog" /></p>
 
 <p>Once you’ve finished the process and created an administrator account, you’re ready to start using TeamCity.
 If it’s installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.</p>
@@ -211,7 +211,7 @@ If it’s installed on MacOS, it will also install the TeamCity agent, which wil
 build under that project. I recommend creating a project from a VCS source, as this will make things easier
 down the line.</p>
 
-<p><img src="/files/images/posts/2017-03-06-create-project.jpg" alt="" /></p>
+<p><img src="/files/images/posts/2017-03-07-create-project.jpg" alt="" /></p>
 
 <p>Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.</p>
 
@@ -292,8 +292,8 @@ killall com.apple.CoreSimulator.CoreSimulatorService
 settings. In the branch specification, I recommend choosing which branches the server should run. To run
 all branches and commits, enter <code class="highlighter-rouge">+:*</code> in the branch specification box.</p>
 
-<p><img src="/files/images/posts/2017-03-06-vcs-config.jpg" alt="" />
-<img src="/files/images/posts/2017-03-06-branch-spec.jpg" alt="" /></p>
+<p><img src="/files/images/posts/2017-03-07-vcs-config.jpg" alt="" />
+<img src="/files/images/posts/2017-03-07-branch-spec.jpg" alt="" /></p>
 
 <h3 id="vcs-labeling">VCS Labeling</h3>
 <p>TeamCity has a lot of really cool features. One of my favorites is VCS labeling. To reach this, go to the
@@ -332,7 +332,7 @@ then go.</p>
 “Agents” tab at the top, then click the link on the right that says “Install build agent”, and select the
 zip file distribution.</p>
 
-<p><img src="/files/images/posts/2016-03-06-agent-install.jpg" alt="Agent Installation" /></p>
+<p><img src="/files/images/posts/2017-03-07-agent-install.jpg" alt="Agent Installation" /></p>
 
 <h2 id="configuring">Configuring</h2>
 <p>Once the agent is installed, you can configure the agent’s settings in the <code class="highlighter-rouge">conf/buildAgent.properties</code>
@@ -349,7 +349,7 @@ these easier.</p>
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/2017/03/06/XCode-CI-Article.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/2017/03/07/XCode-CI-Article.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>

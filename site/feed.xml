@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Mar 2017 11:23:28 -0600</pubDate>
-    <lastBuildDate>Tue, 07 Mar 2017 11:23:28 -0600</lastBuildDate>
+    <pubDate>Tue, 07 Mar 2017 17:15:05 -0600</pubDate>
+    <lastBuildDate>Tue, 07 Mar 2017 17:15:05 -0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -83,14 +83,14 @@ here, but if you want to customize your settings, look up a guide on configuring
 an output similar to the following. To stop the process, run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll stop kill&lt;/code&gt;. Note that this process
 will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-06-runAll-start.jpg&quot; alt=&quot;Sample output&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-runAll-start.jpg&quot; alt=&quot;Sample output&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now navigate to &lt;a href=&quot;http://localhost:8111/&quot;&gt;http://localhost:8111/&lt;/a&gt;. If accessing this from a machine other
 than the one you just set up the server on, use that machine’s hostname instead of localhost. You’ll see
 a setup dialog, similar to the one below. Walk through the setup process. The default settings should be
 fine for simple use cases.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-06-setup-dialog.jpg&quot; alt=&quot;Setup Dialog&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-setup-dialog.jpg&quot; alt=&quot;Setup Dialog&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you’ve finished the process and created an administrator account, you’re ready to start using TeamCity.
 If it’s installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.&lt;/p&gt;
@@ -99,7 +99,7 @@ If it’s installed on MacOS, it will also install the TeamCity agent, which wil
 build under that project. I recommend creating a project from a VCS source, as this will make things easier
 down the line.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-06-create-project.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-create-project.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.&lt;/p&gt;
 
@@ -180,8 +180,8 @@ killall com.apple.CoreSimulator.CoreSimulatorService
 settings. In the branch specification, I recommend choosing which branches the server should run. To run
 all branches and commits, enter &lt;code class=&quot;highlighter-rouge&quot;&gt;+:*&lt;/code&gt; in the branch specification box.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-06-vcs-config.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/files/images/posts/2017-03-06-branch-spec.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-vcs-config.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/files/images/posts/2017-03-07-branch-spec.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;vcs-labeling&quot;&gt;VCS Labeling&lt;/h3&gt;
 &lt;p&gt;TeamCity has a lot of really cool features. One of my favorites is VCS labeling. To reach this, go to the
@@ -220,7 +220,7 @@ then go.&lt;/p&gt;
 “Agents” tab at the top, then click the link on the right that says “Install build agent”, and select the
 zip file distribution.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2016-03-06-agent-install.jpg&quot; alt=&quot;Agent Installation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-agent-install.jpg&quot; alt=&quot;Agent Installation&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;configuring&quot;&gt;Configuring&lt;/h2&gt;
 &lt;p&gt;Once the agent is installed, you can configure the agent’s settings in the &lt;code class=&quot;highlighter-rouge&quot;&gt;conf/buildAgent.properties&lt;/code&gt;
@@ -235,9 +235,9 @@ these easier.&lt;/p&gt;
 &lt;h1 id=&quot;step-3-concluding&quot;&gt;Step 3: Concluding&lt;/h1&gt;
 &lt;p&gt;You’re set up! Congratulations! 🎉&lt;/p&gt;
 </description>
-        <pubDate>Mon, 06 Mar 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2017/03/06/XCode-CI-Article.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/06/XCode-CI-Article.html</guid>
+        <pubDate>Tue, 07 Mar 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/2017/03/07/XCode-CI-Article.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/07/XCode-CI-Article.html</guid>
         
         
       </item>

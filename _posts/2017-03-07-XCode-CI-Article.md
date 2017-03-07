@@ -70,14 +70,14 @@ Navigate to `bin` in your Terminal, and run `./runAll start`. This will start th
 an output similar to the following. To stop the process, run `./runAll stop kill`. Note that this process
 will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.
 
-![Sample output]({{site.baseurl}}/{{site.post_images_path}}/2017-03-06-runAll-start.jpg)
+![Sample output]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-runAll-start.jpg)
 
 Now navigate to [http://localhost:8111/](http://localhost:8111/). If accessing this from a machine other
 than the one you just set up the server on, use that machine's hostname instead of localhost. You'll see
 a setup dialog, similar to the one below. Walk through the setup process. The default settings should be
 fine for simple use cases.
 
-![Setup Dialog]({{site.baseurl}}/{{site.post_images_path}}/2017-03-06-setup-dialog.jpg)
+![Setup Dialog]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-setup-dialog.jpg)
 
 Once you've finished the process and created an administrator account, you're ready to start using TeamCity.
 If it's installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.
@@ -86,7 +86,7 @@ From there, go to the administration page. From the administration page, create 
 build under that project. I recommend creating a project from a VCS source, as this will make things easier
 down the line.
 
-![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-06-create-project.jpg)
+![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-create-project.jpg)
 
 Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.
 
@@ -163,8 +163,8 @@ Head to the version control settings tab of the build configuration. Here, you c
 settings. In the branch specification, I recommend choosing which branches the server should run. To run
 all branches and commits, enter `+:*` in the branch specification box.
 
-![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-06-vcs-config.jpg)
-![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-06-branch-spec.jpg)
+![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-vcs-config.jpg)
+![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-branch-spec.jpg)
 
 ### VCS Labeling
 TeamCity has a lot of really cool features. One of my favorites is VCS labeling. To reach this, go to the
@@ -201,7 +201,7 @@ If you can't use agent push, it may be more reliable to manually install. To man
 "Agents" tab at the top, then click the link on the right that says "Install build agent", and select the
 zip file distribution.
 
-![Agent Installation]({{site.baseurl}}/{{site.post_images_path}}/2016-03-06-agent-install.jpg)
+![Agent Installation]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-agent-install.jpg)
 
 ## Configuring
 Once the agent is installed, you can configure the agent's settings in the `conf/buildAgent.properties`
