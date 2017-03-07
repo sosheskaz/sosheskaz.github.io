@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cde275b-8312-4d03-a8d9-76bf03e37703" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-07-agent-install.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/_posts/2017-03-06-XCode-CI-Article.md" afterPath="$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/images/posts/2017-03-06-branch-spec.jpg" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-07-branch-spec.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/images/posts/2017-03-06-create-project.jpg" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-07-create-project.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/images/posts/2017-03-06-runAll-start.jpg" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-07-runAll-start.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/images/posts/2017-03-06-setup-dialog.jpg" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-07-setup-dialog.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/images/posts/2017-03-06-vcs-config.jpg" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-07-vcs-config.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/feed.xml" afterPath="$PROJECT_DIR$/site/feed.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/index.html" afterPath="$PROJECT_DIR$/site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/posts/index.html" afterPath="$PROJECT_DIR$/site/posts/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,8 +57,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="266">
-                <caret line="203" column="69" lean-forward="false" selection-start-line="203" selection-start-column="69" selection-end-line="203" selection-end-column="69" />
+              <first_editor relative-caret-position="315">
+                <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -400,23 +390,23 @@
       <workItem from="1488081970141" duration="604000" />
       <workItem from="1488823336431" duration="4976000" />
       <workItem from="1488902409229" duration="3791000" />
-      <workItem from="1488928196618" duration="309000" />
+      <workItem from="1488928196618" duration="395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20779000" />
+    <option name="totallyTimeSpent" value="20865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30832356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30832356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -718,8 +708,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="266">
-            <caret line="203" column="69" lean-forward="false" selection-start-line="203" selection-start-column="69" selection-end-line="203" selection-end-column="69" />
+          <first_editor relative-caret-position="315">
+            <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
             <folding />
           </first_editor>
           <second_editor />
