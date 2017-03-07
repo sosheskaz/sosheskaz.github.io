@@ -122,127 +122,234 @@
 <div id="page-content-wrapper" class="content col-md-10">
     <div class="home">
 
-    <h1 class="post-title"><a href="/2017/02/23/3-Things-About-Swift.html">3 Things I Like About Swift</a></h1>
+    <h1 class="post-title"><a href="/2017/03/06/XCode-CI-Article.html">Setting up Simple Continuous Integration for iOS Development</a></h1>
     <div>
-        <div class="col-md-9">
+        <p>Setting up reliable continuous integration (CI) for XCode can be a nightmare. I personally wrestled with the
+problem for a long while, eventually finding a somewhat convoluted workaround to make it work. However, I’ve
+since found a way to develop and maintain a reliable CI solution. Following is how you can whip together something
+similar.</p>
 
-Within the past several months, I've been working a lot in Swift 3 and XCode 8. The language was a brand
-new experience for me, and there was quite a learning curve. I've never worked with a language like it and
-while, as always, programming skills carry over, the syntax of Swift proved tricky. However, after this time,
-I've either gained an appreciation for some of the more novel features in Swift, or else I've gained
-stockholm syndrome. Determining which is left as an exercise to the reader.
+<p>In this guide, you’ll find a start-to-finish CI solution for an XCode project.</p>
 
-</div>
-<p><img src="https://developer.apple.com/swift/images/swift-og.png" class="img-rounded col-md-3" style="padding-bottom: 20px;" /></p>
+<h1 id="vocabulary">Vocabulary</h1>
+<p>If you’re familiar with CI, you can probably skip this (short) section.</p>
 
-<h1 id="1-nil-nada-nothing">1. Nil! Nada! Nothing!</h1>
-<p>That’s right, “nil”. That’s what null is called. Yes, it’s weird that they’ve eschewed traditional
-labeling in favor of this. The logic kind of makes sense, but I won’t go into it - I’m not actually here
-to talk about nil, but about <em>how it’s handled</em> in Swift.</p>
+<ul>
+  <li>Version Control System (VCS): The system used for tracking changes and version control. In this example,
+it is git/BitBucket.</li>
+  <li>CI ServerThe server that monitors the VCS and tells build agents when and what to run.</li>
+  <li>Build Agent: The computer that runs builds and tests, at the behest of the CI server.</li>
+  <li>Package Manager: From <a href="https://en.wikipedia.org/wiki/Package_manager">Wikipedia</a>: “A package manager or package management system is a collection of 
+software tools that automates the process of installing, upgrading, configuring, and removing computer 
+programs for a computer’s operating system in a consistent manner.” This means when you add new third-party
+libraries, no additional work is necessary to make them work on the server.</li>
+</ul>
 
-<p>In C#, there’s a concept called <strong>Nullable.</strong> This makes primatives, like floating-point numbers and 
-integers, which one would not normally be able to assign a value of null, to be assigned null. 
-This is often quite useful when you want primatives to behave like normal objects. Swift implements a
-similar system, but instead it works for any object.</p>
+<h1 id="what-youll-need">What You’ll Need</h1>
+<p>Unfortunately, this process requires some resources that are not insubstantial. They are as follows:</p>
 
-<p>As an example, say you have a “Point” object, stored in the variable point.</p>
+<ul>
+  <li>A server to host your CI. This can be run on most operating systems, including MacOS, Windows, most Linux
+distros, and even BSD. The server in my example is a dedicated computer running FreeBSD 11.0. Ideally, this
+machine will have a high uptime, so a personal laptop is not ideal.</li>
+  <li>A build agent. This machine must run the most recent version of MacOS. A high uptime is ideal, but not
+necessary for a small operation, like mine. I use a dedicated 2011 MacBook Pro using 
+<a href="https://integralpro.github.io/nosleep/">NoSleep</a>. This keeps the machine from going to sleep when closing
+the lid. <strong>This can be the same machine as the CI server if desired</strong>.</li>
+  <li>XCode must be installed on the build agent, along with all of the command line tools. Once XCode is
+installed, run <code class="highlighter-rouge">xcode-select -install</code> from the Terminal.</li>
+  <li><a href="https://www.jetbrains.com/teamcity/">TeamCity</a> or another CI solution. My guide will use TeamCity, 
+because it’s what I’m most familiar with, as well as because it has <em>XCode support out-of-the-box</em>.</li>
+  <li>(Optional) <a href="https://github.com/Carthage/Carthage">Carthage</a> or another package manager. This simplifies
+building dependencies on the build agent, as you’ll see later in the guide.</li>
+</ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var point: Point = Point(1, 3)
+<h1 id="step-1-setting-up-the-ci-server">Step 1: Setting up the CI Server</h1>
+
+<p>In my example, I’ll be setting it up on a MacOS machine. If using a Linux or BSD machine, this should be
+similar. For a Windows machine, your mileage may vary.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>First, ensure that your computer has 
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK 1.8</a> installed.
+Note that this is the most recent version at the time of writing, and so in the future this dependency may
+change. If you are not using TeamCity, this step may or may not be necessary.</p>
+
+<h2 id="setting-up-the-teamcity-service">Setting up the TeamCity Service</h2>
+
+<p>To start, on the machine that will be running the CI server, download 
+<a href="https://www.jetbrains.com/teamcity/download/#">TeamCity</a>. There are respective download options for various
+common operating systems. In this tutorial, I’m assuming use of one of the tar.gz downloads. 
+If using FreeBSD or another flavor of BSD, the Linux version should work. It’s up
+to you to choose the version that’s right for you. If the machine running this server is a MacOS laptop,
+I highly recommend also downloading <a href="https://integralpro.github.io/nosleep/">NoSleep</a> and
+<a href="https://itunes.apple.com/us/app/amphetamine/id937984704?mt=12">Amphetamine</a> to keep it running at all
+times.</p>
+
+<p>In the extracted directory structure, the configuration files can be found in <code class="highlighter-rouge">conf</code> and the executable
+files can be found in <code class="highlighter-rouge">bin</code>. The configuration files can be changed to suit your needs. I won’t get into it
+here, but if you want to customize your settings, look up a guide on configuring TomCat.</p>
+
+<p>Navigate to <code class="highlighter-rouge">bin</code> in your Terminal, and run <code class="highlighter-rouge">./runAll start</code>. This will start the server, and you can expect
+an output similar to the following. To stop the process, run <code class="highlighter-rouge">./runAll stop kill</code>. Note that this process
+will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.</p>
+
+<p><img src="/files/images/posts/2017-03-06-runAll-start.jpg" alt="Sample output" /></p>
+
+<p>Now navigate to <a href="http://localhost:8111/">http://localhost:8111/</a>. If accessing this from a machine other
+than the one you just set up the server on, use that machine’s hostname instead of localhost. You’ll see
+a setup dialog, similar to the one below. Walk through the setup process. The default settings should be
+fine for simple use cases.</p>
+
+<p><img src="/files/images/posts/2017-03-06-setup-dialog.jpg" alt="Setup Dialog" /></p>
+
+<p>Once you’ve finished the process and created an administrator account, you’re ready to start using TeamCity.
+If it’s installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.</p>
+
+<p>From there, go to the administration page. From the administration page, create a project, and create a
+build under that project. I recommend creating a project from a VCS source, as this will make things easier
+down the line.</p>
+
+<p><img src="/files/images/posts/2017-03-06-create-project.jpg" alt="" /></p>
+
+<p>Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.</p>
+
+<h3 id="some-nice-additions">Some nice additions</h3>
+<p>If you’re running this on a company network, or you use a VPN to connect to the server, you’re probably done.
+However, if this is for personal use or for use of a small project, you may want to look at a DDNS configuration.
+DDNS means Dynamic Domain Name System. Basically, it sets it up such that a computer that may or may not
+have a permanent IP address has a domain name that tracks it and follows it wherever it goes. You can get
+a free version of this service from <a href="https://ddns.net">ddns.net</a>.</p>
+
+<h2 id="configuring-your-build-steps">Configuring your Build Steps</h2>
+
+<p>TeamCity will try to auto-detect build steps. If they’re appropriate for you, you can use them. If not,
+creating them manually is easy. My example build will contain four steps, but these can be adjusted as
+necessary.</p>
+
+<h3 id="substep-1-dependency-resolution">Substep 1: Dependency Resolution</h3>
+<p>You only need to follow this step if you use a package manager for dependency resolution (which I 
+<strong><em>highly</em></strong> recommend). Note that the following are simplified somewhat, and may ignore best practices;
+this is to make it clearer to the reader what exactly is going on.</p>
+
+<p>Create a command line build step, as shown below. Name the step something like “dependency resolution”
+or “Carthage” (if you’re using Carthage as a package manager). For the “build script content” you’ll enter
+something like <code class="highlighter-rouge">carthage bootstrap --platform iOS</code>. When running builds, this may make it take a bit longer,
+but the reliability is worth the minutes in my opinion.</p>
+
+<h3 id="substep-2-simulator-configuration">Substep 2: Simulator Configuration</h3>
+<p>The Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
+and much more reliable, albeit taking a few minutes longer. Ignoring this step can cause your build to
+hang indefinitely.</p>
+
+<p>Before you do this, identify the iOS simulator that you want to build for and run your tests. If you wish
+to use multiple simulators, then the <code class="highlighter-rouge">xcrun</code> lines should be run for those devices as well. To get a list
+of possible devices, run <code class="highlighter-rouge">xcrun simctl list</code>. This will give you a list of the devices, and their GUIDs,
+available for testing. Let’s say we choose the GUID “94639904-0FEF-4E7F-9F74-F22631A15DBE”. In the following
+steps, replace that GUID with the GUID of your choice (or better yet, put it in an environment variable
+on the build agent).</p>
+
+<p>Once again, create a command line build step. Call the step something like “Reset Simulator”. For the
+script content, enter the following (with your GUID):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>xcrun simctl shutdown 94639904-0FEF-4E7F-9F74-F22631A15DBE
+killall Simulator
+killall com.apple.CoreSimulator.CoreSimulatorService
+xcrun simctl erase 94639904-0FEF-4E7F-9F74-F22631A15DBE
 </code></pre>
 </div>
 
-<p>The variable point can never be nil. If one tries the following code: <code class="highlighter-rouge">point = nil</code> it will raise a compiler
-error. However, if you wanted it to be able to be nil, all you have to do is add a ‘?’ to Point, so that
-the type is now “nillable”.</p>
+<p>The first line shuts down the simulator for the device if it’s running. The second and third lines ensure
+that the Simulator is shut down, to ensure a sanitary testing environment. Finally, the final line erases
+the content and settings of the simulated device. This ensures both a sanitary testing environment, and
+avoids an issue where, when running an automated build, it can hang indefinitely.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var point: Point? = Point(1, 3)
-point = nil
+<h3 id="substep-3-the-fun-part">Substep 3: The Fun Part</h3>
+<p>At long last, it’s time to set up our XCode build step! In the build step type, select XCode Project.
+Click “Show advanced options”. Set the Path to the project or workspace to your .xcodeproj file. Use a
+scheme-based build. (Note that to use scheme-based builds, you must configure a build scheme in XCode and
+push your changes to VCS.) Set build action(s) to <code class="highlighter-rouge">clean build</code>. Check the “Run tests” box. Finally, in
+the Additional command line parameters box, enter the following: 
+<code class="highlighter-rouge">-destination "id=94639904-0FEF-4E7F-9F74-F22631A15DBE"</code>. This will tell it to run the build on and for
+the device we set up in the previous step.</p>
+
+<h3 id="substep-4-cleanup">Substep 4: Cleanup</h3>
+<p>Finally, we want to clean up to save resources. This is fairly self-explanatory. Create a final command-line
+step with the following code:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>xcrun simctl shutdown %env.simulator_guid%
+killall Simulator
+killall com.apple.CoreSimulator.CoreSimulatorService
 </code></pre>
 </div>
 
-<p>This seems novel at first, but in conjunction with other features (one of which is coming up next) it really
-simplifies programming. When writing a function, if one wants, they can mandate that no values passed in are
-nil, which can simplify edge cases and testing. Now, onto “nillable’s” best friend:</p>
+<h2 id="icing-on-the-cake">Icing on the cake</h2>
+<p>Finally, a few options to add some nice features to your build.</p>
 
-<h1 id="2-guard-statements">2. Guard Statements</h1>
-<p>Guard statements were, for me, covered briefly in a class, but beyond that, not talked about much. A guard
-statement is a statement at the beginning of a function where it’s decided whether the function can basically
-work. They’re often used to check for null or for error conditions. Swift, however, has its own dedicated
-keyword for this, logically called <code class="highlighter-rouge">guard</code>. The keyword alone is useful for keeping code readable, because
-one can see the keyword, realize it’s just checking for error conditions, and skip over it when understanding
-how some code works.</p>
+<h3 id="vcs">VCS</h3>
+<p>Head to the version control settings tab of the build configuration. Here, you can customize your VCS
+settings. In the branch specification, I recommend choosing which branches the server should run. To run
+all branches and commits, enter <code class="highlighter-rouge">+:*</code> in the branch specification box.</p>
 
-<p>But other than that, what benefits are there? For one, they force good practice; the compiler won’t allow
-you to forget to <code class="highlighter-rouge">return</code>, <code class="highlighter-rouge">break</code>, or execute some other control flow. They allow one to create variables
-for future use, allowing one to seamlessly unwrap a nillable. Here’s that in practice:</p>
+<p><img src="/files/images/posts/2017-03-06-vcs-config.jpg" alt="" />
+<img src="/files/images/posts/2017-03-06-branch-spec.jpg" alt="" /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>func doThing(thisReallyShouldNotBeNil: Int?, shouldBeTrue: Bool) {
-    guard let notNil = thisReallyShouldNotBeNil else {
-        print("you put in nil you dummy!")
-        return
-    }
-    guard shouldBeTrue == true else {
-        print("This should never happen :P")
-        return
-    }
-    
-    // notNil is an Int now, not an Int?.
-    
-    print(notNil != nil) // you will get a compiler warning because this will never be possible. 
-}
-</code></pre>
-</div>
+<h3 id="vcs-labeling">VCS Labeling</h3>
+<p>TeamCity has a lot of really cool features. One of my favorites is VCS labeling. To reach this, go to the
+Build Features tab. Click “Add build feature” and select the VCS root and the branches you want to enable
+it for. I like to set up two of these: One with the labeling pattern <code class="highlighter-rouge">build-%system.build.number%</code> for all
+builds, and one with the labeling pattern <code class="highlighter-rouge">build-%system.build.number%-passed</code> that is added to successful
+builds only. Then, from a GUI client like SourceTree, you can see at a glance which build is associated
+with which commit, as well as which commits failed.</p>
 
-<p>Obviously this is simplified, but it becomes very powerful in keeping things from getting out of hand as 
-they get more complicated.</p>
+<h1 id="step-2-setting-up-the-teamcity-agent">Step 2: Setting up the TeamCity Agent</h1>
+<p>If your agent is the same as the CI server, skip to step 3.</p>
 
-<h1 id="3-string-templating">3. String Templating</h1>
-<p>Y’all, this is the best templating I’ve ever seen. Even better than Ruby or C#. It’s simply beautiful. Say
-one wants to print out a person’s information:</p>
+<p>There are some basic requirements for setup. If these requirements are not met, you will <strong>not</strong> be able to 
+successfully install the agent.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>print("Name: \(person.name)    Height: \(person.height)    Profession: \(person.profession)")
-</code></pre>
-</div>
+<ul>
+  <li>The desired agent must have a stable (and preferably fast) internet connection.</li>
+  <li>The desired agent must have space to install the agent.</li>
+  <li>Time. The agent will take a while to install, because the agent installation process installs all of its
+dependencies (and there are a lot of them). Let the agent sit for an hour (depending on connection speed)
+before you decide that something’s wrong. Activity monitor may be used to investigate. The name of the
+process running the installation is “java”. There may be multiple processes doing this.</li>
+</ul>
 
-<p>It’s the simplest thing. Backslash, parenthesis. Fits the context of the language, is perfectly clear,
-and is one of the least verbose methods out there in any language. Simple beauty. It’s the small things in
-life.</p>
+<p>On the MacOS machine you want to run as an agent, the simplest way is using TeamCity’s <em>agent push</em>
+functionality. To use this, you must enable remote login on the desired agent in System Preferences &gt;
+Sharing. This allows TeamCity to ssh to your machine and install the agent. To use TeamCity’s agent push
+functionality, you must either be on the same network, or have an IP/DNS address at which the <strong>server</strong>
+will be able to reach the <strong>agent</strong>.</p>
 
-<h1 id="the-bad">The Bad</h1>
-<p>Swift is an innovative, different, and unique language, and it has its share of bad. Most of it boils down to</p>
+<p>To reach TeamCity’s agent push functionality, click the “Agents” tab at the top menu. In the submenu, 
+select agent push, and then click the install agent button. Enter appropriate details for the agent,
+then go.</p>
 
-<h2 id="xcode">XCode</h2>
-<p>Swift is hard to build without XCode. Really hard. Even JetBrains’ AppCode relies on opening XCode for 
-certain operations. One of the main reasons for this boils down to the flat filemap. In most programming
-languages, if you put something in a folder, that means it’s in that folder in the operating system.
-This makes traversing and interacting with your project from the command line natural. Instead, there’s an
-XML file that keeps track of the folder and subfolder in every file. If you want to look at the project as
-intended, you need XCode. While this maps well to Apple’s (and arguable BSD’s) centralized philosophy, it’s
-an annoyance to developers.</p>
+<p>If you can’t use agent push, it may be more reliable to manually install. To manually install, go to the
+“Agents” tab at the top, then click the link on the right that says “Install build agent”, and select the
+zip file distribution.</p>
 
-<p>XCode is buggy and crash-prone; lots of times features simply stop working and XCode needs to be restarted.
-It reminds me of my early days with Eclipse over 5 years ago, and even then I believe Eclipse was more 
-reliable.</p>
+<p><img src="/files/images/posts/2016-03-06-agent-install.jpg" alt="Agent Installation" /></p>
 
-<p>Beyond that, it just has poor design in many ways. Keyboard shortcuts aren’t shown in menus, the toolbar is
-at times incomplete, and “generate” code functionality is painfully absent, to name a few.</p>
+<h2 id="configuring">Configuring</h2>
+<p>Once the agent is installed, you can configure the agent’s settings in the <code class="highlighter-rouge">conf/buildAgent.properties</code>
+file. Here you can set the agent name, environment variables for TeamCity, and more.</p>
 
-<h1 id="closing">Closing</h1>
-<p>So yes, I like Swift quite a bit. It winds up being a different language, but some of the language features
-have shown to not only be niceto use, but to be very forward-thinking in terms of keeping large codebases 
-sustainable. It also keeps up with more modern functionality, syntax, and paradigms quite well, while also
-putting its own spin on it.</p>
+<h2 id="running">Running</h2>
+<p>To run, in Terminal navigate to the <code class="highlighter-rouge">bin</code> folder. Then, run <code class="highlighter-rouge">./agent.sh start</code>. To stop the process, run
+<code class="highlighter-rouge">./agent.sh stop kill</code>. This will <strong>not</strong> run on start, but you can find tutorials online for configuring
+this with launchd. I recommend <a href="http://www.soma-zone.com/LaunchControl/">Launch Control</a> to make configuring
+these easier.</p>
 
-<p>Finally, it’s important to consider that Swift is designed very specifically around building UI apps. In
-this way it’s often more specific, or at least has a different focus, than many other languages. When 
-learning it, it’s important to keep an open mind, and to give Swift’s way of doing things a shot. I’m glad
-I did.</p>
-
-<p>&lt;/div&gt;</p>
+<h1 id="step-3-concluding">Step 3: Concluding</h1>
+<p>You’re set up! Congratulations! 🎉</p>
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/2017/02/23/3-Things-About-Swift.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/2017/03/06/XCode-CI-Article.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>

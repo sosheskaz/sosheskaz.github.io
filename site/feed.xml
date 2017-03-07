@@ -6,9 +6,241 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 23 Feb 2017 17:46:15 -0600</pubDate>
-    <lastBuildDate>Thu, 23 Feb 2017 17:46:15 -0600</lastBuildDate>
+    <pubDate>Tue, 07 Mar 2017 11:23:28 -0600</pubDate>
+    <lastBuildDate>Tue, 07 Mar 2017 11:23:28 -0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Setting up Simple Continuous Integration for iOS Development</title>
+        <description>&lt;p&gt;Setting up reliable continuous integration (CI) for XCode can be a nightmare. I personally wrestled with the
+problem for a long while, eventually finding a somewhat convoluted workaround to make it work. However, I’ve
+since found a way to develop and maintain a reliable CI solution. Following is how you can whip together something
+similar.&lt;/p&gt;
+
+&lt;p&gt;In this guide, you’ll find a start-to-finish CI solution for an XCode project.&lt;/p&gt;
+
+&lt;h1 id=&quot;vocabulary&quot;&gt;Vocabulary&lt;/h1&gt;
+&lt;p&gt;If you’re familiar with CI, you can probably skip this (short) section.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Version Control System (VCS): The system used for tracking changes and version control. In this example,
+it is git/BitBucket.&lt;/li&gt;
+  &lt;li&gt;CI ServerThe server that monitors the VCS and tells build agents when and what to run.&lt;/li&gt;
+  &lt;li&gt;Build Agent: The computer that runs builds and tests, at the behest of the CI server.&lt;/li&gt;
+  &lt;li&gt;Package Manager: From &lt;a href=&quot;https://en.wikipedia.org/wiki/Package_manager&quot;&gt;Wikipedia&lt;/a&gt;: “A package manager or package management system is a collection of 
+software tools that automates the process of installing, upgrading, configuring, and removing computer 
+programs for a computer’s operating system in a consistent manner.” This means when you add new third-party
+libraries, no additional work is necessary to make them work on the server.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;what-youll-need&quot;&gt;What You’ll Need&lt;/h1&gt;
+&lt;p&gt;Unfortunately, this process requires some resources that are not insubstantial. They are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A server to host your CI. This can be run on most operating systems, including MacOS, Windows, most Linux
+distros, and even BSD. The server in my example is a dedicated computer running FreeBSD 11.0. Ideally, this
+machine will have a high uptime, so a personal laptop is not ideal.&lt;/li&gt;
+  &lt;li&gt;A build agent. This machine must run the most recent version of MacOS. A high uptime is ideal, but not
+necessary for a small operation, like mine. I use a dedicated 2011 MacBook Pro using 
+&lt;a href=&quot;https://integralpro.github.io/nosleep/&quot;&gt;NoSleep&lt;/a&gt;. This keeps the machine from going to sleep when closing
+the lid. &lt;strong&gt;This can be the same machine as the CI server if desired&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;XCode must be installed on the build agent, along with all of the command line tools. Once XCode is
+installed, run &lt;code class=&quot;highlighter-rouge&quot;&gt;xcode-select -install&lt;/code&gt; from the Terminal.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jetbrains.com/teamcity/&quot;&gt;TeamCity&lt;/a&gt; or another CI solution. My guide will use TeamCity, 
+because it’s what I’m most familiar with, as well as because it has &lt;em&gt;XCode support out-of-the-box&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;(Optional) &lt;a href=&quot;https://github.com/Carthage/Carthage&quot;&gt;Carthage&lt;/a&gt; or another package manager. This simplifies
+building dependencies on the build agent, as you’ll see later in the guide.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;step-1-setting-up-the-ci-server&quot;&gt;Step 1: Setting up the CI Server&lt;/h1&gt;
+
+&lt;p&gt;In my example, I’ll be setting it up on a MacOS machine. If using a Linux or BSD machine, this should be
+similar. For a Windows machine, your mileage may vary.&lt;/p&gt;
+
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;First, ensure that your computer has 
+&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&quot;&gt;JDK 1.8&lt;/a&gt; installed.
+Note that this is the most recent version at the time of writing, and so in the future this dependency may
+change. If you are not using TeamCity, this step may or may not be necessary.&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-the-teamcity-service&quot;&gt;Setting up the TeamCity Service&lt;/h2&gt;
+
+&lt;p&gt;To start, on the machine that will be running the CI server, download 
+&lt;a href=&quot;https://www.jetbrains.com/teamcity/download/#&quot;&gt;TeamCity&lt;/a&gt;. There are respective download options for various
+common operating systems. In this tutorial, I’m assuming use of one of the tar.gz downloads. 
+If using FreeBSD or another flavor of BSD, the Linux version should work. It’s up
+to you to choose the version that’s right for you. If the machine running this server is a MacOS laptop,
+I highly recommend also downloading &lt;a href=&quot;https://integralpro.github.io/nosleep/&quot;&gt;NoSleep&lt;/a&gt; and
+&lt;a href=&quot;https://itunes.apple.com/us/app/amphetamine/id937984704?mt=12&quot;&gt;Amphetamine&lt;/a&gt; to keep it running at all
+times.&lt;/p&gt;
+
+&lt;p&gt;In the extracted directory structure, the configuration files can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;conf&lt;/code&gt; and the executable
+files can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt;. The configuration files can be changed to suit your needs. I won’t get into it
+here, but if you want to customize your settings, look up a guide on configuring TomCat.&lt;/p&gt;
+
+&lt;p&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt; in your Terminal, and run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll start&lt;/code&gt;. This will start the server, and you can expect
+an output similar to the following. To stop the process, run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll stop kill&lt;/code&gt;. Note that this process
+will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-06-runAll-start.jpg&quot; alt=&quot;Sample output&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now navigate to &lt;a href=&quot;http://localhost:8111/&quot;&gt;http://localhost:8111/&lt;/a&gt;. If accessing this from a machine other
+than the one you just set up the server on, use that machine’s hostname instead of localhost. You’ll see
+a setup dialog, similar to the one below. Walk through the setup process. The default settings should be
+fine for simple use cases.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-06-setup-dialog.jpg&quot; alt=&quot;Setup Dialog&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you’ve finished the process and created an administrator account, you’re ready to start using TeamCity.
+If it’s installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.&lt;/p&gt;
+
+&lt;p&gt;From there, go to the administration page. From the administration page, create a project, and create a
+build under that project. I recommend creating a project from a VCS source, as this will make things easier
+down the line.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-06-create-project.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-nice-additions&quot;&gt;Some nice additions&lt;/h3&gt;
+&lt;p&gt;If you’re running this on a company network, or you use a VPN to connect to the server, you’re probably done.
+However, if this is for personal use or for use of a small project, you may want to look at a DDNS configuration.
+DDNS means Dynamic Domain Name System. Basically, it sets it up such that a computer that may or may not
+have a permanent IP address has a domain name that tracks it and follows it wherever it goes. You can get
+a free version of this service from &lt;a href=&quot;https://ddns.net&quot;&gt;ddns.net&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-your-build-steps&quot;&gt;Configuring your Build Steps&lt;/h2&gt;
+
+&lt;p&gt;TeamCity will try to auto-detect build steps. If they’re appropriate for you, you can use them. If not,
+creating them manually is easy. My example build will contain four steps, but these can be adjusted as
+necessary.&lt;/p&gt;
+
+&lt;h3 id=&quot;substep-1-dependency-resolution&quot;&gt;Substep 1: Dependency Resolution&lt;/h3&gt;
+&lt;p&gt;You only need to follow this step if you use a package manager for dependency resolution (which I 
+&lt;strong&gt;&lt;em&gt;highly&lt;/em&gt;&lt;/strong&gt; recommend). Note that the following are simplified somewhat, and may ignore best practices;
+this is to make it clearer to the reader what exactly is going on.&lt;/p&gt;
+
+&lt;p&gt;Create a command line build step, as shown below. Name the step something like “dependency resolution”
+or “Carthage” (if you’re using Carthage as a package manager). For the “build script content” you’ll enter
+something like &lt;code class=&quot;highlighter-rouge&quot;&gt;carthage bootstrap --platform iOS&lt;/code&gt;. When running builds, this may make it take a bit longer,
+but the reliability is worth the minutes in my opinion.&lt;/p&gt;
+
+&lt;h3 id=&quot;substep-2-simulator-configuration&quot;&gt;Substep 2: Simulator Configuration&lt;/h3&gt;
+&lt;p&gt;The Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
+and much more reliable, albeit taking a few minutes longer. Ignoring this step can cause your build to
+hang indefinitely.&lt;/p&gt;
+
+&lt;p&gt;Before you do this, identify the iOS simulator that you want to build for and run your tests. If you wish
+to use multiple simulators, then the &lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun&lt;/code&gt; lines should be run for those devices as well. To get a list
+of possible devices, run &lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun simctl list&lt;/code&gt;. This will give you a list of the devices, and their GUIDs,
+available for testing. Let’s say we choose the GUID “94639904-0FEF-4E7F-9F74-F22631A15DBE”. In the following
+steps, replace that GUID with the GUID of your choice (or better yet, put it in an environment variable
+on the build agent).&lt;/p&gt;
+
+&lt;p&gt;Once again, create a command line build step. Call the step something like “Reset Simulator”. For the
+script content, enter the following (with your GUID):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun simctl shutdown 94639904-0FEF-4E7F-9F74-F22631A15DBE
+killall Simulator
+killall com.apple.CoreSimulator.CoreSimulatorService
+xcrun simctl erase 94639904-0FEF-4E7F-9F74-F22631A15DBE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The first line shuts down the simulator for the device if it’s running. The second and third lines ensure
+that the Simulator is shut down, to ensure a sanitary testing environment. Finally, the final line erases
+the content and settings of the simulated device. This ensures both a sanitary testing environment, and
+avoids an issue where, when running an automated build, it can hang indefinitely.&lt;/p&gt;
+
+&lt;h3 id=&quot;substep-3-the-fun-part&quot;&gt;Substep 3: The Fun Part&lt;/h3&gt;
+&lt;p&gt;At long last, it’s time to set up our XCode build step! In the build step type, select XCode Project.
+Click “Show advanced options”. Set the Path to the project or workspace to your .xcodeproj file. Use a
+scheme-based build. (Note that to use scheme-based builds, you must configure a build scheme in XCode and
+push your changes to VCS.) Set build action(s) to &lt;code class=&quot;highlighter-rouge&quot;&gt;clean build&lt;/code&gt;. Check the “Run tests” box. Finally, in
+the Additional command line parameters box, enter the following: 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;-destination &quot;id=94639904-0FEF-4E7F-9F74-F22631A15DBE&quot;&lt;/code&gt;. This will tell it to run the build on and for
+the device we set up in the previous step.&lt;/p&gt;
+
+&lt;h3 id=&quot;substep-4-cleanup&quot;&gt;Substep 4: Cleanup&lt;/h3&gt;
+&lt;p&gt;Finally, we want to clean up to save resources. This is fairly self-explanatory. Create a final command-line
+step with the following code:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun simctl shutdown %env.simulator_guid%
+killall Simulator
+killall com.apple.CoreSimulator.CoreSimulatorService
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;icing-on-the-cake&quot;&gt;Icing on the cake&lt;/h2&gt;
+&lt;p&gt;Finally, a few options to add some nice features to your build.&lt;/p&gt;
+
+&lt;h3 id=&quot;vcs&quot;&gt;VCS&lt;/h3&gt;
+&lt;p&gt;Head to the version control settings tab of the build configuration. Here, you can customize your VCS
+settings. In the branch specification, I recommend choosing which branches the server should run. To run
+all branches and commits, enter &lt;code class=&quot;highlighter-rouge&quot;&gt;+:*&lt;/code&gt; in the branch specification box.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-06-vcs-config.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/files/images/posts/2017-03-06-branch-spec.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;vcs-labeling&quot;&gt;VCS Labeling&lt;/h3&gt;
+&lt;p&gt;TeamCity has a lot of really cool features. One of my favorites is VCS labeling. To reach this, go to the
+Build Features tab. Click “Add build feature” and select the VCS root and the branches you want to enable
+it for. I like to set up two of these: One with the labeling pattern &lt;code class=&quot;highlighter-rouge&quot;&gt;build-%system.build.number%&lt;/code&gt; for all
+builds, and one with the labeling pattern &lt;code class=&quot;highlighter-rouge&quot;&gt;build-%system.build.number%-passed&lt;/code&gt; that is added to successful
+builds only. Then, from a GUI client like SourceTree, you can see at a glance which build is associated
+with which commit, as well as which commits failed.&lt;/p&gt;
+
+&lt;h1 id=&quot;step-2-setting-up-the-teamcity-agent&quot;&gt;Step 2: Setting up the TeamCity Agent&lt;/h1&gt;
+&lt;p&gt;If your agent is the same as the CI server, skip to step 3.&lt;/p&gt;
+
+&lt;p&gt;There are some basic requirements for setup. If these requirements are not met, you will &lt;strong&gt;not&lt;/strong&gt; be able to 
+successfully install the agent.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The desired agent must have a stable (and preferably fast) internet connection.&lt;/li&gt;
+  &lt;li&gt;The desired agent must have space to install the agent.&lt;/li&gt;
+  &lt;li&gt;Time. The agent will take a while to install, because the agent installation process installs all of its
+dependencies (and there are a lot of them). Let the agent sit for an hour (depending on connection speed)
+before you decide that something’s wrong. Activity monitor may be used to investigate. The name of the
+process running the installation is “java”. There may be multiple processes doing this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On the MacOS machine you want to run as an agent, the simplest way is using TeamCity’s &lt;em&gt;agent push&lt;/em&gt;
+functionality. To use this, you must enable remote login on the desired agent in System Preferences &amp;gt;
+Sharing. This allows TeamCity to ssh to your machine and install the agent. To use TeamCity’s agent push
+functionality, you must either be on the same network, or have an IP/DNS address at which the &lt;strong&gt;server&lt;/strong&gt;
+will be able to reach the &lt;strong&gt;agent&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;To reach TeamCity’s agent push functionality, click the “Agents” tab at the top menu. In the submenu, 
+select agent push, and then click the install agent button. Enter appropriate details for the agent,
+then go.&lt;/p&gt;
+
+&lt;p&gt;If you can’t use agent push, it may be more reliable to manually install. To manually install, go to the
+“Agents” tab at the top, then click the link on the right that says “Install build agent”, and select the
+zip file distribution.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2016-03-06-agent-install.jpg&quot; alt=&quot;Agent Installation&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring&quot;&gt;Configuring&lt;/h2&gt;
+&lt;p&gt;Once the agent is installed, you can configure the agent’s settings in the &lt;code class=&quot;highlighter-rouge&quot;&gt;conf/buildAgent.properties&lt;/code&gt;
+file. Here you can set the agent name, environment variables for TeamCity, and more.&lt;/p&gt;
+
+&lt;h2 id=&quot;running&quot;&gt;Running&lt;/h2&gt;
+&lt;p&gt;To run, in Terminal navigate to the &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt; folder. Then, run &lt;code class=&quot;highlighter-rouge&quot;&gt;./agent.sh start&lt;/code&gt;. To stop the process, run
+&lt;code class=&quot;highlighter-rouge&quot;&gt;./agent.sh stop kill&lt;/code&gt;. This will &lt;strong&gt;not&lt;/strong&gt; run on start, but you can find tutorials online for configuring
+this with launchd. I recommend &lt;a href=&quot;http://www.soma-zone.com/LaunchControl/&quot;&gt;Launch Control&lt;/a&gt; to make configuring
+these easier.&lt;/p&gt;
+
+&lt;h1 id=&quot;step-3-concluding&quot;&gt;Step 3: Concluding&lt;/h1&gt;
+&lt;p&gt;You’re set up! Congratulations! 🎉&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Mar 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000/2017/03/06/XCode-CI-Article.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/06/XCode-CI-Article.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>3 Things I Like About Swift</title>
@@ -117,7 +349,7 @@ at times incomplete, and “generate” code functionality is painfully absent, 
 
 &lt;h1 id=&quot;closing&quot;&gt;Closing&lt;/h1&gt;
 &lt;p&gt;So yes, I like Swift quite a bit. It winds up being a different language, but some of the language features
-have shown to not only be niceto use, but to be very forward-thinking in terms of keeping large codebases 
+have shown to not only be nice to use, but to be very forward-thinking in terms of keeping large codebases 
 sustainable. It also keeps up with more modern functionality, syntax, and paradigms quite well, while also
 putting its own spin on it.&lt;/p&gt;
 
@@ -125,8 +357,6 @@ putting its own spin on it.&lt;/p&gt;
 this way it’s often more specific, or at least has a different focus, than many other languages. When 
 learning it, it’s important to keep an open mind, and to give Swift’s way of doing things a shot. I’m glad
 I did.&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 Feb 2017 00:00:00 -0600</pubDate>
         <link>http://localhost:4000/2017/02/23/3-Things-About-Swift.html</link>
@@ -849,47 +1079,6 @@ The new service will now be viewable via bonjour clients, such as Safari and dns
         <category>funny</category>
         
         <category>humor</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>09/07 Apple Event Coverage</title>
-        <description>&lt;p&gt;So, I’ll do my regular coverage of the Apple event now that I’ve sat on it a few days, broken into relevant subsections:&lt;/p&gt;
-
-&lt;h3 id=&quot;apple-watch&quot;&gt;Apple Watch:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Added a new iteration, called “Series 2”, and one that’s basically the same but with a processor update, “Series 1”.&lt;/li&gt;
-  &lt;li&gt;Processor update to both. Nothing truly substantial, but it will help future-proof it.&lt;/li&gt;
-  &lt;li&gt;Series 2 is waterproof and has built-in GPS. This makes it more usable for fitness without an iPhone nearby.&lt;/li&gt;
-  &lt;li&gt;Series 2 has a much brighter display, for better in-sun visibility.&lt;/li&gt;
-  &lt;li&gt;Price point for series 1 has dropped to $270. Price delta for 42/38 mm models has dropped from $50 to $30.&lt;/li&gt;
-  &lt;li&gt;They got it pretty much right the first time, and there’s not a whole lot to improve.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;iphone&quot;&gt;iPhone:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Substantial camera improvements. 7 has image stabilization, and 7+ has dual lenses. This means that iPhone can now physically zoom, and better correct digital zoom. Also has better image software to improve low-light shots and overall image prettiness.&lt;/li&gt;
-  &lt;li&gt;End-to-end wide-color gamut support. This means you’ll get brighter, sharper colors across the board.&lt;/li&gt;
-  &lt;li&gt;CPU upgrade - There’s been a massive CPU upgrade, with not just huge performance increases, but battery life increases. I’ll discuss implications later.&lt;/li&gt;
-  &lt;li&gt;Loss of headphone jack - this gets its own section with in-depth analysis.&lt;/li&gt;
-  &lt;li&gt;If you don’t like it don’t buy it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-headphone-jack&quot;&gt;The Headphone Jack&lt;/h3&gt;
-
-&lt;p&gt;Loss of headphone jack. You’ve heard about it. You might be mad about it. Personally, the reaction reminds me of when Apple migrated away from optical drives (or from floppy disks, but I wasn’t there for that). One difference is that back then I thought Apple was right to remove the optical drive - but I don’t think so here. The optical drive had a clear replacement - digital distribution. Tim Cook kind of flubbed on what we’re supposed to replace aux with, between bluetooth and lightning. Both cases had a poorly received alternative (external DVD drive / lightning-aux converter) I actually could’ve gotten behind this decision if it had been made a bit differently; delayed by maybe 1 or 2 years to address the faults. Fault 1: There is no good replacement for Aux. Bluetooth’s quality is weak - waiting for bluetooth 5.0 could’ve helped a lot. Lightning is a poor replacement for wired - it’s little used and nonstandard. I have little doubt this is a licensing power grab by Apple. Converting to USB-C would’ve spoken to their willingness to move on from outdated and obsolete technology. Fault 2: No charging while listening. It’s theorized that Apple was working on built-in wireless charging for the iPhone. If that were on the scene, this move would make a lot more sense. Given those 2 things, I think this change would be much better (although no better received). The third fault is that most of the consumer world still runs on aux, but this will still be the case 2 years from now (if Apple hadn’t made this move). USB-C would be a better audio driver than aux. It’s better than lightning. I think Apple is making a good stand, but on the wrong foot.&lt;/p&gt;
-
-&lt;h3 id=&quot;processor-implications&quot;&gt;Processor implications:&lt;/h3&gt;
-
-&lt;p&gt;This is what I’m excited about. There’s something in computer science called “Moore’s Law” which derives to “Computer power roughly doubles every year”. Later, it was changed to 18 months as we came closer to hitting the limits of what we could do. Now, the law is more or less obsolete - we can’t do much more in some arenas to make circuitry smaller. Apple has been doing a lot of work on low-power ARM chips (like A10) over the last few years, doing some impressive things. This improvement alone is cool, but I’m looking forward to what this chip will accomplish on the iPad Pro models. Unfortunately by the iPad Pro, it now has the specs of a full computer, but not the OS. I personally suspect work on an “iOSX” project for the iPad Pros, which I believe would make them some of the most popular computers out there. But making a fully-functional touch-based OS with a good UI is hard - just ask Windows 8.
-So overall this year was disappointing, but had some cool things in the future.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 10 Sep 2016 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2016/09/10/0907-Apple-Event-Coverage.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/10/0907-Apple-Event-Coverage.html</guid>
         
         
       </item>
