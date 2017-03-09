@@ -15,12 +15,14 @@ If you're familiar with CI, you can probably skip this (short) section.
 
 * Version Control System (VCS): The system used for tracking changes and version control. In this example,
 it is git/BitBucket.
-* CI ServerThe server that monitors the VCS and tells build agents when and what to run.
+* CI Server: The server that monitors the VCS and tells build agents when and what to run.
 * Build Agent: The computer that runs builds and tests, at the behest of the CI server.
 * Package Manager: From [Wikipedia](https://en.wikipedia.org/wiki/Package_manager): "A package manager or package management system is a collection of 
 software tools that automates the process of installing, upgrading, configuring, and removing computer 
 programs for a computer's operating system in a consistent manner." This means when you add new third-party
 libraries, no additional work is necessary to make them work on the server.
+* Dependency Resolution: This is a technology that provides a way to programmatically install,
+manage, and update third-party libraries.
 
 # What You'll Need
 Unfortunately, this process requires some resources that are not insubstantial. They are as follows:
@@ -32,8 +34,9 @@ machine will have a high uptime, so a personal laptop is not ideal.
 necessary for a small operation, like mine. I use a dedicated 2011 MacBook Pro using 
 [NoSleep](https://integralpro.github.io/nosleep/). This keeps the machine from going to sleep when closing
 the lid. **This can be the same machine as the CI server if desired**.
-* XCode must be installed on the build agent, along with all of the command line tools. Once XCode is
-installed, run `xcode-select -install` from the Terminal.
+* XCode must be installed on the build agent, along with all of the command line tools. It can
+be installed from the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+Once XCode is installed, run `xcode-select -install` from the Terminal.
 * [TeamCity](https://www.jetbrains.com/teamcity/) or another CI solution. My guide will use TeamCity, 
 because it's what I'm most familiar with, as well as because it has *XCode support out-of-the-box*.
 * (Optional) [Carthage](https://github.com/Carthage/Carthage) or another package manager. This simplifies
@@ -66,8 +69,8 @@ In the extracted directory structure, the configuration files can be found in `c
 files can be found in `bin`. The configuration files can be changed to suit your needs. I won't get into it
 here, but if you want to customize your settings, look up a guide on configuring TomCat.
 
-Navigate to `bin` in your Terminal, and run `./runAll start`. This will start the server, and you can expect
-an output similar to the following. To stop the process, run `./runAll stop kill`. Note that this process
+Navigate to `bin` in your Terminal, and run `./runAll.sh start`. This will start the server, and you can expect
+an output similar to the following. To stop the process, run `./runAll.sh stop kill`. Note that this process
 will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.
 
 ![Sample output]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-runAll-start.jpg)
@@ -83,9 +86,10 @@ Once you've finished the process and created an administrator account, you're re
 If it's installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.
 
 From there, go to the administration page. From the administration page, create a project, and create a
-build under that project. I recommend creating a project from a VCS source, as this will make things easier
-down the line.
+build configuration under that project. I recommend creating a project from a VCS source, as this will
+make things easier down the line.
 
+![]({{site.baseurl}}/{{site.post_images_path}}/2016-03-07-admin-page-link.jpg)
 ![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-create-project.jpg)
 
 Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.
@@ -105,13 +109,16 @@ necessary.
 
 ### Substep 1: Dependency Resolution
 You only need to follow this step if you use a package manager for dependency resolution (which I 
-***highly*** recommend). Note that the following are simplified somewhat, and may ignore best practices;
-this is to make it clearer to the reader what exactly is going on.
+***highly*** recommend). Note that the following are simplified somewhat; best practices would dictate
+that one store something like the path to `carthage` in an environment variable. This would make it scale
+better if you have more than one build agent, or some agents do not have `carthage` installed.
 
 Create a command line build step, as shown below. Name the step something like "dependency resolution"
 or "Carthage" (if you're using Carthage as a package manager). For the "build script content" you'll enter
-something like `carthage bootstrap --platform iOS`. When running builds, this may make it take a bit longer,
-but the reliability is worth the minutes in my opinion.
+something like `carthage bootstrap --platform iOS`. The industry standard for dependency resolution is
+[Cocoapods](https://cocoapods.org/), but carthage has a slightly simpler setup. When running builds, this 
+may make it take a bit longer, but the reliability is worth the minutes in my opinion. Note that if this
+is a concern, cocoapods can be faster.
 
 ### Substep 2: Simulator Configuration 
 The Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
