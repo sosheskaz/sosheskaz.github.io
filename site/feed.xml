@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Mar 2017 17:15:05 -0600</pubDate>
-    <lastBuildDate>Tue, 07 Mar 2017 17:15:05 -0600</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 16:53:08 -0600</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 16:53:08 -0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -25,12 +25,18 @@ similar.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Version Control System (VCS): The system used for tracking changes and version control. In this example,
 it is git/BitBucket.&lt;/li&gt;
-  &lt;li&gt;CI ServerThe server that monitors the VCS and tells build agents when and what to run.&lt;/li&gt;
+  &lt;li&gt;CI Server: The server that monitors the VCS and tells build agents when and what to run.&lt;/li&gt;
   &lt;li&gt;Build Agent: The computer that runs builds and tests, at the behest of the CI server.&lt;/li&gt;
   &lt;li&gt;Package Manager: From &lt;a href=&quot;https://en.wikipedia.org/wiki/Package_manager&quot;&gt;Wikipedia&lt;/a&gt;: “A package manager or package management system is a collection of 
 software tools that automates the process of installing, upgrading, configuring, and removing computer 
 programs for a computer’s operating system in a consistent manner.” This means when you add new third-party
 libraries, no additional work is necessary to make them work on the server.&lt;/li&gt;
+  &lt;li&gt;Dependency Resolution: This is a technology that provides a way to programmatically install,
+manage, and update third-party libraries.&lt;/li&gt;
+  &lt;li&gt;GUID/UUID: Globally Unique IDentifier, or Universally Unique IDentifier. These two terms are
+interchangeable. It is a 128-bit number that, when generated, is guaranteed to always be unique. It is
+usually in hexadecimal, with a few dashes in between. If you want to know more, here’s the 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Universally_unique_identifier&quot;&gt;Wikipedia Article&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;what-youll-need&quot;&gt;What You’ll Need&lt;/h1&gt;
@@ -44,8 +50,9 @@ machine will have a high uptime, so a personal laptop is not ideal.&lt;/li&gt;
 necessary for a small operation, like mine. I use a dedicated 2011 MacBook Pro using 
 &lt;a href=&quot;https://integralpro.github.io/nosleep/&quot;&gt;NoSleep&lt;/a&gt;. This keeps the machine from going to sleep when closing
 the lid. &lt;strong&gt;This can be the same machine as the CI server if desired&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;XCode must be installed on the build agent, along with all of the command line tools. Once XCode is
-installed, run &lt;code class=&quot;highlighter-rouge&quot;&gt;xcode-select -install&lt;/code&gt; from the Terminal.&lt;/li&gt;
+  &lt;li&gt;XCode must be installed on the build agent, along with all of the command line tools. It can
+be installed from the &lt;a href=&quot;https://itunes.apple.com/us/app/xcode/id497799835?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.
+Once XCode is installed, run &lt;code class=&quot;highlighter-rouge&quot;&gt;xcode-select -install&lt;/code&gt; from the Terminal.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.jetbrains.com/teamcity/&quot;&gt;TeamCity&lt;/a&gt; or another CI solution. My guide will use TeamCity, 
 because it’s what I’m most familiar with, as well as because it has &lt;em&gt;XCode support out-of-the-box&lt;/em&gt;.&lt;/li&gt;
   &lt;li&gt;(Optional) &lt;a href=&quot;https://github.com/Carthage/Carthage&quot;&gt;Carthage&lt;/a&gt; or another package manager. This simplifies
@@ -73,14 +80,15 @@ If using FreeBSD or another flavor of BSD, the Linux version should work. It’s
 to you to choose the version that’s right for you. If the machine running this server is a MacOS laptop,
 I highly recommend also downloading &lt;a href=&quot;https://integralpro.github.io/nosleep/&quot;&gt;NoSleep&lt;/a&gt; and
 &lt;a href=&quot;https://itunes.apple.com/us/app/amphetamine/id937984704?mt=12&quot;&gt;Amphetamine&lt;/a&gt; to keep it running at all
-times.&lt;/p&gt;
+times. This assumes a dedicated computer; for a small or temporary setup, using a non-dedicated computer 
+(such as a dev laptop) may be sufficient.&lt;/p&gt;
 
 &lt;p&gt;In the extracted directory structure, the configuration files can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;conf&lt;/code&gt; and the executable
 files can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt;. The configuration files can be changed to suit your needs. I won’t get into it
 here, but if you want to customize your settings, look up a guide on configuring TomCat.&lt;/p&gt;
 
-&lt;p&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt; in your Terminal, and run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll start&lt;/code&gt;. This will start the server, and you can expect
-an output similar to the following. To stop the process, run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll stop kill&lt;/code&gt;. Note that this process
+&lt;p&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt; in your Terminal, and run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll.sh start&lt;/code&gt;. This will start the server, and you can expect
+an output similar to the following. To stop the process, run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll.sh stop kill&lt;/code&gt;. Note that this process
 will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-runAll-start.jpg&quot; alt=&quot;Sample output&quot; /&gt;&lt;/p&gt;
@@ -96,10 +104,11 @@ fine for simple use cases.&lt;/p&gt;
 If it’s installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.&lt;/p&gt;
 
 &lt;p&gt;From there, go to the administration page. From the administration page, create a project, and create a
-build under that project. I recommend creating a project from a VCS source, as this will make things easier
-down the line.&lt;/p&gt;
+build configuration under that project. I recommend creating a project from a VCS source, as this will
+make things easier down the line.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-create-project.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-admin-page-link.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/files/images/posts/2017-03-07-create-project.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.&lt;/p&gt;
 
@@ -117,29 +126,43 @@ creating them manually is easy. My example build will contain four steps, but th
 necessary.&lt;/p&gt;
 
 &lt;h3 id=&quot;substep-1-dependency-resolution&quot;&gt;Substep 1: Dependency Resolution&lt;/h3&gt;
+&lt;p&gt;The goal of this step is to ensure that your build agent has whatever software packages or libraries
+your app will need to work.&lt;/p&gt;
+
 &lt;p&gt;You only need to follow this step if you use a package manager for dependency resolution (which I 
-&lt;strong&gt;&lt;em&gt;highly&lt;/em&gt;&lt;/strong&gt; recommend). Note that the following are simplified somewhat, and may ignore best practices;
-this is to make it clearer to the reader what exactly is going on.&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;highly&lt;/em&gt;&lt;/strong&gt; recommend). If you don’t, resolving dependencies is left up to you. Note that the following 
+are simplified somewhat; best practices would dictate that one store something like the path to 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;carthage&lt;/code&gt; in an environment variable. This would make it scale better if you have more than one build 
+agent, or if some agents do not have &lt;code class=&quot;highlighter-rouge&quot;&gt;carthage&lt;/code&gt; installed.&lt;/p&gt;
 
 &lt;p&gt;Create a command line build step, as shown below. Name the step something like “dependency resolution”
 or “Carthage” (if you’re using Carthage as a package manager). For the “build script content” you’ll enter
-something like &lt;code class=&quot;highlighter-rouge&quot;&gt;carthage bootstrap --platform iOS&lt;/code&gt;. When running builds, this may make it take a bit longer,
-but the reliability is worth the minutes in my opinion.&lt;/p&gt;
+something like &lt;code class=&quot;highlighter-rouge&quot;&gt;carthage bootstrap --platform iOS&lt;/code&gt;. The industry standard for dependency resolution is
+&lt;a href=&quot;https://cocoapods.org/&quot;&gt;Cocoapods&lt;/a&gt;, but carthage has a slightly simpler setup. When running builds, this 
+may make it take a bit longer, but the reliability is worth the minutes in my opinion. Note that if this
+is a concern, cocoapods can be faster.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-carthage-step.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;substep-2-simulator-configuration&quot;&gt;Substep 2: Simulator Configuration&lt;/h3&gt;
-&lt;p&gt;The Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
+&lt;p&gt;First, some background: In order to run tests, XCode uses an app, the aptly-named Simulator, which 
+simulates an iOS device. When you run tests, it will open the simulator, install the app you’re testing 
+onto it, and then run tests through the app it installed.&lt;/p&gt;
+
+&lt;p&gt;The iOS Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
 and much more reliable, albeit taking a few minutes longer. Ignoring this step can cause your build to
 hang indefinitely.&lt;/p&gt;
 
-&lt;p&gt;Before you do this, identify the iOS simulator that you want to build for and run your tests. If you wish
-to use multiple simulators, then the &lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun&lt;/code&gt; lines should be run for those devices as well. To get a list
-of possible devices, run &lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun simctl list&lt;/code&gt;. This will give you a list of the devices, and their GUIDs,
-available for testing. Let’s say we choose the GUID “94639904-0FEF-4E7F-9F74-F22631A15DBE”. In the following
-steps, replace that GUID with the GUID of your choice (or better yet, put it in an environment variable
-on the build agent).&lt;/p&gt;
+&lt;p&gt;Before you do this, identify the iOS simulator that you want to build for and run your tests. 
+You will have multiple options for the various devices that Apple supports, such as the iPhone 7 or the 
+iPhone SE. If you wish to use multiple simulators, then the &lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun&lt;/code&gt; commands shown below should be run
+for those devices as well. To get a list of possible devices, run &lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun simctl list&lt;/code&gt;. This will give you 
+a list of the devices, and their GUIDs, available for testing. Let’s say we choose the GUID 
+“94639904-0FEF-4E7F-9F74-F22631A15DBE”. In the following steps, replace that GUID with the GUID of your
+choice (or better yet, put it in an environment variable on the build agent).&lt;/p&gt;
 
 &lt;p&gt;Once again, create a command line build step. Call the step something like “Reset Simulator”. For the
-script content, enter the following (with your GUID):&lt;/p&gt;
+script content, enter the following (with your simulated device’s GUID):&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun simctl shutdown 94639904-0FEF-4E7F-9F74-F22631A15DBE
 killall Simulator
@@ -161,6 +184,10 @@ push your changes to VCS.) Set build action(s) to &lt;code class=&quot;highlight
 the Additional command line parameters box, enter the following: 
 &lt;code class=&quot;highlighter-rouge&quot;&gt;-destination &quot;id=94639904-0FEF-4E7F-9F74-F22631A15DBE&quot;&lt;/code&gt;. This will tell it to run the build on and for
 the device we set up in the previous step.&lt;/p&gt;
+
+&lt;p&gt;Here’s an example of my setup for one of my projects (with some minor changes to make it more readable):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-xcode-step.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;substep-4-cleanup&quot;&gt;Substep 4: Cleanup&lt;/h3&gt;
 &lt;p&gt;Finally, we want to clean up to save resources. This is fairly self-explanatory. Create a final command-line

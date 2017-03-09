@@ -23,6 +23,10 @@ programs for a computer's operating system in a consistent manner." This means w
 libraries, no additional work is necessary to make them work on the server.
 * Dependency Resolution: This is a technology that provides a way to programmatically install,
 manage, and update third-party libraries.
+* GUID/UUID: Globally Unique IDentifier, or Universally Unique IDentifier. These two terms are
+interchangeable. It is a 128-bit number that, when generated, is guaranteed to always be unique. It is
+usually in hexadecimal, with a few dashes in between. If you want to know more, here's the 
+[Wikipedia Article](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
 # What You'll Need
 Unfortunately, this process requires some resources that are not insubstantial. They are as follows:
@@ -90,7 +94,7 @@ From there, go to the administration page. From the administration page, create 
 build configuration under that project. I recommend creating a project from a VCS source, as this will
 make things easier down the line.
 
-![]({{site.baseurl}}/{{site.post_images_path}}/2016-03-07-admin-page-link.jpg)
+![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-admin-page-link.jpg)
 ![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-create-project.jpg)
 
 Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.
@@ -109,10 +113,14 @@ creating them manually is easy. My example build will contain four steps, but th
 necessary.
 
 ### Substep 1: Dependency Resolution
+The goal of this step is to ensure that your build agent has whatever software packages or libraries
+your app will need to work.
+
 You only need to follow this step if you use a package manager for dependency resolution (which I 
-***highly*** recommend). Note that the following are simplified somewhat; best practices would dictate
-that one store something like the path to `carthage` in an environment variable. This would make it scale
-better if you have more than one build agent, or some agents do not have `carthage` installed.
+***highly*** recommend). If you don't, resolving dependencies is left up to you. Note that the following 
+are simplified somewhat; best practices would dictate that one store something like the path to 
+`carthage` in an environment variable. This would make it scale better if you have more than one build 
+agent, or if some agents do not have `carthage` installed.
 
 Create a command line build step, as shown below. Name the step something like "dependency resolution"
 or "Carthage" (if you're using Carthage as a package manager). For the "build script content" you'll enter
@@ -121,20 +129,27 @@ something like `carthage bootstrap --platform iOS`. The industry standard for de
 may make it take a bit longer, but the reliability is worth the minutes in my opinion. Note that if this
 is a concern, cocoapods can be faster.
 
+![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-carthage-step.jpg)
+
 ### Substep 2: Simulator Configuration 
-The Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
+First, some background: In order to run tests, XCode uses an app, the aptly-named Simulator, which 
+simulates an iOS device. When you run tests, it will open the simulator, install the app you're testing 
+onto it, and then run tests through the app it installed.
+
+The iOS Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
 and much more reliable, albeit taking a few minutes longer. Ignoring this step can cause your build to
 hang indefinitely.
 
-Before you do this, identify the iOS simulator that you want to build for and run your tests. If you wish
-to use multiple simulators, then the `xcrun` lines should be run for those devices as well. To get a list
-of possible devices, run `xcrun simctl list`. This will give you a list of the devices, and their GUIDs,
-available for testing. Let's say we choose the GUID "94639904-0FEF-4E7F-9F74-F22631A15DBE". In the following
-steps, replace that GUID with the GUID of your choice (or better yet, put it in an environment variable
-on the build agent).
+Before you do this, identify the iOS simulator that you want to build for and run your tests. 
+You will have multiple options for the various devices that Apple supports, such as the iPhone 7 or the 
+iPhone SE. If you wish to use multiple simulators, then the `xcrun` commands shown below should be run
+for those devices as well. To get a list of possible devices, run `xcrun simctl list`. This will give you 
+a list of the devices, and their GUIDs, available for testing. Let's say we choose the GUID 
+"94639904-0FEF-4E7F-9F74-F22631A15DBE". In the following steps, replace that GUID with the GUID of your
+choice (or better yet, put it in an environment variable on the build agent).
 
 Once again, create a command line build step. Call the step something like "Reset Simulator". For the
-script content, enter the following (with your GUID):
+script content, enter the following (with your simulated device's GUID):
 
     xcrun simctl shutdown 94639904-0FEF-4E7F-9F74-F22631A15DBE
     killall Simulator
@@ -154,6 +169,10 @@ push your changes to VCS.) Set build action(s) to `clean build`. Check the "Run 
 the Additional command line parameters box, enter the following: 
 `-destination "id=94639904-0FEF-4E7F-9F74-F22631A15DBE"`. This will tell it to run the build on and for
 the device we set up in the previous step.
+
+Here's an example of my setup for one of my projects (with some minor changes to make it more readable):
+
+![]({{site.baseurl}}/{{site.post_images_path}}/2017-03-07-xcode-step.jpg)
 
 ### Substep 4: Cleanup
 Finally, we want to clean up to save resources. This is fairly self-explanatory. Create a final command-line
