@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cde275b-8312-4d03-a8d9-76bf03e37703" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-07-admin-page-link.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md" afterPath="$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,8 +57,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="409">
-                <caret line="113" column="82" lean-forward="false" selection-start-line="113" selection-start-column="82" selection-end-line="113" selection-end-column="82" />
+              <first_editor relative-caret-position="184">
+                <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -395,12 +393,12 @@
       <workItem from="1488823336431" duration="4976000" />
       <workItem from="1488902409229" duration="3791000" />
       <workItem from="1488928196618" duration="1479000" />
-      <workItem from="1489092074886" duration="1130000" />
+      <workItem from="1489092074886" duration="1305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23079000" />
+    <option name="totallyTimeSpent" value="23254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -713,8 +711,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="409">
-            <caret line="113" column="82" lean-forward="false" selection-start-line="113" selection-start-column="82" selection-end-line="113" selection-end-column="82" />
+          <first_editor relative-caret-position="184">
+            <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
             <folding />
           </first_editor>
           <second_editor />

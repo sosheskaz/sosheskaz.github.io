@@ -63,7 +63,8 @@ If using FreeBSD or another flavor of BSD, the Linux version should work. It's u
 to you to choose the version that's right for you. If the machine running this server is a MacOS laptop,
 I highly recommend also downloading [NoSleep](https://integralpro.github.io/nosleep/) and
 [Amphetamine](https://itunes.apple.com/us/app/amphetamine/id937984704?mt=12) to keep it running at all
-times.
+times. This assumes a dedicated computer; for a small or temporary setup, using a non-dedicated computer 
+(such as a dev laptop) may be sufficient.
 
 In the extracted directory structure, the configuration files can be found in `conf` and the executable
 files can be found in `bin`. The configuration files can be changed to suit your needs. I won't get into it
