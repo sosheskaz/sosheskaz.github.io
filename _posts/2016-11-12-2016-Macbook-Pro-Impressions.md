@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2016 MacBook Pro Impressions
-tags: macbook pro 2016 apple impressions mac
+author: Eric Miller
 ---
 
 # Introduction

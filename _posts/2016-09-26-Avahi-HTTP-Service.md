@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to use Avahi to advertise an HTTP service
-tags: avahi bonjour zeroconf plex
+author: Eric Miller
 ---
 
 This is a simple guide to how to set up avahi to advertise an HTTP service that a web browser (in this case, Safari's Bonjour) can detect and hook into.

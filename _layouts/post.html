@@ -4,9 +4,20 @@ layout: page
 <div id="Post" class="Post text_good_2">
     <article class="Article">
         <h1 class="post-title"><a id="post_link" class="post_link" href="{{ page.url }}">{{ page.title }}</a></h1>
+
         <div style="font-style: italic; font-size: small; text-align: right">
-            Written by Eric Miller on {{ page.date | date: "%b %-d, %Y" }}
+        {% if page.author %}
+            Written by {{page.author}}
+            <br>
+            {% if page.editor %}
+            Edited by {{page.editor}}
+            <br>
+            {% endif %}
+        {% endif %}
+
+        Published on {{ page.date | date: "%b %-d, %Y" }}
         </div>
+
         <hr>
         <br>
         {{ content }}

@@ -122,261 +122,128 @@
 <div id="page-content-wrapper" class="content col-md-10">
     <div class="home">
 
-    <h1 class="post-title"><a href="/2017/03/07/XCode-CI-Article.html">Setting up Simple Continuous Integration for iOS Development</a></h1>
+    <h1 class="post-title"><a href="/2017/03/16/iPad-USB-C.html">Apple, Muster your Courage. It's time for USB-C.</a></h1>
     <div>
-        <p>Setting up reliable continuous integration (CI) for XCode can be a nightmare. I personally wrestled with the
-problem for a long while, eventually finding a somewhat convoluted workaround to make it work. However, I’ve
-since found a way to develop and maintain a reliable CI solution. Following is how you can whip together something
-similar.</p>
+        <p>Apple, I’ve watched your progress over the last few years with interest. As a fan, follower, and analyst, I
+feel I need to call you out on it when you’re making a mistake.</p>
 
-<p>In this guide, you’ll find a start-to-finish CI solution for an XCode project.</p>
+<p>And you’re making a mistake.</p>
 
-<h1 id="vocabulary">Vocabulary</h1>
-<p>If you’re familiar with CI, you can probably skip this (short) section.</p>
+<p>USB-C is the future. You know this. It’s why your new laptops have solely USB-C (and despite what the haters
+say, that’s a good thing). So it’s time to muster your famous <em>courage</em>, and follow through on that.</p>
 
-<ul>
-  <li>Version Control System (VCS): The system used for tracking changes and version control. In this example,
-it is git/BitBucket.</li>
-  <li>CI Server: The server that monitors the VCS and tells build agents when and what to run.</li>
-  <li>Build Agent: The computer that runs builds and tests, at the behest of the CI server.</li>
-  <li>Package Manager: From <a href="https://en.wikipedia.org/wiki/Package_manager">Wikipedia</a>: “A package manager or package management system is a collection of 
-software tools that automates the process of installing, upgrading, configuring, and removing computer 
-programs for a computer’s operating system in a consistent manner.” This means when you add new third-party
-libraries, no additional work is necessary to make them work on the server.</li>
-  <li>Dependency Resolution: This is a technology that provides a way to programmatically install,
-manage, and update third-party libraries.</li>
-  <li>GUID/UUID: Globally Unique IDentifier, or Universally Unique IDentifier. These two terms are
-interchangeable. It is a 128-bit number that, when generated, is guaranteed to always be unique. It is
-usually in hexadecimal, with a few dashes in between. If you want to know more, here’s the 
-<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Wikipedia Article</a>.</li>
-</ul>
+<p>USB-C is the new standard. It may take some time to adopt, but it is. With up to 40Gbps throughput with the
+thunderbolt standard, it’s the fastest mainstream port out there. It supports every kind of device people
+use, from mice and keyboards, to headphones, to ethernet connections, and even to 4K displays. It even has
+enough power throughput to power a laptop; that’s why you’re supporting power delivery from that port for 
+the upcoming iPhones. And even through all of that, it’s relatively tiny (which I know you folks love).</p>
 
-<h1 id="what-youll-need">What You’ll Need</h1>
-<p>Unfortunately, this process requires some resources that are not insubstantial. They are as follows:</p>
+<p>And I understand your hesitance, and your pain. The last time you changed the port on your iOS devices,
+you faced enormous pushback. It’s not fun, and not good for a company in your position. But if you have the
+courage to remove the aux jack from your iPhones, you have the courage to do this. And it’s worth doing. So
+in the article that follows, I’ll lay out why this is a good idea, and why the pain of making the switch
+is well worth it.</p>
 
-<ul>
-  <li>A server to host your CI. This can be run on most operating systems, including MacOS, Windows, most Linux
-distros, and even BSD. The server in my example is a dedicated computer running FreeBSD 11.0. Ideally, this
-machine will have a high uptime, so a personal laptop is not ideal.</li>
-  <li>A build agent. This machine must run the most recent version of MacOS. A high uptime is ideal, but not
-necessary for a small operation, like mine. I use a dedicated 2011 MacBook Pro using 
-<a href="https://integralpro.github.io/nosleep/">NoSleep</a>. This keeps the machine from going to sleep when closing
-the lid. <strong>This can be the same machine as the CI server if desired</strong>.</li>
-  <li>XCode must be installed on the build agent, along with all of the command line tools. It can
-be installed from the <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">Mac App Store</a>.
-Once XCode is installed, run <code class="highlighter-rouge">xcode-select -install</code> from the Terminal.</li>
-  <li><a href="https://www.jetbrains.com/teamcity/">TeamCity</a> or another CI solution. My guide will use TeamCity, 
-because it’s what I’m most familiar with, as well as because it has <em>XCode support out-of-the-box</em>.</li>
-  <li>(Optional) <a href="https://github.com/Carthage/Carthage">Carthage</a> or another package manager. This simplifies
-building dependencies on the build agent, as you’ll see later in the guide.</li>
-</ul>
+<h1 id="1-user-experience">1. User Experience</h1>
+<p>If there’s one thing Apple is famous for, it’s user experience. And not only user experience, but user
+experience across devices. If I connect to WiFi on my mac, my phone will connect to it too. I can send
+files back and forth with AirDrop easily. Hell, y’all have been pushing this more and more, with other
+technologies like HandOff, Apple Watch unlock, and universal clipboard. And not to blow smoke, but you’ve
+done a great job with it.</p>
 
-<h1 id="step-1-setting-up-the-ci-server">Step 1: Setting up the CI Server</h1>
+<p>But that’s software. When it comes to hardware, you’re sending mixed messages. If I buy a pair of lightning
+headphones for my iPhone 7, I can’t then use them with my mac. If I buy a USB-C charging cable for one of
+the new macs, I can’t then also use that to charge my phone. Imagine a world where, if I buy an accessory,
+it works on every device I own. In terms of user experience, that’s something no one’s achieved yet. But
+you can bet that’s where Android and Windows are going. If you don’t join them, Android and Windows will
+start to blow you out of the water in terms of hardware compatibility. And I know that’s something you
+don’t want.</p>
 
-<p>In my example, I’ll be setting it up on a MacOS machine. If using a Linux or BSD machine, this should be
-similar. For a Windows machine, your mileage may vary.</p>
+<p>USB-C is an answer to the <a href="https://xkcd.com/927/">age-old problem of competing ports</a>. You can either jump
+into this new world with both feet, or you can be left in the dust by people who do.</p>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<h1 id="2-the-ipad-pro-line">2. The iPad Pro Line</h1>
+<p>The iPad pro line is being marketed as a desktop replacement. In truth, you’re closer to that than your
+competitors would like to admit, and further from it than you’d like to think.</p>
 
-<p>First, ensure that your computer has 
-<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK 1.8</a> installed.
-Note that this is the most recent version at the time of writing, and so in the future this dependency may
-change. If you are not using TeamCity, this step may or may not be necessary.</p>
+<p>The simple fact is, as much as you believe that wireless is the future (as do I), the world still runs on
+ports. You know this - it’s why you’re still putting ports on your laptops. One day, when wireless
+charging from across the house works, the 802.11X WiFi standard has evolved, and Bluetooth reaches its true
+potential, we’ll live in the world you dream about: a world without ports. But we’re not there. We’re not
+even close.</p>
 
-<h2 id="setting-up-the-teamcity-service">Setting up the TeamCity Service</h2>
+<p>People - both professionals and consumers - need these ports. We need them to facilitate our presentations,
+to print our documents, to share files, and to connect to secured networks. It may not be your ideal, but
+it’s the world we live in. And you can’t truly call the iPad a “pro” until it can do these things.</p>
 
-<p>To start, on the machine that will be running the CI server, download 
-<a href="https://www.jetbrains.com/teamcity/download/#">TeamCity</a>. There are respective download options for various
-common operating systems. In this tutorial, I’m assuming use of one of the tar.gz downloads. 
-If using FreeBSD or another flavor of BSD, the Linux version should work. It’s up
-to you to choose the version that’s right for you. If the machine running this server is a MacOS laptop,
-I highly recommend also downloading <a href="https://integralpro.github.io/nosleep/">NoSleep</a> and
-<a href="https://itunes.apple.com/us/app/amphetamine/id937984704?mt=12">Amphetamine</a> to keep it running at all
-times. This assumes a dedicated computer; for a small or temporary setup, using a non-dedicated computer 
-(such as a dev laptop) may be sufficient.</p>
+<p>So even throwing away the ideas of “iOSX”, I believe that the iPad pro has the potential to be a truly
+exceptional desktop replacement, even competing on an even playing field with something as fully-featured
+as the Microsoft Surface Pro, likely even surpassing it.</p>
 
-<p>In the extracted directory structure, the configuration files can be found in <code class="highlighter-rouge">conf</code> and the executable
-files can be found in <code class="highlighter-rouge">bin</code>. The configuration files can be changed to suit your needs. I won’t get into it
-here, but if you want to customize your settings, look up a guide on configuring TomCat.</p>
+<p>So let’s take a moment, and talk about three hypothetical graphic designers: Tom, Dick, and Sally. Tom uses
+a fancy, new, top-of-the-line iPad Pro. Dick uses a generic laptop, let’s say a MacBook Pro. Sally uses a
+Surface Pro.</p>
 
-<p>Navigate to <code class="highlighter-rouge">bin</code> in your Terminal, and run <code class="highlighter-rouge">./runAll.sh start</code>. This will start the server, and you can expect
-an output similar to the following. To stop the process, run <code class="highlighter-rouge">./runAll.sh stop kill</code>. Note that this process
-will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.</p>
+<p>Tom and Sally, being the savvy purchasers they are, love their ability to draw right on their computers.
+They have a clear advantage here over Dick, who needs a separate Wacom tablet. They also love the 
+portability of their computers, so they can go meet with clients with just a small bag. Dick is frustrated
+with his setup compared to his peers in this regard.</p>
 
-<p><img src="/files/images/posts/2017-03-07-runAll-start.jpg" alt="Sample output" /></p>
+<p>Then, they have to get to work doing more sophisticated work. Tom and Sally use multiple monitors and an
+ethernet hardline. Dick has an easy time of this, and Sally has the ports she needs to get it done. Tom, 
+however, can’t do these tasks at all. The iPad doesn’t support that kind of multiple display setup at all,
+and can’t do an ethernet hardline either. This means he can’t do anywhere near what his peers can, or work
+as efficiently. Dick and Sally laugh at him for his purchase, and rightly so.</p>
 
-<p>Now navigate to <a href="http://localhost:8111/">http://localhost:8111/</a>. If accessing this from a machine other
-than the one you just set up the server on, use that machine’s hostname instead of localhost. You’ll see
-a setup dialog, similar to the one below. Walk through the setup process. The default settings should be
-fine for simple use cases.</p>
+<p>And finally, they need to give a presentation. Tom brings his laptop, connects to the projector or 
+big-screen display with no problem, and seamlessly gives his presentation. Sally can too, equally quickly.
+Tom, however, is left in the dark. He has to send the presentation to a peer, and run it off their laptop.
+How embarrassing.</p>
 
-<p><img src="/files/images/posts/2017-03-07-setup-dialog.jpg" alt="Setup Dialog" /></p>
+<p>Now, do you see what I mean? The iPad pro is so close to being a feasible laptop replacement in terms of
+software, but just doesn’t have the hardware to cut it. If it USB-C, and full software support for it, he
+could easily keep up with Dick and Sally. His iPad would do everything he needs, and do it well. There is
+so much potential for the iPad here, and it’s squandered just by this one simple shortcoming. It would make
+your claims of it being a full-fledged desktop replacement a reality.</p>
 
-<p>Once you’ve finished the process and created an administrator account, you’re ready to start using TeamCity.
-If it’s installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.</p>
+<h1 id="3-lightning-licensing">3. Lightning Licensing</h1>
+<p>I know, this would mean you lose out on licensing lightning products, and the income that comes with them.
+I can’t claim to know how much profit you get from this, and I can only assume that both the loss of 
+revenue and the corporate restructuring involved would be painful.</p>
 
-<p>From there, go to the administration page. From the administration page, create a project, and create a
-build configuration under that project. I recommend creating a project from a VCS source, as this will
-make things easier down the line.</p>
+<p>But think about the points I just made. I believe there are a lot of people out there who would love to use
+an iPad as a laptop replacement, but just can’t make the jump due to the shortcomings. Likewise, there’s no
+doubt that the user experience improvements would improve your customer retention, and probably bring in
+new users too. Not just that, but getting users into your ecosystem (and having your ecosystem become more
+consistent/reliable) will encourage them to buy your other products, resulting in a multiplier effect.</p>
 
-<p><img src="/files/images/posts/2017-03-07-admin-page-link.jpg" alt="" />
-<img src="/files/images/posts/2017-03-07-create-project.jpg" alt="" /></p>
+<p>Further, think about the problems you’ve had with licensing. It discourages manufacturers from making 
+accessories for your devices, and lowers their ROI. You need these people, and if you open up your
+ecosystem to people to make more, and better, devices for your ecosystem, it’ll only spur your growth. And
+that’s what’ll make you a successful company, not nickel-and-diming the manufacturers who build 
+accessories to make your ecosystem richer.</p>
 
-<p>Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.</p>
+<p>And of course, we all know you’ve had problems with counterfeiters. When some company cranks out subpar
+devices and starts a house fire, you have to acknowledge that without the licensing issues, it would at
+the very least be a <em>smaller</em> issue. And given that if it wouldn’t be such a big problem if not for your
+licensing practices, you are at least a little at fault for these incidents, for fostering an environment
+where they’re <del>allowed</del> encouraged to exist. If you really care about these problems, and about your
+users, it would be ethical to cease this practice.</p>
 
-<h3 id="some-nice-additions">Some nice additions</h3>
-<p>If you’re running this on a company network, or you use a VPN to connect to the server, you’re probably done.
-However, if this is for personal use or for use of a small project, you may want to look at a DDNS configuration.
-DDNS means Dynamic Domain Name System. Basically, it sets it up such that a computer that may or may not
-have a permanent IP address has a domain name that tracks it and follows it wherever it goes. You can get
-a free version of this service from <a href="https://ddns.net">ddns.net</a>.</p>
+<h1 id="in-closing">In Closing</h1>
+<p>Adopting USB-C would be painful. But it’s not only the right thing to do, it’s in your best interest, from
+almost every angle. While you’ll probably never read this, I can only hope that you’re still considering
+the points I’ve made here.</p>
 
-<h2 id="configuring-your-build-steps">Configuring your Build Steps</h2>
+<p><img src="http://fscl01.fonpit.de/userfiles/4376948/image/AndroidPIT-usb-c-lighning-comparison-3.JPG" alt="" /></p>
 
-<p>TeamCity will try to auto-detect build steps. If they’re appropriate for you, you can use them. If not,
-creating them manually is easy. My example build will contain four steps, but these can be adjusted as
-necessary.</p>
+<p>Sincerely, your pal and fan,</p>
 
-<h3 id="substep-1-dependency-resolution">Substep 1: Dependency Resolution</h3>
-<p>The goal of this step is to ensure that your build agent has whatever software packages or libraries
-your app will need to work.</p>
-
-<p>You only need to follow this step if you use a package manager for dependency resolution (which I 
-<strong><em>highly</em></strong> recommend). If you don’t, resolving dependencies is left up to you. Note that the following 
-are simplified somewhat; best practices would dictate that one store something like the path to 
-<code class="highlighter-rouge">carthage</code> in an environment variable. This would make it scale better if you have more than one build 
-agent, or if some agents do not have <code class="highlighter-rouge">carthage</code> installed.</p>
-
-<p>Create a command line build step, as shown below. Name the step something like “dependency resolution”
-or “Carthage” (if you’re using Carthage as a package manager). For the “build script content” you’ll enter
-something like <code class="highlighter-rouge">carthage bootstrap --platform iOS</code>. The industry standard for dependency resolution is
-<a href="https://cocoapods.org/">Cocoapods</a>, but carthage has a slightly simpler setup. When running builds, this 
-may make it take a bit longer, but the reliability is worth the minutes in my opinion. Note that if this
-is a concern, cocoapods can be faster.</p>
-
-<p><img src="/files/images/posts/2017-03-07-carthage-step.jpg" alt="" /></p>
-
-<h3 id="substep-2-simulator-configuration">Substep 2: Simulator Configuration</h3>
-<p>First, some background: In order to run tests, XCode uses an app, the aptly-named Simulator, which 
-simulates an iOS device. When you run tests, it will open the simulator, install the app you’re testing 
-onto it, and then run tests through the app it installed.</p>
-
-<p>The iOS Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
-and much more reliable, albeit taking a few minutes longer. Ignoring this step can cause your build to
-hang indefinitely.</p>
-
-<p>Before you do this, identify the iOS simulator that you want to build for and run your tests. 
-You will have multiple options for the various devices that Apple supports, such as the iPhone 7 or the 
-iPhone SE. If you wish to use multiple simulators, then the <code class="highlighter-rouge">xcrun</code> commands shown below should be run
-for those devices as well. To get a list of possible devices, run <code class="highlighter-rouge">xcrun simctl list</code>. This will give you 
-a list of the devices, and their GUIDs, available for testing. Let’s say we choose the GUID 
-“94639904-0FEF-4E7F-9F74-F22631A15DBE”. In the following steps, replace that GUID with the GUID of your
-choice (or better yet, put it in an environment variable on the build agent).</p>
-
-<p>Once again, create a command line build step. Call the step something like “Reset Simulator”. For the
-script content, enter the following (with your simulated device’s GUID):</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>xcrun simctl shutdown 94639904-0FEF-4E7F-9F74-F22631A15DBE
-killall Simulator
-killall com.apple.CoreSimulator.CoreSimulatorService
-xcrun simctl erase 94639904-0FEF-4E7F-9F74-F22631A15DBE
-</code></pre>
-</div>
-
-<p>The first line shuts down the simulator for the device if it’s running. The second and third lines ensure
-that the Simulator is shut down, to ensure a sanitary testing environment. Finally, the final line erases
-the content and settings of the simulated device. This ensures both a sanitary testing environment, and
-avoids an issue where, when running an automated build, it can hang indefinitely.</p>
-
-<h3 id="substep-3-the-fun-part">Substep 3: The Fun Part</h3>
-<p>At long last, it’s time to set up our XCode build step! In the build step type, select XCode Project.
-Click “Show advanced options”. Set the Path to the project or workspace to your .xcodeproj file. Use a
-scheme-based build. (Note that to use scheme-based builds, you must configure a build scheme in XCode and
-push your changes to VCS.) Set build action(s) to <code class="highlighter-rouge">clean build</code>. Check the “Run tests” box. Finally, in
-the Additional command line parameters box, enter the following: 
-<code class="highlighter-rouge">-destination "id=94639904-0FEF-4E7F-9F74-F22631A15DBE"</code>. This will tell it to run the build on and for
-the device we set up in the previous step.</p>
-
-<p>Here’s an example of my setup for one of my projects (with some minor changes to make it more readable):</p>
-
-<p><img src="/files/images/posts/2017-03-07-xcode-step.jpg" alt="" /></p>
-
-<h3 id="substep-4-cleanup">Substep 4: Cleanup</h3>
-<p>Finally, we want to clean up to save resources. This is fairly self-explanatory. Create a final command-line
-step with the following code:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>xcrun simctl shutdown %env.simulator_guid%
-killall Simulator
-killall com.apple.CoreSimulator.CoreSimulatorService
-</code></pre>
-</div>
-
-<h2 id="icing-on-the-cake">Icing on the cake</h2>
-<p>Finally, a few options to add some nice features to your build.</p>
-
-<h3 id="vcs">VCS</h3>
-<p>Head to the version control settings tab of the build configuration. Here, you can customize your VCS
-settings. In the branch specification, I recommend choosing which branches the server should run. To run
-all branches and commits, enter <code class="highlighter-rouge">+:*</code> in the branch specification box.</p>
-
-<p><img src="/files/images/posts/2017-03-07-vcs-config.jpg" alt="" />
-<img src="/files/images/posts/2017-03-07-branch-spec.jpg" alt="" /></p>
-
-<h3 id="vcs-labeling">VCS Labeling</h3>
-<p>TeamCity has a lot of really cool features. One of my favorites is VCS labeling. To reach this, go to the
-Build Features tab. Click “Add build feature” and select the VCS root and the branches you want to enable
-it for. I like to set up two of these: One with the labeling pattern <code class="highlighter-rouge">build-%system.build.number%</code> for all
-builds, and one with the labeling pattern <code class="highlighter-rouge">build-%system.build.number%-passed</code> that is added to successful
-builds only. Then, from a GUI client like SourceTree, you can see at a glance which build is associated
-with which commit, as well as which commits failed.</p>
-
-<h1 id="step-2-setting-up-the-teamcity-agent">Step 2: Setting up the TeamCity Agent</h1>
-<p>If your agent is the same as the CI server, skip to step 3.</p>
-
-<p>There are some basic requirements for setup. If these requirements are not met, you will <strong>not</strong> be able to 
-successfully install the agent.</p>
-
-<ul>
-  <li>The desired agent must have a stable (and preferably fast) internet connection.</li>
-  <li>The desired agent must have space to install the agent.</li>
-  <li>Time. The agent will take a while to install, because the agent installation process installs all of its
-dependencies (and there are a lot of them). Let the agent sit for an hour (depending on connection speed)
-before you decide that something’s wrong. Activity monitor may be used to investigate. The name of the
-process running the installation is “java”. There may be multiple processes doing this.</li>
-</ul>
-
-<p>On the MacOS machine you want to run as an agent, the simplest way is using TeamCity’s <em>agent push</em>
-functionality. To use this, you must enable remote login on the desired agent in System Preferences &gt;
-Sharing. This allows TeamCity to ssh to your machine and install the agent. To use TeamCity’s agent push
-functionality, you must either be on the same network, or have an IP/DNS address at which the <strong>server</strong>
-will be able to reach the <strong>agent</strong>.</p>
-
-<p>To reach TeamCity’s agent push functionality, click the “Agents” tab at the top menu. In the submenu, 
-select agent push, and then click the install agent button. Enter appropriate details for the agent,
-then go.</p>
-
-<p>If you can’t use agent push, it may be more reliable to manually install. To manually install, go to the
-“Agents” tab at the top, then click the link on the right that says “Install build agent”, and select the
-zip file distribution.</p>
-
-<p><img src="/files/images/posts/2017-03-07-agent-install.jpg" alt="Agent Installation" /></p>
-
-<h2 id="configuring">Configuring</h2>
-<p>Once the agent is installed, you can configure the agent’s settings in the <code class="highlighter-rouge">conf/buildAgent.properties</code>
-file. Here you can set the agent name, environment variables for TeamCity, and more.</p>
-
-<h2 id="running">Running</h2>
-<p>To run, in Terminal navigate to the <code class="highlighter-rouge">bin</code> folder. Then, run <code class="highlighter-rouge">./agent.sh start</code>. To stop the process, run
-<code class="highlighter-rouge">./agent.sh stop kill</code>. This will <strong>not</strong> run on start, but you can find tutorials online for configuring
-this with launchd. I recommend <a href="http://www.soma-zone.com/LaunchControl/">Launch Control</a> to make configuring
-these easier.</p>
-
-<h1 id="step-3-concluding">Step 3: Concluding</h1>
-<p>You’re set up! Congratulations! 🎉</p>
+<p>Eric</p>
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/2017/03/07/XCode-CI-Article.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/2017/03/16/iPad-USB-C.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>
