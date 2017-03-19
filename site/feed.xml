@@ -6,9 +6,137 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Mar 2017 01:17:07 -0500</pubDate>
-    <lastBuildDate>Sun, 19 Mar 2017 01:17:07 -0500</lastBuildDate>
+    <pubDate>Sun, 19 Mar 2017 17:17:04 -0500</pubDate>
+    <lastBuildDate>Sun, 19 Mar 2017 17:17:04 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Automatically Adding Screenshots to Photos in MacOS</title>
+        <description>&lt;p&gt;I take a lot of screenshots. I use them for my website, for memory, for laughs, and a lot more. However,
+I also take lots of screenshots on my phone. So it winds up being really weird (and inconvenient) when the
+screenshots on my computer and the screenshots on my phone are organized differently and in completely
+different places.&lt;/p&gt;
+
+&lt;p&gt;So naturally, being the procrastinating programmer I am, I engineered a solution to consolidate everything
+in one nice, organized package. Basically, I set up a simple app/script that anytime I take a screenshot
+on my computer, it gets added to Photos.app, and shared in a simple, clean way across my devices. To
+enable iCloud Photo Sync across your devices, open System Preferences and navigate to the iCloud
+preference pane. Check the checkbox next to “Photos”. That’s it!&lt;/p&gt;
+
+&lt;p&gt;I’ll tell you know, this can get a bit technical, but don’t worry. I’ll be here, going step by step, and
+the entire process is perfectly safe.&lt;/p&gt;
+
+&lt;h2 id=&quot;outcome&quot;&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;Whenever you take a screenshot with your Mac, it will be uploaded to Apple Photos in a folder called 
+“MacOS Screenshots”, and shared across devices (if iCloud sync is enabled).&lt;/p&gt;
+
+&lt;h2 id=&quot;caveats&quot;&gt;Caveats&lt;/h2&gt;
+&lt;p&gt;When I set this up, I initially tried to unify my iOS screenshots and my MacOS screenshots into a single
+folder. Unfortunately this isn’t quite easily possible (that I know of) without jailbreaking.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-take-screenshots&quot;&gt;How to Take Screenshots&lt;/h1&gt;
+&lt;p&gt;MacOS has some pretty useful, and pretty powerful, screenshotting tools. There are three important ones,
+which all have slightly different effects.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-full-screen&quot;&gt;1. Full Screen&lt;/h2&gt;
+&lt;p&gt;This mode takes a screenshot of your entire screen. Everything is visible. This is quick and easy, but if
+you’re sharing screenshots publicly, it may give out more information than you want. To take this kind of
+screenshot, the shortcut is &lt;em&gt;cmd-shift-3&lt;/em&gt;. Following is what the result will look like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-full-screen.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-grabbing&quot;&gt;2. Grabbing&lt;/h2&gt;
+&lt;p&gt;This mode allows you to specify (“Grab”) a portion of your screen and save that. This lets you choose a 
+more manageable chunk of your screen to use as a screenshot, rather than the whole thing. The shortcut is
+&lt;em&gt;cmd-shift-4&lt;/em&gt;. Once this is done, your cursor will turn into a crosshair. Click and drag over the area you
+want to screenshot. Here’s what that could look like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-grabber.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-window-screenshots&quot;&gt;3. Window Screenshots&lt;/h2&gt;
+&lt;p&gt;This mode takes a screenshot of just one application window. This is nice, and it’s what I usually use in
+my posts and tutorials. To use it, you first enter the Grabbing shortcut, &lt;em&gt;cmd-shift-4&lt;/em&gt;. Then, press space.
+Your cursor will turn into a picture of a camera. Then, just click on the window you want to screenshot. 
+Another nice side effect of this kind of screenshot is that, unlike the other two, it ignores any
+transparency effects, so it looks very clean. Here’s an example.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-app-screenshot.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;step-1-isolating-screenshots&quot;&gt;Step 1. Isolating Screenshots&lt;/h1&gt;
+&lt;p&gt;Historically, I’ve always set my computer to save screenshots to a special screenshots folder. I recommend
+doing this here too, because it simplifies things and minimizes any potential weird side effects by
+ensuring a sanitary working space. To do this, I recommend creating a folder in the Pictures folder (this
+can be found in your home directory) called “Screenshots”. Mine looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-screenshots-folder.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The first step here is to download &lt;a href=&quot;http://www.titanium.free.fr/onyx.html&quot;&gt;OnyX&lt;/a&gt;. This can be done without
+OnyX, but this is the easiest way to do it. When you first open OnyX, it will give you some instructions
+that will allow it to function properly. Follow these closely and carefully. OnyX is a safe tool, but also
+a very powerful one. This means if it doesn’t have the resources it needs, it may not be able to do things
+correctly. &lt;strong&gt;NOTE: When you launch OnyX, it will &lt;em&gt;temporarily&lt;/em&gt; lock up your computer. This is normal,
+just wait for it to finish. It could take as long as a few minutes.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, click on the “Parameters” tab. This tab can do lots of fun things, and you can feel free to explore
+these on your own. However, we will now navigate to the “General” subtab as shown. Next, click the “select”
+button next to the “path” field as shown. Now, in the popup window, select the Screenshots folder you just
+created. **NOTE: I have a slightly different configuration, for personal backwards compatibilty reasons,
+so my path is different. Yours should look something like: &lt;code class=&quot;highlighter-rouge&quot;&gt;/Users/yourusername/Pictures/Screenshots&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now take a screenshot; instead of showing up on the desktop, it should appear in your screenshots folder.
+Now you have a dedicated screenshots folder where everything can go! We’re halfway there.&lt;/p&gt;
+
+&lt;h1 id=&quot;step-2-preparing-photosapp&quot;&gt;Step 2. Preparing Photos.app&lt;/h1&gt;
+&lt;p&gt;Now, we have to do some work with Photos.app to make sure our step 3 works right. This is pretty easy.
+First, open Photos. In the top toolbar, there should be a large “plus” button. Click it, then in the menu
+it opens, select “Album”. You can name this album whatever you want, but you’ll need to remember it for
+step 3. I recommend something like “Screenshots: MacOS”.&lt;/p&gt;
+
+&lt;p&gt;Once this album is created, it should be empty - this is ok.&lt;/p&gt;
+
+&lt;h1 id=&quot;step-3-the-folder-action&quot;&gt;Step 3. The “Folder Action”&lt;/h1&gt;
+&lt;p&gt;Brace yourself, this is probably the most complicated part.&lt;/p&gt;
+
+&lt;p&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;/Applications/Automator&lt;/code&gt;. Select “New Document”. It will give you a series of choices for the type
+of document to create, as seen below. Select “Folder Action”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-automator-document-type.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the top right-hand corner, there’s a drop-down menu that says “Choose folder.” Click this, select
+“Other”, and then choose the Screenshots folder we created in step 1.&lt;/p&gt;
+
+&lt;p&gt;In the search bar on the upper left-hand side (Says “Name” in gray), type “Import”. A few options will
+show up just below it - click and drag the file to the right-hand side, so your screen looks like mine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-automator-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, in the drop-down menu that says “Import without adding to album”, select “Add to existing top-level
+album”. A new field will show up just to the right of that - select the screenshots album you created in
+step 2. Mine looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-automator-2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, press &lt;em&gt;cmd-s&lt;/em&gt; to save. Name the file something recognizable, like “Screenshots - Import to Photos”.&lt;/p&gt;
+
+&lt;p&gt;Go back to your screenshots folder that you made in step 1. Right click the folder, and select 
+Services &amp;gt; Folder Actions, as shown below. Finder will offer a bunch of suggestions - press cancel. Make
+sure that the “Enable Folder Actions” checkbox is checked, just like in my screenshot. Make sure that the
+folder and script are both checked as well, just like in mine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-Folder-Actions-Finder.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-19-folder-actions-window.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;congrats&quot;&gt;Congrats!&lt;/h1&gt;
+&lt;p&gt;Now, whenever you take screenshots on your mac, they will be added to Photos and uploaded to iCloud (if
+enabled.)&lt;/p&gt;
+</description>
+        <pubDate>Sun, 19 Mar 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2017/03/19/MacOS-Screenshots-AddToPhotos.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/19/MacOS-Screenshots-AddToPhotos.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Apple, Muster your Courage. It's time for USB-C.</title>
@@ -1086,17 +1214,6 @@ The new service will now be viewable via bonjour clients, such as Safari and dns
         <pubDate>Mon, 26 Sep 2016 00:00:00 -0500</pubDate>
         <link>http://localhost:4000/2016/09/26/Avahi-HTTP-Service.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/09/26/Avahi-HTTP-Service.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Jurassic World with Chris Pratt as the Velociraptors and a Velociraptor as Chris Pratt</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/files/images/posts/2016-09-24-jurassic-world-reversal.png&quot; alt=&quot;Jurassic World with Chris Pratt as the Velociraptors and a Velociraptor as Chris Pratt&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 24 Sep 2016 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2016/09/24/Jurassic-World-Reversal.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/24/Jurassic-World-Reversal.html</guid>
         
         
       </item>

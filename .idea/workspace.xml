@@ -2,78 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cde275b-8312-4d03-a8d9-76bf03e37703" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTAlbum.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTArtist.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTAudioStreamingController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTAuth.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTAuthViewController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTBrowse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTCircularBuffer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTCoreAudioController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTCoreAudioDevice.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTCoreAudioDeviceSource.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTDiskCache.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTFeaturedPlaylistList.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTFollow.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTImage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTJSONDecoding.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTJSONObjectBase.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTListPage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPartialAlbum.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPartialArtist.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPartialPlaylist.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPartialTrack.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPlayOptions.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPlaybackState.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPlaybackTrack.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPlaylistList.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPlaylistSnapshot.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTPlaylistTrack.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTRequest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTSavedTrack.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTSearch.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTSession.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTStoreViewController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTTrack.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTUser.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Classes/SPTYourMusic.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Constants/SPTAlbumType.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Constants/SPTBitrate.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Constants/SPTProduct.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Constants/SPTRepeatMode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Constants/SPTSearchQueryType.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTAudioStreamingDelegate.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTAudioStreamingPlaybackDelegate.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTAuthViewDelegate.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTCoreAudioControllerDelegate.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTDiskCaching.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTJSONObject.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTPartialObject.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTRequestHandlerProtocol.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTStoreControllerDelegate.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/Protocols/SPTTrackProvider.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/css/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/css/stylesPrint.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/hierarchy.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/img/button_bar_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/img/disclosure.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/img/disclosure_open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/img/library_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/img/title_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spotify-ios-doc/index.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-Folder-Actions-Finder.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-app-screenshot.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-automator-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-automator-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-automator-document-type.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-folder-actions-window.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-full-screen.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-grabber.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-photos-add-album.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/images/posts/2017-03-19-screenshots-folder.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2017-03-19-MacOS-Screenshots-AddToPhotos.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/page.html" afterPath="$PROJECT_DIR$/_layouts/page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/2016/09/10/0907-Apple-Event-Coverage.html" afterPath="$PROJECT_DIR$/site/2016/09/10/0907-Apple-Event-Coverage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/2016/09/24/Jurassic-World-Reversal.html" afterPath="$PROJECT_DIR$/site/2016/09/24/Jurassic-World-Reversal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/2016/09/26/Avahi-HTTP-Service.html" afterPath="$PROJECT_DIR$/site/2016/09/26/Avahi-HTTP-Service.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/2017/01/17/How-to-Secure-Your-Online-Life.html" afterPath="$PROJECT_DIR$/site/2017/01/17/How-to-Secure-Your-Online-Life.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/about/index.html" afterPath="$PROJECT_DIR$/site/about/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.scss" afterPath="$PROJECT_DIR$/css/main.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/css/main.css" afterPath="$PROJECT_DIR$/files/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/css/main.css" afterPath="$PROJECT_DIR$/site/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/feed.xml" afterPath="$PROJECT_DIR$/site/feed.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/files/css/main.css" afterPath="$PROJECT_DIR$/site/files/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/index.html" afterPath="$PROJECT_DIR$/site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/posts/0907-Apple-Event-Coverage/index.html" afterPath="$PROJECT_DIR$/site/posts/0907-Apple-Event-Coverage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/posts/Avahi-HTTP-Service/index.html" afterPath="$PROJECT_DIR$/site/posts/Avahi-HTTP-Service/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/posts/How-to-Secure-Your-Online-Life/index.html" afterPath="$PROJECT_DIR$/site/posts/How-to-Secure-Your-Online-Life/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/posts/Jurassic-World-Reversal/index.html" afterPath="$PROJECT_DIR$/site/posts/Jurassic-World-Reversal/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/posts/index.html" afterPath="$PROJECT_DIR$/site/posts/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,73 +35,103 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2016-09-14-A-Dramatic-Reenactment-of-the-iPhone-7's-Development-Pitch.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2016-09-14-A-Dramatic-Reenactment-of-the-iPhone-7's-Development-Pitch.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="45">
-                <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015-09-23-Excerpts-from-Apple's-Review-Guidelines.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2015-09-23-Excerpts-from-Apple's-Review-Guidelines.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="45">
-                <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_layouts/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="255">
-                <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="posts.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/posts.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="complaints.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="complaints.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/complaints.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state relative-caret-position="298">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#form#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017-03-19-MacOS-Screenshots-AddToPhotos.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2017-03-19-MacOS-Screenshots-AddToPhotos.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="371">
+                <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beautifier.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files/css/beautifier.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="font.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files/css/font.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017-03-16-iPad-USB-C.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2017-03-16-iPad-USB-C.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-1324">
+                <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017-03-07-XCode-CI-Article.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="285">
+                <caret line="82" column="17" lean-forward="false" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="68" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -166,45 +142,6 @@
             <state relative-caret-position="1260">
               <caret line="84" column="51" lean-forward="false" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2016-09-10-0907-Apple-Event-Coverage.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2016-09-10-0907-Apple-Event-Coverage.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="45">
-                <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2016-09-24-Jurassic-World-Reversal.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2016-09-24-Jurassic-World-Reversal.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="45">
-                <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2016-09-26-Avahi-HTTP-Service.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2016-09-26-Avahi-HTTP-Service.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="30">
-                <caret line="2" column="52" lean-forward="false" selection-start-line="2" selection-start-column="52" selection-end-line="3" selection-end-column="19" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -253,6 +190,9 @@
         <option value="$PROJECT_DIR$/about.md" />
         <option value="$PROJECT_DIR$/_layouts/page.html" />
         <option value="$PROJECT_DIR$/complaints.html" />
+        <option value="$PROJECT_DIR$/_posts/2017-03-19-MacOS-Screenshots-AddToPhotos.md" />
+        <option value="$PROJECT_DIR$/files/css/main.css" />
+        <option value="$PROJECT_DIR$/css/main.scss" />
       </list>
     </option>
   </component>
@@ -281,6 +221,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -357,7 +299,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="_posts" />
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -371,14 +317,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="_layouts" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,11 +335,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/files" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/files/images/posts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/files" />
     </key>
   </component>
   <component name="RunManager">
@@ -486,32 +430,33 @@
       <workItem from="1489789723457" duration="5011000" />
       <workItem from="1489901573968" duration="423000" />
       <workItem from="1489902524278" duration="1672000" />
+      <workItem from="1489956490075" duration="5044000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32587000" />
+    <option name="totallyTimeSpent" value="37631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30832356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30832356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,24 +470,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/about.md" />
-    <entry file="file://$PROJECT_DIR$/_layouts/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="120" lean-forward="false" selection-start-line="9" selection-start-column="120" selection-end-line="9" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_layouts/page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="106" column="46" lean-forward="false" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-02-14-Sunrise-Photos.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2017-02-23-3-Things-About-Swift.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2017-01-27-Apple-Watch-Review.md" />
     <entry file="file://$PROJECT_DIR$/posts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -561,9 +488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#article#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -609,9 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#article#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -681,26 +602,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-03-16-iPad-USB-C.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-02-23-3-Things-About-Swift.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -767,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,9 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#article#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -878,11 +775,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/complaints.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        <state relative-caret-position="298">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#textarea#0;n#form#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-03-16-iPad-USB-C.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-1324">
+            <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-03-07-XCode-CI-Article.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="285">
+            <caret line="82" column="17" lean-forward="false" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="68" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-03-19-MacOS-Screenshots-AddToPhotos.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="371">
+            <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/css/beautifier.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/css/font.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

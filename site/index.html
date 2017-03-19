@@ -111,128 +111,130 @@
 <div id="page-content-wrapper" class="content col-md-10">
     <div class="home">
 
-    <h1 class="post-title"><a href="/2017/03/16/iPad-USB-C.html">Apple, Muster your Courage. It's time for USB-C.</a></h1>
+    <h1 class="post-title"><a href="/2017/03/19/MacOS-Screenshots-AddToPhotos.html">Automatically Adding Screenshots to Photos in MacOS</a></h1>
     <div>
-        <p>Apple, I’ve watched your progress over the last few years with interest. As a fan, follower, and analyst, I
-feel I need to call you out on it when you’re making a mistake.</p>
+        <p>I take a lot of screenshots. I use them for my website, for memory, for laughs, and a lot more. However,
+I also take lots of screenshots on my phone. So it winds up being really weird (and inconvenient) when the
+screenshots on my computer and the screenshots on my phone are organized differently and in completely
+different places.</p>
 
-<p>And you’re making a mistake.</p>
+<p>So naturally, being the procrastinating programmer I am, I engineered a solution to consolidate everything
+in one nice, organized package. Basically, I set up a simple app/script that anytime I take a screenshot
+on my computer, it gets added to Photos.app, and shared in a simple, clean way across my devices. To
+enable iCloud Photo Sync across your devices, open System Preferences and navigate to the iCloud
+preference pane. Check the checkbox next to “Photos”. That’s it!</p>
 
-<p>USB-C is the future. You know this. It’s why your new laptops have solely USB-C (and despite what the haters
-say, that’s a good thing). So it’s time to muster your famous <em>courage</em>, and follow through on that.</p>
+<p>I’ll tell you know, this can get a bit technical, but don’t worry. I’ll be here, going step by step, and
+the entire process is perfectly safe.</p>
 
-<p>USB-C is the new standard. It may take some time to adopt, but it is. With up to 40Gbps throughput with the
-thunderbolt standard, it’s the fastest mainstream port out there. It supports every kind of device people
-use, from mice and keyboards, to headphones, to ethernet connections, and even to 4K displays. It even has
-enough power throughput to power a laptop; that’s why you’re supporting power delivery from that port for 
-the upcoming iPhones. And even through all of that, it’s relatively tiny (which I know you folks love).</p>
+<h2 id="outcome">Outcome</h2>
+<p>Whenever you take a screenshot with your Mac, it will be uploaded to Apple Photos in a folder called 
+“MacOS Screenshots”, and shared across devices (if iCloud sync is enabled).</p>
 
-<p>And I understand your hesitance, and your pain. The last time you changed the port on your iOS devices,
-you faced enormous pushback. It’s not fun, and not good for a company in your position. But if you have the
-courage to remove the aux jack from your iPhones, you have the courage to do this. And it’s worth doing. So
-in the article that follows, I’ll lay out why this is a good idea, and why the pain of making the switch
-is well worth it.</p>
+<h2 id="caveats">Caveats</h2>
+<p>When I set this up, I initially tried to unify my iOS screenshots and my MacOS screenshots into a single
+folder. Unfortunately this isn’t quite easily possible (that I know of) without jailbreaking.</p>
 
-<h1 id="1-user-experience">1. User Experience</h1>
-<p>If there’s one thing Apple is famous for, it’s user experience. And not only user experience, but user
-experience across devices. If I connect to WiFi on my mac, my phone will connect to it too. I can send
-files back and forth with AirDrop easily. Hell, y’all have been pushing this more and more, with other
-technologies like HandOff, Apple Watch unlock, and universal clipboard. And not to blow smoke, but you’ve
-done a great job with it.</p>
+<h1 id="how-to-take-screenshots">How to Take Screenshots</h1>
+<p>MacOS has some pretty useful, and pretty powerful, screenshotting tools. There are three important ones,
+which all have slightly different effects.</p>
 
-<p>But that’s software. When it comes to hardware, you’re sending mixed messages. If I buy a pair of lightning
-headphones for my iPhone 7, I can’t then use them with my mac. If I buy a USB-C charging cable for one of
-the new macs, I can’t then also use that to charge my phone. Imagine a world where, if I buy an accessory,
-it works on every device I own. In terms of user experience, that’s something no one’s achieved yet. But
-you can bet that’s where Android and Windows are going. If you don’t join them, Android and Windows will
-start to blow you out of the water in terms of hardware compatibility. And I know that’s something you
-don’t want.</p>
+<h2 id="1-full-screen">1. Full Screen</h2>
+<p>This mode takes a screenshot of your entire screen. Everything is visible. This is quick and easy, but if
+you’re sharing screenshots publicly, it may give out more information than you want. To take this kind of
+screenshot, the shortcut is <em>cmd-shift-3</em>. Following is what the result will look like.</p>
 
-<p>USB-C is an answer to the <a href="https://xkcd.com/927/">age-old problem of competing ports</a>. You can either jump
-into this new world with both feet, or you can be left in the dust by people who do.</p>
+<p><img src="/files/images/posts/2017-03-19-full-screen.jpg" alt="" /></p>
 
-<h1 id="2-the-ipad-pro-line">2. The iPad Pro Line</h1>
-<p>The iPad pro line is being marketed as a desktop replacement. In truth, you’re closer to that than your
-competitors would like to admit, and further from it than you’d like to think.</p>
+<h2 id="2-grabbing">2. Grabbing</h2>
+<p>This mode allows you to specify (“Grab”) a portion of your screen and save that. This lets you choose a 
+more manageable chunk of your screen to use as a screenshot, rather than the whole thing. The shortcut is
+<em>cmd-shift-4</em>. Once this is done, your cursor will turn into a crosshair. Click and drag over the area you
+want to screenshot. Here’s what that could look like.</p>
 
-<p>The simple fact is, as much as you believe that wireless is the future (as do I), the world still runs on
-ports. You know this - it’s why you’re still putting ports on your laptops. One day, when wireless
-charging from across the house works, the 802.11X WiFi standard has evolved, and Bluetooth reaches its true
-potential, we’ll live in the world you dream about: a world without ports. But we’re not there. We’re not
-even close.</p>
+<p><img src="/files/images/posts/2017-03-19-grabber.jpg" alt="" /></p>
 
-<p>People - both professionals and consumers - need these ports. We need them to facilitate our presentations,
-to print our documents, to share files, and to connect to secured networks. It may not be your ideal, but
-it’s the world we live in. And you can’t truly call the iPad a “pro” until it can do these things.</p>
+<h2 id="3-window-screenshots">3. Window Screenshots</h2>
+<p>This mode takes a screenshot of just one application window. This is nice, and it’s what I usually use in
+my posts and tutorials. To use it, you first enter the Grabbing shortcut, <em>cmd-shift-4</em>. Then, press space.
+Your cursor will turn into a picture of a camera. Then, just click on the window you want to screenshot. 
+Another nice side effect of this kind of screenshot is that, unlike the other two, it ignores any
+transparency effects, so it looks very clean. Here’s an example.</p>
 
-<p>So even throwing away the ideas of “iOSX”, I believe that the iPad pro has the potential to be a truly
-exceptional desktop replacement, even competing on an even playing field with something as fully-featured
-as the Microsoft Surface Pro, likely even surpassing it.</p>
+<p><img src="/files/images/posts/2017-03-19-app-screenshot.jpg" alt="" /></p>
 
-<p>So let’s take a moment, and talk about three hypothetical graphic designers: Tom, Dick, and Sally. Tom uses
-a fancy, new, top-of-the-line iPad Pro. Dick uses a generic laptop, let’s say a MacBook Pro. Sally uses a
-Surface Pro.</p>
+<h1 id="step-1-isolating-screenshots">Step 1. Isolating Screenshots</h1>
+<p>Historically, I’ve always set my computer to save screenshots to a special screenshots folder. I recommend
+doing this here too, because it simplifies things and minimizes any potential weird side effects by
+ensuring a sanitary working space. To do this, I recommend creating a folder in the Pictures folder (this
+can be found in your home directory) called “Screenshots”. Mine looks like this:</p>
 
-<p>Tom and Sally, being the savvy purchasers they are, love their ability to draw right on their computers.
-They have a clear advantage here over Dick, who needs a separate Wacom tablet. They also love the 
-portability of their computers, so they can go meet with clients with just a small bag. Dick is frustrated
-with his setup compared to his peers in this regard.</p>
+<p><img src="/files/images/posts/2017-03-19-screenshots-folder.jpg" alt="" /></p>
 
-<p>Then, they have to get to work doing more sophisticated work. Tom and Sally use multiple monitors and an
-ethernet hardline. Dick has an easy time of this, and Sally has the ports she needs to get it done. Tom, 
-however, can’t do these tasks at all. The iPad doesn’t support that kind of multiple display setup at all,
-and can’t do an ethernet hardline either. This means he can’t do anywhere near what his peers can, or work
-as efficiently. Dick and Sally laugh at him for his purchase, and rightly so.</p>
+<p>The first step here is to download <a href="http://www.titanium.free.fr/onyx.html">OnyX</a>. This can be done without
+OnyX, but this is the easiest way to do it. When you first open OnyX, it will give you some instructions
+that will allow it to function properly. Follow these closely and carefully. OnyX is a safe tool, but also
+a very powerful one. This means if it doesn’t have the resources it needs, it may not be able to do things
+correctly. <strong>NOTE: When you launch OnyX, it will <em>temporarily</em> lock up your computer. This is normal,
+just wait for it to finish. It could take as long as a few minutes.</strong></p>
 
-<p>And finally, they need to give a presentation. Tom brings his laptop, connects to the projector or 
-big-screen display with no problem, and seamlessly gives his presentation. Sally can too, equally quickly.
-Tom, however, is left in the dark. He has to send the presentation to a peer, and run it off their laptop.
-How embarrassing.</p>
+<p>Now, click on the “Parameters” tab. This tab can do lots of fun things, and you can feel free to explore
+these on your own. However, we will now navigate to the “General” subtab as shown. Next, click the “select”
+button next to the “path” field as shown. Now, in the popup window, select the Screenshots folder you just
+created. **NOTE: I have a slightly different configuration, for personal backwards compatibilty reasons,
+so my path is different. Yours should look something like: <code class="highlighter-rouge">/Users/yourusername/Pictures/Screenshots</code>.</p>
 
-<p>Now, do you see what I mean? The iPad pro is so close to being a feasible laptop replacement in terms of
-software, but just doesn’t have the hardware to cut it. If it USB-C, and full software support for it, he
-could easily keep up with Dick and Sally. His iPad would do everything he needs, and do it well. There is
-so much potential for the iPad here, and it’s squandered just by this one simple shortcoming. It would make
-your claims of it being a full-fledged desktop replacement a reality.</p>
+<p>Now take a screenshot; instead of showing up on the desktop, it should appear in your screenshots folder.
+Now you have a dedicated screenshots folder where everything can go! We’re halfway there.</p>
 
-<h1 id="3-lightning-licensing">3. Lightning Licensing</h1>
-<p>I know, this would mean you lose out on licensing lightning products, and the income that comes with them.
-I can’t claim to know how much profit you get from this, and I can only assume that both the loss of 
-revenue and the corporate restructuring involved would be painful.</p>
+<h1 id="step-2-preparing-photosapp">Step 2. Preparing Photos.app</h1>
+<p>Now, we have to do some work with Photos.app to make sure our step 3 works right. This is pretty easy.
+First, open Photos. In the top toolbar, there should be a large “plus” button. Click it, then in the menu
+it opens, select “Album”. You can name this album whatever you want, but you’ll need to remember it for
+step 3. I recommend something like “Screenshots: MacOS”.</p>
 
-<p>But think about the points I just made. I believe there are a lot of people out there who would love to use
-an iPad as a laptop replacement, but just can’t make the jump due to the shortcomings. Likewise, there’s no
-doubt that the user experience improvements would improve your customer retention, and probably bring in
-new users too. Not just that, but getting users into your ecosystem (and having your ecosystem become more
-consistent/reliable) will encourage them to buy your other products, resulting in a multiplier effect.</p>
+<p>Once this album is created, it should be empty - this is ok.</p>
 
-<p>Further, think about the problems you’ve had with licensing. It discourages manufacturers from making 
-accessories for your devices, and lowers their ROI. You need these people, and if you open up your
-ecosystem to people to make more, and better, devices for your ecosystem, it’ll only spur your growth. And
-that’s what’ll make you a successful company, not nickel-and-diming the manufacturers who build 
-accessories to make your ecosystem richer.</p>
+<h1 id="step-3-the-folder-action">Step 3. The “Folder Action”</h1>
+<p>Brace yourself, this is probably the most complicated part.</p>
 
-<p>And of course, we all know you’ve had problems with counterfeiters. When some company cranks out subpar
-devices and starts a house fire, you have to acknowledge that without the licensing issues, it would at
-the very least be a <em>smaller</em> issue. And given that if it wouldn’t be such a big problem if not for your
-licensing practices, you are at least a little at fault for these incidents, for fostering an environment
-where they’re <del>allowed</del> encouraged to exist. If you really care about these problems, and about your
-users, it would be ethical to cease this practice.</p>
+<p>Open <code class="highlighter-rouge">/Applications/Automator</code>. Select “New Document”. It will give you a series of choices for the type
+of document to create, as seen below. Select “Folder Action”.</p>
 
-<h1 id="in-closing">In Closing</h1>
-<p>Adopting USB-C would be painful. But it’s not only the right thing to do, it’s in your best interest, from
-almost every angle. While you’ll probably never read this, I can only hope that you’re still considering
-the points I’ve made here.</p>
+<p><img src="/files/images/posts/2017-03-19-automator-document-type.jpg" alt="" /></p>
 
-<p><img src="http://fscl01.fonpit.de/userfiles/4376948/image/AndroidPIT-usb-c-lighning-comparison-3.JPG" alt="" /></p>
+<p>In the top right-hand corner, there’s a drop-down menu that says “Choose folder.” Click this, select
+“Other”, and then choose the Screenshots folder we created in step 1.</p>
 
-<p>Sincerely, your pal and fan,</p>
+<p>In the search bar on the upper left-hand side (Says “Name” in gray), type “Import”. A few options will
+show up just below it - click and drag the file to the right-hand side, so your screen looks like mine.</p>
 
-<p>Eric</p>
+<p><img src="/files/images/posts/2017-03-19-automator-1.jpg" alt="" /></p>
+
+<p>Now, in the drop-down menu that says “Import without adding to album”, select “Add to existing top-level
+album”. A new field will show up just to the right of that - select the screenshots album you created in
+step 2. Mine looks like this:</p>
+
+<p><img src="/files/images/posts/2017-03-19-automator-2.jpg" alt="" /></p>
+
+<p>Now, press <em>cmd-s</em> to save. Name the file something recognizable, like “Screenshots - Import to Photos”.</p>
+
+<p>Go back to your screenshots folder that you made in step 1. Right click the folder, and select 
+Services &gt; Folder Actions, as shown below. Finder will offer a bunch of suggestions - press cancel. Make
+sure that the “Enable Folder Actions” checkbox is checked, just like in my screenshot. Make sure that the
+folder and script are both checked as well, just like in mine.</p>
+
+<p><img src="/files/images/posts/2017-03-19-Folder-Actions-Finder.jpg" alt="" /></p>
+
+<p><img src="/files/images/posts/2017-03-19-folder-actions-window.jpg" alt="" /></p>
+
+<h1 id="congrats">Congrats!</h1>
+<p>Now, whenever you take screenshots on your mac, they will be added to Photos and uploaded to iCloud (if
+enabled.)</p>
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/2017/03/16/iPad-USB-C.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/2017/03/19/MacOS-Screenshots-AddToPhotos.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>
