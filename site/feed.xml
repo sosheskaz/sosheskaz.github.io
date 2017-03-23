@@ -6,9 +6,51 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Mar 2017 17:17:04 -0500</pubDate>
-    <lastBuildDate>Sun, 19 Mar 2017 17:17:04 -0500</lastBuildDate>
+    <pubDate>Thu, 23 Mar 2017 16:32:07 -0500</pubDate>
+    <lastBuildDate>Thu, 23 Mar 2017 16:32:07 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>March 21 2017 Apple Press Release Coverage</title>
+        <description>&lt;p&gt;Apple put out a press release on Monday, announcing a few minor new products. I’m here to cover what they did, and what
+I think of it. I’ll also say that I’m aggregating a lot from &lt;a href=&quot;https://macrumors.com&quot;&gt;MacRumors&lt;/a&gt;, which is a website
+with Apple news and, in my opinion, is the fairest and has the highest journalistic integrity of the mainstream Apple
+news aggregators.&lt;/p&gt;
+
+&lt;h1 id=&quot;1-now-lower-end-ipad&quot;&gt;1. Now Lower-End iPad&lt;/h1&gt;
+&lt;p&gt;Apple released a new lower-end iPad. It’s replacing the iPad Air 2, which has become a bit outdated. Most notably, in my
+opinion, its price point has dropped from $399 to $329, making it Apple’s cheapest tablet offering. It’s got a few minor
+technical updates. It’s running the new(er) A9 chip, which is a substantial improvement from the previous A8X. However,
+it’s notable that it’s not using the A9X chips the iPad Pros use, and this is probably one of the main reasons for the
+price drop. It’s also got a brighter display, and is about an ounce heavier (32 grams). If you want an iPad, now is a
+good time to buy, thanks to the price drop.&lt;/p&gt;
+
+&lt;h1 id=&quot;2-product-red-iphone-7&quot;&gt;2. (PRODUCT) RED iPhone 7&lt;/h1&gt;
+&lt;p&gt;The iPhone now comes in a bright red. Some of the proceeds from this product goes to an organization that fights to
+prevent and spread awareness about AIDS in some African countries. If you’re considering buying an iPhone 7, consider
+buying this color to support a charity.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-23/red-iphone.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;3-clips-app&quot;&gt;3. Clips App&lt;/h1&gt;
+&lt;p&gt;Apple is releasing a new app that allows users to make and edit videos, to easily and quickly make smooth, good-looking
+videos straight from your phone. This app looks pretty cool, and I’m really looking forward to playing with it once it’s
+released if it’s free.&lt;/p&gt;
+
+&lt;h1 id=&quot;4-apple-watch-bands&quot;&gt;4. Apple Watch Bands&lt;/h1&gt;
+&lt;p&gt;I don’t really care about these, but since it was part of the press release, I’ll mention it. Apple released a few new
+ones, as they do seasonally. I like the look of some of them, but will not be buying any.&lt;/p&gt;
+
+&lt;h1 id=&quot;in-closing&quot;&gt;In Closing&lt;/h1&gt;
+&lt;p&gt;This was kind of a simple, quick press release by Apple for a few minor things. However, they’re expected to hold an
+event in April to announce new iPad Pros, which will be interesting.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Mar 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2017/03/23/Apple-Press-Release-Coverage.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/23/Apple-Press-Release-Coverage.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Automatically Adding Screenshots to Photos in MacOS</title>
@@ -1168,52 +1210,6 @@ big bucks, I think the new MacBook Pro is a fine choice.&lt;/p&gt;
         <pubDate>Sat, 12 Nov 2016 00:00:00 -0600</pubDate>
         <link>http://localhost:4000/2016/11/12/2016-Macbook-Pro-Impressions.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/11/12/2016-Macbook-Pro-Impressions.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to use Avahi to advertise an HTTP service</title>
-        <description>&lt;p&gt;This is a simple guide to how to set up avahi to advertise an HTTP service that a web browser (in this case, Safari’s Bonjour) can detect and hook into.&lt;/p&gt;
-
-&lt;p&gt;Background: This is running on a server running FreeBSD 10.3.0. Avahi was installed using pkg and set up with the default configuration.
-It is used largely as a sandbox for experimenting, as well as being a media/file server and a light webserver.
-Its capacity as a media server is fulfilled using &lt;a href=&quot;https://www.plex.tv&quot;&gt;Plex&lt;/a&gt;, so I want to advertise the existence of the Plex server for easy use.&lt;/p&gt;
-
-&lt;p&gt;First, install avahi with the package manager of your choice. In the case of FreeBSD and pkg, &lt;code class=&quot;highlighter-rouge&quot;&gt;pkg install avahi -y&lt;/code&gt;.
-If using FreeBSD, you’ll need to enable the service by adding &lt;code class=&quot;highlighter-rouge&quot;&gt;avahi_daemon_enable=&quot;YES&quot;&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/rc.conf&lt;/code&gt;.
-In GNU/Linux distros, this is typically not required.
-The avahi service can now be started/stopped/restarted with &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo service avahi-daemon &amp;lt;start/stop/restart&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Next, find the avahi services directory. With my installation, it is located in &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/etc/avahi/services&lt;/code&gt;.
-On other GNU/Linux distros, it may also be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/avahi/services&lt;/code&gt;.
-In the services directory, you will likely see some default services aleady set up.
-For example, I already had &lt;code class=&quot;highlighter-rouge&quot;&gt;sftp-ssh.service&lt;/code&gt; amd &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh.service&lt;/code&gt; in mine.&lt;/p&gt;
-
-&lt;p&gt;Create a new file called &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;your-service&amp;gt;.service&lt;/code&gt;. In my case, this is &lt;code class=&quot;highlighter-rouge&quot;&gt;plex.service&lt;/code&gt;.
-Within that file, add the following (which I shamelessly stole most of from &lt;a href=&quot;http://holyarmy.org/2008/01/advertising-linux-services-via-avahibonjour/&quot;&gt;here&lt;/a&gt;):&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; standalone='no'?&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--*-nxml-*--&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE service-group SYSTEM &quot;avahi-service.dtd&quot;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;service-group&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;name&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;replace-wildcards=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;yes&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;%h &lt;span class=&quot;nt&quot;&gt;&amp;lt;YOUR_HTTP_SERVICE&amp;gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;service&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;_http._tcp&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;port&amp;gt;&amp;lt;YOUR_PORT&amp;gt;&amp;lt;/port&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/service-group&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now, restart avahi with the command &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo service avahi-daemon restart&lt;/code&gt;.
-The new service will now be viewable via bonjour clients, such as Safari and dns-sd (see below).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2016-09-26-avahi-in-safari.png&quot; alt=&quot;Avahi-Safari&quot; /&gt;
-&lt;img src=&quot;/files/images/posts/2016-09-26-avahi-in-terminal.png&quot; alt=&quot;Avahi-dns-sd&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 26 Sep 2016 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2016/09/26/Avahi-HTTP-Service.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/26/Avahi-HTTP-Service.html</guid>
         
         
       </item>
