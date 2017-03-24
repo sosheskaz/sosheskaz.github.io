@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to Secure Your Online Life
-author: Eric Miller
+author: Eric Millerw
 ---
 
 Have an online stalker who you're worried might hack your account? Have sensitive materials in your accounts or computer
@@ -46,11 +46,12 @@ However, password managers have one important downfall: if your master password 
 
 Typically, this is a service you have to turn on in the web service you're looking at. Usually it works by sending you a text with a one-time code that you can use to log in, but there are other solutions.
 
-I recommend [Authy](https://www.authy.com) as your "one-stop-shop" for this, as it works with a lot of websites, won't fill up your text inbox, and works on iOS, Android, and Desktop. When setting up two-factor authentication on a website, look for "Google Authenticator". It'll give you a QR code - just scan it, and it's set up! Note that some sites only support text for authentication, and not Google Authenticator.
+I recommend <a href="https://www.authy.com">Authy</a> as your "one-stop-shop" for this, as it works with a lot of websites, won't fill up your text inbox, and works on iOS, Android, and Desktop. When setting up two-factor authentication on a website, look for "Google Authenticator". It'll give you a QR code - just scan it, and it's set up! Note that some sites only support text for authentication, and not Google Authenticator.
 
 You can use this for LastPass, and now in order for someone to get into your account, it makes it *very* difficult to break into your account.
 
 Note: Apple and Microsoft have their own ways for doing this for their accounts, that are in some ways more convenient and in some ways less so.
+You should definitely use these, as these are likely some of your most important accounts.
 </div>
 
 # Step 3. Full Disk Encryption

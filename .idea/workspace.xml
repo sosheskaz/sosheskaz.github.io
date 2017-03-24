@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cde275b-8312-4d03-a8d9-76bf03e37703" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2017-03-23-Apple-Press-Release-Coverage.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/about/index.html" afterPath="$PROJECT_DIR$/site/about/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2017-01-17-How-to-Secure-Your-Online-Life.md" afterPath="$PROJECT_DIR$/_posts/2017-01-17-How-to-Secure-Your-Online-Life.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/2017/01/17/How-to-Secure-Your-Online-Life.html" afterPath="$PROJECT_DIR$/site/2017/01/17/How-to-Secure-Your-Online-Life.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/feed.xml" afterPath="$PROJECT_DIR$/site/feed.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/index.html" afterPath="$PROJECT_DIR$/site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/posts/index.html" afterPath="$PROJECT_DIR$/site/posts/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/posts/How-to-Secure-Your-Online-Life/index.html" afterPath="$PROJECT_DIR$/site/posts/How-to-Secure-Your-Online-Life/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,10 +23,13 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="2017-03-19-MacOS-Screenshots-AddToPhotos.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2017-03-19-MacOS-Screenshots-AddToPhotos.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="119" column="55" lean-forward="false" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="55" />
-              <folding />
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -45,19 +46,35 @@
       </file>
       <file leaf-file-name="about.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2017-03-23-Apple-Press-Release-Coverage.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2017-03-23-Apple-Press-Release-Coverage.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2017-03-23-Apple-Press-Release-Coverage.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="230">
+                <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017-01-17-How-to-Secure-Your-Online-Life.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2017-01-17-How-to-Secure-Your-Online-Life.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="368">
+              <caret line="58" column="66" lean-forward="false" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -115,6 +132,7 @@
       <find>06</find>
       <find>XCode m</find>
       <find>./runAll</find>
+      <find>Authy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,7 +151,6 @@
         <option value="$PROJECT_DIR$/_posts/2017-02-14-Sunrise-Photos.md" />
         <option value="$PROJECT_DIR$/_posts/2017-01-27-Apple-Watch-Review.md" />
         <option value="$PROJECT_DIR$/_posts/2017-01-20-Ethical-Considerations-In-Advanced-Robotics-and-AI.md" />
-        <option value="$PROJECT_DIR$/_posts/2017-01-17-How-to-Secure-Your-Online-Life.md" />
         <option value="$PROJECT_DIR$/_posts/2016-11-12-2016-Macbook-Pro-Impressions.md" />
         <option value="$PROJECT_DIR$/_posts/2016-09-26-Avahi-HTTP-Service.md" />
         <option value="$PROJECT_DIR$/_layouts/post.html" />
@@ -150,6 +167,7 @@
         <option value="$PROJECT_DIR$/css/main.scss" />
         <option value="$PROJECT_DIR$/files/images/posts/2017-03-23-Apple-Press-Release-Coverage.md" />
         <option value="$PROJECT_DIR$/_posts/2017-03-23-Apple-Press-Release-Coverage.md" />
+        <option value="$PROJECT_DIR$/_posts/2017-01-17-How-to-Secure-Your-Online-Life.md" />
       </list>
     </option>
   </component>
@@ -183,7 +201,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,6 +355,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,14 +486,17 @@
       <workItem from="1489956490075" duration="5044000" />
       <workItem from="1490302606914" duration="1687000" />
       <workItem from="1490304566402" duration="189000" />
+      <workItem from="1490385526562" duration="14000" />
+      <workItem from="1490385560620" duration="190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39511000" />
+    <option name="totallyTimeSpent" value="39715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -646,13 +667,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-01-20-Ethical-Considerations-In-Advanced-Robotics-and-AI.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2017-01-17-How-to-Secure-Your-Online-Life.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2016-11-12-2016-Macbook-Pro-Impressions.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -742,7 +756,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/about.md">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -755,7 +778,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-03-19-MacOS-Screenshots-AddToPhotos.md">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="1785">
           <caret line="119" column="55" lean-forward="false" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="55" />
           <folding />
@@ -763,9 +795,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-03-23-Apple-Press-Release-Coverage.md">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="230">
+            <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-01-17-How-to-Secure-Your-Online-Life.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="58" column="66" lean-forward="false" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
           <folding />
         </state>
       </provider>
