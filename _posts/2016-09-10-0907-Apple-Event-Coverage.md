@@ -2,6 +2,7 @@
 layout: post
 title: 09/07 Apple Event Coverage
 author: Eric Miller
+topic: Apple
 ---
 So, I'll do my regular coverage of the Apple event now that I've sat on it a few days, broken into relevant subsections:
 

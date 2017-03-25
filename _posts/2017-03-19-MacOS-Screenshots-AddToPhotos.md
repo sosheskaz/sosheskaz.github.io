@@ -2,6 +2,7 @@
 layout: post
 title: Automatically Adding Screenshots to Photos in MacOS
 author: Eric Miller
+topic: Tutorial
 ---
 
 I take a lot of screenshots. I use them for my website, for memory, for laughs, and a lot more. However,

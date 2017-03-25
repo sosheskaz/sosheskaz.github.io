@@ -2,6 +2,7 @@
 layout: post
 title: Excerpts from Apple's Review Guidelines
 author: Eric Miller
+topic: Apple
 ---
 
 From this document: [https://developer.apple.com/app-store/review/guidelines/](https://developer.apple.com/app-store/review/guidelines/)

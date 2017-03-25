@@ -2,6 +2,7 @@
 layout: post
 title: 2016 MacBook Pro Impressions
 author: Eric Miller
+topic: Apple
 ---
 
 # Introduction

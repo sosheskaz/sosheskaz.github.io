@@ -2,6 +2,7 @@
 layout: post
 title: Ethical Considerations in Advanced Robotics and AI
 author: Eric Miller
+topic: Technology
 ---
 
 Advanced robotics and Artificial Intelligence is a very new area of scientific and sociological discussion. There wind up being a lot of problems with these kinds of products as they become increasingly complex, and when something goes wrong it's not always clear whether responsibility lies with the user or with the manufacturer. I was inspired by [this article](http://www.theverge.com/2017/1/19/14322334/robot-electronic-persons-eu-report-liability-civil-suits), where the author discussed

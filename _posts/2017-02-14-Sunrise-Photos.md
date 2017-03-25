@@ -2,6 +2,7 @@
 layout: post
 title: Photos of the Sunrise
 author: Eric Miller
+topic: Photos
 ---
 
 A few nights ago, I was up all night working. Around 6:30 AM I got done, and my watch told me it was less

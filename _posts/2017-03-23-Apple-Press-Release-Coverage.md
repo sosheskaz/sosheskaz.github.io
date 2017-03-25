@@ -1,8 +1,8 @@
 ---
 title: March 21 2017 Apple Press Release Coverage
 layout: post
-
 author: Eric Miller
+topic: Apple
 ---
 
 Apple put out a press release on Monday, announcing a few minor new products. I'm here to cover what they did, and what
