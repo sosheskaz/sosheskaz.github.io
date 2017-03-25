@@ -2,7 +2,8 @@
 layout: post
 title: Apple Watch Review
 author: Eric Miller
-topic: Review
+category: Review
+tags: Apple watch
 ---
 
 So, I've recently come into posession of an Apple Watch. 

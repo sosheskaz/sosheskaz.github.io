@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 24 Mar 2017 15:02:04 -0500</pubDate>
-    <lastBuildDate>Fri, 24 Mar 2017 15:02:04 -0500</lastBuildDate>
+    <pubDate>Sat, 25 Mar 2017 15:23:46 -0500</pubDate>
+    <lastBuildDate>Sat, 25 Mar 2017 15:23:46 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -46,9 +46,11 @@ ones, as they do seasonally. I like the look of some of them, but will not be bu
 event in April to announce new iPad Pros, which will be interesting.&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 Mar 2017 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2017/03/23/Apple-Press-Release-Coverage.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/23/Apple-Press-Release-Coverage.html</guid>
+        <link>http://localhost:4000/apple/2017/03/23/Apple-Press-Release-Coverage.html</link>
+        <guid isPermaLink="true">http://localhost:4000/apple/2017/03/23/Apple-Press-Release-Coverage.html</guid>
         
+        
+        <category>Apple</category>
         
       </item>
     
@@ -174,9 +176,13 @@ folder and script are both checked as well, just like in mine.&lt;/p&gt;
 enabled.)&lt;/p&gt;
 </description>
         <pubDate>Sun, 19 Mar 2017 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2017/03/19/MacOS-Screenshots-AddToPhotos.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/19/MacOS-Screenshots-AddToPhotos.html</guid>
+        <link>http://localhost:4000/tutorial/2017/03/19/MacOS-Screenshots-AddToPhotos.html</link>
+        <guid isPermaLink="true">http://localhost:4000/tutorial/2017/03/19/MacOS-Screenshots-AddToPhotos.html</guid>
         
+        <category>Apple</category>
+        
+        
+        <category>Tutorial</category>
         
       </item>
     
@@ -300,9 +306,11 @@ the points I’ve made here.&lt;/p&gt;
 &lt;p&gt;Eric&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Mar 2017 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2017/03/16/iPad-USB-C.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/16/iPad-USB-C.html</guid>
+        <link>http://localhost:4000/apple/2017/03/16/iPad-USB-C.html</link>
+        <guid isPermaLink="true">http://localhost:4000/apple/2017/03/16/iPad-USB-C.html</guid>
         
+        
+        <category>Apple</category>
         
       </item>
     
@@ -559,9 +567,15 @@ these easier.&lt;/p&gt;
 &lt;p&gt;You’re set up! Congratulations! 🎉&lt;/p&gt;
 </description>
         <pubDate>Tue, 07 Mar 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2017/03/07/XCode-CI-Article.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/03/07/XCode-CI-Article.html</guid>
+        <link>http://localhost:4000/tutorial/2017/03/07/XCode-CI-Article.html</link>
+        <guid isPermaLink="true">http://localhost:4000/tutorial/2017/03/07/XCode-CI-Article.html</guid>
         
+        <category>Apple,</category>
+        
+        <category>programming</category>
+        
+        
+        <category>Tutorial</category>
         
       </item>
     
@@ -682,9 +696,15 @@ learning it, it’s important to keep an open mind, and to give Swift’s way of
 I did.&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 Feb 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2017/02/23/3-Things-About-Swift.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/23/3-Things-About-Swift.html</guid>
+        <link>http://localhost:4000/apple/2017/02/23/3-Things-About-Swift.html</link>
+        <guid isPermaLink="true">http://localhost:4000/apple/2017/02/23/3-Things-About-Swift.html</guid>
         
+        <category>swift</category>
+        
+        <category>programming</category>
+        
+        
+        <category>Apple</category>
         
       </item>
     
@@ -750,9 +770,11 @@ reflect this, but the movement of the cars add a nice dimension to the early-mor
 &lt;/p&gt;
 </description>
         <pubDate>Tue, 14 Feb 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2017/02/14/Sunrise-Photos.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/14/Sunrise-Photos.html</guid>
+        <link>http://localhost:4000/photos/2017/02/14/Sunrise-Photos.html</link>
+        <guid isPermaLink="true">http://localhost:4000/photos/2017/02/14/Sunrise-Photos.html</guid>
         
+        
+        <category>Photos</category>
         
       </item>
     
@@ -933,9 +955,15 @@ refurbished Apple computer), their refurbishing program is just as
 good as brand new.&lt;/p&gt;
 </description>
         <pubDate>Fri, 27 Jan 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2017/01/27/Apple-Watch-Review.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/27/Apple-Watch-Review.html</guid>
+        <link>http://localhost:4000/review/2017/01/27/Apple-Watch-Review.html</link>
+        <guid isPermaLink="true">http://localhost:4000/review/2017/01/27/Apple-Watch-Review.html</guid>
         
+        <category>Apple</category>
+        
+        <category>watch</category>
+        
+        
+        <category>Review</category>
         
       </item>
     
@@ -990,9 +1018,13 @@ good as brand new.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 20 Jan 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2017/01/20/Ethical-Considerations-In-Advanced-Robotics-and-AI.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/20/Ethical-Considerations-In-Advanced-Robotics-and-AI.html</guid>
+        <link>http://localhost:4000/technology/2017/01/20/Ethical-Considerations-In-Advanced-Robotics-and-AI.html</link>
+        <guid isPermaLink="true">http://localhost:4000/technology/2017/01/20/Ethical-Considerations-In-Advanced-Robotics-and-AI.html</guid>
         
+        <category>philosophy</category>
+        
+        
+        <category>Technology</category>
         
       </item>
     
@@ -1051,6 +1083,7 @@ I recommend &lt;a href=&quot;https://www.authy.com&quot;&gt;Authy&lt;/a&gt; as y
 You can use this for LastPass, and now in order for someone to get into your account, it makes it *very* difficult to break into your account.
 
 Note: Apple and Microsoft have their own ways for doing this for their accounts, that are in some ways more convenient and in some ways less so.
+You should definitely use these, as these are likely some of your most important accounts.
 &lt;/div&gt;
 
 &lt;h1 id=&quot;step-3-full-disk-encryption&quot;&gt;Step 3. Full Disk Encryption&lt;/h1&gt;
@@ -1067,9 +1100,11 @@ Windows does this with BitLocker, and MacOS does this with FileVault. Both are e
 &lt;p&gt;Congrats! With step 1 and 2, and proper diligence, your digital life is now locked down tight. If you followed step 3 as well, you’re Fort Knox 🎉.&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Jan 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2017/01/17/How-to-Secure-Your-Online-Life.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/17/How-to-Secure-Your-Online-Life.html</guid>
+        <link>http://localhost:4000/security/2017/01/17/How-to-Secure-Your-Online-Life.html</link>
+        <guid isPermaLink="true">http://localhost:4000/security/2017/01/17/How-to-Secure-Your-Online-Life.html</guid>
         
+        
+        <category>Security</category>
         
       </item>
     
@@ -1208,9 +1243,11 @@ your needs, don’t fix what ain’t broke. On the other hand, if you need a new
 big bucks, I think the new MacBook Pro is a fine choice.&lt;/p&gt;
 </description>
         <pubDate>Sat, 12 Nov 2016 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/2016/11/12/2016-Macbook-Pro-Impressions.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/12/2016-Macbook-Pro-Impressions.html</guid>
+        <link>http://localhost:4000/apple/2016/11/12/2016-Macbook-Pro-Impressions.html</link>
+        <guid isPermaLink="true">http://localhost:4000/apple/2016/11/12/2016-Macbook-Pro-Impressions.html</guid>
         
+        
+        <category>Apple</category>
         
       </item>
     

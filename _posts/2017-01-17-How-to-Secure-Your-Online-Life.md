@@ -2,7 +2,7 @@
 layout: post
 title: How to Secure Your Online Life
 author: Eric Miller
-topic: Security
+category: Security
 ---
 
 Have an online stalker who you're worried might hack your account? Have sensitive materials in your accounts or computer

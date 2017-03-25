@@ -3,6 +3,8 @@ layout: post
 title: 3 Things I Like About Swift
 author: Eric Miller
 topic: Programming
+category: Apple
+tags: swift programming
 ---
 
 

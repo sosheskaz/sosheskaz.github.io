@@ -3,7 +3,8 @@ layout: post
 title: Setting up Simple Continuous Integration for iOS Development
 author: Eric Miller
 editor: Elise Penn
-topic: Tutorial
+category: Tutorial
+tags: Apple, programming
 ---
 
 Setting up reliable continuous integration (CI) for XCode can be a nightmare. I personally wrestled with the
