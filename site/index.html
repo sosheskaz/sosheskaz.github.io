@@ -112,44 +112,111 @@
 <div id="page-content-wrapper" class="content col-md-10">
     <div class="home">
 
-    <h1 class="post-title"><a href="/apple/2017/03/23/Apple-Press-Release-Coverage.html">March 21 2017 Apple Press Release Coverage</a></h1>
+    <h1 class="post-title"><a href="/tutorial/2017/03/28/FreeBSD-rcd-Setup.html">How to Make a Basic rc.d Script in FreeBSD</a></h1>
     <div>
-        <p>Apple put out a press release on Monday, announcing a few minor new products. I’m here to cover what they did, and what
-I think of it. I’ll also say that I’m aggregating a lot from <a href="https://macrumors.com">MacRumors</a>, which is a website
-with Apple news and, in my opinion, is the fairest and has the highest journalistic integrity of the mainstream Apple
-news aggregators.</p>
+        <p>Recently, I wanted to make an rc.d script for my FreeBSD server, in order to include TeamCity in the 
+<code class="highlighter-rouge">service</code> interface, which in FreeBSD is linked to the rc.d system, as opposed to Linux’s systemd system.
+I was unable to find an easy tutorial, until I stumbled upon a Minecraft forum where I found information on
+a suitable script. The rc.d system is actually rather nice to work with, and in my opinion, confers more
+power to the user than does systemd. This is largely thanks to the <code class="highlighter-rouge">/etc/rc.conf</code> file. That said, writing
+an rc.d script is relatively easy once you understand how to do it.</p>
 
-<h1 id="1-now-lower-end-ipad">1. Now Lower-End iPad</h1>
-<p>Apple released a new lower-end iPad. It’s replacing the iPad Air 2, which has become a bit outdated. Most notably, in my
-opinion, its price point has dropped from $399 to $329, making it Apple’s cheapest tablet offering. It’s got a few minor
-technical updates. It’s running the new(er) A9 chip, which is a substantial improvement from the previous A8X. However,
-it’s notable that it’s not using the A9X chips the iPad Pros use, and this is probably one of the main reasons for the
-price drop. It’s also got a brighter display, and is about an ounce heavier (32 grams). If you want an iPad, now is a
-good time to buy, thanks to the price drop.</p>
+<p>The first step is to set up the script that tells <code class="highlighter-rouge">service</code> how to understand what to do. 
+For the purpose of this tutorial, I’ll call the service <code class="highlighter-rouge">myservice</code>. The first thing
+to do is put a script in the <code class="highlighter-rouge">/usr/local/etc/rc.d/</code> folder. Name this file the name of your service, in
+this case <code class="highlighter-rouge">myservice</code>. This means the absolute path of this file is <code class="highlighter-rouge">/usr/local/etc/rc.d/myservice</code>.
+Finally, make this file executable using <code class="highlighter-rouge">chmod +x /usr/local/etc/rc.d/myservice</code>.</p>
 
-<h1 id="2-product-red-iphone-7">2. (PRODUCT) RED iPhone 7</h1>
-<p>The iPhone now comes in a bright red. Some of the proceeds from this product goes to an organization that fights to
-prevent and spread awareness about AIDS in some African countries. If you’re considering buying an iPhone 7, consider
-buying this color to support a charity.</p>
+<p>Now, edit the file. The first step is the hashbang, which should be put on the first line. This lets the 
+program know how to start the script independently. Your file should look like this:</p>
 
-<p><img src="/files/images/posts/2017-03-23/red-iphone.png" alt="" /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+</code></pre>
+</div>
 
-<h1 id="3-clips-app">3. Clips App</h1>
-<p>Apple is releasing a new app that allows users to make and edit videos, to easily and quickly make smooth, good-looking
-videos straight from your phone. This app looks pretty cool, and I’m really looking forward to playing with it once it’s
-released if it’s free.</p>
+<p>Next, we need to tell it how to use the rc subrouting. This is basically just boilerplate; add 
+<code class="highlighter-rouge">. /etc/rc.subr</code> to the file. Your file will now look like this:</p>
 
-<h1 id="4-apple-watch-bands">4. Apple Watch Bands</h1>
-<p>I don’t really care about these, but since it was part of the press release, I’ll mention it. Apple released a few new
-ones, as they do seasonally. I like the look of some of them, but will not be buying any.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
 
-<h1 id="in-closing">In Closing</h1>
-<p>This was kind of a simple, quick press release by Apple for a few minor things. However, they’re expected to hold an
-event in April to announce new iPad Pros, which will be interesting.</p>
+. /etc/rc.subr
+</code></pre>
+</div>
+
+<p>Now, it’s time to put in some metadata so that rc.d understands some basic information about this service.
+Again, this is, to some extent, boilerplate to work with the rc.d system.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>name="myservice" # How the service will be invoked from service
+rcvar="${name}_enable" # The variable in rc.conf that will allow this service to run
+load_rc_config $name # Loads the config file, if relevant.
+</code></pre>
+</div>
+
+<p>Okay, this script is set up to work with the rc.d system. Now, we need to tell it what to do. The first
+thing is to set up any environment variables your service may need. You may or may not need to do this,
+depending on the nature of your service. Let’s say <code class="highlighter-rouge">myservice</code> needs Java to run, so we need to add the
+<code class="highlighter-rouge">JRE_HOME</code> environment variable.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export JRE_HOME="/usr/local"
+</code></pre>
+</div>
+
+<p>Excellent! Now it’s time to tell service what to do when it uses particular commands. In this example, I’ll
+say we’re using 3 commands: start, stop, and status. To do this, we set up a variable for each command,
+where the value is the <code class="highlighter-rouge">sh</code> code to run. For complicated setups, you’re best off setting this up to be an
+independent file, or initializing these values as functions rather than variables. For the sake of
+simplicity in the example, I’m going to use quick <code class="highlighter-rouge">sh</code> one-liners. For reference, the variable names we use
+are <code class="highlighter-rouge">start_cmd</code>, <code class="highlighter-rouge">stop_cmd</code>, and <code class="highlighter-rouge">status_cmd</code>. Also note, in this example I’m assuming that <code class="highlighter-rouge">myservice</code>
+starts as a daemon, and stores its PID in a file called <code class="highlighter-rouge">myservice.pid</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pidfile="/home/ericmiller/myservice/myservice.pid"
+start_cmd="/home/ericmiller/myservice/start ; echo MyService is now running on PID $(cat $pidfile)"
+stop_cmd="/home/ericmiller/myservice/stop ; echo MyService is not running. ; rm $(cat $pidfile)"
+status_cmd="if [ -e $pidfile ]; then echo MyService is running on PID $(cat $pidfile). ; return 1; fi; echo MyService is not running. ; return 0"
+</code></pre>
+</div>
+
+<p>Okay, we’re almost done. Now we just need to tell rc.d to run the appropriate command based on the user’s
+input. This is done with the following line:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>run_rc_command "$1"
+</code></pre>
+</div>
+
+<p>Okay! That’s all you need for the script. Here’s what our <code class="highlighter-rouge">/usr/local/etc/rc.d/myservice</code> script looks like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+. /etc/rc.subr
+
+<span class="nv">name</span><span class="o">=</span><span class="s2">"myservice"</span> <span class="c"># How the service will be invoked from service</span>
+<span class="nv">rcvar</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">name</span><span class="k">}</span><span class="s2">_enable"</span> <span class="c"># The variable in rc.conf that will allow this service to run</span>
+load_rc_config <span class="nv">$name</span> <span class="c"># Loads the config file, if relevant.</span>
+
+<span class="nb">export </span><span class="nv">JRE_HOME</span><span class="o">=</span><span class="s2">"/usr/local"</span>
+
+<span class="nv">pidfile</span><span class="o">=</span><span class="s2">"/home/ericmiller/myservice/myservice.pid"</span>
+<span class="nv">start_cmd</span><span class="o">=</span><span class="s2">"/home/ericmiller/myservice/start ; echo MyService is now running on PID </span><span class="k">$(</span>cat <span class="nv">$pidfile</span><span class="k">)</span><span class="s2">"</span>
+<span class="nv">stop_cmd</span><span class="o">=</span><span class="s2">"/home/ericmiller/myservice/stop ; echo MyService is not running. ; rm </span><span class="k">$(</span>cat <span class="nv">$pidfile</span><span class="k">)</span><span class="s2">"</span>
+<span class="nv">status_cmd</span><span class="o">=</span><span class="s2">"if [ -e </span><span class="nv">$pidfile</span><span class="s2"> ]; then echo MyService is running on PID </span><span class="k">$(</span>cat <span class="nv">$pidfile</span><span class="k">)</span><span class="s2">. ; return 1; fi; echo MyService is not running. ; return 0"</span>
+
+run_rc_command <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>Now, there’s one last step. If you try to run the service with <code class="highlighter-rouge">service start myservice</code>, it’ll give you
+a message telling you that you need to enable it in <code class="highlighter-rouge">/etc/rc.conf</code>. You can do this with one simple command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo myservice_enable="YES" &gt;&gt; /etc/rc.conf
+</code></pre>
+</div>
+
+<p>Congrats! Your rc.d script is set up and ready to go.</p>
+
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/apple/2017/03/23/Apple-Press-Release-Coverage.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/tutorial/2017/03/28/FreeBSD-rcd-Setup.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>
