@@ -1,5 +1,6 @@
 ---
 title: How to Make a Basic rc.d Script in FreeBSD
+layout: post
 author: Eric Miller
 category: Tutorial
 tags: FreeBSD
