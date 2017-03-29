@@ -1,4 +1,5 @@
 ---
+layout: post
 title: On the AES Encryption Algorithm
 author: Eric Miller
 category: Security
