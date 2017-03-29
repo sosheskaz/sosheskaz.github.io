@@ -20,6 +20,7 @@ As with any cryptographic algorithm or service, it’s important to analyze pote
 
 
 Sources:
+
 [http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf](https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html)
 
 [http://csrc.nist.gov/archive/aes/index2.html](https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html)
