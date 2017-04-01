@@ -92,7 +92,7 @@ of the TeleCom industry. If you have evidence otherwise, feel free to contact me
 ### 1 ISP
 ![Only 1 Provider](/files/images/posts/2017-03-31/1-provider.jpg)
 
-### 2-13 ISPs
+### 2 or more ISPs
 ![2-13 Providers](/files/images/posts/2017-03-31/2-or-more-providers.jpg)
 
 ### 4 or more ISPs
