@@ -6,9 +6,158 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Mar 2017 13:53:46 -0500</pubDate>
-    <lastBuildDate>Wed, 29 Mar 2017 13:53:46 -0500</lastBuildDate>
+    <pubDate>Fri, 31 Mar 2017 19:39:45 -0500</pubDate>
+    <lastBuildDate>Fri, 31 Mar 2017 19:39:45 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>On Internet Privacy - 31 March 2017</title>
+        <description>&lt;h1 id=&quot;prologue&quot;&gt;Prologue&lt;/h1&gt;
+&lt;p&gt;I don’t like to post or write about politics. I’m much more interested in education and exploration of
+the kinds of topics I cover, and carefree writing. That said, I also feel that I can’t ignore it when the
+world of politics steps into the world of computer science; I would be doing a disservice to this website,
+to my (small) readership, and to myself if I ignore it and don’t speak up and voice my opinion.&lt;/p&gt;
+
+&lt;p&gt;If you’re an employer or potential employer, have a personal relationship with me, or are sensitive about
+these politics, you may want to skip this post unless you can’t divorce your personal opinions on politics 
+from the technical insight and the opinions I state here.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-situation&quot;&gt;The Situation&lt;/h1&gt;
+
+&lt;p&gt;As you may be aware, there is pending legislation surrounding individuals’ privacy as it pertains to 
+internet service providers. The legislation will most likely be enacted into law at this point, and while
+it’s certainly possible that it won’t pass, it most likely will. Even if it doesn’t, it will almost
+definitely come up again.&lt;/p&gt;
+
+&lt;p&gt;So what is this legislation? It’s essentially just rolling back some interpretations of the law that were
+held during the previous presidency. These interpretations put some restrictions on what your ISP can do
+with the information collected on you. The collection of this information is natural, in the same way that
+it’s natural that your doctor keeps your medical records. The question addressed by this legislation is
+what your ISP can do with that information. Naturally, it’s nowhere near as sensitive as medical records,
+and there’s no real substantial regulation or definite guidelines surrounding what can be done with this
+information, in large part due to how young the internet is. In particular, this legislation aims to void
+the interpretations of existing law (originally intended for &lt;em&gt;phone&lt;/em&gt; communications) and to loosen up the
+restrictions TeleCom companies face regarding what they can do with their data.&lt;/p&gt;
+
+&lt;p&gt;Currently, your ISP can use your data for some things, ranging from improving your service (some do this
+more than others… &lt;em&gt;Comcast&lt;/em&gt;.) to personalizing ads. Yes, like Facebook and Google do. Personally, I
+don’t have an enormous issue with this in pure principle, because Facebook and Google already do this, 
+and at this point companies using your data to personalize advertisements and to sell to advertisers is 
+a given. The &lt;strong&gt;big issue&lt;/strong&gt; that comes from this is that your ISP has records of &lt;em&gt;every&lt;/em&gt; website you visit,
+every server you connect to, and can even tell when you’re compulsively reading Cracked article after
+Cracked article at 3AM because you had too much coffee and now you can’t sleep. Now, they can’t
+necessarily see &lt;em&gt;what&lt;/em&gt; you’re reading, just who you’re reading it from (if you’re not using encryption,
+i.e. HTTPS, they can absolutely see it). But that can still tell you a lot, and frankly we don’t really
+know what will happen once ISPs are given this much free reign with personal data. What we do know is
+that it will lead to repositories of data - linked to people, locations, addresses, and computers - the
+likes of which has never been seen before. Predictably, privacy advocates see this as a bad thing&lt;/p&gt;
+
+&lt;h2 id=&quot;the-sides&quot;&gt;The Sides&lt;/h2&gt;
+&lt;p&gt;There are, essentially, two sides in this debate. The first is the more powerful, the TeleCom companies.
+The second is privacy advocates.&lt;/p&gt;
+
+&lt;p&gt;TeleCom companies, of course, want to maximize their profit. The existing regulations are, supposedly (I
+am not disputing this here, I am not a lawyer), complex and difficult to understand. This is likely true,
+and if it is, merits change. They also restrict what these companies can do with this information. They,
+no doubt, will sell it (primarily to advertisers) for additional profit. In theory this will be passed on
+to consumers in the form of savings on service.&lt;/p&gt;
+
+&lt;p&gt;Privacy advocates, on the other hand, take a somewhat draconian stance in the opposite directions. Most
+would probably like for all consumers’ data to be fully private. Similarly to doctor-patient
+confidentiality, your ISP would only be able to use your information internally, and then only with
+people and processes that require it to provide better service to you. They would like similar 
+restrictions on sites like Facebook and Google, but honestly, that will never happen. In those cases,
+they’re more likely to advocate for ensuring that there’s as little information linking consumers and
+their data when their data is sold.&lt;/p&gt;
+
+&lt;p&gt;Many computer scientists are privacy advocates. That said, many also believe that big data collection and
+analysis is the way of the future, and that the privacy enjoyed in the last century is an antiquated idea.
+I sit somewhere in the middle, but I tend to agree with privacy advocates in most cases. But I also use
+Google and Facebook heavily, so I’m a hypocrite. Most of us are, at one level or another; protecting your
+privacy is getting harder and harder.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-quick-economics&quot;&gt;Some Quick Economics&lt;/h2&gt;
+&lt;p&gt;An &lt;em&gt;externality&lt;/em&gt; is the cost or benefit of a business or product that does not affect the owner. For
+example, a negative externality of a paper manufacturing plant is the drop in nearby property prices
+nearby due to the smell. This doesn’t affect the plant, but other people pay the price. There are two
+types of protections against negative externalities. The first is the free market. If a company is
+damaging the environment, you can vote with your wallet by taking your business elsewhere until they
+change their behavior. The second is government regulation. The government can step in, enacting laws
+and fines to encourage businesses to contain their negative effects.&lt;/p&gt;
+
+&lt;p&gt;Conservatives will argue that the first is the superior approach, and liberals will argue that the second
+is the correct approach. But whichever side you fall on, it’s hard to dispute that the first doesn’t
+apply in the situation if the driving force, competition, is not present. As it applies here, most people
+can’t or won’t very well go without internet service. In this case, depending on where you live, internet
+service will be at best an oligopoly, but most likely a monopoly. &lt;strong&gt;Most places in the country are
+serviced by a single ISP, and almost all have 3 or less.&lt;/strong&gt; That’s not competition. To make this point,
+I’ve prepared 3 maps, powered by &lt;a href=&quot;https://www.broadbandmap.gov&quot;&gt;BroadbandMap.gov&lt;/a&gt;. For this reason,
+government regulation is the only even mildly effective tool we have at controlling the externalities
+of the TeleCom industry. If you have evidence otherwise, feel free to contact me with the link above.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-isp&quot;&gt;1 ISP&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-31/1-provider.jpg&quot; alt=&quot;Only 1 Provider&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-13-isps&quot;&gt;2-13 ISPs&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-31/2-or-more-providers.jpg&quot; alt=&quot;2-13 Providers&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-or-more-isps&quot;&gt;4 or more ISPs&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-31/4-or-more-providers.jpg&quot; alt=&quot;4-13 Providers&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, there’s very little competition in broadband providers, and in most of the country, there
+is none. I think I’ve adequately made that point. As such, the free market cannot be counted on to provide
+sufficient alternatives when these companies decide to take certain actions.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-do-i-do&quot;&gt;What do I do?&lt;/h1&gt;
+&lt;p&gt;You may not care about your privacy - but many do. If you don’t, I encourage you to still consider
+advocating against this type of legislation, as those who do want to be protected should be. I’d encourage
+the reader to take action by donating to the &lt;a href=&quot;https://www.eff.org/&quot;&gt;Electronic Frontier Foundation&lt;/a&gt;, a 
+non-profit organization that aims to protect your rights in the Information Age.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-vpn&quot;&gt;1. VPN&lt;/h2&gt;
+
+&lt;p&gt;Now, once these are enacted, if you want to protect yourself, I’ll offer a few methods to do that. The
+first, and easiest (though not free) is to research and pay for a VPN service. This routes all your
+internet traffic through a third-party, where the price of membership includes the price of privacy. For
+more technical users, it may also be possible to host this yourself, using Amazon Web Services or another
+cloud computing provider - but I don’t know how cost-effective or how difficult this would be.&lt;/p&gt;
+
+&lt;h1 id=&quot;2-tor&quot;&gt;2. Tor&lt;/h1&gt;
+&lt;p&gt;Tor is a browser dedicated to anonymous browsing and evasion of censorship. Basically, using it lets you 
+get around any sort of censorship (I used it for this in my MPS days), is free, and can also be used to 
+access the “dark web” (though aside from being academically interesting, I don’t have much use for or
+recommend using). It is free.&lt;/p&gt;
+
+&lt;p&gt;It’s not perfect security-wise (if you remember a few years back, the drug marketplace The Silk Road was 
+busted) and while it’s far from perfect, unless you’re a drug kingpin, figuring out who you are is a LOT 
+of work for not much reward, and realistically, no one will bother.&lt;/p&gt;
+
+&lt;p&gt;Finally, I’ll cover some history of the Tor network. I know, it’s boring, but it can be important to 
+understand the context of a tool this important. It was created as an independent non-profit, with the
+main goals being internet privacy and censorship avoidance, especially for people living under oppressive
+government regimes. It took off after it was funded by various third parties, including the U.S.
+government and google. That said, it has maintained its independence and integrity.&lt;/p&gt;
+
+&lt;p&gt;There are various ways to use Tor. The easiest is the &lt;a href=&quot;&quot;&gt;Tor Browser&lt;/a&gt;, which is an internet browser that
+routes all of its traffic through the Tor network. For those more technically inclined, Tor can also be
+run through a socket on your computer, and route all of your traffic through a SOCKS proxy.&lt;/p&gt;
+
+&lt;h1 id=&quot;concluding&quot;&gt;Concluding&lt;/h1&gt;
+&lt;p&gt;I hope you’ve found this article interesting and/or useful, and found my conjecture to be reasonable. If
+you have any vitriol to direct at me, I invite you to visit the &lt;a href=&quot;/complaints/&quot;&gt;Complaints Department&lt;/a&gt;.
+If you enjoyed the article, please share with your friends and family so we can have a better informed
+world.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 31 Mar 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/privacy/2017/03/31/Internet-Privacy.html</link>
+        <guid isPermaLink="true">http://localhost:4000/privacy/2017/03/31/Internet-Privacy.html</guid>
+        
+        <category>politics</category>
+        
+        
+        <category>Privacy</category>
+        
+      </item>
     
       <item>
         <title>On the AES Encryption Algorithm</title>
@@ -24,11 +173,15 @@
 
 &lt;p&gt;As with any cryptographic algorithm or service, it’s important to analyze potential vulnerabilities and ultimately, the resources necessary to bypass it. From a mathematical standpoint, AES has proven to be a robust standard. Of course, the nature of software and computer science are fundamentally different. Over the years, various exploits and vulnerabilities have been found, but none that seriously called into question or impacted the overall security of the standard. While the mathematics have shown to be sound (although there may be mathematical vulnerabilities, there is no known way to “break” the algorithm), implementations and even more, users, can be vulnerable. Ignoring the dangers of social engineering, flaws in the implementation of the open AES standard could be vulnerable. Given that, at some point in the implementation, all of the data can be siphoned, the algorithm can be trusted only as much as the author. This is best indicated by the story of LavaBit, an encryption service that was federally mandated to install an exploit in their service, along with a gag order.&lt;/p&gt;
 
-&lt;p&gt;Sources:
-http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf
-http://csrc.nist.gov/archive/aes/index2.html
-http://www.jscape.com/blog/aes-encryption
-https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html&lt;/p&gt;
+&lt;p&gt;Sources:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html&quot;&gt;http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html&quot;&gt;http://csrc.nist.gov/archive/aes/index2.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html&quot;&gt;http://www.jscape.com/blog/aes-encryption&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html&quot;&gt;https://www.schneier.com/blog/archives/2012/03/can_the_nsa_bre.html&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 29 Mar 2017 00:00:00 -0500</pubDate>
@@ -1107,67 +1260,6 @@ good as brand new.&lt;/p&gt;
         
         
         <category>Review</category>
-        
-      </item>
-    
-      <item>
-        <title>Ethical Considerations in Advanced Robotics and AI</title>
-        <description>&lt;p&gt;Advanced robotics and Artificial Intelligence is a very new area of scientific and sociological discussion. There wind up being a lot of problems with these kinds of products as they become increasingly complex, and when something goes wrong it’s not always clear whether responsibility lies with the user or with the manufacturer. I was inspired by &lt;a href=&quot;http://www.theverge.com/2017/1/19/14322334/robot-electronic-persons-eu-report-liability-civil-suits&quot;&gt;this article&lt;/a&gt;, where the author discussed&lt;/p&gt;
-
-&lt;h1 id=&quot;important-terms&quot;&gt;Important Terms&lt;/h1&gt;
-&lt;p&gt;AI: Artificial Intelligence - A human-created entity that can respond to external stimuli in a way that is &lt;em&gt;comparable&lt;/em&gt; to a human in terms of sophistication.&lt;/p&gt;
-
-&lt;p&gt;Neural Network: Neural Net - A process that automatically uses feedback to improve itself.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-complexities-of-neural-networks&quot;&gt;The Complexities of Neural Networks&lt;/h1&gt;
-&lt;p&gt;Over time, you may have heard the term “neural network” when talking about engineering. This is the technology that drives a lot of the upcoming, more impressive products like Google’s self-driving cars. It’s a paradigm born of the need to develop software more complex than humans are able to wrap their mind around. I’m delving into this subject first, because understanding the basic ideas behind this technology is imperative to discussing the ethical implications further on down the line.&lt;/p&gt;
-
-&lt;h2 id=&quot;so-what-are-neural-networks&quot;&gt;So what are neural networks?&lt;/h2&gt;
-&lt;p&gt;Neural networks are a new paradigm to programming that, rather than telling the computer what to do, tells it what you &lt;em&gt;want&lt;/em&gt; it to do. Rather than walk the computer through the process of following a task, you evaluate its performance at a task and it uses that feedback. This process is largely inspired by both how human beings learn things (by taking continuous feedback and linking it into how we do things) as well as the principles of evolution.&lt;/p&gt;
-
-&lt;p&gt;For example, say you write a program to cook some pancakes. Because I like pancakes. In traditional programming, you would outline something like a recipe; it would go through all the steps, have clearly defined ingredients, quantities,  and cooking times. Then, once you eat the pancakes, you might go back and adjust the recipe for better pancakes.&lt;/p&gt;
-
-&lt;p&gt;Using a neural network, the process is a bit different. You may start with a recipe, or even just a list of ingredients. Most likely, you’d program it with an initial, very basic recipe. Then, you’d develop a scoring system for the pancakes. Give some points for taste, nutritional value, and a relatively small number of points for deviation from the original recipe (so that as the “recipe” changes, it keeps making pancakes and doesn’t become completely indistinguishable). Next, it will take that original recipe and make minor random changes, and serves those modified recipes to people. If any score higher than the original, it uses that recipe going forward. Over time (with a &lt;strong&gt;lot&lt;/strong&gt; of samplings), the pancakes will be far superior to the original recipe.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-scary-side-of-neural-networks&quot;&gt;The Scary Side of Neural Networks&lt;/h2&gt;
-&lt;p&gt;This is where things get kind of unnerving. Following the pancake metaphor, you’ll start to see the neural network doing really weird things that make no sense. If you start to look at the recipe, it will be extremely long and do things that make no sense. You’ll see seasonings that make no sense for pancakes, bizarrely complex ways of mixing batter, and other things that a human being would never do. Most likely, if a human tried to read the recipe they wouldn’t even be able to understand it.&lt;/p&gt;
-
-&lt;p&gt;I remember a case study where some scientists made a neural network to solve a relatively predictable problem; either solving an equation or navigating a maze, I don’t remember. After running the neural network for long enough, they found two things: 1) that the process followed was borderline gibberish and was extremely difficult to understand, and 2) that the algorithm was now so sophisticated that is was actually &lt;em&gt;taking advantage of previously undiscovered flaws in the hardware&lt;/em&gt; to optimize its speed.&lt;/p&gt;
-
-&lt;p&gt;So as an algorithm becomes increasingly complex, it eventually goes beyond human comprehension, in unpredictable ways. This gives way to an important, and perhaps unanswerable question: &lt;strong&gt;&lt;em&gt;At what point of complexity, if any, are we forced to consider the possibility that an electronic device may be conscious?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Add to this the fact that, using the internet, massive numbers of these robots or computers could be added together in a neural network. Imagine the skill of an individual who spent their entire life studying a trade. A neural network could have the equivalent of tens, or hundreds, or thousands of lifetimes of experience in a trade.&lt;/p&gt;
-
-&lt;p&gt;It’s pretty much unanimous that the answer is “we’re not sure, but we’re pretty sure we’re not there yet”. Perhaps by following certain guidelines, we can find a way to ensure we never reach that point. It will give way to entirely new discussions about ethics and technology, the likes of which we’ve never seen. Further, it could introduce the problem of how human beings will function in a post-scarcity society, or a society where some are post-scarcity society, or even if a post-scarcity society is possible when labor becomes infinite.&lt;/p&gt;
-
-&lt;h1 id=&quot;legal-status-of-advanced-robotics&quot;&gt;Legal Status of Advanced Robotics&lt;/h1&gt;
-&lt;p&gt;As time goes on, it’s becoming apparent that we will need separate legal status for sufficiently dangerous equipment. The article above suggested tracking the possession of these robots using a kind of registry; this is an interesting idea. What if, like land, sufficiently advanced robots transferred ownership by way of a legal title or deed? It would allow one to track and identify the owner, in the case of one going rogue.&lt;/p&gt;
-
-&lt;p&gt;But further, who gets held accountable when things go wrong? Say you had some highly-intelligent industrial equipment in a machine shop programmed using a neural net, that injured a worker?  Most would agree that the worker needs to be compensated, but should the legal owner of the robot or the machine be held accountable? It’s even possible that the neural net is part of a “hive mind” neural net, where all devices operate according to the same rules. This “hive mind” could be fully-distributed, where it has no owner, like the internet. Perhaps the manufacturer of the robot never even touched its programming.&lt;/p&gt;
-
-&lt;p&gt;But in a system where a robot becomes as complex, or even more complex than a human being, could we hold that robot responsible? Further, if the robot is part of a hive mind, how can you hold anyone responsible? The hive mind is, at this point, beyond the control or understanding of any human being, but it’s also not sentient and is incapable of malicious intent. In this scenario, there are strong arguments that no one could be fairly held accountable, since the only point of failure was not controlled by any sentient being.&lt;/p&gt;
-
-&lt;p&gt;At this point, consideration of giving the status of a legal entity to the “hive mind” is necessary, because it must be held accountable for its actions, because no one else can. Then, it needs money, in order to compensate users when things go wrong. But this raises entirely new questions - how does it decide when to go to court and when to settle? Who argues for it in court - does it hire a “lawyer” hive mind? Does it have to pay the other “hive mind?” Does a human lawyer handle it? How could a human judge assess a being that they not only can’t understand, but can’t empathize with? What happens when a “hive mind” wrongs another “hive mind”? Where will the “hive mind” get its money from? Who does it charge? Would all this be decided by its original creator? Would it owe its original creator royalties? Can its original creator “disown” it (similarly to what happens with some “open-source” development projects?&lt;/p&gt;
-
-&lt;h1 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h1&gt;
-&lt;p&gt;This is a lot to think about, and ultimately we won’t have any concrete answers until we get there. However, I’ve got a few ideas and principles that I believe could make things easier going forward.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Intentional creation of sentient beings should, at least at the beginning, be illegal.&lt;/li&gt;
-  &lt;li&gt;We need a definition of sentient for this context.&lt;/li&gt;
-  &lt;li&gt;Ultimately, I believe that the creation of special legal status (similar to corporations) for sufficiently intelligent artificial entities is necessary.&lt;/li&gt;
-  &lt;li&gt;How is a legal artificial entity different from a human, or a corporation? Can it declare bankruptcy? What legal rights and responsibilities does it have?&lt;/li&gt;
-  &lt;li&gt;At exactly what point does a neural network become sufficiently detached from human control that an individual human can’t be held accountable?&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 20 Jan 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/technology/2017/01/20/Ethical-Considerations-In-Advanced-Robotics-and-AI.html</link>
-        <guid isPermaLink="true">http://localhost:4000/technology/2017/01/20/Ethical-Considerations-In-Advanced-Robotics-and-AI.html</guid>
-        
-        <category>philosophy</category>
-        
-        
-        <category>Technology</category>
         
       </item>
     

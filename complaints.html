@@ -5,13 +5,8 @@ permalink: /dev/null/
 ---
 
 <script>
-$('#myForm').submit(function(e){
+$('#complaintform').submit(function(e){
     e.preventDefault();
-    $.ajax({
-        url:'http://www.devnull.com/',
-        type:'post',
-        data:$('#complaintform').serialize()
-    });
 });
 </script>
 
@@ -27,7 +22,7 @@ Enter your complaint below:
 <br>
 
 <form id="complaintform">
-    <textarea name="complaint" form="complaintform" class="form-control" style="height: 200px;"></textarea>
+    <textarea form="complaintform" class="form-control" style="height: 200px;"></textarea>
     <br>
     <input type="submit" class="btn-primary col-md-2 col-md-offset-5" value="Save to /dev/null!">
 </form>
