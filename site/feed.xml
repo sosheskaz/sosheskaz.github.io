@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Mar 2017 19:39:45 -0500</pubDate>
-    <lastBuildDate>Fri, 31 Mar 2017 19:39:45 -0500</lastBuildDate>
+    <pubDate>Fri, 31 Mar 2017 19:53:59 -0500</pubDate>
+    <lastBuildDate>Fri, 31 Mar 2017 19:53:59 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -138,13 +138,13 @@ main goals being internet privacy and censorship avoidance, especially for peopl
 government regimes. It took off after it was funded by various third parties, including the U.S.
 government and google. That said, it has maintained its independence and integrity.&lt;/p&gt;
 
-&lt;p&gt;There are various ways to use Tor. The easiest is the &lt;a href=&quot;&quot;&gt;Tor Browser&lt;/a&gt;, which is an internet browser that
+&lt;p&gt;There are various ways to use Tor. The easiest is the &lt;a href=&quot;https://www.torproject.org/projects/torbrowser.html&quot;&gt;Tor Browser&lt;/a&gt;, which is an internet browser that
 routes all of its traffic through the Tor network. For those more technically inclined, Tor can also be
 run through a socket on your computer, and route all of your traffic through a SOCKS proxy.&lt;/p&gt;
 
 &lt;h1 id=&quot;concluding&quot;&gt;Concluding&lt;/h1&gt;
 &lt;p&gt;I hope you’ve found this article interesting and/or useful, and found my conjecture to be reasonable. If
-you have any vitriol to direct at me, I invite you to visit the &lt;a href=&quot;/complaints/&quot;&gt;Complaints Department&lt;/a&gt;.
+you have any vitriol to direct at me, I invite you to visit the &lt;a href=&quot;/dev/null/&quot;&gt;Complaints Department&lt;/a&gt;.
 If you enjoyed the article, please share with your friends and family so we can have a better informed
 world.&lt;/p&gt;
 </description>
