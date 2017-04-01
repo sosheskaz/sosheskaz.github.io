@@ -132,12 +132,12 @@ main goals being internet privacy and censorship avoidance, especially for peopl
 government regimes. It took off after it was funded by various third parties, including the U.S.
 government and google. That said, it has maintained its independence and integrity.
 
-There are various ways to use Tor. The easiest is the [Tor Browser](), which is an internet browser that
+There are various ways to use Tor. The easiest is the [Tor Browser](https://www.torproject.org/projects/torbrowser.html), which is an internet browser that
 routes all of its traffic through the Tor network. For those more technically inclined, Tor can also be
 run through a socket on your computer, and route all of your traffic through a SOCKS proxy.
 
 # Concluding
 I hope you've found this article interesting and/or useful, and found my conjecture to be reasonable. If
-you have any vitriol to direct at me, I invite you to visit the [Complaints Department](/complaints/).
+you have any vitriol to direct at me, I invite you to visit the [Complaints Department](/dev/null/).
 If you enjoyed the article, please share with your friends and family so we can have a better informed
 world.
