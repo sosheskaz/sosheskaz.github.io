@@ -99,27 +99,6 @@
                         <ul class="nav navbar-nav">
                             <li><a href="/">Home</a></li>
                             <li><a href="/posts/">All Posts</a></li>
-                            <!--<li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Categories  <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    
-                                    
-                                    <li><a href="/Apple">Apple</a></li>
-                                    
-                                    <li><a href="/Photos">Photos</a></li>
-                                    
-                                    <li><a href="/Privacy">Privacy</a></li>
-                                    
-                                    <li><a href="/Review">Review</a></li>
-                                    
-                                    <li><a href="/Security">Security</a></li>
-                                    
-                                    <li><a href="/Technology">Technology</a></li>
-                                    
-                                    <li><a href="/Tutorial">Tutorial</a></li>
-                                    
-                                </ul>
-                            </li>-->
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/dev/null/">Complaints</a></li>
@@ -138,7 +117,7 @@
     <h1 class="post-title"><a href=""></a></h1>
     <div class="home">
 
-    <h1 class="post-title"><a href="/privacy/2017/03/31/Internet-Privacy.html">On Internet Privacy - 31 March 2017</a></h1>
+    <h1 class="post-title"><a href="/2017/04/08/Computers-Are-Black-Magic.html">Computers Are Black Magic</a></h1>
 
     <!-- Project Wonderful Ad Box Code -->
     <div style="text-align:center;"><div style="display:inline-block;" id="pw_adbox_80042_1_0"></div></div>
@@ -149,145 +128,87 @@
     <!-- End Project Wonderful Ad Box Code -->
 
     <div>
-        <h1 id="prologue">Prologue</h1>
-<p>I don’t like to post or write about politics. I’m much more interested in education and exploration of
-the kinds of topics I cover, and carefree writing. That said, I also feel that I can’t ignore it when the
-world of politics steps into the world of computer science; I would be doing a disservice to this website,
-to my (small) readership, and to myself if I ignore it and don’t speak up and voice my opinion.</p>
+        <p>layout: post
+title: Today’s Computers are Black Magic
+author: Eric Miller
+category: Technology
+tags:</p>
 
-<p>If you’re an employer or potential employer, have a personal relationship with me, or are sensitive about
-these politics, you may want to skip this post unless you can’t divorce your personal opinions on politics 
-from the technical insight and the opinions I state here.</p>
+<p>Today’s computers are insanely fast and sophisticated. We don’t necessarily think of them that way, because
+they do such simple things like browse the web, read emails, and run dishwashers. Almost everything that
+uses electricity these days has a computer in it. We’re really seeing this with things like home automation,
+where even individual lightbulbs have small computers in them. They’re insanely cheap too, going to as <a href="https://www.raspberrypi.org/blog/raspberry-pi-zero/">little
+as $5</a> for something that can run a full operating
+system.</p>
 
-<h1 id="the-situation">The Situation</h1>
+<p>It’s easy to take this for granted, especially if you’re too young (as I am) to even remember the days
+of programming computers with punch cards. So I’m going to put some things into perspective.</p>
 
-<p>As you may be aware, there is pending legislation surrounding individuals’ privacy as it pertains to 
-internet service providers. The legislation will most likely be enacted into law at this point, and while
-it’s certainly possible that it won’t pass, it most likely will. Even if it doesn’t, it will almost
-definitely come up again.</p>
+<p>Let’s take a trip back just 70 years, to the year 1947. Hitler was defeated just a short time ago, the
+USSR was budding into a global superpower, and computers were finally coming into their own. The prize
+American computer of the time was the <a href="https://en.wikipedia.org/wiki/ENIAC">ENIAC</a>. It was paid for by the
+U.S. military (computers were originally machines of war), and came in costing $500,000. Of course, 
+adjusted for inflation, this is somewhere between 6-7 million dollars.</p>
 
-<p>So what is this legislation? It’s essentially just rolling back some interpretations of the law that were
-held during the previous presidency. These interpretations put some restrictions on what your ISP can do
-with the information collected on you. The collection of this information is natural, in the same way that
-it’s natural that your doctor keeps your medical records. The question addressed by this legislation is
-what your ISP can do with that information. Naturally, it’s nowhere near as sensitive as medical records,
-and there’s no real substantial regulation or definite guidelines surrounding what can be done with this
-information, in large part due to how young the internet is. In particular, this legislation aims to void
-the interpretations of existing law (originally intended for <em>phone</em> communications) and to loosen up the
-restrictions TeleCom companies face regarding what they can do with their data.</p>
+<p>It was a beast. The best of its kind. It was the machine with which the military assessed damage and
+calculated the impact of atomic bombs. It was the machine that opened the door for computers to be used,
+not just by the military, but by business. It was the machine that <em>proved what computers were capable of</em>.</p>
 
-<p>Currently, your ISP can use your data for some things, ranging from improving your service (some do this
-more than others… <em>Comcast</em>.) to personalizing ads. Yes, like Facebook and Google do. Personally, I
-don’t have an enormous issue with this in pure principle, because Facebook and Google already do this, 
-and at this point companies using your data to personalize advertisements and to sell to advertisers is 
-a given. The <strong>big issue</strong> that comes from this is that your ISP has records of <em>every</em> website you visit,
-every server you connect to, and can even tell when you’re compulsively reading Cracked article after
-Cracked article at 3AM because you had too much coffee and now you can’t sleep. Now, they can’t
-necessarily see <em>what</em> you’re reading, just who you’re reading it from (if you’re not using encryption,
-i.e. HTTPS, they can absolutely see it). But that can still tell you a lot, and frankly we don’t really
-know what will happen once ISPs are given this much free reign with personal data. What we do know is
-that it will lead to repositories of data - linked to people, locations, addresses, and computers - the
-likes of which has never been seen before. Predictably, privacy advocates see this as a bad thing</p>
+<hr />
 
-<h2 id="the-sides">The Sides</h2>
-<p>There are, essentially, two sides in this debate. The first is the more powerful, the TeleCom companies.
-The second is privacy advocates.</p>
+<p>Imagine the smartest person you can think of. Maybe it’s Einstein, maybe it’s Turing, or maybe it’s a name
+lost to time. Now imagine that all of their genius was focused on one thing: crunching numbers. Now imagine
+that they don’t need to eat or sleep, and just crunch numbers 24/7. Say they could perform 5 calculations
+every second (adding, subtracting, etc… huge numbers, like 31242363.21894), including writing them down.
+The ENIAC was like 100 of those people, all working in perfect unison.</p>
 
-<p>TeleCom companies, of course, want to maximize their profit. The existing regulations are, supposedly (I
-am not disputing this here, I am not a lawyer), complex and difficult to understand. This is likely true,
-and if it is, merits change. They also restrict what these companies can do with this information. They,
-no doubt, will sell it (primarily to advertisers) for additional profit. In theory this will be passed on
-to consumers in the form of savings on service.</p>
+<p>In computer science, we have a term for this. It’s called 
+<a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point</a> operations per second 
+<a href="https://en.wikipedia.org/wiki/FLOPS">(FLOPS)</a>. In my example above, each genius was capable of 5 FLOPS.
+The ENIAC was capable of 500. So when I say that the ENIAC was powerful, and peerless, that’s where I’m
+coming from. The ENIAC dwarfed any one of these geniuses by a huge margin, and far surpassed the 
+capabilities of any human that ever existed, or any machine that preceded it.</p>
 
-<p>Privacy advocates, on the other hand, take a somewhat draconian stance in the opposite directions. Most
-would probably like for all consumers’ data to be fully private. Similarly to doctor-patient
-confidentiality, your ISP would only be able to use your information internally, and then only with
-people and processes that require it to provide better service to you. They would like similar 
-restrictions on sites like Facebook and Google, but honestly, that will never happen. In those cases,
-they’re more likely to advocate for ensuring that there’s as little information linking consumers and
-their data when their data is sold.</p>
+<hr />
 
-<p>Many computer scientists are privacy advocates. That said, many also believe that big data collection and
-analysis is the way of the future, and that the privacy enjoyed in the last century is an antiquated idea.
-I sit somewhere in the middle, but I tend to agree with privacy advocates in most cases. But I also use
-Google and Facebook heavily, so I’m a hypocrite. Most of us are, at one level or another; protecting your
-privacy is getting harder and harder.</p>
+<p>There’s a small computer you can buy called the 
+<a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a>. It costs just $35. That’s
+about 0.0005% of the adjusted price of the ENIAC. It’s capable of about 24 <em>billion</em> FLOPS. For those
+keeping score at home, that’s 48 million times faster than the ENIAC. For $35.</p>
 
-<h2 id="some-quick-economics">Some Quick Economics</h2>
-<p>An <em>externality</em> is the cost or benefit of a business or product that does not affect the owner. For
-example, a negative externality of a paper manufacturing plant is the drop in nearby property prices
-nearby due to the smell. This doesn’t affect the plant, but other people pay the price. There are two
-types of protections against negative externalities. The first is the free market. If a company is
-damaging the environment, you can vote with your wallet by taking your business elsewhere until they
-change their behavior. The second is government regulation. The government can step in, enacting laws
-and fines to encourage businesses to contain their negative effects.</p>
+<p>A 48,000,000x improvement. Over just 70 years. That kind of rapid improvement has never been matched in
+any other endeavor.</p>
 
-<p>Conservatives will argue that the first is the superior approach, and liberals will argue that the second
-is the correct approach. But whichever side you fall on, it’s hard to dispute that the first doesn’t
-apply in the situation if the driving force, competition, is not present. As it applies here, most people
-can’t or won’t very well go without internet service. In this case, depending on where you live, internet
-service will be at best an oligopoly, but most likely a monopoly. <strong>Most places in the country are
-serviced by a single ISP, and almost all have 3 or less.</strong> That’s not competition. To make this point,
-I’ve prepared 3 maps, powered by <a href="https://www.broadbandmap.gov">BroadbandMap.gov</a>. For this reason,
-government regulation is the only even mildly effective tool we have at controlling the externalities
-of the TeleCom industry. If you have evidence otherwise, feel free to contact me with the link above.</p>
+<p>Now, in the words of the immortal BILLY MAYS: <strong><em>“BUT WAIT! THERE’S MORE!</em></strong></p>
 
-<h3 id="1-isp">1 ISP</h3>
-<p><img src="/files/images/posts/2017-03-31/1-provider.jpg" alt="Only 1 Provider" /></p>
+<p>So lets take it a step further, with just a few more numbers (I know, I’m a nerd, but this is just too 
+impressive for me to pass up). How much computing power could we buy for the price of the ENIAC? The Pi 3
+is 48 million times faster, and costs a fraction of the price. Ignoring the fact that you can buy computing
+power by the hour for <em>much</em> cheaper than buying a Pi, let’s say for the sake of this example that we
+stockpile as many Pis as we can and see how much they can compute. At the price of $35/Pi, assuming the
+ENIAC cost $7M, we can buy 200,000 Raspberry Pis. That’s 96 <strong>trillion</strong> times the power of the ENIAC.
+That’s right, for the same price (adjusted for inflation), we have 96 trillion times the computing power.</p>
 
-<h3 id="2-13-isps">2-13 ISPs</h3>
-<p><img src="/files/images/posts/2017-03-31/2-or-more-providers.jpg" alt="2-13 Providers" /></p>
+<p>70 years.</p>
 
-<h3 id="4-or-more-isps">4 or more ISPs</h3>
-<p><img src="/files/images/posts/2017-03-31/4-or-more-providers.jpg" alt="4-13 Providers" /></p>
+<p>My phone is more powerful than a Pi 3. My laptop is. Your computer is too. This is what we use to check
+our email. To look at pictures of cats. Hell, to write a weird nerdy post about how powerful computers
+have gotten.</p>
 
-<p>As you can see, there’s very little competition in broadband providers, and in most of the country, there
-is none. I think I’ve adequately made that point. As such, the free market cannot be counted on to provide
-sufficient alternatives when these companies decide to take certain actions.</p>
+<p>Computers have become so powerful, we take them for granted. They’re just a part of our daily lives, and
+we come into contact with computers (in cars, dishwashers, thermostats…) without even thinking about it.
+They’ve elevated to heights no one could’ve predicted, or even wrapped their head around less than a
+century ago.</p>
 
-<h1 id="what-do-i-do">What do I do?</h1>
-<p>You may not care about your privacy - but many do. If you don’t, I encourage you to still consider
-advocating against this type of legislation, as those who do want to be protected should be. I’d encourage
-the reader to take action by donating to the <a href="https://www.eff.org/">Electronic Frontier Foundation</a>, a 
-non-profit organization that aims to protect your rights in the Information Age.</p>
+<p>That’s why we call this the information age. What would’ve been worth more than the entire Earth’s gross
+product a century ago now sits in all of our pockets. Information is cheap, it’s abundant, and it’s in
+everyone’s hands.</p>
 
-<h2 id="1-vpn">1. VPN</h2>
-
-<p>Now, once these are enacted, if you want to protect yourself, I’ll offer a few methods to do that. The
-first, and easiest (though not free) is to research and pay for a VPN service. This routes all your
-internet traffic through a third-party, where the price of membership includes the price of privacy. For
-more technical users, it may also be possible to host this yourself, using Amazon Web Services or another
-cloud computing provider - but I don’t know how cost-effective or how difficult this would be.</p>
-
-<h1 id="2-tor">2. Tor</h1>
-<p>Tor is a browser dedicated to anonymous browsing and evasion of censorship. Basically, using it lets you 
-get around any sort of censorship (I used it for this in my MPS days), is free, and can also be used to 
-access the “dark web” (though aside from being academically interesting, I don’t have much use for or
-recommend using). It is free.</p>
-
-<p>It’s not perfect security-wise (if you remember a few years back, the drug marketplace The Silk Road was 
-busted) and while it’s far from perfect, unless you’re a drug kingpin, figuring out who you are is a LOT 
-of work for not much reward, and realistically, no one will bother.</p>
-
-<p>Finally, I’ll cover some history of the Tor network. I know, it’s boring, but it can be important to 
-understand the context of a tool this important. It was created as an independent non-profit, with the
-main goals being internet privacy and censorship avoidance, especially for people living under oppressive
-government regimes. It took off after it was funded by various third parties, including the U.S.
-government and google. That said, it has maintained its independence and integrity.</p>
-
-<p>There are various ways to use Tor. The easiest is the <a href="https://www.torproject.org/projects/torbrowser.html">Tor Browser</a>, which is an internet browser that
-routes all of its traffic through the Tor network. For those more technically inclined, Tor can also be
-run through a socket on your computer, and route all of your traffic through a SOCKS proxy.</p>
-
-<h1 id="concluding">Concluding</h1>
-<p>I hope you’ve found this article interesting and/or useful, and found my conjecture to be reasonable. If
-you have any vitriol to direct at me, I invite you to visit the <a href="/dev/null/">Complaints Department</a>.
-If you enjoyed the article, please share with your friends and family so we can have a better informed
-world.</p>
+<p><img src="/files/images/posts/2017-04-08/BillyMays.jpg" alt="Unfortunately, this is the end. There is not more." /></p>
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/privacy/2017/03/31/Internet-Privacy.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/2017/04/08/Computers-Are-Black-Magic.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>

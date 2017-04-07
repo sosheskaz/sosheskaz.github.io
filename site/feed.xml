@@ -6,9 +6,96 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Mar 2017 19:53:59 -0500</pubDate>
-    <lastBuildDate>Fri, 31 Mar 2017 19:53:59 -0500</lastBuildDate>
+    <pubDate>Fri, 07 Apr 2017 15:22:27 -0500</pubDate>
+    <lastBuildDate>Fri, 07 Apr 2017 15:22:27 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Computers Are Black Magic</title>
+        <description>&lt;p&gt;layout: post
+title: Today’s Computers are Black Magic
+author: Eric Miller
+category: Technology
+tags:&lt;/p&gt;
+
+&lt;p&gt;Today’s computers are insanely fast and sophisticated. We don’t necessarily think of them that way, because
+they do such simple things like browse the web, read emails, and run dishwashers. Almost everything that
+uses electricity these days has a computer in it. We’re really seeing this with things like home automation,
+where even individual lightbulbs have small computers in them. They’re insanely cheap too, going to as &lt;a href=&quot;https://www.raspberrypi.org/blog/raspberry-pi-zero/&quot;&gt;little
+as $5&lt;/a&gt; for something that can run a full operating
+system.&lt;/p&gt;
+
+&lt;p&gt;It’s easy to take this for granted, especially if you’re too young (as I am) to even remember the days
+of programming computers with punch cards. So I’m going to put some things into perspective.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a trip back just 70 years, to the year 1947. Hitler was defeated just a short time ago, the
+USSR was budding into a global superpower, and computers were finally coming into their own. The prize
+American computer of the time was the &lt;a href=&quot;https://en.wikipedia.org/wiki/ENIAC&quot;&gt;ENIAC&lt;/a&gt;. It was paid for by the
+U.S. military (computers were originally machines of war), and came in costing $500,000. Of course, 
+adjusted for inflation, this is somewhere between 6-7 million dollars.&lt;/p&gt;
+
+&lt;p&gt;It was a beast. The best of its kind. It was the machine with which the military assessed damage and
+calculated the impact of atomic bombs. It was the machine that opened the door for computers to be used,
+not just by the military, but by business. It was the machine that &lt;em&gt;proved what computers were capable of&lt;/em&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Imagine the smartest person you can think of. Maybe it’s Einstein, maybe it’s Turing, or maybe it’s a name
+lost to time. Now imagine that all of their genius was focused on one thing: crunching numbers. Now imagine
+that they don’t need to eat or sleep, and just crunch numbers 24/7. Say they could perform 5 calculations
+every second (adding, subtracting, etc… huge numbers, like 31242363.21894), including writing them down.
+The ENIAC was like 100 of those people, all working in perfect unison.&lt;/p&gt;
+
+&lt;p&gt;In computer science, we have a term for this. It’s called 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Floating-point_arithmetic&quot;&gt;floating point&lt;/a&gt; operations per second 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/FLOPS&quot;&gt;(FLOPS)&lt;/a&gt;. In my example above, each genius was capable of 5 FLOPS.
+The ENIAC was capable of 500. So when I say that the ENIAC was powerful, and peerless, that’s where I’m
+coming from. The ENIAC dwarfed any one of these geniuses by a huge margin, and far surpassed the 
+capabilities of any human that ever existed, or any machine that preceded it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;There’s a small computer you can buy called the 
+&lt;a href=&quot;https://www.raspberrypi.org/products/raspberry-pi-3-model-b/&quot;&gt;Raspberry Pi 3&lt;/a&gt;. It costs just $35. That’s
+about 0.0005% of the adjusted price of the ENIAC. It’s capable of about 24 &lt;em&gt;billion&lt;/em&gt; FLOPS. For those
+keeping score at home, that’s 48 million times faster than the ENIAC. For $35.&lt;/p&gt;
+
+&lt;p&gt;A 48,000,000x improvement. Over just 70 years. That kind of rapid improvement has never been matched in
+any other endeavor.&lt;/p&gt;
+
+&lt;p&gt;Now, in the words of the immortal BILLY MAYS: &lt;strong&gt;&lt;em&gt;“BUT WAIT! THERE’S MORE!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So lets take it a step further, with just a few more numbers (I know, I’m a nerd, but this is just too 
+impressive for me to pass up). How much computing power could we buy for the price of the ENIAC? The Pi 3
+is 48 million times faster, and costs a fraction of the price. Ignoring the fact that you can buy computing
+power by the hour for &lt;em&gt;much&lt;/em&gt; cheaper than buying a Pi, let’s say for the sake of this example that we
+stockpile as many Pis as we can and see how much they can compute. At the price of $35/Pi, assuming the
+ENIAC cost $7M, we can buy 200,000 Raspberry Pis. That’s 96 &lt;strong&gt;trillion&lt;/strong&gt; times the power of the ENIAC.
+That’s right, for the same price (adjusted for inflation), we have 96 trillion times the computing power.&lt;/p&gt;
+
+&lt;p&gt;70 years.&lt;/p&gt;
+
+&lt;p&gt;My phone is more powerful than a Pi 3. My laptop is. Your computer is too. This is what we use to check
+our email. To look at pictures of cats. Hell, to write a weird nerdy post about how powerful computers
+have gotten.&lt;/p&gt;
+
+&lt;p&gt;Computers have become so powerful, we take them for granted. They’re just a part of our daily lives, and
+we come into contact with computers (in cars, dishwashers, thermostats…) without even thinking about it.
+They’ve elevated to heights no one could’ve predicted, or even wrapped their head around less than a
+century ago.&lt;/p&gt;
+
+&lt;p&gt;That’s why we call this the information age. What would’ve been worth more than the entire Earth’s gross
+product a century ago now sits in all of our pockets. Information is cheap, it’s abundant, and it’s in
+everyone’s hands.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-04-08/BillyMays.jpg&quot; alt=&quot;Unfortunately, this is the end. There is not more.&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Apr 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2017/04/08/Computers-Are-Black-Magic.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/08/Computers-Are-Black-Magic.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>On Internet Privacy - 31 March 2017</title>
@@ -98,7 +185,7 @@ of the TeleCom industry. If you have evidence otherwise, feel free to contact me
 &lt;h3 id=&quot;1-isp&quot;&gt;1 ISP&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-31/1-provider.jpg&quot; alt=&quot;Only 1 Provider&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;2-13-isps&quot;&gt;2-13 ISPs&lt;/h3&gt;
+&lt;h3 id=&quot;2-or-more-isps&quot;&gt;2 or more ISPs&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-31/2-or-more-providers.jpg&quot; alt=&quot;2-13 Providers&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;4-or-more-isps&quot;&gt;4 or more ISPs&lt;/h3&gt;
@@ -1071,195 +1158,6 @@ reflect this, but the movement of the cars add a nice dimension to the early-mor
         
         
         <category>Photos</category>
-        
-      </item>
-    
-      <item>
-        <title>Apple Watch Review</title>
-        <description>&lt;p&gt;So, I’ve recently come into posession of an Apple Watch. 
-I like to wait before making value judgements on things, so here I am
-writing a review a month later. For the record, this is a 42mm Series
-2 model.&lt;/p&gt;
-
-&lt;h1 id=&quot;overall&quot;&gt;Overall&lt;/h1&gt;
-
-&lt;p&gt;In the time I’ve had it, I’ve gained a very favorable opinion of the
-Apple Watch. Its user experience is definitely one of the best I’ve
-experienced, and it feels very polished. Notably, integrating it 
-into my daily life felt like second-nature, and I’ve even found 
-myself using the features that I initially saw very little appeal 
-in – in large part due to the incredible user experience that the
-designers have achieved.&lt;/p&gt;
-
-&lt;h1 id=&quot;cool-things-it-does&quot;&gt;Cool Things it Does&lt;/h1&gt;
-
-&lt;p&gt;I’m going to start out by listing a lot of the really cool and
-useful features of the watch that make an impact in my daily life.&lt;/p&gt;
-
-&lt;h2 id=&quot;1-activity-tracking--health&quot;&gt;1. Activity Tracking &amp;amp; Health&lt;/h2&gt;
-
-&lt;p&gt;Let me just start out by saying that if you’re a hardcore runner or
-athlete, this watch will not replace your Garmin. It’s a consumer
-product, not a professional one.&lt;/p&gt;
-
-&lt;div class=&quot;col-md-12&quot;&gt;
-&lt;img src=&quot;/files/images/posts/2017-01-27-Activity.jpg&quot; class=&quot;col-md-3&quot; /&gt;
-
-&lt;p&gt;
-This is a feature I was very skeptical about; I occasionally go to
-the gym or do a small workout, but for the most part my main
-exercise is my habit of pacing around. However, the health features
-of the watch are so easy to use, and so good, that I found myself
-using them regardless, and feel much better for it.
-&lt;/p&gt;
-&lt;p&gt;
-Here's how it works: You have 3 circles: red, green, and blue. The
-red circle tracks the calories you've burned over the course of the
-day. The green tracks how many minutes you've moved/exercised for. The blue
-tracks how many hours in the day in which you've stood up and moved
-around *at least once*. There are goals set for each circle - the 
-calorie goal is set to 500 by default (but is variable), while the exercise and stand
-goals are set for 30 and 12, respectively. If you haven't stood up
-in the last hour, at the 50 minute mark, it'll give you a little 
-tap on your wrist and remind you to stand up and move around a little.
-It sounds kind of silly, but it's a really effective psychological
-reward mechanism.
-&lt;/p&gt;
-&lt;p&gt;
-Finally, there's a program called &quot;Breathe&quot;. This is a really
-simple little app that guides you through a deep breathing exercise.
-It uses the sensor to figure out when you're a little stressed (or
-in my case, drinking coffee) and offers to guide you through a deep
-breathing exercise to cool down. I was skeptical of this too, but
-I've found I feel a lot better when I do this – even for just a 
-minute – once a day.
-
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;2-notifications--and-the-sweet-sound-of-silence&quot;&gt;2. Notifications – And the Sweet Sound of Silence&lt;/h2&gt;
-
-&lt;p&gt;Next up: the notifications on the watch. Personally, I’ve permanently
-switched my phone to silent mode, because the tap on the wrist that
-the Apple Watch gives you when you receive notifications is both
-more noticeable and less disruptive than traditional phone notification
-noises. Further, it lets you more efficiently ignore the unimportant
-notifications you receive – newsletters, facebook comments, unimportant
-texts – which is ultimately really nice. Of course, since the time
-is also on the watch (duh), I’ve ultimately wound up looking at my
-phone much less. For the little things you look at your phone for –
-the time, the weather, music skipping/volume, notifications, timers – 
-the Apple watch steps up and fills the role more conveniently and with
-more subtlety.&lt;/p&gt;
-
-&lt;h2 id=&quot;3-ping-or-mute-your-phone&quot;&gt;3. Ping or Mute your Phone&lt;/h2&gt;
-
-&lt;p&gt;How often do you misplace your phone right next to you, but aren’t
-sure where it is? Or go somewhere where you probably should turn on
-Do Not Disturb mode, but meh it’s on vibrate and it’ll probably be fine.
-The watch has quick buttons to do both of these things for you. You
-can instantly turn Do Not Disturb on or off, and instantly make your
-iPhone make a noise (or if you hold it down, flash the LED too) to
-help you find it. Honestly, this is one of the smartest things they did.&lt;/p&gt;
-
-&lt;h2 id=&quot;ending-the-rule-of-three&quot;&gt;Ending the Rule of Three&lt;/h2&gt;
-
-&lt;p&gt;Of course there are lots of other cool things to do, including: auto-unlocking
-your mac, being a stopwatch/nightstand-alarm-clock/timer, showing your
-daily calendar, being a remote for your camera, and more – but this post
-is already pretty long and I don’t want to bore you too much.&lt;/p&gt;
-
-&lt;h1 id=&quot;complaints-and-grievances&quot;&gt;Complaints and Grievances&lt;/h1&gt;
-
-&lt;p&gt;Of course, it wouldn’t be a fair review if I didn’t list some negatives.&lt;/p&gt;
-
-&lt;h2 id=&quot;1-the-screen-is-small&quot;&gt;1. The Screen is Small&lt;/h2&gt;
-
-&lt;p&gt;I knew this going in, but ultimately, there are simply limits on
-what you can do with an interface on a 1.6” (or 1.5”) screen. While I think
-Apple and third party vendors have, for the most part, created 
-good interfaces given the screen size, it ultimately always falls
-a little short. Force touch, the first time I used it, was a 
-disappointment. For those not in the loop, force touch is a feature
-in Apple’s touch screen products where applying more pressure when
-selecting an item (i.e. pressing harder) performs a contextual action,
-usually a menu related to the item you pressed. The second-gen Apple
-Watches have this feature, but it doesn’t activate based on the item
-you pressed, it activates based on the app or screen that is open.
-This essentially makes force touch a “third button” rather than
-adding a third dimension to the touch screen and, while it makes
-sense for a screen this small, is disappointing.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-no-third-party-watch-faces&quot;&gt;2. No Third-Party Watch Faces&lt;/h2&gt;
-
-&lt;div class=&quot;col-md-12&quot;&gt;
-&lt;img src=&quot;/files/images/posts/2017-01-27-Face.jpg&quot; class=&quot;col-md-3&quot; /&gt;
-
-&lt;p&gt;
-One of the nice things, and something Apple put a good deal of 
-effort into, was the watch faces. This is what you look at when 
-you open your watch. Don't get me wrong, the customization is not
-disappointing and the offerings are fairly good, but I believe
-that third-party faces could add a lot of utility to the product.
-Attached is the main face I use; it has buttons – called &quot;complications&quot; – 
-to display extra information besides the time. The complications
-come in multiple sizes, and third-party apps can be allowed to use them.
-However, the watch faces are all created and controlled by Apple,
-which throttles this customizability.
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h2 id=&quot;3-the-app-screen&quot;&gt;3. The App Screen&lt;/h2&gt;
-
-&lt;div class=&quot;col-md-12&quot;&gt;
-&lt;img src=&quot;/files/images/posts/2017-01-27-AppScreen.jpg&quot; class=&quot;col-md-3&quot; /&gt;
-
-&lt;p&gt;
-The app screen is arranged hexagonally. The rationale behind this
-is understandable; it makes more sense when looking at this kind
-of screen than the traditional rectangular grid. That said, working
-with this screen is awful. I personally set up my watch faces such
-that I can avoid this screen as much as possible. It's harder to
-navigate, remember where apps are, and see apps. If I'm looking
-for a specific app, I'll often miss it once or twice while looking
-for it. Further, it's terrible to organize; unlike when moving 
-apps on an iPhone, the direction that apps are displaced when one
-moves them is unpredictable. This makes organizing the app screen
-a pain, which of course makes it even harder to use.
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h1 id=&quot;closing&quot;&gt;Closing&lt;/h1&gt;
-&lt;p&gt;Overall, the Apple Watch is very thoughtfully designed, offers a
-lovely user experience, and integrates easily into one’s daily
-routine. Being able to swap out watch bands is easy and cheap, so
-it can be dressed for any occasion.&lt;/p&gt;
-
-&lt;h2 id=&quot;should-i-buy-it&quot;&gt;Should I buy it?&lt;/h2&gt;
-&lt;p&gt;…Probably not. While it’s certainly very cool (and useful), the starting 
-price of $269 is, in my opinion, a bit steep. Despite this, if you
-have money to burn and want a cool, handy gadget this may be for
-you. It also makes an excellent and thoughtful gift.&lt;/p&gt;
-
-&lt;p&gt;It should be noted that Apple offers discounts through its refurbished store,
-where prices start at $229. In my experience (this was typed on a
-refurbished Apple computer), their refurbishing program is just as
-good as brand new.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 27 Jan 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/review/2017/01/27/Apple-Watch-Review.html</link>
-        <guid isPermaLink="true">http://localhost:4000/review/2017/01/27/Apple-Watch-Review.html</guid>
-        
-        <category>Apple</category>
-        
-        <category>watch</category>
-        
-        
-        <category>Review</category>
         
       </item>
     
