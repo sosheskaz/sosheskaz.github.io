@@ -1,8 +1,10 @@
+---
 layout: post
 title: Today's Computers are Black Magic
 author: Eric Miller
 category: Technology
 tags: 
+---
 
 Today's computers are insanely fast and sophisticated. We don't necessarily think of them that way, because
 they do such simple things like browse the web, read emails, and run dishwashers. Almost everything that
@@ -49,7 +51,7 @@ keeping score at home, that's 48 million times faster than the ENIAC. For $35.
 A 48,000,000x improvement. Over just 70 years. That kind of rapid improvement has never been matched in
 any other endeavor.
 
-Now, in the words of the immortal BILLY MAYS: ***"BUT WAIT! THERE'S MORE!***
+Now, in the words of the immortal BILLY MAYS: ***"BUT WAIT! THERE'S MORE!"***
 
 So lets take it a step further, with just a few more numbers (I know, I'm a nerd, but this is just too 
 impressive for me to pass up). How much computing power could we buy for the price of the ENIAC? The Pi 3
