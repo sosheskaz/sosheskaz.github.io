@@ -76,4 +76,6 @@ That's why we call this the information age. What would've been worth more than 
 product a century ago now sits in all of our pockets. Information is cheap, it's abundant, and it's in
 everyone's hands.
 
-![Unfortunately, this is the end. There is not more.](/files/images/posts/2017-04-08/BillyMays.jpg)
+<div class="col-md-4"></div>
+<img src="/files/images/posts/2017-04-08/BillyMays.jpg" class="img-rounded col-md-4" />
+<div class="col-md-4"></div>

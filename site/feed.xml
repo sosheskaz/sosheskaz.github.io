@@ -6,19 +6,13 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 Apr 2017 15:22:27 -0500</pubDate>
-    <lastBuildDate>Fri, 07 Apr 2017 15:22:27 -0500</lastBuildDate>
+    <pubDate>Fri, 07 Apr 2017 15:30:19 -0500</pubDate>
+    <lastBuildDate>Fri, 07 Apr 2017 15:30:19 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
-        <title>Computers Are Black Magic</title>
-        <description>&lt;p&gt;layout: post
-title: Today’s Computers are Black Magic
-author: Eric Miller
-category: Technology
-tags:&lt;/p&gt;
-
-&lt;p&gt;Today’s computers are insanely fast and sophisticated. We don’t necessarily think of them that way, because
+        <title>Today's Computers are Black Magic</title>
+        <description>&lt;p&gt;Today’s computers are insanely fast and sophisticated. We don’t necessarily think of them that way, because
 they do such simple things like browse the web, read emails, and run dishwashers. Almost everything that
 uses electricity these days has a computer in it. We’re really seeing this with things like home automation,
 where even individual lightbulbs have small computers in them. They’re insanely cheap too, going to as &lt;a href=&quot;https://www.raspberrypi.org/blog/raspberry-pi-zero/&quot;&gt;little
@@ -63,7 +57,7 @@ keeping score at home, that’s 48 million times faster than the ENIAC. For $35.
 &lt;p&gt;A 48,000,000x improvement. Over just 70 years. That kind of rapid improvement has never been matched in
 any other endeavor.&lt;/p&gt;
 
-&lt;p&gt;Now, in the words of the immortal BILLY MAYS: &lt;strong&gt;&lt;em&gt;“BUT WAIT! THERE’S MORE!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now, in the words of the immortal BILLY MAYS: &lt;strong&gt;&lt;em&gt;“BUT WAIT! THERE’S MORE!”&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;So lets take it a step further, with just a few more numbers (I know, I’m a nerd, but this is just too 
 impressive for me to pass up). How much computing power could we buy for the price of the ENIAC? The Pi 3
@@ -88,12 +82,16 @@ century ago.&lt;/p&gt;
 product a century ago now sits in all of our pockets. Information is cheap, it’s abundant, and it’s in
 everyone’s hands.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-04-08/BillyMays.jpg&quot; alt=&quot;Unfortunately, this is the end. There is not more.&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-04-08/BillyMays.jpg&quot; class=&quot;img-rounded col-md-4&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 08 Apr 2017 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2017/04/08/Computers-Are-Black-Magic.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/08/Computers-Are-Black-Magic.html</guid>
+        <link>http://localhost:4000/technology/2017/04/08/Computers-Are-Black-Magic.html</link>
+        <guid isPermaLink="true">http://localhost:4000/technology/2017/04/08/Computers-Are-Black-Magic.html</guid>
         
+        
+        <category>Technology</category>
         
       </item>
     
