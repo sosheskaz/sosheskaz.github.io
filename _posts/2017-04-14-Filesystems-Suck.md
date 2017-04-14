@@ -26,6 +26,44 @@ I sense some of you are angry or confused with me. But hear me out.
 I'll start off with showing why and how this way of organizing files has failed,
 mostly with examples.
 
+# More Information About the Topic
+
+File systems are the building blocks of files. It keeps track of what space is
+used and what isn't, where files begin and end, and where everything is located.
+The fundamental ideas of file systems are fairly common, and work similarly no
+matter what operating system you're on. Of course, there are lots of different
+implementations of this functionality. If you're on Windows, you use NTFS. If
+you're on a mac (or iOS device, for that matter), it runs on HFS+. If you're on
+Linux, you most likely use Ext3 or Ext4.
+
+For the record, NTFS and HFS+ are both outdated and lag behind their Linux
+counterparts. Apple is supposed to release a new file system this year, called
+APFS, that has some neat features, but in many ways it still falls short of the
+counterparts offered for Linux.
+
+You *need* a file system, at least under the hood. Without it, you have no idea
+which physical parts of your hard drive are used and which ones aren't. You
+don't know when a file was last edited, how big it is, or where it is. It's
+impossible to use a computer without one. But does it need to be exposed to the
+user? Maybe, but probably not as much as it is.
+
+Also keep in mind that a lot of what I talk about here is already how iOS and
+Android work, at least to some extent, and I took a lot of inspiration from
+both their successes and shortcomings. While their methods still fall short of
+where they could be, I still believe that they're a good milestone.
+
+Finally, I'll explain in simple terms what a database is. This is kind of
+tricky. Basically, it's just a way of storing a lot of data, and keeping track
+of the relationships between data. For example, if we want to keep track of a
+list of houses, who lives in those houses, and what their names are, a database
+could do that. The easiest way to think about it is that a database is Basically
+a big Excel spreadsheet. You can put a ton of data in it. For each bit of
+information, you have a column (Address, Name, phone number in our example
+above). Each row is another entry, with another person. We can also filter or
+sort our entries by any of the columns too.
+
+![Example](/files/images/posts/2017-04-14/spreadsheet.jpg)
+
 ## Example 1. The Desktop
 
 ![\*cringe\*](/files/images/posts/2017-04-14/cluttered-desktop.png)
@@ -65,11 +103,17 @@ problem.
 ## Example 3. Because I Always Follow the Rule of Three
 [Seriously, it's built into me. I have to.](https://en.wikipedia.org/wiki/Rule_of_three_(writing))
 
+For this, you'll need to understand what a
+[symbolic link](https://kb.iu.edu/d/abbe) is. It's basically a more powerful
+version of Windows shortcuts or Mac aliases, that works particularly well for
+folders. Basically, you tell the computer "Okay, when I say Documents/photos,
+just redirect me to my Photos folder".
+
 For this example, I'll talk about how I organize my files.
 I'm obsessive with my file organization. I've
 got subfolder after subfolder, everything carefully named, everything in its
 proper place. No clutter. Basically the opposite of my home office. Then, I've
-got dozens of [symbolic links](https://kb.iu.edu/d/abbe) pointing to related
+got dozens of symlinks pointing to related
 folders (for example, my senior
 design code belongs both in the "MSOE" folder and the "Code" folder) so that
 everything is accessible from anywhere that makes sense. Then dozens more,
@@ -91,6 +135,10 @@ that the average user just doesn't have. All to make the file system work
 nicely.
 
 That is not the hallmark of a good system.
+
+I believe that my way of organizing my file system among the most elegant, and
+one of the best I've seen. I'm really quite proud of it, but even then, I still
+feel it's often quite ugly and hacky due to its constraints.
 
 # Technical Reasons
 There are also technical reasons why this method of document management is
@@ -130,12 +178,20 @@ world's servers are built on it, and it works great for that. It's absolutely
 ideal for storing operating systems. My argument is only that, for users, the
 file system is an awful way to store documents and things.
 
+On Linux and BSD systems, things are really cleanly organized in this hierarchy.
+`/bin` is for binaries, `/home` is where users' home folders are, `/etc` is
+where settings live, and so on. This makes sense, for the purpose it serves,
+and is actually a rather elegant solution. Again, my beef is with users'
+documents.
+
 # Okay, Smart Guy, if the Old Way is Wrong, What Should we Do?
 
 Thanks for asking. I'll admit, this is a really hard problem, for various
 reasons. The most obvious is backwards-compatibility. File shares also pose a
-bit of a problem, but perhaps they can stay the way they are. I'm just going to
-look at how I'd go about solving it on a single personal computer.
+bit of a problem, but perhaps they can stay the way they are. There's a
+multitude of things that would make compatibility here difficult, but this post
+is long as is.I'm just going to look at how I'd go about solving it on a single
+personal computer.
 
 I'll also say that people smarter than I have tried and failed to do this.
 Notably, the engineers at Apple attempted to do this with iCloud. It failed
@@ -159,6 +215,13 @@ the database on top of the file system (this would actually make sense) but it
 would need to be ubiquitous. Why? This would allow extremely efficient searches
 of documents or apps by any criteria. Current file systems actually do something
 similar, but I want to take it to the next level.
+
+Some of you may be wondering how I'd deal with projects. For example, in code,
+you have a whole folder full of files and assets, with lots of file types. I
+have some ideas about how to address this, namely by sandboxing the files in
+a single "project" file that's actually a folder (kind of like
+[how Apple handles .apps](https://superuser.com/questions/78176/how-do-mac-app-execution-files-work?rq=1)),
+but I won't get into it here.
 
 Next, we need a document manager. Actually, this would be pretty easy to write,
 even just on top of the file system. With the database, this would be incredibly
