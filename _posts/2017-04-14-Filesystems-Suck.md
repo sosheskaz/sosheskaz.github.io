@@ -118,6 +118,9 @@ photoshop file? Open photoshop. The entire hierarchy is abstracted away from the
 user. It's been *proven* that this is the safer and more intuitive way to do
 things.
 
+From [Wikipedia](https://en.wikipedia.org/wiki/Abstraction_(software_engineering)):
+*"In software engineering and computer science, abstraction is a technique for arranging complexity of computer systems. It works by establishing a level of complexity on which a person interacts with the system, suppressing the more complex details below the current level."*
+
 # Why the Hierarchy Still Makes Sense
 
 Don't get me wrong, I don't want to do away with it entirely. It makes sense

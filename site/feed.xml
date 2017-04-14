@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 14 Apr 2017 17:19:29 -0500</pubDate>
-    <lastBuildDate>Fri, 14 Apr 2017 17:19:29 -0500</lastBuildDate>
+    <pubDate>Fri, 14 Apr 2017 17:25:55 -0500</pubDate>
+    <lastBuildDate>Fri, 14 Apr 2017 17:25:55 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -123,6 +123,9 @@ application. Want to open a word document? Open word. A photo? Open Photos. A
 photoshop file? Open photoshop. The entire hierarchy is abstracted away from the
 user. It’s been &lt;em&gt;proven&lt;/em&gt; that this is the safer and more intuitive way to do
 things.&lt;/p&gt;
+
+&lt;p&gt;From &lt;a href=&quot;https://en.wikipedia.org/wiki/Abstraction_(software_engineering)&quot;&gt;Wikipedia&lt;/a&gt;:
+&lt;em&gt;“In software engineering and computer science, abstraction is a technique for arranging complexity of computer systems. It works by establishing a level of complexity on which a person interacts with the system, suppressing the more complex details below the current level.”&lt;/em&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;why-the-hierarchy-still-makes-sense&quot;&gt;Why the Hierarchy Still Makes Sense&lt;/h1&gt;
 
