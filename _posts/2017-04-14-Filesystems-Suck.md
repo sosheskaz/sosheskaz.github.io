@@ -106,6 +106,8 @@ want to access your word documents, or your photos, or anything, they have to
 ask you for permission. Mobile devices already implement what I'm talking about
 here.
 
+![What RansomWare looks like](/files/images/posts/2017-04-14/ransomware.png)
+
 So while we're talking about mobile devices, let's bring up another point.
 On your phone, where are your photos located? Easy, in the Photos app. On your
 computer, where are your photos located? Probably all sorts of different places.

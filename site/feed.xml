@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 14 Apr 2017 17:13:56 -0500</pubDate>
-    <lastBuildDate>Fri, 14 Apr 2017 17:13:56 -0500</lastBuildDate>
+    <pubDate>Fri, 14 Apr 2017 17:19:29 -0500</pubDate>
+    <lastBuildDate>Fri, 14 Apr 2017 17:19:29 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -111,6 +111,8 @@ That’s why you don’t really get RansomWare on iOS and Android devices - if t
 want to access your word documents, or your photos, or anything, they have to
 ask you for permission. Mobile devices already implement what I’m talking about
 here.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-04-14/ransomware.png&quot; alt=&quot;What RansomWare looks like&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So while we’re talking about mobile devices, let’s bring up another point.
 On your phone, where are your photos located? Easy, in the Photos app. On your
