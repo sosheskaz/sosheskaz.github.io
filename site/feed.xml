@@ -6,9 +6,130 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 14 Apr 2017 18:00:42 -0500</pubDate>
-    <lastBuildDate>Fri, 14 Apr 2017 18:00:42 -0500</lastBuildDate>
+    <pubDate>Fri, 21 Apr 2017 16:48:27 -0500</pubDate>
+    <lastBuildDate>Fri, 21 Apr 2017 16:48:27 -0500</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Why Package Managers are Great - With a Focus on Homebrew</title>
+        <description>&lt;p&gt;I really like package managers. Often, I’ll even get a bit preachy about them.
+So guess what I’m going to do!&lt;/p&gt;
+
+&lt;p&gt;Package managers are a lovely piece of technology. Linux users will be very
+familiar with the terminology, but the fact is most of us interact with them
+regularly without even realizing it.&lt;/p&gt;
+
+&lt;p&gt;From &lt;a href=&quot;https://en.wikipedia.org/wiki/Package_manager&quot;&gt;Wikipedia&lt;/a&gt;: &lt;em&gt;A package
+manager or package management system is a collection of software tools that
+automates the process of installing, upgrading, configuring, and removing
+computer programs for a computer’s operating system in a consistent manner.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Sound familiar? That’s what the iOS and Android app stores do. That’s even what
+the Windows and Mac app stores do. And that’s really all this is: instead of
+downloading an app off the internet, running it, and then having to dig around
+for an uninstaller to remove it. Package managers take care of this for you.
+Of course, a package manager also has even more upsides:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If the software has any dependencies, the package manager will install those
+automatically.&lt;/li&gt;
+  &lt;li&gt;You can easily update all of your software at once, or even automate it to
+happen regularly.&lt;/li&gt;
+  &lt;li&gt;Most package managers are curated, so when you install something, you can be
+confident that it came from a legitimate source.&lt;/li&gt;
+  &lt;li&gt;There is a unified interface for everything - there are no special steps to
+install or remove software.&lt;/li&gt;
+  &lt;li&gt;Things install consistently - you don’t need to choose an install directory,
+or show the installer where the dependencies are - it takes care of everything.&lt;/li&gt;
+  &lt;li&gt;It uses sane installation options. You know how sometimes you’ll open an
+installer and it’ll “generously” offer to change your search engine to Yahoo,
+install 14 toolbars, and other goofy things? Package managers will disable those
+by default (typically).&lt;/li&gt;
+  &lt;li&gt;It adds command line tools to your PATH automatically, so you don’t have to
+think.&lt;/li&gt;
+  &lt;li&gt;It verifies that your download hasn’t been corrupted.&lt;/li&gt;
+  &lt;li&gt;It makes migrating to a new computer a breeze.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Traditional package managers operate using the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Command-line_interface&quot;&gt;command line&lt;/a&gt;. If you’re
+not computer savvy, this is probably intimidating. But I’ll provide some options
+regardless. For Windows users, &lt;a href=&quot;https://chocolatey.org/&quot;&gt;Chocolatey&lt;/a&gt; exists.
+In my opinion, it’s a bit incomplete, and somewhat poorly maintained, but to me
+a mediocre package manager is better than none. For Mac, there are two good
+options, &lt;a href=&quot;https://brew.sh/&quot;&gt;Homebrew&lt;/a&gt; and &lt;a href=&quot;https://www.macports.org/&quot;&gt;MacPorts&lt;/a&gt;.
+I recommend Homebrew, as it’s simpler in my opinion, but MacPorts has its own
+advantages. I won’t wax philosophical about it here.&lt;/p&gt;
+
+&lt;p&gt;Package managers are particularly useful to people in software development or
+IT, as they handle many of the intricacies that are easy to mess up. If you’re
+in those fields, and are not familiar with package managers, I highly recommend
+taking the time to learn your way around them.&lt;/p&gt;
+
+&lt;h1 id=&quot;so-how-do-you-use-one&quot;&gt;So How do You Use One?&lt;/h1&gt;
+
+&lt;p&gt;In this example, I’m using Homebrew, because it’s native to my OS and I’m most
+familiar with it. To install software, for example ruby, simply type &lt;code class=&quot;highlighter-rouge&quot;&gt;brew
+install ruby&lt;/code&gt;. To remove it, &lt;code class=&quot;highlighter-rouge&quot;&gt;brew remove ruby&lt;/code&gt;. Easy. But what about installing
+something bigger, like Java? Homebrew has a built-in extension for some packages
+that were outside the philosophical scope of the original homebrew, called
+Homebrew-Cask. To install Java, just run &lt;code class=&quot;highlighter-rouge&quot;&gt;brew cask install java&lt;/code&gt;, and to remove
+just &lt;code class=&quot;highlighter-rouge&quot;&gt;brew cask remove Java&lt;/code&gt;. Again, easy.&lt;/p&gt;
+
+&lt;p&gt;Now you want to update your apps. For homebrew, just run &lt;code class=&quot;highlighter-rouge&quot;&gt;brew update &amp;amp;&amp;amp; brew
+upgrade -y&lt;/code&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;-y&lt;/code&gt; lets it know that you’re sure you want to upgrade them, so
+it doesn’t ask you if you’re sure. But wait! You don’t want to upgrade something
+because you need a specific version! &lt;code class=&quot;highlighter-rouge&quot;&gt;brew&lt;/code&gt; has you covered. Just run &lt;code class=&quot;highlighter-rouge&quot;&gt;brew pin
+something&lt;/code&gt; and it’ll stay at the version it’s at.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, Homebrew (and Cask) is an incomplete package manager at this
+point in time. This is one of the reasons MacPorts can be better. Homebrew-Cask
+doesn’t actually have an updater built-in, but you can install one with
+&lt;a href=&quot;https://github.com/buo/homebrew-cask-upgrade&quot;&gt;this&lt;/a&gt;. TL;DR: Run this:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;brew tap buo/cask-upgrade&lt;/code&gt; to install, and &lt;code class=&quot;highlighter-rouge&quot;&gt;brew cu&lt;/code&gt; to update your apps.
+Unfortunately, it doesn’t support pinning, so beware. Otherwise, you can update
+manually with &lt;code class=&quot;highlighter-rouge&quot;&gt;brew cask remove something &amp;amp;&amp;amp; brew cask install something&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally, package managers can make migrating to a new computer a breeze. I don’t
+necessarily trust most migration software, so I tend to want to do it myself. I
+also like to do clean installs, so any “gunk” my old computer accumulated
+doesn’t pass on to my new one. To do this, there are three easy steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;brew list &amp;gt; brew.txt &amp;amp;&amp;amp; brew cask list &amp;gt; brewcask.txt &amp;amp;&amp;amp; brew tap --list &amp;gt; btlist.txt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Copy &lt;code class=&quot;highlighter-rouge&quot;&gt;brew.txt&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;brewcask.txt&lt;/code&gt; to your new computer.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cat btlist.txt | xargs brew tap &amp;amp;&amp;amp; cat brew.txt | xargs brew install &amp;amp;&amp;amp; cat brewcask.txt | xargs brew cask install&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now all your software is on the new machine, in three steps and about two
+minutes worth of work.&lt;/p&gt;
+
+&lt;h1 id=&quot;closing-up&quot;&gt;Closing Up&lt;/h1&gt;
+
+&lt;p&gt;Package managers have a bit of a learning curve at first, being command line,
+but in the end they simplify things a lot. The funny thing is, I actually don’t
+know how to install most of the software I use, because I never have to choose
+the installation directory, the options, or set up dependencies. I just type a
+few words.&lt;/p&gt;
+
+&lt;p&gt;Think about how much the app store has simplified things. How instead of having
+to hunt down a website and a tutorial and check whether the developer is legit
+and forget to uncheck the box so now Yahoo is your search engine. There’s one,
+simplified way to do everything, that’s safe and easy. That’s what package
+managers do.&lt;/p&gt;
+
+&lt;p&gt;And it’s beautiful. 🍺&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Apr 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/technology/2017/04/21/Package-Managers.html</link>
+        <guid isPermaLink="true">http://localhost:4000/technology/2017/04/21/Package-Managers.html</guid>
+        
+        
+        <category>Technology</category>
+        
+      </item>
     
       <item>
         <title>The Problem with File Systems</title>
@@ -1279,135 +1400,6 @@ these easier.&lt;/p&gt;
         
         
         <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>3 Things I Like About Swift</title>
-        <description>&lt;div class=&quot;col-md-9&quot;&gt;
-
-Within the past several months, I've been working a lot in Swift 3 and XCode 8. The language was a brand
-new experience for me, and there was quite a learning curve. I've never worked with a language like it and
-while, as always, programming skills carry over, the syntax of Swift proved tricky. However, after this time,
-I've either gained an appreciation for some of the more novel features in Swift, or else I've gained
-stockholm syndrome. Determining which is left as an exercise to the reader.
-
-&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://developer.apple.com/swift/images/swift-og.png&quot; class=&quot;img-rounded col-md-3&quot; style=&quot;padding-bottom: 20px;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;1-nil-nada-nothing&quot;&gt;1. Nil! Nada! Nothing!&lt;/h1&gt;
-&lt;p&gt;That’s right, “nil”. That’s what null is called. Yes, it’s weird that they’ve eschewed traditional
-labeling in favor of this. The logic kind of makes sense, but I won’t go into it - I’m not actually here
-to talk about nil, but about &lt;em&gt;how it’s handled&lt;/em&gt; in Swift.&lt;/p&gt;
-
-&lt;p&gt;In C#, there’s a concept called &lt;strong&gt;Nullable.&lt;/strong&gt; This makes primatives, like floating-point numbers and 
-integers, which one would not normally be able to assign a value of null, to be assigned null. 
-This is often quite useful when you want primatives to behave like normal objects. Swift implements a
-similar system, but instead it works for any object.&lt;/p&gt;
-
-&lt;p&gt;As an example, say you have a “Point” object, stored in the variable point.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var point: Point = Point(1, 3)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The variable point can never be nil. If one tries the following code: &lt;code class=&quot;highlighter-rouge&quot;&gt;point = nil&lt;/code&gt; it will raise a compiler
-error. However, if you wanted it to be able to be nil, all you have to do is add a ‘?’ to Point, so that
-the type is now “nillable”.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var point: Point? = Point(1, 3)
-point = nil
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This seems novel at first, but in conjunction with other features (one of which is coming up next) it really
-simplifies programming. When writing a function, if one wants, they can mandate that no values passed in are
-nil, which can simplify edge cases and testing. Now, onto “nillable’s” best friend:&lt;/p&gt;
-
-&lt;h1 id=&quot;2-guard-statements&quot;&gt;2. Guard Statements&lt;/h1&gt;
-&lt;p&gt;Guard statements were, for me, covered briefly in a class, but beyond that, not talked about much. A guard
-statement is a statement at the beginning of a function where it’s decided whether the function can basically
-work. They’re often used to check for null or for error conditions. Swift, however, has its own dedicated
-keyword for this, logically called &lt;code class=&quot;highlighter-rouge&quot;&gt;guard&lt;/code&gt;. The keyword alone is useful for keeping code readable, because
-one can see the keyword, realize it’s just checking for error conditions, and skip over it when understanding
-how some code works.&lt;/p&gt;
-
-&lt;p&gt;But other than that, what benefits are there? For one, they force good practice; the compiler won’t allow
-you to forget to &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt;, or execute some other control flow. They allow one to create variables
-for future use, allowing one to seamlessly unwrap a nillable. Here’s that in practice:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func doThing(thisReallyShouldNotBeNil: Int?, shouldBeTrue: Bool) {
-    guard let notNil = thisReallyShouldNotBeNil else {
-        print(&quot;you put in nil you dummy!&quot;)
-        return
-    }
-    guard shouldBeTrue == true else {
-        print(&quot;This should never happen :P&quot;)
-        return
-    }
-    
-    // notNil is an Int now, not an Int?.
-    
-    print(notNil != nil) // you will get a compiler warning because this will never be possible. 
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Obviously this is simplified, but it becomes very powerful in keeping things from getting out of hand as 
-they get more complicated.&lt;/p&gt;
-
-&lt;h1 id=&quot;3-string-templating&quot;&gt;3. String Templating&lt;/h1&gt;
-&lt;p&gt;Y’all, this is the best templating I’ve ever seen. Even better than Ruby or C#. It’s simply beautiful. Say
-one wants to print out a person’s information:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;print(&quot;Name: \(person.name)    Height: \(person.height)    Profession: \(person.profession)&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;It’s the simplest thing. Backslash, parenthesis. Fits the context of the language, is perfectly clear,
-and is one of the least verbose methods out there in any language. Simple beauty. It’s the small things in
-life.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-bad&quot;&gt;The Bad&lt;/h1&gt;
-&lt;p&gt;Swift is an innovative, different, and unique language, and it has its share of bad. Most of it boils down to&lt;/p&gt;
-
-&lt;h2 id=&quot;xcode&quot;&gt;XCode&lt;/h2&gt;
-&lt;p&gt;Swift is hard to build without XCode. Really hard. Even JetBrains’ AppCode relies on opening XCode for 
-certain operations. One of the main reasons for this boils down to the flat filemap. In most programming
-languages, if you put something in a folder, that means it’s in that folder in the operating system.
-This makes traversing and interacting with your project from the command line natural. Instead, there’s an
-XML file that keeps track of the folder and subfolder in every file. If you want to look at the project as
-intended, you need XCode. While this maps well to Apple’s (and arguable BSD’s) centralized philosophy, it’s
-an annoyance to developers.&lt;/p&gt;
-
-&lt;p&gt;XCode is buggy and crash-prone; lots of times features simply stop working and XCode needs to be restarted.
-It reminds me of my early days with Eclipse over 5 years ago, and even then I believe Eclipse was more 
-reliable.&lt;/p&gt;
-
-&lt;p&gt;Beyond that, it just has poor design in many ways. Keyboard shortcuts aren’t shown in menus, the toolbar is
-at times incomplete, and “generate” code functionality is painfully absent, to name a few.&lt;/p&gt;
-
-&lt;h1 id=&quot;closing&quot;&gt;Closing&lt;/h1&gt;
-&lt;p&gt;So yes, I like Swift quite a bit. It winds up being a different language, but some of the language features
-have shown to not only be nice to use, but to be very forward-thinking in terms of keeping large codebases 
-sustainable. It also keeps up with more modern functionality, syntax, and paradigms quite well, while also
-putting its own spin on it.&lt;/p&gt;
-
-&lt;p&gt;Finally, it’s important to consider that Swift is designed very specifically around building UI apps. In
-this way it’s often more specific, or at least has a different focus, than many other languages. When 
-learning it, it’s important to keep an open mind, and to give Swift’s way of doing things a shot. I’m glad
-I did.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 23 Feb 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/apple/2017/02/23/3-Things-About-Swift.html</link>
-        <guid isPermaLink="true">http://localhost:4000/apple/2017/02/23/3-Things-About-Swift.html</guid>
-        
-        <category>swift</category>
-        
-        <category>programming</category>
-        
-        
-        <category>Apple</category>
         
       </item>
     
