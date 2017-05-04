@@ -9,10 +9,10 @@ As a developer, I'm always on the lookout for good software libraries to make my
 some I like.
 
 # C# #
-[NDesk.Options](http://www.ndesk.org/Options) - Quick and easy command line options parser.
-[Command Line Parser](https://commandline.codeplex.com/) - More sophisticated and powerful, but somewhat
+* [NDesk.Options](http://www.ndesk.org/Options) - Quick and easy command line options parser.
+* [Command Line Parser](https://commandline.codeplex.com/) - More sophisticated and powerful, but somewhat
 harder to use, command line options parser.
-[JSON.NET](http://www.newtonsoft.com/json) - All things JSON.
+* [JSON.NET](http://www.newtonsoft.com/json) - All things JSON.
 
 # Python
 * [SciPy](https://www.scipy.org/) - Python library for very powerful mathematical and scientific analysis.
