@@ -6,9 +6,93 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 May 2017 14:28:09 -0500</pubDate>
-    <lastBuildDate>Fri, 05 May 2017 14:28:09 -0500</lastBuildDate>
+    <pubDate>Fri, 05 May 2017 17:56:13 -0500</pubDate>
+    <lastBuildDate>Fri, 05 May 2017 17:56:13 -0500</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Beamforming</title>
+        <description>&lt;p&gt;layout: post
+title: What is Beamforming, and How Will it Change the World?
+author: Eric Miller
+category: Technology
+tags:&lt;/p&gt;
+
+&lt;p&gt;As the internet’s grown up, more and more areas have started to be explored, especially in consumer
+devices. The best examples are smarthome hardware, wearable tech, and the ever-growing power of
+smartphones. Engineers are moving Heaven and Earth to make everyday things slightly more convenient.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-beamforming&quot;&gt;What is Beamforming?&lt;/h1&gt;
+&lt;p&gt;It’s a wireless technology, based around electomagnetic fields, especially WiFi. Traditionally, WiFi is
+radiated out in a sphere, in the same way that light emits from a lightbulb in every direction. One of the
+big problems of this is that it gets weak very fast as you move away from the source. Beamforming is an
+attempt to alleviate this.&lt;/p&gt;
+
+&lt;p&gt;Instead of radiating the signal out in a sphere, it locks on to one device and focuses its energy on
+sending the signal just in that direction. This means they can pump way more energy in just the direction
+that it needs to go, so the signal winds up being much stronger wherever you are.&lt;/p&gt;
+
+&lt;h1 id=&quot;things-that-are-changing&quot;&gt;Things that are Changing&lt;/h1&gt;
+&lt;h2 id=&quot;wifi&quot;&gt;WiFi&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-05-05/low-wifi.jpg&quot; alt=&quot;&quot; /&gt;
+The first, and most obvious, is WiFi. The new WiFi standard, 802.11ac, has beamforming built into the
+standard. One of the drawbacks of this standard is that is uses a higher electromagnetic frequency (5GHz) than the
+previous 802.11n (2.4GHz) standard. Why
+does this matter? Higher-frequency EM waves don’t penetrate through physical barriers as well as 
+lower-frequency ones do. Think of it this way: WiFi can penetrate through walls and bend around corners - 
+however, visible light, which is a much higher frequency than WiFi, does neither of these things very well.
+The new WiFi standard is nowhere near as high-frequency as light, but as an extreme example, this
+illustrates my point.&lt;/p&gt;
+
+&lt;p&gt;Using the 5GHz frequency had a lot of advantages and overcomes many of the other problems with WiFi, 
+especially things like signal interference. Since the strength of 5GHz radiation deteriorates so much 
+faster, they needed a technology to overcome this. Enter beamforming - by focusing the direction, it can
+actually produce a stronger signal, with better range, than the older standard. You can already buy 
+routers and laptops with this capability.&lt;/p&gt;
+
+&lt;h2 id=&quot;location&quot;&gt;Location&lt;/h2&gt;
+&lt;p&gt;Traditionally, the go-to way to locate things was a process called triangulation. Basically, you record
+the signal strength of the thing to be located from three sources, then cross-reference that with data
+about the physical environment to determine location. This is how cell phones detected their location
+before GPS chips were adopted. However, this technique is based on the old way of doing things - sending
+radiation out in every direction and hoping some of it actually gets used.&lt;/p&gt;
+
+&lt;p&gt;With beamforming, we can determine an approximate location with just one source. Since beamforming can tell
+us not only the signal strength, but the direction something is in, we can tell, roughly, where something
+is. This is less accurate than triangulation, but the fact that it’s even approximate is a breakthrough.
+This means we can map the physical location of devices with just one source instead of three. This
+technology is already being integrated by Apple in their Apple Watch - the Apple Watch uses beamforming
+to detect its proximity to a paired mac and, if it’s close enough, can automatically unlock it.&lt;/p&gt;
+
+&lt;h2 id=&quot;power&quot;&gt;Power&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-05-05/unlimited-power.jpg&quot; alt=&quot;&quot; /&gt;
+Wireless power delivery has been theorized for a long time. Nikola Tesla figured it out long ago. But it
+was always wildly impractical and inefficient. It has efficiency problems to begin with, because the
+process of generating an electromagnetic signal itself is inefficient. Add to this the fact that you’re 
+broadcasting that signal in all directions, with most of it not being used, and efficiency is extremely
+low. Beamforming comes in here - by eliminating the waste of sending the signal in every direction, 
+short-range wireless charging actually becomes practical (but still inefficient compared to cables).
+Beamforming is the key to truly wireless charging, which will open up new possibilities in and of itself.&lt;/p&gt;
+
+&lt;p&gt;There’s actually a company working on this, likely starting to sell devices in the next couple years.
+They’re called &lt;a href=&quot;https://energous.com/&quot;&gt;Energous&lt;/a&gt;. They’re partnered with Apple (this isn’t official, but
+based on Apple’s M.O. and Energous’ statements, this is all but certain), and are expected to be providing
+wireless charging for an upcoming iPhone. I will watch their career with great interest.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So that’s it! Beamforming is a cool new technology that’s doing a lot of cool new things, and will open up
+countless doors in the evolution of upcoming wireless technologies. It’ll be interesting to see what 
+clever uses the engineers who integrate this technology will dream up.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 06 May 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2017/05/06/Beamforming.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/06/Beamforming.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>The World Runs on Bad Code</title>
@@ -17,7 +101,7 @@
 &lt;p&gt;Writing code is easy. I really do believe that with effort and willingness to learn, just about anybody
 can write a simple program. The challenge, however, is writing good code.&lt;/p&gt;
 
-&lt;p&gt;In the paraphrased words of Peter Welch (a log of this post is inspired by his essay, 
+&lt;p&gt;In the paraphrased words of Peter Welch (a lot of this post is inspired by his essay, 
 &lt;a href=&quot;https://www.stilldrinking.org/programming-sucks&quot;&gt;Programming Sucks&lt;/a&gt;, and its counterpart by a different
 author, 
 &lt;a href=&quot;http://blog.samstokes.co.uk/blog/2014/05/01/what-programming-is-like/&quot;&gt;What Programming is Like&lt;/a&gt;), 
@@ -1135,134 +1219,6 @@ enabled.)&lt;/p&gt;
         
         
         <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>Apple, Muster your Courage. It's time for USB-C.</title>
-        <description>&lt;p&gt;Apple, I’ve watched your progress over the last few years with interest. As a fan, follower, and analyst, I
-feel I need to call you out on it when you’re making a mistake.&lt;/p&gt;
-
-&lt;p&gt;And you’re making a mistake.&lt;/p&gt;
-
-&lt;p&gt;USB-C is the future. You know this. It’s why your new laptops have solely USB-C (and despite what the haters
-say, that’s a good thing). So it’s time to muster your famous &lt;em&gt;courage&lt;/em&gt;, and follow through on that.&lt;/p&gt;
-
-&lt;p&gt;USB-C is the new standard. It may take some time to adopt, but it is. With up to 40Gbps throughput with the
-thunderbolt standard, it’s the fastest mainstream port out there. It supports every kind of device people
-use, from mice and keyboards, to headphones, to ethernet connections, and even to 4K displays. It even has
-enough power throughput to power a laptop; that’s why you’re supporting power delivery from that port for 
-the upcoming iPhones. And even through all of that, it’s relatively tiny (which I know you folks love).&lt;/p&gt;
-
-&lt;p&gt;And I understand your hesitance, and your pain. The last time you changed the port on your iOS devices,
-you faced enormous pushback. It’s not fun, and not good for a company in your position. But if you have the
-courage to remove the aux jack from your iPhones, you have the courage to do this. And it’s worth doing. So
-in the article that follows, I’ll lay out why this is a good idea, and why the pain of making the switch
-is well worth it.&lt;/p&gt;
-
-&lt;h1 id=&quot;1-user-experience&quot;&gt;1. User Experience&lt;/h1&gt;
-&lt;p&gt;If there’s one thing Apple is famous for, it’s user experience. And not only user experience, but user
-experience across devices. If I connect to WiFi on my mac, my phone will connect to it too. I can send
-files back and forth with AirDrop easily. Hell, y’all have been pushing this more and more, with other
-technologies like HandOff, Apple Watch unlock, and universal clipboard. And not to blow smoke, but you’ve
-done a great job with it.&lt;/p&gt;
-
-&lt;p&gt;But that’s software. When it comes to hardware, you’re sending mixed messages. If I buy a pair of lightning
-headphones for my iPhone 7, I can’t then use them with my mac. If I buy a USB-C charging cable for one of
-the new macs, I can’t then also use that to charge my phone. Imagine a world where, if I buy an accessory,
-it works on every device I own. In terms of user experience, that’s something no one’s achieved yet. But
-you can bet that’s where Android and Windows are going. If you don’t join them, Android and Windows will
-start to blow you out of the water in terms of hardware compatibility. And I know that’s something you
-don’t want.&lt;/p&gt;
-
-&lt;p&gt;USB-C is an answer to the &lt;a href=&quot;https://xkcd.com/927/&quot;&gt;age-old problem of competing ports&lt;/a&gt;. You can either jump
-into this new world with both feet, or you can be left in the dust by people who do.&lt;/p&gt;
-
-&lt;h1 id=&quot;2-the-ipad-pro-line&quot;&gt;2. The iPad Pro Line&lt;/h1&gt;
-&lt;p&gt;The iPad pro line is being marketed as a desktop replacement. In truth, you’re closer to that than your
-competitors would like to admit, and further from it than you’d like to think.&lt;/p&gt;
-
-&lt;p&gt;The simple fact is, as much as you believe that wireless is the future (as do I), the world still runs on
-ports. You know this - it’s why you’re still putting ports on your laptops. One day, when wireless
-charging from across the house works, the 802.11X WiFi standard has evolved, and Bluetooth reaches its true
-potential, we’ll live in the world you dream about: a world without ports. But we’re not there. We’re not
-even close.&lt;/p&gt;
-
-&lt;p&gt;People - both professionals and consumers - need these ports. We need them to facilitate our presentations,
-to print our documents, to share files, and to connect to secured networks. It may not be your ideal, but
-it’s the world we live in. And you can’t truly call the iPad a “pro” until it can do these things.&lt;/p&gt;
-
-&lt;p&gt;So even throwing away the ideas of “iOSX”, I believe that the iPad pro has the potential to be a truly
-exceptional desktop replacement, even competing on an even playing field with something as fully-featured
-as the Microsoft Surface Pro, likely even surpassing it.&lt;/p&gt;
-
-&lt;p&gt;So let’s take a moment, and talk about three hypothetical graphic designers: Tom, Dick, and Sally. Tom uses
-a fancy, new, top-of-the-line iPad Pro. Dick uses a generic laptop, let’s say a MacBook Pro. Sally uses a
-Surface Pro.&lt;/p&gt;
-
-&lt;p&gt;Tom and Sally, being the savvy purchasers they are, love their ability to draw right on their computers.
-They have a clear advantage here over Dick, who needs a separate Wacom tablet. They also love the 
-portability of their computers, so they can go meet with clients with just a small bag. Dick is frustrated
-with his setup compared to his peers in this regard.&lt;/p&gt;
-
-&lt;p&gt;Then, they have to get to work doing more sophisticated work. Tom and Sally use multiple monitors and an
-ethernet hardline. Dick has an easy time of this, and Sally has the ports she needs to get it done. Tom, 
-however, can’t do these tasks at all. The iPad doesn’t support that kind of multiple display setup at all,
-and can’t do an ethernet hardline either. This means he can’t do anywhere near what his peers can, or work
-as efficiently. Dick and Sally laugh at him for his purchase, and rightly so.&lt;/p&gt;
-
-&lt;p&gt;And finally, they need to give a presentation. Tom brings his laptop, connects to the projector or 
-big-screen display with no problem, and seamlessly gives his presentation. Sally can too, equally quickly.
-Tom, however, is left in the dark. He has to send the presentation to a peer, and run it off their laptop.
-How embarrassing.&lt;/p&gt;
-
-&lt;p&gt;Now, do you see what I mean? The iPad pro is so close to being a feasible laptop replacement in terms of
-software, but just doesn’t have the hardware to cut it. If it USB-C, and full software support for it, he
-could easily keep up with Dick and Sally. His iPad would do everything he needs, and do it well. There is
-so much potential for the iPad here, and it’s squandered just by this one simple shortcoming. It would make
-your claims of it being a full-fledged desktop replacement a reality.&lt;/p&gt;
-
-&lt;h1 id=&quot;3-lightning-licensing&quot;&gt;3. Lightning Licensing&lt;/h1&gt;
-&lt;p&gt;I know, this would mean you lose out on licensing lightning products, and the income that comes with them.
-I can’t claim to know how much profit you get from this, and I can only assume that both the loss of 
-revenue and the corporate restructuring involved would be painful.&lt;/p&gt;
-
-&lt;p&gt;But think about the points I just made. I believe there are a lot of people out there who would love to use
-an iPad as a laptop replacement, but just can’t make the jump due to the shortcomings. Likewise, there’s no
-doubt that the user experience improvements would improve your customer retention, and probably bring in
-new users too. Not just that, but getting users into your ecosystem (and having your ecosystem become more
-consistent/reliable) will encourage them to buy your other products, resulting in a multiplier effect.&lt;/p&gt;
-
-&lt;p&gt;Further, think about the problems you’ve had with licensing. It discourages manufacturers from making 
-accessories for your devices, and lowers their ROI. You need these people, and if you open up your
-ecosystem to people to make more, and better, devices for your ecosystem, it’ll only spur your growth. And
-that’s what’ll make you a successful company, not nickel-and-diming the manufacturers who build 
-accessories to make your ecosystem richer.&lt;/p&gt;
-
-&lt;p&gt;And of course, we all know you’ve had problems with counterfeiters. When some company cranks out subpar
-devices and starts a house fire, you have to acknowledge that without the licensing issues, it would at
-the very least be a &lt;em&gt;smaller&lt;/em&gt; issue. And given that if it wouldn’t be such a big problem if not for your
-licensing practices, you are at least a little at fault for these incidents, for fostering an environment
-where they’re &lt;del&gt;allowed&lt;/del&gt; encouraged to exist. If you really care about these problems, and about your
-users, it would be ethical to cease this practice.&lt;/p&gt;
-
-&lt;h1 id=&quot;in-closing&quot;&gt;In Closing&lt;/h1&gt;
-&lt;p&gt;Adopting USB-C would be painful. But it’s not only the right thing to do, it’s in your best interest, from
-almost every angle. While you’ll probably never read this, I can only hope that you’re still considering
-the points I’ve made here.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://fscl01.fonpit.de/userfiles/4376948/image/AndroidPIT-usb-c-lighning-comparison-3.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Sincerely, your pal and fan,&lt;/p&gt;
-
-&lt;p&gt;Eric&lt;/p&gt;
-</description>
-        <pubDate>Thu, 16 Mar 2017 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/apple/2017/03/16/iPad-USB-C.html</link>
-        <guid isPermaLink="true">http://localhost:4000/apple/2017/03/16/iPad-USB-C.html</guid>
-        
-        
-        <category>Apple</category>
         
       </item>
     

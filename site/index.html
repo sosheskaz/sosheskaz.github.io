@@ -117,142 +117,96 @@
     <h1 class="post-title"><a href=""></a></h1>
     <div class="home">
 
-    <h1 class="post-title"><a href="/technology/2017/05/05/The-World-Runs-on-Bad-Code.html">The World Runs on Bad Code</a></h1>
+    <h1 class="post-title"><a href="/2017/05/06/Beamforming.html">Beamforming</a></h1>
 
     <div style="font-style: italic; font-size: small; text-align: right">
     
-        Written by Eric Miller
-        <br>
-        
-    
 
-    Published on May 5, 2017
+    Published on May 6, 2017
     </div>
 
     <hr>
     <br>
     
     <div>
-        <p>Code quality, the savior of, and the bane of, programmers.</p>
+        <p>layout: post
+title: What is Beamforming, and How Will it Change the World?
+author: Eric Miller
+category: Technology
+tags:</p>
 
-<p>Writing code is easy. I really do believe that with effort and willingness to learn, just about anybody
-can write a simple program. The challenge, however, is writing good code.</p>
+<p>As the internet’s grown up, more and more areas have started to be explored, especially in consumer
+devices. The best examples are smarthome hardware, wearable tech, and the ever-growing power of
+smartphones. Engineers are moving Heaven and Earth to make everyday things slightly more convenient.</p>
 
-<p>In the paraphrased words of Peter Welch (a log of this post is inspired by his essay, 
-<a href="https://www.stilldrinking.org/programming-sucks">Programming Sucks</a>, and its counterpart by a different
-author, 
-<a href="http://blog.samstokes.co.uk/blog/2014/05/01/what-programming-is-like/">What Programming is Like</a>), 
-good code reads like poetry 
-written by someone over thirty.
-Expounding on this idea, it’s quite accurate. Good code is descriptive without being obnoxious, neither 
-too concise nor too verbose, carefully thought out, well organized, and has a nice rhythm.</p>
+<h1 id="what-is-beamforming">What is Beamforming?</h1>
+<p>It’s a wireless technology, based around electomagnetic fields, especially WiFi. Traditionally, WiFi is
+radiated out in a sphere, in the same way that light emits from a lightbulb in every direction. One of the
+big problems of this is that it gets weak very fast as you move away from the source. Beamforming is an
+attempt to alleviate this.</p>
 
-<p>And it’s really difficult.</p>
+<p>Instead of radiating the signal out in a sphere, it locks on to one device and focuses its energy on
+sending the signal just in that direction. This means they can pump way more energy in just the direction
+that it needs to go, so the signal winds up being much stronger wherever you are.</p>
 
-<h1 id="okay-but-why-is-it-that-difficult">Okay, but Why is it that Difficult?</h1>
-<p>We all wrote those papers in high school. Perfectly prescribed formatting, with one introduction paragraph,
-three middle paragraphs, and a conclusion. We’re taught that because it’s an easy writing style to make
-coherent for a brief essay, but it’s really not much good beyond that. It lacks sophisticated flow, is 
-unsuited for expressing complex ideas, and of course, doesn’t work very well if you’re doing something
-substantially longer. It’s something teachers use to introduce you to the basic idea of how to structure
-your thoughts for something legible and meaningful. Computer science is similar: you’re taught basic
-structures and patterns that are more legible, coherent, and effective than pure stream-of-consciousness.
-But since each project takes maybe a few weeks, you don’t really do anything sophisticated - you’re writing
-those 5-paragraph essays, when your job will be to crank out encyclopedias.</p>
+<h1 id="things-that-are-changing">Things that are Changing</h1>
+<h2 id="wifi">WiFi</h2>
+<p><img src="/files/images/posts/2017-05-05/low-wifi.jpg" alt="" />
+The first, and most obvious, is WiFi. The new WiFi standard, 802.11ac, has beamforming built into the
+standard. One of the drawbacks of this standard is that is uses a higher electromagnetic frequency (5GHz) than the
+previous 802.11n (2.4GHz) standard. Why
+does this matter? Higher-frequency EM waves don’t penetrate through physical barriers as well as 
+lower-frequency ones do. Think of it this way: WiFi can penetrate through walls and bend around corners - 
+however, visible light, which is a much higher frequency than WiFi, does neither of these things very well.
+The new WiFi standard is nowhere near as high-frequency as light, but as an extreme example, this
+illustrates my point.</p>
 
-<p>But it’s not just like written language - it’s much, much worse. Imagine, if you will, a world where not
-only is it your job to crank out book after book, but that the history of written language is completely
-different. In this scenario, written language is only 60 years old. Not only that, but every few years
-a new revision of the language is put out, and whatever you wrote before is no longer compliant. Languages
-don’t translate easily, so you need to choose the right language to reach your entire desired audience.
-Some languages are better suited toward certain ideas, and almost everyone specializes in 1-3 languages.
-It’s a haphazard imbroglio of rushing to find the best way to structure your words, what only works in
-certain languages, and trying to keep up with the newest changes.</p>
+<p>Using the 5GHz frequency had a lot of advantages and overcomes many of the other problems with WiFi, 
+especially things like signal interference. Since the strength of 5GHz radiation deteriorates so much 
+faster, they needed a technology to overcome this. Enter beamforming - by focusing the direction, it can
+actually produce a stronger signal, with better range, than the older standard. You can already buy 
+routers and laptops with this capability.</p>
 
-<p>Now, on top of all of that, you’re writing it with a team of other people, all with their own linguistic
-voice, different specialties, and ideas. You try to divide it up - agree on conventions, design the layout
-of the book beforehand, divide up chapters - but as they say, no battle plan survives contact with the 
-enemy.</p>
+<h2 id="location">Location</h2>
+<p>Traditionally, the go-to way to locate things was a process called triangulation. Basically, you record
+the signal strength of the thing to be located from three sources, then cross-reference that with data
+about the physical environment to determine location. This is how cell phones detected their location
+before GPS chips were adopted. However, this technique is based on the old way of doing things - sending
+radiation out in every direction and hoping some of it actually gets used.</p>
 
-<h1 id="but-its-your-job-you-should-be-able-to-do-it">But it’s your Job. You Should be Able to Do it.</h1>
-<p>There’s truth to this, but computer science is an immense field. There are countless sub-areas, many of
-which are probably too broad in and of themselves for any individual to have a thorough understanding. 
-There’s the mathematics, the philosophy, the design, data engineering, security, tech support, the
-internet, robotics, and so much more. Code quality could probably nestle itself within the philosophy
-of computer science, and it’s still something that’s hard to pin down. There are guidelines, things that
-we all agree are good, but to a large extent judging code quality is a case of “I know it when I see it.”</p>
+<p>With beamforming, we can determine an approximate location with just one source. Since beamforming can tell
+us not only the signal strength, but the direction something is in, we can tell, roughly, where something
+is. This is less accurate than triangulation, but the fact that it’s even approximate is a breakthrough.
+This means we can map the physical location of devices with just one source instead of three. This
+technology is already being integrated by Apple in their Apple Watch - the Apple Watch uses beamforming
+to detect its proximity to a paired mac and, if it’s close enough, can automatically unlock it.</p>
 
-<p>That said, there are gray areas. Sometimes something becomes completely illegible due to a programmer
-using some “black magic” to get the job done, and do it efficiently. My favorite example is the 
-<a href="https://en.wikipedia.org/wiki/Fast_inverse_square_root">Fast Inverse Square Root Approximation</a>, 
-a bit of code used to power graphics in a lot of old games.
-To be honest, I don’t understand the mathematics behind it, but the code speaks for itself.</p>
+<h2 id="power">Power</h2>
+<p><img src="/files/images/posts/2017-05-05/unlimited-power.jpg" alt="" />
+Wireless power delivery has been theorized for a long time. Nikola Tesla figured it out long ago. But it
+was always wildly impractical and inefficient. It has efficiency problems to begin with, because the
+process of generating an electromagnetic signal itself is inefficient. Add to this the fact that you’re 
+broadcasting that signal in all directions, with most of it not being used, and efficiency is extremely
+low. Beamforming comes in here - by eliminating the waste of sending the signal in every direction, 
+short-range wireless charging actually becomes practical (but still inefficient compared to cables).
+Beamforming is the key to truly wireless charging, which will open up new possibilities in and of itself.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>float Q_rsqrt( float number )
-{
-    long i;
-    float x2, y;
-    const float threehalfs = 1.5F;
-    
-    x2 = number * 0.5F;
-    y  = number;
-    i  = * ( long * ) &amp;y;                       // evil floating point bit level hacking
-    i  = 0x5f3759df - ( i &gt;&gt; 1 );               // what the fuck? 
-    y  = * ( float * ) &amp;i;
-    y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
-//	y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
-    
-    return y;
-}
-</code></pre>
-</div>
-
-<p>This violates a <strong>LOT</strong> of the principles of clean code (swearing in comments is also always a bad sign). 
-And yet, the author managed to abstract it away
-deep enough that no one who uses the function will really need to know how it works (this is an important
-principle of clean code), and it does its job more quickly and effectively than other algorithms of its
-time. It’s ugly, and it’s beautiful. It’s awful code, and it’s great code.</p>
-
-<p>Most programmers have decent code quality. They have to. If you don’t have a basic level of quality in
-your code, you hit a point where you can’t expand on it anymore because you don’t know what it does. But
-most programmers also drop their quality here and there, because management says <em>we need three weeks of
-code done in three days and I don’t care how</em>, or sometimes simply because it doesn’t make sense to invest
-that much effort in designing a basic piece of code.</p>
-
-<h1 id="so-what-does-any-of-this-have-to-do-with-your-title">So What Does any of This Have to Do With Your Title?</h1>
-<p>Writing good code is an art. And like many arts, there are journeymen, experts, and masters. The
-journeymen are common enough, but the experts and masters are rarities. People who write clean code as easily
-as they think it, whose skills have progressed so far they’ve forgotten how to write bad code, whose
-work toils unseen under the systems we experience every day and holds everything together.</p>
-
-<p>It really is too bad that they are so rare.</p>
-
-<p>Any shmuck with a computer and some determination can write some code and put it up online somewhere. And
-there’s a lot of shmucks with determination.</p>
-
-<p>Since it’s such a difficult art, there are many people writing code that just isn’t up to par. It’s what
-powers the internet, what powers our computers, and what drives our entire experience. And perhaps the
-scariest part, we wouldn’t be where we are without them. Behind every major website or application is at
-least some bad code, and if there weren’t people to write that code, nothing would work in the first
-place.</p>
-
-<h1 id="where-do-we-go-from-here">Where Do We Go From Here?</h1>
-<p>If the arts reached their greatest era in the renaissance, we’re still doing cave paintings. Doing
-guesswork and experimentation, finding the berries that make the best pigments, and theorizing what will
-work based on a small sample size. The greatest masters of the art of clean code, most likely, have not
-written their first program yet. One day, when languages have evolved, truths have been discovered,
-and the likes of Donald Knuth, Linus Torvalds, and Jon Skeet are considered archaic example of what was
-considered good code before we knew what we were doing, the premise of this post will no longer be true.</p>
+<p>There’s actually a company working on this, likely starting to sell devices in the next couple years.
+They’re called <a href="https://energous.com/">Energous</a>. They’re partnered with Apple (this isn’t official, but
+based on Apple’s M.O. and Energous’ statements, this is all but certain), and are expected to be providing
+wireless charging for an upcoming iPhone. I will watch their career with great interest.</p>
 
 <p> </p>
 
 <hr />
 
-<p><em>“When you do things right, people won’t be sure that you have done anything at all.”</em></p>
+<p>So that’s it! Beamforming is a cool new technology that’s doing a lot of cool new things, and will open up
+countless doors in the evolution of upcoming wireless technologies. It’ll be interesting to see what 
+clever uses the engineers who integrate this technology will dream up.</p>
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/technology/2017/05/05/The-World-Runs-on-Bad-Code.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/2017/05/06/Beamforming.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>
