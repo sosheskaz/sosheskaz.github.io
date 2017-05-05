@@ -1,8 +1,10 @@
+---
 layout: post
 title: What is Beamforming, and How Will it Change the World?
 author: Eric Miller
 category: Technology
 tags: 
+---
 
 As the internet's grown up, more and more areas have started to be explored, especially in consumer
 devices. The best examples are smarthome hardware, wearable tech, and the ever-growing power of
