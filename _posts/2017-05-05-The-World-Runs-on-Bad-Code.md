@@ -11,7 +11,7 @@ Code quality, the savior of, and the bane of, programmers.
 Writing code is easy. I really do believe that with effort and willingness to learn, just about anybody
 can write a simple program. The challenge, however, is writing good code.
 
-In the paraphrased words of Peter Welch (a log of this post is inspired by his essay, 
+In the paraphrased words of Peter Welch (a lot of this post is inspired by his essay, 
 [Programming Sucks](https://www.stilldrinking.org/programming-sucks), and its counterpart by a different
 author, 
 [What Programming is Like](http://blog.samstokes.co.uk/blog/2014/05/01/what-programming-is-like/)), 
