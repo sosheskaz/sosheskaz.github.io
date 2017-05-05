@@ -14,20 +14,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- Begin Jekyll SEO tag v2.1.0 -->
+    <!-- Begin Jekyll SEO tag v2.2.2 -->
 <meta property="og:title" content="Eric Miller’s Website" />
+<meta name="author" content="Eric Miller" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="My personal website. A place for my stuff." />
 <meta property="og:description" content="My personal website. A place for my stuff." />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Eric Miller’s Website" />
 <script type="application/ld+json">
-{"@context": "http://schema.org",
-"@type": "WebSite",
-"name": "Eric Miller’s Website",
-"headline": "Eric Miller’s Website",
-"description": "My personal website. A place for my stuff.",
-"url": "http://localhost:4000/"}</script>
+{"@context":"http://schema.org","@type":"WebSite","name":"Eric Miller’s Website","headline":"Eric Miller’s Website","author":{"@type":"Person","name":"Eric Miller"},"description":"My personal website. A place for my stuff.","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -120,7 +117,7 @@
     <h1 class="post-title"><a href=""></a></h1>
     <div class="home">
 
-    <h1 class="post-title"><a href="/technology/2017/04/21/Package-Managers.html">Why Package Managers are Great - With a Focus on Homebrew</a></h1>
+    <h1 class="post-title"><a href="/technology/2017/05/05/The-World-Runs-on-Bad-Code.html">The World Runs on Bad Code</a></h1>
 
     <div style="font-style: italic; font-size: small; text-align: right">
     
@@ -129,126 +126,133 @@
         
     
 
-    Published on Apr 21, 2017
+    Published on May 5, 2017
     </div>
 
     <hr>
     <br>
     
     <div>
-        <p>I really like package managers. Often, I’ll even get a bit preachy about them.
-So guess what I’m going to do!</p>
+        <p>Code quality, the savior of, and the bane of, programmers.</p>
 
-<p>Package managers are a lovely piece of technology. Linux users will be very
-familiar with the terminology, but the fact is most of us interact with them
-regularly without even realizing it.</p>
+<p>Writing code is easy. I really do believe that with effort and willingness to learn, just about anybody
+can write a simple program. The challenge, however, is writing good code.</p>
 
-<p>From <a href="https://en.wikipedia.org/wiki/Package_manager">Wikipedia</a>: <em>A package
-manager or package management system is a collection of software tools that
-automates the process of installing, upgrading, configuring, and removing
-computer programs for a computer’s operating system in a consistent manner.</em></p>
+<p>In the paraphrased words of Peter Welch (a log of this post is inspired by his essay, 
+<a href="https://www.stilldrinking.org/programming-sucks">Programming Sucks</a>, and its counterpart by a different
+author, 
+<a href="http://blog.samstokes.co.uk/blog/2014/05/01/what-programming-is-like/">What Programming is Like</a>), 
+good code reads like poetry 
+written by someone over thirty.
+Expounding on this idea, it’s quite accurate. Good code is descriptive without being obnoxious, neither 
+too concise nor too verbose, carefully thought out, well organized, and has a nice rhythm.</p>
 
-<p>Sound familiar? That’s what the iOS and Android app stores do. That’s even what
-the Windows and Mac app stores do. And that’s really all this is: instead of
-downloading an app off the internet, running it, and then having to dig around
-for an uninstaller to remove it. Package managers take care of this for you.
-Of course, a package manager also has even more upsides:</p>
+<p>And it’s really difficult.</p>
 
-<ul>
-  <li>If the software has any dependencies, the package manager will install those
-automatically.</li>
-  <li>You can easily update all of your software at once, or even automate it to
-happen regularly.</li>
-  <li>Most package managers are curated, so when you install something, you can be
-confident that it came from a legitimate source.</li>
-  <li>There is a unified interface for everything - there are no special steps to
-install or remove software.</li>
-  <li>Things install consistently - you don’t need to choose an install directory,
-or show the installer where the dependencies are - it takes care of everything.</li>
-  <li>It uses sane installation options. You know how sometimes you’ll open an
-installer and it’ll “generously” offer to change your search engine to Yahoo,
-install 14 toolbars, and other goofy things? Package managers will disable those
-by default (typically).</li>
-  <li>It adds command line tools to your PATH automatically, so you don’t have to
-think.</li>
-  <li>It verifies that your download hasn’t been corrupted.</li>
-  <li>It makes migrating to a new computer a breeze.</li>
-</ul>
+<h1 id="okay-but-why-is-it-that-difficult">Okay, but Why is it that Difficult?</h1>
+<p>We all wrote those papers in high school. Perfectly prescribed formatting, with one introduction paragraph,
+three middle paragraphs, and a conclusion. We’re taught that because it’s an easy writing style to make
+coherent for a brief essay, but it’s really not much good beyond that. It lacks sophisticated flow, is 
+unsuited for expressing complex ideas, and of course, doesn’t work very well if you’re doing something
+substantially longer. It’s something teachers use to introduce you to the basic idea of how to structure
+your thoughts for something legible and meaningful. Computer science is similar: you’re taught basic
+structures and patterns that are more legible, coherent, and effective than pure stream-of-consciousness.
+But since each project takes maybe a few weeks, you don’t really do anything sophisticated - you’re writing
+those 5-paragraph essays, when your job will be to crank out encyclopedias.</p>
+
+<p>But it’s not just like written language - it’s much, much worse. Imagine, if you will, a world where not
+only is it your job to crank out book after book, but that the history of written language is completely
+different. In this scenario, written language is only 60 years old. Not only that, but every few years
+a new revision of the language is put out, and whatever you wrote before is no longer compliant. Languages
+don’t translate easily, so you need to choose the right language to reach your entire desired audience.
+Some languages are better suited toward certain ideas, and almost everyone specializes in 1-3 languages.
+It’s a haphazard imbroglio of rushing to find the best way to structure your words, what only works in
+certain languages, and trying to keep up with the newest changes.</p>
+
+<p>Now, on top of all of that, you’re writing it with a team of other people, all with their own linguistic
+voice, different specialties, and ideas. You try to divide it up - agree on conventions, design the layout
+of the book beforehand, divide up chapters - but as they say, no battle plan survives contact with the 
+enemy.</p>
+
+<h1 id="but-its-your-job-you-should-be-able-to-do-it">But it’s your Job. You Should be Able to Do it.</h1>
+<p>There’s truth to this, but computer science is an immense field. There are countless sub-areas, many of
+which are probably too broad in and of themselves for any individual to have a thorough understanding. 
+There’s the mathematics, the philosophy, the design, data engineering, security, tech support, the
+internet, robotics, and so much more. Code quality could probably nestle itself within the philosophy
+of computer science, and it’s still something that’s hard to pin down. There are guidelines, things that
+we all agree are good, but to a large extent judging code quality is a case of “I know it when I see it.”</p>
+
+<p>That said, there are gray areas. Sometimes something becomes completely illegible due to a programmer
+using some “black magic” to get the job done, and do it efficiently. My favorite example is the 
+<a href="https://en.wikipedia.org/wiki/Fast_inverse_square_root">Fast Inverse Square Root Approximation</a>, 
+a bit of code used to power graphics in a lot of old games.
+To be honest, I don’t understand the mathematics behind it, but the code speaks for itself.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>float Q_rsqrt( float number )
+{
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
+    
+    x2 = number * 0.5F;
+    y  = number;
+    i  = * ( long * ) &amp;y;                       // evil floating point bit level hacking
+    i  = 0x5f3759df - ( i &gt;&gt; 1 );               // what the fuck? 
+    y  = * ( float * ) &amp;i;
+    y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
+//	y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
+    
+    return y;
+}
+</code></pre>
+</div>
+
+<p>This violates a <strong>LOT</strong> of the principles of clean code (swearing in comments is also always a bad sign). 
+And yet, the author managed to abstract it away
+deep enough that no one who uses the function will really need to know how it works (this is an important
+principle of clean code), and it does its job more quickly and effectively than other algorithms of its
+time. It’s ugly, and it’s beautiful. It’s awful code, and it’s great code.</p>
+
+<p>Most programmers have decent code quality. They have to. If you don’t have a basic level of quality in
+your code, you hit a point where you can’t expand on it anymore because you don’t know what it does. But
+most programmers also drop their quality here and there, because management says <em>we need three weeks of
+code done in three days and I don’t care how</em>, or sometimes simply because it doesn’t make sense to invest
+that much effort in designing a basic piece of code.</p>
+
+<h1 id="so-what-does-any-of-this-have-to-do-with-your-title">So What Does any of This Have to Do With Your Title?</h1>
+<p>Writing good code is an art. And like many arts, there are journeymen, experts, and masters. The
+journeymen are common enough, but the experts and masters are rarities. People who write clean code as easily
+as they think it, whose skills have progressed so far they’ve forgotten how to write bad code, whose
+work toils unseen under the systems we experience every day and holds everything together.</p>
+
+<p>It really is too bad that they are so rare.</p>
+
+<p>Any shmuck with a computer and some determination can write some code and put it up online somewhere. And
+there’s a lot of shmucks with determination.</p>
+
+<p>Since it’s such a difficult art, there are many people writing code that just isn’t up to par. It’s what
+powers the internet, what powers our computers, and what drives our entire experience. And perhaps the
+scariest part, we wouldn’t be where we are without them. Behind every major website or application is at
+least some bad code, and if there weren’t people to write that code, nothing would work in the first
+place.</p>
+
+<h1 id="where-do-we-go-from-here">Where Do We Go From Here?</h1>
+<p>If the arts reached their greatest era in the renaissance, we’re still doing cave paintings. Doing
+guesswork and experimentation, finding the berries that make the best pigments, and theorizing what will
+work based on a small sample size. The greatest masters of the art of clean code, most likely, have not
+written their first program yet. One day, when languages have evolved, truths have been discovered,
+and the likes of Donald Knuth, Linus Torvalds, and Jon Skeet are considered archaic example of what was
+considered good code before we knew what we were doing, the premise of this post will no longer be true.</p>
+
+<p> </p>
 
 <hr />
 
-<p>Traditional package managers operate using the
-<a href="https://en.wikipedia.org/wiki/Command-line_interface">command line</a>. If you’re
-not computer savvy, this is probably intimidating. But I’ll provide some options
-regardless. For Windows users, <a href="https://chocolatey.org/">Chocolatey</a> exists.
-In my opinion, it’s a bit incomplete, and somewhat poorly maintained, but to me
-a mediocre package manager is better than none. For Mac, there are two good
-options, <a href="https://brew.sh/">Homebrew</a> and <a href="https://www.macports.org/">MacPorts</a>.
-I recommend Homebrew, as it’s simpler in my opinion, but MacPorts has its own
-advantages. I won’t wax philosophical about it here.</p>
-
-<p>Package managers are particularly useful to people in software development or
-IT, as they handle many of the intricacies that are easy to mess up. If you’re
-in those fields, and are not familiar with package managers, I highly recommend
-taking the time to learn your way around them.</p>
-
-<h1 id="so-how-do-you-use-one">So How do You Use One?</h1>
-
-<p>In this example, I’m using Homebrew, because it’s native to my OS and I’m most
-familiar with it. To install software, for example ruby, simply type <code class="highlighter-rouge">brew
-install ruby</code>. To remove it, <code class="highlighter-rouge">brew remove ruby</code>. Easy. But what about installing
-something bigger, like Java? Homebrew has a built-in extension for some packages
-that were outside the philosophical scope of the original homebrew, called
-Homebrew-Cask. To install Java, just run <code class="highlighter-rouge">brew cask install java</code>, and to remove
-just <code class="highlighter-rouge">brew cask remove Java</code>. Again, easy.</p>
-
-<p>Now you want to update your apps. For homebrew, just run <code class="highlighter-rouge">brew update &amp;&amp; brew
-upgrade -y</code>. The <code class="highlighter-rouge">-y</code> lets it know that you’re sure you want to upgrade them, so
-it doesn’t ask you if you’re sure. But wait! You don’t want to upgrade something
-because you need a specific version! <code class="highlighter-rouge">brew</code> has you covered. Just run <code class="highlighter-rouge">brew pin
-something</code> and it’ll stay at the version it’s at.</p>
-
-<p>Unfortunately, Homebrew (and Cask) is an incomplete package manager at this
-point in time. This is one of the reasons MacPorts can be better. Homebrew-Cask
-doesn’t actually have an updater built-in, but you can install one with
-<a href="https://github.com/buo/homebrew-cask-upgrade">this</a>. TL;DR: Run this:
-<code class="highlighter-rouge">brew tap buo/cask-upgrade</code> to install, and <code class="highlighter-rouge">brew cu</code> to update your apps.
-Unfortunately, it doesn’t support pinning, so beware. Otherwise, you can update
-manually with <code class="highlighter-rouge">brew cask remove something &amp;&amp; brew cask install something</code>.</p>
-
-<p>Finally, package managers can make migrating to a new computer a breeze. I don’t
-necessarily trust most migration software, so I tend to want to do it myself. I
-also like to do clean installs, so any “gunk” my old computer accumulated
-doesn’t pass on to my new one. To do this, there are three easy steps:</p>
-
-<ol>
-  <li><code class="highlighter-rouge">brew list &gt; brew.txt &amp;&amp; brew cask list &gt; brewcask.txt &amp;&amp; brew tap --list &gt; btlist.txt</code></li>
-  <li>Copy <code class="highlighter-rouge">brew.txt</code> and <code class="highlighter-rouge">brewcask.txt</code> to your new computer.</li>
-  <li><code class="highlighter-rouge">cat btlist.txt | xargs brew tap &amp;&amp; cat brew.txt | xargs brew install &amp;&amp; cat brewcask.txt | xargs brew cask install</code></li>
-</ol>
-
-<p>Now all your software is on the new machine, in three steps and about two
-minutes worth of work.</p>
-
-<h1 id="closing-up">Closing Up</h1>
-
-<p>Package managers have a bit of a learning curve at first, being command line,
-but in the end they simplify things a lot. The funny thing is, I actually don’t
-know how to install most of the software I use, because I never have to choose
-the installation directory, the options, or set up dependencies. I just type a
-few words.</p>
-
-<p>Think about how much the app store has simplified things. How instead of having
-to hunt down a website and a tutorial and check whether the developer is legit
-and forget to uncheck the box so now Yahoo is your search engine. There’s one,
-simplified way to do everything, that’s safe and easy. That’s what package
-managers do.</p>
-
-<p>And it’s beautiful. 🍺</p>
+<p><em>“When you do things right, people won’t be sure that you have done anything at all.”</em></p>
 
     </div>
 
-    <div class="fb-like" data-href="http://localhost:4000/technology/2017/04/21/Package-Managers.html" data-layout="standard" data-action="like"
+    <div class="fb-like" data-href="http://localhost:4000/technology/2017/05/05/The-World-Runs-on-Bad-Code.html" data-layout="standard" data-action="like"
          data-size="large" data-show-faces="true" data-share="true"></div>
     <br>
     <hr>

@@ -6,9 +6,137 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 May 2017 16:41:49 -0500</pubDate>
-    <lastBuildDate>Thu, 04 May 2017 16:41:49 -0500</lastBuildDate>
-    <generator>Jekyll v3.3.1</generator>
+    <pubDate>Fri, 05 May 2017 14:28:09 -0500</pubDate>
+    <lastBuildDate>Fri, 05 May 2017 14:28:09 -0500</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>The World Runs on Bad Code</title>
+        <description>&lt;p&gt;Code quality, the savior of, and the bane of, programmers.&lt;/p&gt;
+
+&lt;p&gt;Writing code is easy. I really do believe that with effort and willingness to learn, just about anybody
+can write a simple program. The challenge, however, is writing good code.&lt;/p&gt;
+
+&lt;p&gt;In the paraphrased words of Peter Welch (a log of this post is inspired by his essay, 
+&lt;a href=&quot;https://www.stilldrinking.org/programming-sucks&quot;&gt;Programming Sucks&lt;/a&gt;, and its counterpart by a different
+author, 
+&lt;a href=&quot;http://blog.samstokes.co.uk/blog/2014/05/01/what-programming-is-like/&quot;&gt;What Programming is Like&lt;/a&gt;), 
+good code reads like poetry 
+written by someone over thirty.
+Expounding on this idea, it’s quite accurate. Good code is descriptive without being obnoxious, neither 
+too concise nor too verbose, carefully thought out, well organized, and has a nice rhythm.&lt;/p&gt;
+
+&lt;p&gt;And it’s really difficult.&lt;/p&gt;
+
+&lt;h1 id=&quot;okay-but-why-is-it-that-difficult&quot;&gt;Okay, but Why is it that Difficult?&lt;/h1&gt;
+&lt;p&gt;We all wrote those papers in high school. Perfectly prescribed formatting, with one introduction paragraph,
+three middle paragraphs, and a conclusion. We’re taught that because it’s an easy writing style to make
+coherent for a brief essay, but it’s really not much good beyond that. It lacks sophisticated flow, is 
+unsuited for expressing complex ideas, and of course, doesn’t work very well if you’re doing something
+substantially longer. It’s something teachers use to introduce you to the basic idea of how to structure
+your thoughts for something legible and meaningful. Computer science is similar: you’re taught basic
+structures and patterns that are more legible, coherent, and effective than pure stream-of-consciousness.
+But since each project takes maybe a few weeks, you don’t really do anything sophisticated - you’re writing
+those 5-paragraph essays, when your job will be to crank out encyclopedias.&lt;/p&gt;
+
+&lt;p&gt;But it’s not just like written language - it’s much, much worse. Imagine, if you will, a world where not
+only is it your job to crank out book after book, but that the history of written language is completely
+different. In this scenario, written language is only 60 years old. Not only that, but every few years
+a new revision of the language is put out, and whatever you wrote before is no longer compliant. Languages
+don’t translate easily, so you need to choose the right language to reach your entire desired audience.
+Some languages are better suited toward certain ideas, and almost everyone specializes in 1-3 languages.
+It’s a haphazard imbroglio of rushing to find the best way to structure your words, what only works in
+certain languages, and trying to keep up with the newest changes.&lt;/p&gt;
+
+&lt;p&gt;Now, on top of all of that, you’re writing it with a team of other people, all with their own linguistic
+voice, different specialties, and ideas. You try to divide it up - agree on conventions, design the layout
+of the book beforehand, divide up chapters - but as they say, no battle plan survives contact with the 
+enemy.&lt;/p&gt;
+
+&lt;h1 id=&quot;but-its-your-job-you-should-be-able-to-do-it&quot;&gt;But it’s your Job. You Should be Able to Do it.&lt;/h1&gt;
+&lt;p&gt;There’s truth to this, but computer science is an immense field. There are countless sub-areas, many of
+which are probably too broad in and of themselves for any individual to have a thorough understanding. 
+There’s the mathematics, the philosophy, the design, data engineering, security, tech support, the
+internet, robotics, and so much more. Code quality could probably nestle itself within the philosophy
+of computer science, and it’s still something that’s hard to pin down. There are guidelines, things that
+we all agree are good, but to a large extent judging code quality is a case of “I know it when I see it.”&lt;/p&gt;
+
+&lt;p&gt;That said, there are gray areas. Sometimes something becomes completely illegible due to a programmer
+using some “black magic” to get the job done, and do it efficiently. My favorite example is the 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Fast_inverse_square_root&quot;&gt;Fast Inverse Square Root Approximation&lt;/a&gt;, 
+a bit of code used to power graphics in a lot of old games.
+To be honest, I don’t understand the mathematics behind it, but the code speaks for itself.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;float Q_rsqrt( float number )
+{
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
+    
+    x2 = number * 0.5F;
+    y  = number;
+    i  = * ( long * ) &amp;amp;y;                       // evil floating point bit level hacking
+    i  = 0x5f3759df - ( i &amp;gt;&amp;gt; 1 );               // what the fuck? 
+    y  = * ( float * ) &amp;amp;i;
+    y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
+//	y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
+    
+    return y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This violates a &lt;strong&gt;LOT&lt;/strong&gt; of the principles of clean code (swearing in comments is also always a bad sign). 
+And yet, the author managed to abstract it away
+deep enough that no one who uses the function will really need to know how it works (this is an important
+principle of clean code), and it does its job more quickly and effectively than other algorithms of its
+time. It’s ugly, and it’s beautiful. It’s awful code, and it’s great code.&lt;/p&gt;
+
+&lt;p&gt;Most programmers have decent code quality. They have to. If you don’t have a basic level of quality in
+your code, you hit a point where you can’t expand on it anymore because you don’t know what it does. But
+most programmers also drop their quality here and there, because management says &lt;em&gt;we need three weeks of
+code done in three days and I don’t care how&lt;/em&gt;, or sometimes simply because it doesn’t make sense to invest
+that much effort in designing a basic piece of code.&lt;/p&gt;
+
+&lt;h1 id=&quot;so-what-does-any-of-this-have-to-do-with-your-title&quot;&gt;So What Does any of This Have to Do With Your Title?&lt;/h1&gt;
+&lt;p&gt;Writing good code is an art. And like many arts, there are journeymen, experts, and masters. The
+journeymen are common enough, but the experts and masters are rarities. People who write clean code as easily
+as they think it, whose skills have progressed so far they’ve forgotten how to write bad code, whose
+work toils unseen under the systems we experience every day and holds everything together.&lt;/p&gt;
+
+&lt;p&gt;It really is too bad that they are so rare.&lt;/p&gt;
+
+&lt;p&gt;Any shmuck with a computer and some determination can write some code and put it up online somewhere. And
+there’s a lot of shmucks with determination.&lt;/p&gt;
+
+&lt;p&gt;Since it’s such a difficult art, there are many people writing code that just isn’t up to par. It’s what
+powers the internet, what powers our computers, and what drives our entire experience. And perhaps the
+scariest part, we wouldn’t be where we are without them. Behind every major website or application is at
+least some bad code, and if there weren’t people to write that code, nothing would work in the first
+place.&lt;/p&gt;
+
+&lt;h1 id=&quot;where-do-we-go-from-here&quot;&gt;Where Do We Go From Here?&lt;/h1&gt;
+&lt;p&gt;If the arts reached their greatest era in the renaissance, we’re still doing cave paintings. Doing
+guesswork and experimentation, finding the berries that make the best pigments, and theorizing what will
+work based on a small sample size. The greatest masters of the art of clean code, most likely, have not
+written their first program yet. One day, when languages have evolved, truths have been discovered,
+and the likes of Donald Knuth, Linus Torvalds, and Jon Skeet are considered archaic example of what was
+considered good code before we knew what we were doing, the premise of this post will no longer be true.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;“When you do things right, people won’t be sure that you have done anything at all.”&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 05 May 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/technology/2017/05/05/The-World-Runs-on-Bad-Code.html</link>
+        <guid isPermaLink="true">http://localhost:4000/technology/2017/05/05/The-World-Runs-on-Bad-Code.html</guid>
+        
+        
+        <category>Technology</category>
+        
+      </item>
     
       <item>
         <title>Why Package Managers are Great - With a Focus on Homebrew</title>
@@ -1135,271 +1263,6 @@ the points I’ve made here.&lt;/p&gt;
         
         
         <category>Apple</category>
-        
-      </item>
-    
-      <item>
-        <title>Setting up Simple Continuous Integration for iOS Development</title>
-        <description>&lt;p&gt;Setting up reliable continuous integration (CI) for XCode can be a nightmare. I personally wrestled with the
-problem for a long while, eventually finding a somewhat convoluted workaround to make it work. However, I’ve
-since found a way to develop and maintain a reliable CI solution. Following is how you can whip together something
-similar.&lt;/p&gt;
-
-&lt;p&gt;In this guide, you’ll find a start-to-finish CI solution for an XCode project.&lt;/p&gt;
-
-&lt;h1 id=&quot;vocabulary&quot;&gt;Vocabulary&lt;/h1&gt;
-&lt;p&gt;If you’re familiar with CI, you can probably skip this (short) section.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Version Control System (VCS): The system used for tracking changes and version control. In this example,
-it is git/BitBucket.&lt;/li&gt;
-  &lt;li&gt;CI Server: The server that monitors the VCS and tells build agents when and what to run.&lt;/li&gt;
-  &lt;li&gt;Build Agent: The computer that runs builds and tests, at the behest of the CI server.&lt;/li&gt;
-  &lt;li&gt;Package Manager: From &lt;a href=&quot;https://en.wikipedia.org/wiki/Package_manager&quot;&gt;Wikipedia&lt;/a&gt;: “A package manager or package management system is a collection of 
-software tools that automates the process of installing, upgrading, configuring, and removing computer 
-programs for a computer’s operating system in a consistent manner.” This means when you add new third-party
-libraries, no additional work is necessary to make them work on the server.&lt;/li&gt;
-  &lt;li&gt;Dependency Resolution: This is a technology that provides a way to programmatically install,
-manage, and update third-party libraries.&lt;/li&gt;
-  &lt;li&gt;GUID/UUID: Globally Unique IDentifier, or Universally Unique IDentifier. These two terms are
-interchangeable. It is a 128-bit number that, when generated, is guaranteed to always be unique. It is
-usually in hexadecimal, with a few dashes in between. If you want to know more, here’s the 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Universally_unique_identifier&quot;&gt;Wikipedia Article&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;what-youll-need&quot;&gt;What You’ll Need&lt;/h1&gt;
-&lt;p&gt;Unfortunately, this process requires some resources that are not insubstantial. They are as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A server to host your CI. This can be run on most operating systems, including MacOS, Windows, most Linux
-distros, and even BSD. The server in my example is a dedicated computer running FreeBSD 11.0. Ideally, this
-machine will have a high uptime, so a personal laptop is not ideal.&lt;/li&gt;
-  &lt;li&gt;A build agent. This machine must run the most recent version of MacOS. A high uptime is ideal, but not
-necessary for a small operation, like mine. I use a dedicated 2011 MacBook Pro using 
-&lt;a href=&quot;https://integralpro.github.io/nosleep/&quot;&gt;NoSleep&lt;/a&gt;. This keeps the machine from going to sleep when closing
-the lid. &lt;strong&gt;This can be the same machine as the CI server if desired&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;XCode must be installed on the build agent, along with all of the command line tools. It can
-be installed from the &lt;a href=&quot;https://itunes.apple.com/us/app/xcode/id497799835?mt=12&quot;&gt;Mac App Store&lt;/a&gt;.
-Once XCode is installed, run &lt;code class=&quot;highlighter-rouge&quot;&gt;xcode-select -install&lt;/code&gt; from the Terminal.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jetbrains.com/teamcity/&quot;&gt;TeamCity&lt;/a&gt; or another CI solution. My guide will use TeamCity, 
-because it’s what I’m most familiar with, as well as because it has &lt;em&gt;XCode support out-of-the-box&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;(Optional) &lt;a href=&quot;https://github.com/Carthage/Carthage&quot;&gt;Carthage&lt;/a&gt; or another package manager. This simplifies
-building dependencies on the build agent, as you’ll see later in the guide.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;step-1-setting-up-the-ci-server&quot;&gt;Step 1: Setting up the CI Server&lt;/h1&gt;
-
-&lt;p&gt;In my example, I’ll be setting it up on a MacOS machine. If using a Linux or BSD machine, this should be
-similar. For a Windows machine, your mileage may vary.&lt;/p&gt;
-
-&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
-
-&lt;p&gt;First, ensure that your computer has 
-&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&quot;&gt;JDK 1.8&lt;/a&gt; installed.
-Note that this is the most recent version at the time of writing, and so in the future this dependency may
-change. If you are not using TeamCity, this step may or may not be necessary.&lt;/p&gt;
-
-&lt;h2 id=&quot;setting-up-the-teamcity-service&quot;&gt;Setting up the TeamCity Service&lt;/h2&gt;
-
-&lt;p&gt;To start, on the machine that will be running the CI server, download 
-&lt;a href=&quot;https://www.jetbrains.com/teamcity/download/#&quot;&gt;TeamCity&lt;/a&gt;. There are respective download options for various
-common operating systems. In this tutorial, I’m assuming use of one of the tar.gz downloads. 
-If using FreeBSD or another flavor of BSD, the Linux version should work. It’s up
-to you to choose the version that’s right for you. If the machine running this server is a MacOS laptop,
-I highly recommend also downloading &lt;a href=&quot;https://integralpro.github.io/nosleep/&quot;&gt;NoSleep&lt;/a&gt; and
-&lt;a href=&quot;https://itunes.apple.com/us/app/amphetamine/id937984704?mt=12&quot;&gt;Amphetamine&lt;/a&gt; to keep it running at all
-times. This assumes a dedicated computer; for a small or temporary setup, using a non-dedicated computer 
-(such as a dev laptop) may be sufficient.&lt;/p&gt;
-
-&lt;p&gt;In the extracted directory structure, the configuration files can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;conf&lt;/code&gt; and the executable
-files can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt;. The configuration files can be changed to suit your needs. I won’t get into it
-here, but if you want to customize your settings, look up a guide on configuring TomCat.&lt;/p&gt;
-
-&lt;p&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt; in your Terminal, and run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll.sh start&lt;/code&gt;. This will start the server, and you can expect
-an output similar to the following. To stop the process, run &lt;code class=&quot;highlighter-rouge&quot;&gt;./runAll.sh stop kill&lt;/code&gt;. Note that this process
-will not run on startup, and you will need to use launchd/systemd/Services as appropriate for the OS.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-runAll-start.jpg&quot; alt=&quot;Sample output&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now navigate to &lt;a href=&quot;http://localhost:8111/&quot;&gt;http://localhost:8111/&lt;/a&gt;. If accessing this from a machine other
-than the one you just set up the server on, use that machine’s hostname instead of localhost. You’ll see
-a setup dialog, similar to the one below. Walk through the setup process. The default settings should be
-fine for simple use cases.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-setup-dialog.jpg&quot; alt=&quot;Setup Dialog&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you’ve finished the process and created an administrator account, you’re ready to start using TeamCity.
-If it’s installed on MacOS, it will also install the TeamCity agent, which will make the next step easier.&lt;/p&gt;
-
-&lt;p&gt;From there, go to the administration page. From the administration page, create a project, and create a
-build configuration under that project. I recommend creating a project from a VCS source, as this will
-make things easier down the line.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-admin-page-link.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/files/images/posts/2017-03-07-create-project.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Setting up additional user accounts, builds, and other settings is left as an exercise to the reader 😉.&lt;/p&gt;
-
-&lt;h3 id=&quot;some-nice-additions&quot;&gt;Some nice additions&lt;/h3&gt;
-&lt;p&gt;If you’re running this on a company network, or you use a VPN to connect to the server, you’re probably done.
-However, if this is for personal use or for use of a small project, you may want to look at a DDNS configuration.
-DDNS means Dynamic Domain Name System. Basically, it sets it up such that a computer that may or may not
-have a permanent IP address has a domain name that tracks it and follows it wherever it goes. You can get
-a free version of this service from &lt;a href=&quot;https://ddns.net&quot;&gt;ddns.net&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;configuring-your-build-steps&quot;&gt;Configuring your Build Steps&lt;/h2&gt;
-
-&lt;p&gt;TeamCity will try to auto-detect build steps. If they’re appropriate for you, you can use them. If not,
-creating them manually is easy. My example build will contain four steps, but these can be adjusted as
-necessary.&lt;/p&gt;
-
-&lt;h3 id=&quot;substep-1-dependency-resolution&quot;&gt;Substep 1: Dependency Resolution&lt;/h3&gt;
-&lt;p&gt;The goal of this step is to ensure that your build agent has whatever software packages or libraries
-your app will need to work.&lt;/p&gt;
-
-&lt;p&gt;You only need to follow this step if you use a package manager for dependency resolution (which I 
-&lt;strong&gt;&lt;em&gt;highly&lt;/em&gt;&lt;/strong&gt; recommend). If you don’t, resolving dependencies is left up to you. Note that the following 
-are simplified somewhat; best practices would dictate that one store something like the path to 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;carthage&lt;/code&gt; in an environment variable. This would make it scale better if you have more than one build 
-agent, or if some agents do not have &lt;code class=&quot;highlighter-rouge&quot;&gt;carthage&lt;/code&gt; installed.&lt;/p&gt;
-
-&lt;p&gt;Create a command line build step, as shown below. Name the step something like “dependency resolution”
-or “Carthage” (if you’re using Carthage as a package manager). For the “build script content” you’ll enter
-something like &lt;code class=&quot;highlighter-rouge&quot;&gt;carthage bootstrap --platform iOS&lt;/code&gt;. The industry standard for dependency resolution is
-&lt;a href=&quot;https://cocoapods.org/&quot;&gt;Cocoapods&lt;/a&gt;, but carthage has a slightly simpler setup. When running builds, this 
-may make it take a bit longer, but the reliability is worth the minutes in my opinion. Note that if this
-is a concern, cocoapods can be faster.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-carthage-step.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;substep-2-simulator-configuration&quot;&gt;Substep 2: Simulator Configuration&lt;/h3&gt;
-&lt;p&gt;First, some background: In order to run tests, XCode uses an app, the aptly-named Simulator, which 
-simulates an iOS device. When you run tests, it will open the simulator, install the app you’re testing 
-onto it, and then run tests through the app it installed.&lt;/p&gt;
-
-&lt;p&gt;The iOS Simulator can cause lots of problems if not handled properly. This step makes the builds much easier
-and much more reliable, albeit taking a few minutes longer. Ignoring this step can cause your build to
-hang indefinitely.&lt;/p&gt;
-
-&lt;p&gt;Before you do this, identify the iOS simulator that you want to build for and run your tests. 
-You will have multiple options for the various devices that Apple supports, such as the iPhone 7 or the 
-iPhone SE. If you wish to use multiple simulators, then the &lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun&lt;/code&gt; commands shown below should be run
-for those devices as well. To get a list of possible devices, run &lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun simctl list&lt;/code&gt;. This will give you 
-a list of the devices, and their GUIDs, available for testing. Let’s say we choose the GUID 
-“94639904-0FEF-4E7F-9F74-F22631A15DBE”. In the following steps, replace that GUID with the GUID of your
-choice (or better yet, put it in an environment variable on the build agent).&lt;/p&gt;
-
-&lt;p&gt;Once again, create a command line build step. Call the step something like “Reset Simulator”. For the
-script content, enter the following (with your simulated device’s GUID):&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun simctl shutdown 94639904-0FEF-4E7F-9F74-F22631A15DBE
-killall Simulator
-killall com.apple.CoreSimulator.CoreSimulatorService
-xcrun simctl erase 94639904-0FEF-4E7F-9F74-F22631A15DBE
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The first line shuts down the simulator for the device if it’s running. The second and third lines ensure
-that the Simulator is shut down, to ensure a sanitary testing environment. Finally, the final line erases
-the content and settings of the simulated device. This ensures both a sanitary testing environment, and
-avoids an issue where, when running an automated build, it can hang indefinitely.&lt;/p&gt;
-
-&lt;h3 id=&quot;substep-3-the-fun-part&quot;&gt;Substep 3: The Fun Part&lt;/h3&gt;
-&lt;p&gt;At long last, it’s time to set up our XCode build step! In the build step type, select XCode Project.
-Click “Show advanced options”. Set the Path to the project or workspace to your .xcodeproj file. Use a
-scheme-based build. (Note that to use scheme-based builds, you must configure a build scheme in XCode and
-push your changes to VCS.) Set build action(s) to &lt;code class=&quot;highlighter-rouge&quot;&gt;clean build&lt;/code&gt;. Check the “Run tests” box. Finally, in
-the Additional command line parameters box, enter the following: 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;-destination &quot;id=94639904-0FEF-4E7F-9F74-F22631A15DBE&quot;&lt;/code&gt;. This will tell it to run the build on and for
-the device we set up in the previous step.&lt;/p&gt;
-
-&lt;p&gt;Here’s an example of my setup for one of my projects (with some minor changes to make it more readable):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-xcode-step.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;substep-4-cleanup&quot;&gt;Substep 4: Cleanup&lt;/h3&gt;
-&lt;p&gt;Finally, we want to clean up to save resources. This is fairly self-explanatory. Create a final command-line
-step with the following code:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun simctl shutdown %env.simulator_guid%
-killall Simulator
-killall com.apple.CoreSimulator.CoreSimulatorService
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;icing-on-the-cake&quot;&gt;Icing on the cake&lt;/h2&gt;
-&lt;p&gt;Finally, a few options to add some nice features to your build.&lt;/p&gt;
-
-&lt;h3 id=&quot;vcs&quot;&gt;VCS&lt;/h3&gt;
-&lt;p&gt;Head to the version control settings tab of the build configuration. Here, you can customize your VCS
-settings. In the branch specification, I recommend choosing which branches the server should run. To run
-all branches and commits, enter &lt;code class=&quot;highlighter-rouge&quot;&gt;+:*&lt;/code&gt; in the branch specification box.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-vcs-config.jpg&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/files/images/posts/2017-03-07-branch-spec.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;vcs-labeling&quot;&gt;VCS Labeling&lt;/h3&gt;
-&lt;p&gt;TeamCity has a lot of really cool features. One of my favorites is VCS labeling. To reach this, go to the
-Build Features tab. Click “Add build feature” and select the VCS root and the branches you want to enable
-it for. I like to set up two of these: One with the labeling pattern &lt;code class=&quot;highlighter-rouge&quot;&gt;build-%system.build.number%&lt;/code&gt; for all
-builds, and one with the labeling pattern &lt;code class=&quot;highlighter-rouge&quot;&gt;build-%system.build.number%-passed&lt;/code&gt; that is added to successful
-builds only. Then, from a GUI client like SourceTree, you can see at a glance which build is associated
-with which commit, as well as which commits failed.&lt;/p&gt;
-
-&lt;h1 id=&quot;step-2-setting-up-the-teamcity-agent&quot;&gt;Step 2: Setting up the TeamCity Agent&lt;/h1&gt;
-&lt;p&gt;If your agent is the same as the CI server, skip to step 3.&lt;/p&gt;
-
-&lt;p&gt;There are some basic requirements for setup. If these requirements are not met, you will &lt;strong&gt;not&lt;/strong&gt; be able to 
-successfully install the agent.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The desired agent must have a stable (and preferably fast) internet connection.&lt;/li&gt;
-  &lt;li&gt;The desired agent must have space to install the agent.&lt;/li&gt;
-  &lt;li&gt;Time. The agent will take a while to install, because the agent installation process installs all of its
-dependencies (and there are a lot of them). Let the agent sit for an hour (depending on connection speed)
-before you decide that something’s wrong. Activity monitor may be used to investigate. The name of the
-process running the installation is “java”. There may be multiple processes doing this.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;On the MacOS machine you want to run as an agent, the simplest way is using TeamCity’s &lt;em&gt;agent push&lt;/em&gt;
-functionality. To use this, you must enable remote login on the desired agent in System Preferences &amp;gt;
-Sharing. This allows TeamCity to ssh to your machine and install the agent. To use TeamCity’s agent push
-functionality, you must either be on the same network, or have an IP/DNS address at which the &lt;strong&gt;server&lt;/strong&gt;
-will be able to reach the &lt;strong&gt;agent&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;To reach TeamCity’s agent push functionality, click the “Agents” tab at the top menu. In the submenu, 
-select agent push, and then click the install agent button. Enter appropriate details for the agent,
-then go.&lt;/p&gt;
-
-&lt;p&gt;If you can’t use agent push, it may be more reliable to manually install. To manually install, go to the
-“Agents” tab at the top, then click the link on the right that says “Install build agent”, and select the
-zip file distribution.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/images/posts/2017-03-07-agent-install.jpg&quot; alt=&quot;Agent Installation&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;configuring&quot;&gt;Configuring&lt;/h2&gt;
-&lt;p&gt;Once the agent is installed, you can configure the agent’s settings in the &lt;code class=&quot;highlighter-rouge&quot;&gt;conf/buildAgent.properties&lt;/code&gt;
-file. Here you can set the agent name, environment variables for TeamCity, and more.&lt;/p&gt;
-
-&lt;h2 id=&quot;running&quot;&gt;Running&lt;/h2&gt;
-&lt;p&gt;To run, in Terminal navigate to the &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt; folder. Then, run &lt;code class=&quot;highlighter-rouge&quot;&gt;./agent.sh start&lt;/code&gt;. To stop the process, run
-&lt;code class=&quot;highlighter-rouge&quot;&gt;./agent.sh stop kill&lt;/code&gt;. This will &lt;strong&gt;not&lt;/strong&gt; run on start, but you can find tutorials online for configuring
-this with launchd. I recommend &lt;a href=&quot;http://www.soma-zone.com/LaunchControl/&quot;&gt;Launch Control&lt;/a&gt; to make configuring
-these easier.&lt;/p&gt;
-
-&lt;h1 id=&quot;step-3-concluding&quot;&gt;Step 3: Concluding&lt;/h1&gt;
-&lt;p&gt;You’re set up! Congratulations! 🎉&lt;/p&gt;
-</description>
-        <pubDate>Tue, 07 Mar 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000/tutorial/2017/03/07/XCode-CI-Article.html</link>
-        <guid isPermaLink="true">http://localhost:4000/tutorial/2017/03/07/XCode-CI-Article.html</guid>
-        
-        <category>Apple,</category>
-        
-        <category>programming</category>
-        
-        
-        <category>Tutorial</category>
         
       </item>
     
