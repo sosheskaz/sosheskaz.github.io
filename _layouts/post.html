@@ -5,16 +5,21 @@ layout: page
 
     <article class="Article">
         <div style="font-style: italic; font-size: small; text-align: right">
-        {% if page.author %}
-            Written by {{page.author}}
-            <br>
-            {% if page.editor %}
-            Edited by {{page.editor}}
-            <br>
+            {% if page.author %}
+                Written by {{page.author}}
+                <br>
+                {% if page.editor %}
+                    Edited by {{page.editor}}
+                    <br>
+                {% endif %}
             {% endif %}
-        {% endif %}
 
-        Published on {{ page.date | date: "%b %-d, %Y" }}
+            Published on {{ page.date | date: "%b %-d, %Y" }}
+
+            {% if page.category %}
+            <br>
+            Topic: {{page.category}}
+            {% endif %}
         </div>
 
         <hr>

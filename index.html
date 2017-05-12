@@ -17,6 +17,11 @@ layout: page
     {% endif %}
 
     Published on {{ site.posts[0].date | date: "%b %-d, %Y" }}
+
+    {% if site.posts[0].category %}
+    <br>
+    Topic: {{site.posts[0].category}}
+    {% endif %}
     </div>
 
     <hr>
