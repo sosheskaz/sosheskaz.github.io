@@ -96,13 +96,9 @@ tell it that it's okay. As you can see,
 FreeBSD is much more confusing, but it also allows the user to be more careful and specific, if they have
 the knowledge to do so.
 
-BSD becomes, in my opinion, the OS of academics, while Linux becomes the OS of the people. BSD errs on
-the side of caution and the tried-and-true, while Linux likes to stay bleeding-edge and fast. BSD is
-elegant, Linux is practical.
+BSD becomes, in my opinion, the OS of academics, while Linux becomes the OS of the people.
 
 # Licenses
-Earlier, I said 
-*"BSD becomes, in my opinion, the OS of academics, while Linux becomes the OS of the people."*
 This is also
 reflected in the [BSD licenses](https://en.wikipedia.org/wiki/BSD_licenses), which BSD and the BSD 
 utilities are licensed under, and the 
