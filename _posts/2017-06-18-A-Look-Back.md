@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2016 MacBook Pro Review
+title: A Look Back
 author: Eric Miller
 category: Personal
 tags:
