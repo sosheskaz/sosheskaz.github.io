@@ -35,7 +35,7 @@ dramatically year-by-year.
 
 ![Performance Year-by-Year](/files/images/posts/2017-12-29/performance-graph.jpg)
 
-Source: [Extreme Tech](https://www.extremetech.com/)
+Source: Apple (though these figures are relatively representative of real performance gains)
 
 Energy efficiency has grown similarly. With much more computational power available, for a much
 lower battery hit, it's natural for developers to use more power for both low-level tasks and to
