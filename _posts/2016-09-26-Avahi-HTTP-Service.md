@@ -42,3 +42,87 @@ The new service will now be viewable via bonjour clients, such as Safari and dns
 
 ![Avahi-Safari](/{{site.post_images_path}}/2016-09-26-avahi-in-safari.png)
 ![Avahi-dns-sd](/{{site.post_images_path}}/2016-09-26-avahi-in-terminal.png)
+
+### Update
+
+So, after turning on SEO and forgetting about it for a few weeks, this page has gotten pretty
+popular. Looking back, it's a bit lackluster in terms of information, so I'll put in a bit more
+information here. To be honest, I mostly made this so I could personally reference it later when I
+forgot how to use avahi, so it's a bit barebones. That said, the XML `.service` file above is a
+pretty good example, but I'll elaborate on a
+bit of the information here to hopefully make zeroconf networking a bit easier to understand.
+
+#### Important Caveat
+
+On the client side, identifying a domain and resolving a domain are two different things. You first
+need to *browse* for a domain, and then using the name, service, and domain information, issue a
+resolve command against it to resolve an address you can reach it at. `dns-sd` examples of how to
+do this can be found at the bottom of the page.
+
+#### Linux Guide
+
+Because I understand Linux a bit better now, I'll include some details for it.
+
+On Debian-based distros, you can install avahi with `apt-get install avahi-daemon`
+
+On RHEL/CentOS-based distros, use `yum install avahi`.
+
+On Alpine Linux, use `apk add -U avahi`.
+
+Enabling of the service will vary by what service manager you use, but using the general `service`
+syntax, it should be something like `service -e avahi-daemon` to enable it and
+`service avahi-daemon start` to start it.
+
+Your services directory will most likely be located in `/usr/etc/avahi/services`.
+
+#### Line-by-Line Breakdown
+
+`<service-group></service-group>` – This defines a group of related services offered. They will
+share the name (at least with this example), so in general you probably only need one service per
+service group, unless they're directly related (for example, ports 80 and 443, or ports 20 and 21).
+
+`<service></service>` – This defined an individual service offered. For HTTP, for example, you may
+offer both HTTP and HTTPS, and want to advertize two services, one for each port. 
+
+`<name replace-wildcards="yes">%h <YOUR_HTTP_SERVICE></name>` – this is the name your service will
+broadcast itself as. `replace-wildcards="yes"` enables the `%h` wildcard, which replaces instances
+of `%h` with your system hostname. When you detect the service with `dns-sd` or a similar bonjour
+discovery tool, that's what it will show up as.
+
+`<type>_http._tcp</type>` – This defines the protocol/type of the service offered. If you're
+running ad-hoc servers, this can be very useful, because you can use it to key on your custom
+service type. The second part, `_tcp` in this case, tells it whether you're using TCP or UDP, and
+is usually dependent on the higher-level service offered. Most services only support TCP (with the
+exception of some things, like DNS resolution). If you're using a custom app, something like
+`_mycustomapp._tcp` would be good. Of course, you still need to validate that the service is
+legitimate if you do that, as anyone could be claiming to be your app.
+
+`<port><YOUR_PORT></port>` – For http, `YOUR_PORT` is probably 80 or 443 if you're serving it
+publicly, or maybe something like `8080` if you're running a basic web-app behind a LAN.
+
+`<subtype></subtype>` – This isn't used in my example, but it is supported by avahi. You don't need
+it for something like an HTTP server, but for sophisticated protocols it might be useful.
+
+`<txt-record></txt-record>` – Not in my example.
+This allows for custom text-based records to your avahi broadcast.
+This could be useful if you're running some sort of custom app where other servers on the network
+would need to know its characteristics. It's pretty much free-form, so you can put whatever useful
+information you need in these records.
+
+#### Developing an App
+
+In general, if you're developing some sort of app (web, integrated, or otherwise), I'd recommend
+looking for libraries for your specific language. The swift/iOS bonjour client is clunky, but if
+you're doing macOS/iOS development it's ultimately simpler to just use it. The one for python,
+aptly named [zeroconf](https://pypi.python.org/pypi/zeroconf) works well, is easy to use, and is
+great for prototyping.
+
+#### Handy dns-sd Commands
+
+`dns-sd -B _http` – search the LAN for any HTTP services and update when any new ones are found.
+
+`dns-sd -R myservice _http._tcp local 8080` – Advertise a local HTTP service on port 8080 to your
+local network (whether there actually is one or not).
+
+`dns-sd -L dns-sd -L myservername _http._tcp local` – resolve the IP/domain and port of an
+advertized service.
