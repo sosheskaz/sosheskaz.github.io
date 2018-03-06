@@ -77,9 +77,7 @@ Your services directory will most likely be located in `/usr/etc/avahi/services`
 
 #### Line-by-Line Breakdown
 
-`<service-group></service-group>` – This defines a group of related services offered. They will
-share the name (at least with this example), so in general you probably only need one service per
-service group, unless they're directly related (for example, ports 80 and 443, or ports 20 and 21).
+`<service-group></service-group>` – This is the outermost tag required in your service definition.
 
 `<service></service>` – This defined an individual service offered. For HTTP, for example, you may
 offer both HTTP and HTTPS, and want to advertize two services, one for each port. 
