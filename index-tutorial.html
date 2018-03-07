@@ -6,8 +6,8 @@ permalink: /tutorial/
 
 <ul class="post-list">
   {% for post in site.posts %}
-  {% assign categories = 'tutorial Tutorial' %}
-  {% if categories contains post.category  %}
+  {% assign current_categories = 'tutorial Tutorial' %}
+  {% if current_categories contains post.category  %}
   {% continue %}
   {% endif %}
   <li>

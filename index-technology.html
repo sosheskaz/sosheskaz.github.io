@@ -6,8 +6,8 @@ permalink: /technology/
 
 <ul class="post-list">
   {% for post in site.posts %}
-  {% assign categories = 'technology Technology' %}
-  {% if categories contains post.category  %}
+  {% assign current_categories = 'technology Technology' %}
+  {% if current_categories contains post.category  %}
   {% continue %}
   {% endif %}
   <li>

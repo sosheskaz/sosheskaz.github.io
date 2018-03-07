@@ -6,8 +6,8 @@ permalink: /server/
 
 <ul class="post-list">
   {% for post in site.posts %}
-  {% assign categories = 'server Server' %}
-  {% if categories contains post.category  %}
+  {% assign current_categories = 'server Server' %}
+  {% if current_categories contains post.category  %}
   {% continue %}
   {% endif %}
   <li>
