@@ -5,8 +5,8 @@ permalink: /apple/
 ---
 <ul class="post-list">
   {% for post in site.posts %}
-  {% assign categories = 'apple Apple' %}
-  {% if categories contains post.category  %}
+  {% assign current_categories = 'apple Apple' %}
+  {% if current_categories contains post.category  %}
   {% continue %}
   {% endif %}
   <li>
