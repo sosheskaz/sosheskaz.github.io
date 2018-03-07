@@ -6,7 +6,10 @@ permalink: /server/
 
 <ul class="post-list">
   {% for post in site.posts %}
-  {% if post.category contains 'server' %}
+  {% assign categories = 'server Server' %}
+  {% if categories contains post.category  %}
+  {% continue %}
+  {% endif %}
   <li>
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
@@ -14,6 +17,5 @@ permalink: /server/
       <a class="post-link" href="{{ post.url }}">{{ post.title | escape }}</a>
     </h2>
   </li>
-  {% endif %}
   {% endfor %}
 </ul>

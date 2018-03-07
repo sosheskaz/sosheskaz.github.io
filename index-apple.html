@@ -5,8 +5,10 @@ permalink: /apple/
 ---
 <ul class="post-list">
   {% for post in site.posts %}
-  <div>{{ post.category }}</div>
-  {% if post.category contains 'apple' %}
+  {% assign categories = 'apple Apple' %}
+  {% if categories contains post.category  %}
+  {% continue %}
+  {% endif %}
   <li>
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
@@ -14,6 +16,5 @@ permalink: /apple/
       <a class="post-link" href="{{ post.url }}">{{ post.title | escape }}</a>
     </h2>
   </li>
-  {% endif %}
   {% endfor %}
 </ul>
