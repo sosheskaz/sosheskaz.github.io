@@ -24,7 +24,7 @@ my_images_path: files/images/my
 post_images_path: files/images/posts
 
 # configuration
-gems:
+plugins:
   - octopress-paginate
   - jekyll-seo-tag
   - jekyll-feed
