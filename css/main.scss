@@ -16,7 +16,7 @@ $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
-$grey-color:       #828282;
+$grey-color:       #a2a2a2;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
@@ -56,6 +56,31 @@ img {
   margin-right: auto;
 }
 
+table {
+  padding: 20px;
+}
+
+table th {
+  background-color: #c2c2c2;
+}
+
+table tr:nth-child(even) {
+  background-color: #e0e0e0;
+}
+table tr:nth-child(odd) {
+  background-color: #efefef;
+}
+
+table td, table th {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.highlight {
+  padding: 20px !important;
+  background-color: #111 !important;
+}
+
 .navbar {
   margin-bottom: 0;
 }
@@ -79,13 +104,13 @@ img {
   background-color: #EFEFEF;
 }
 
-.me {
-  content: url(/files/images/my/Team1675_MentorHeadshots-106.png)
-}
-
 .post-title {
   text-align: center;
 }
 
+.img-rounded {
+  width: 100%;
+}
+
 // Import partials from the `minima` theme.
-@import "minima";
+@import "{{ site.theme }}";

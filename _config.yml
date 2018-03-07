@@ -8,7 +8,7 @@ future: true
 excerpt_separator: <!--more-->
 markdown: kramdown
 highlighter: rouge
-theme: minima
+theme: jekyll-theme-tactile
 
 # Blog information
 title: Eric Miller's Website
