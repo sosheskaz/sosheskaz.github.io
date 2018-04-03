@@ -15,8 +15,13 @@ harder to use, command line options parser.
 * [JSON.NET](http://www.newtonsoft.com/json) - All things JSON.
 
 # Python
+* [argparse](https://docs.python.org/3/library/argparse.html) – Alright, this one is built-in, but it's easily my favorite CLI options library out there.
+* [Jinja](http://jinja.pocoo.org) – templating. A must-have if you're doing web serving with python or doing configuration management.
+* [Requests](https://requests.readthedocs.io/en/master/) – Easy-to-use HTTP.
 * [SciPy](https://www.scipy.org/) - Python library for very powerful mathematical and scientific analysis.
 If you're doing statistical analysis, look no further.
+* [SQLAlchemy](http://www.sqlalchemy.org) – SQL library for python, similar to ActiveRecord for ruby in terms of functionality and purpose.
+* [SymPy](http://www.sympy.org/en/index.html) – Symbolic mathematics, including prime number calculation.
 * [tqdm](https://pypi.python.org/pypi/tqdm) - Make command-line status bars easily from Python or from
 the command line.
 
