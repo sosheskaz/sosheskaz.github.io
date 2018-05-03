@@ -8,7 +8,6 @@
     <link rel="icon" href="{{site.favicon}}">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
     <link rel="stylesheet" href="/css/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -93,7 +92,7 @@
 
 <div class="col-md-1"></div>
 <div id="page-content-wrapper" class="content col-md-10">
-    <h1 class="post-title"><a href="{{post.url}}">{{page.title}}</a></h1>
+    {% unless page.index %}<h1 class="post-title"><a href="{{post.url}}">{{page.title}}</a></h1>{% endunless %}
     {{content}}
 </div>
 <div class="col-md-1"></div>
