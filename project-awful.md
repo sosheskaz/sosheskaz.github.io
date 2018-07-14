@@ -23,7 +23,7 @@ Awfully is sufficient to put it here. So what are these criteria?
 * Accomplishes its goal. Anyone can write a program that doesn't work. For software to be Awful, it
 has to at least basically work sometimes.
 * Uses pointer hacking or does other, similarly stupid things.
-* Steamrolls errors or rewrites its own code. The 
+* Steamrolls errors or rewrites its own code. The
 [Wheeler Jump](https://www.youtube.com/watch?v=zR8V0lq029c) is a good example of what I'm getting
 at here.
 * Shows code to the user, fails to work under random conditions, has Awful error messages, or
@@ -92,7 +92,8 @@ because colons are *unpythonic*.
 
 It may be a bit of a faux pas to promote my own stuff here, but damn it I'm proud.
 [SiriSings](https://github.com/sosheskaz/sirisings) is a command line app for mac that allows you
-to put in words and have a siri-like voice sing a song found based on those words.
+to put in words and have a siri-like voice sing a song found based on those words. You can install
+it with `pip install https://sosheskaz.github.io/pypi/sirisings.zip`
 
 | Criteria                | Status                                                                         |
 | ----------------------- | ------------------------------------------------------------------------------ |
