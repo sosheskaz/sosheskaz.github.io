@@ -157,7 +157,7 @@ successfully without needing to *establish a total monopoly* on their ecosystem 
 ## Windows
 
 Honestly, I can't muster much more than an honorable mention for Windows in the package management
-area, but I also don't want to leave it out. That's to denigrate the people working on it
+area, but I also don't want to leave it out. That's not to denigrate the people working on it
 at all - they do great work, and as someone who fell in love with package managers as soon as I
 found them, the work they do on bringing package managers to an ecosystem that seems to think it's
 too good for them is greatly appreciated. That said, nothing that's come out of it has been
