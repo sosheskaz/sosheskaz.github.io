@@ -225,4 +225,4 @@ repositories?
 And now, for your entertainment, Windows 95, being run raw though a javascript renderer provided by
 Chromium.
 
-![tru dat](/site/files/images/posts/2019-01-03-windows-95.png)
+![tru dat](/files/images/posts/2019-01-03-windows-95.png)
