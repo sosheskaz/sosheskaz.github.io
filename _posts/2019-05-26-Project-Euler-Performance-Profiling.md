@@ -106,7 +106,7 @@ computational complexity between problems skews points on the graph too much for
 profilers to show up on the graph. I control for this by instead doing a relative comparison against
 the Golang implementation.
 
-![Relative Performance by Profile Strategy (GoLang as Reference Point)](/files/images/posts/2019-05-28/relative-clock-time.png)
+![Relative Performance by Profile Strategy (GoLang as Reference Point)](/files/images/posts/2019-05-26/relative-clock-time.png)
 
 Although this chart offers some pretty clear trends in terms of relative clock time performance
 between the five languages, I suspect that is likely due to startup times of each language, given
@@ -164,7 +164,7 @@ Second, a huge kudos to PyPy. Where CPython took 21.5 times as long as Golang to
 program, PyPy actually *outperformed the compiled language*, running almost 30x as fast as CPython.
 This is quite a feat for an interpreted language. This is only made more impressive when you
 consider that the golang implementation was multithreaded, where the Python implementation was not.
-We'll look more at PyPy later, in the section [*PyPy vs CPython*](#PyPy-vs-CPython).
+We'll look more at PyPy later, in the section *PyPy vs CPython*.
 
 However, Groovy performed quite poorly here when compared to everything else. This may be poor
 programming on my part, but I suspect my solutions the Project Euler problems simply don't play to
@@ -209,7 +209,7 @@ That aside, let's look at a graph of languages' memory footprint over the variou
 that Groovy is left out of this graph, due to its peak of 1.4GB on Euler014 skewing the graph to the
 point of unreadability:
 
-![Memory Footprint](/files/images/posts/2019-05-28/memory-general.png)
+![Memory Footprint](/files/images/posts/2019-05-26/memory-general.png)
 
 This graph has relatively few interesting points. We can see that Ruby performs particularly poorly
 on certain problems because it doesn't seem to handle deferred execution quite as well as the other
@@ -220,13 +220,13 @@ there's a limit to what we can learn outside of edge cases.
 However, the comparisons for PyPy and CPython, and for the various versions of Node.js, can show us
 a lot:
 
-![CPython vs PyPy Memory Footprint](/files/images/posts/2019-05-28/python-memory-footprint.png)
+![CPython vs PyPy Memory Footprint](/files/images/posts/2019-05-26/python-memory-footprint.png)
 
 We can see that PyPy performs dramatically worse than CPython. Aside from the much larger baseline
 memory footprint, it seems to have much worse performance in this area as the general memory demand
 increases.
 
-![Node.js Memory Footprint](/files/images/posts/2019-05-28/node-memory-footprint.png)
+![Node.js Memory Footprint](/files/images/posts/2019-05-26/node-memory-footprint.png)
 
 While the later versions of Node consistently outperform the older versions, the effect doesn't seem
 to scale, and instead it seems to simply be tracking the improvements in the baseline, offering only
@@ -235,7 +235,7 @@ improvements for large datasets.
 
 Finally, let's look at the comparison of Groovy and Ruby:
 
-![Groovy vs Ruby Memory Footprint](/files/images/posts/2019-05-28/memory-groovy-vs-ruby.png)
+![Groovy vs Ruby Memory Footprint](/files/images/posts/2019-05-26/memory-groovy-vs-ruby.png)
 
 Why am I comparing Groovy to Ruby? Because Ruby was the next worst performing by this metric, and
 it was the best I could get when it came to making this graph readable.
@@ -248,9 +248,9 @@ languages in functional programming functionality and performance.
 
 ## PyPy vs CPython
 
-![Cpython vs PyPy CPU Time](../files/images/posts/2019-05-28/cputime-python-pypy.png)
+![Cpython vs PyPy CPU Time](../files/images/posts/2019-05-26/cputime-python-pypy.png)
 
-![CPython vs PyPy Memory Footprint](/files/images/posts/2019-05-28/python-memory-footprint.png)
+![CPython vs PyPy Memory Footprint](/files/images/posts/2019-05-26/python-memory-footprint.png)
 
 Well, we certainly saw some interesting results for comparisons of CPython and PyPy. CPython's
 miniscule memory footprint is certainly a strong asset, but the memory cost of PyPy would likely
