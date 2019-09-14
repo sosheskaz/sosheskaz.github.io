@@ -24,6 +24,13 @@ layout: page
 
         <hr>
 
+        <div>
+            {% if page.previous %}<a style="float: left" href="{{ page.previous.url }}">Previous</a>{% endif %}
+            {% if page.next %}<a style="float: right" href="{{ page.next.url }}">Next</a>{% endif %}
+        </div>
+
+        <hr>
+
         {{ content }}
     </article>
 </div>

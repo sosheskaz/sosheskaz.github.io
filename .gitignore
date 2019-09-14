@@ -3,5 +3,6 @@ _site
 .jekyll-metadata
 
 .idea/
+.vscode/
 
 site/
