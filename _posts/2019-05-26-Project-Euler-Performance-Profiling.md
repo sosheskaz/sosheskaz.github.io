@@ -15,12 +15,12 @@ answer, but to maximize performance in measurable ways. Most Project Euler solut
 haven't quantified their performance in this way, and when they do optimize, usually only optimize
 in favor of one metric, usually the "Clock Time" taken to compute the answer. Here, I'm sitting on
 a lot of data – currently, 21 problems (and a control) across 5 different programming languages,
-as well as different performance approaches for the differerent languages.
+as well as different performance approaches for the different languages.
 
 So today, sitting in front of my grand total of 5 programming languages, expressed using 9 different
 profilers, measuring 4 metrics across 22 programs, for a total of 792 data points, I have a golden
 opportunity to don my lab coat and play scientist for a day, and look at the performance of several
-different progrramming languages and even different runtimes for the same language.
+different programming languages and even different runtimes for the same language.
 
 ## Methodology
 
@@ -29,7 +29,7 @@ the logic to other programming languages. I also avoided third-party libraries, 
 poorly across languages and profiling strategies. I kept the overall strategy of the implementations
 relatively uniform, with two exceptions.
 
-1. If a language is able to natively, cleanly, and easily parrallelize operations, I did so.
+1. If a language is able to natively, cleanly, and easily parallelize operations, I did so.
 2. If a language offers language features that can simplify the implementation, I use them.
 
 The first means that certain languages have an advantage in clock time, and the second means that
@@ -57,7 +57,7 @@ The source code for the profiler and the orchestrator can be found
 The results are written out to JSON, YAML, and CSV. I'm working from the CSV format, because it
 maps easily into spreadsheet software for making graphs. You can find the raw data
 [here](https://github.com/sosheskaz/Project-Euler/tree/b1e5e3817185f5c262321b6e368f63d8f3a5a571/profiles).
-Also included therre are hardware specifications for the machine that generated this data.
+Also included there are hardware specifications for the machine that generated this data.
 
 ### Profiling Strategies
 
@@ -89,7 +89,7 @@ however, have a total of 3 profilers for different versions of Node.js: `Node.js
 ### Python 3
 
 Again, this profiler (`Python 3.7.3`) usually just consists of running Python3 against the script.
-However, it does have an additional profiler, `PyPy 3.6-7.1.0`, which uses the PyPy implementatio
+However, it does have an additional profiler, `PyPy 3.6-7.1.0`, which uses the PyPy implementation
 of Python (as opposed to CPython), to compare metrics across the two Python implementations.
 
 ### Ruby
@@ -199,7 +199,7 @@ for the profilers (Leaving out NailGun):
 The first thing that jumps out is how incredibly expensive Groovy is. Even for a no op, we have to
 spin up the JVM, which is incredibly expensive.
 
-Second, we can say the same thing about PyPy. 7 times bigger foorprint than CPython. CPython though,
+Second, we can say the same thing about PyPy. 7 times bigger footprint than CPython. CPython though,
 is very impressive, only taking about 20% more than Golang's empty binary. Ruby and newer versions
 of Node are also respectable, with Kudos to Node for showing such dramatic improvement since version
 10.x. Perhaps PyPy's frontloading of memory is partially what's responsible for its phenomenal
@@ -249,11 +249,10 @@ languages in functional programming functionality and performance.
 ## PyPy vs CPython
 
 ![Cpython vs PyPy CPU Time](../{{site.post_images_path}}/2019-05-26/cputime-python-pypy.png)
-
 ![CPython vs PyPy Memory Footprint](/{{site.post_images_path}}/2019-05-26/python-memory-footprint.png)
 
 Well, we certainly saw some interesting results for comparisons of CPython and PyPy. CPython's
-miniscule memory footprint is certainly a strong asset, but the memory cost of PyPy would likely
+minuscule memory footprint is certainly a strong asset, but the memory cost of PyPy would likely
 more than offset the additional memory usage for most use cases where it's viable. Where we see the
 greatest benefits in particular, is in CPU Time for large degrees of complexity.
 
@@ -275,7 +274,7 @@ incredibly performant.
 ## Conclusions
 
 The most obvious conclusion that can be drawn is that, for most cases we've been looking at, Golang
-is a phenomenal tool. The miniscule memory footprint and phenomenal all-around performance is
+is a phenomenal tool. The minuscule memory footprint and phenomenal all-around performance is
 wonderful to work with - it's as popular as it is for a reason. And there's a reason my profiler is
 written in it. The benefits of "truly" compiled languages, like Golang and Swift, are substantial,
 especially these days when Software is written with so much bloat. The parallelism techniques that
