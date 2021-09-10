@@ -80,7 +80,7 @@ Your services directory will most likely be located in `/usr/etc/avahi/services`
 `<service-group></service-group>` – This is the outermost tag required in your service definition.
 
 `<service></service>` – This defined an individual service offered. For HTTP, for example, you may
-offer both HTTP and HTTPS, and want to advertize two services, one for each port. 
+offer both HTTP and HTTPS, and want to advertize two services, one for each port.
 
 `<name replace-wildcards="yes">%h <YOUR_HTTP_SERVICE></name>` – this is the name your service will
 broadcast itself as. `replace-wildcards="yes"` enables the `%h` wildcard, which replaces instances
