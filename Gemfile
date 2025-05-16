@@ -9,4 +9,4 @@ gem "bootstrap-sass"
 gem "jekyll-autoprefixer"
 gem "jekyll-feed"
 
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.8"

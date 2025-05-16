@@ -285,7 +285,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
-    webrick (1.7.0)
+    webrick (1.8.2)
     zeitwerk (2.6.6)
 
 PLATFORMS
@@ -300,7 +300,7 @@ DEPENDENCIES
   jekyll-seo-tag
   octopress-hooks!
   octopress-paginate
-  webrick (~> 1.7)
+  webrick (~> 1.8)
 
 RUBY VERSION
    ruby 3.0.2p107
